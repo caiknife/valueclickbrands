@@ -1,0 +1,45 @@
+<?php
+if ($this->page > 1) {
+    $this->headTitle("您正在访问第".$this->page."页 - ".$this->keyword."－大红包海淘优惠券");
+    $this->headMeta()->appendName("keywords", $this->keyword);
+    $this->headMeta()->appendName("description", "您正在访问第".$this->page."页 - 大红包海淘优惠券为您展示了最为齐全的".$this->keyword."海淘购物优惠券。");
+} else {
+    $this->headTitle($this->keyword."－大红包海淘优惠券");
+    $this->headMeta()->appendName("keywords", $this->keyword);
+    $this->headMeta()->appendName("description", "大红包海淘优惠券为您展示了最为齐全的".$this->keyword."海淘特价促销信息。");
+}
+?>
+<div class="mainleft">
+	<!-- 全部优惠券分类 -->
+	<?php print $this->partial('us/default/allCategory.phtml');?>
+
+	<!-- 海淘攻略 && 优惠券使用攻略 -->
+	<?php print $this->partial('us/default/siteHelp.phtml');?>
+
+	<!-- 邮箱订阅 -->
+	<?php print $this->partial('us/default/emailSubcription.phtml');?>
+
+	<!-- 帮助中心 -->
+	<?php print $this->partial('us/default/helpCenter.phtml');?>
+
+	<!-- google ads -->
+	<?php print $this->partial('us/default/googleAdsList.phtml');?>
+</div>
+<div class="mainright">
+	<div class="breadcrumb">
+		当前位置： <a href="/">大红包海淘优惠券</a> &gt; 搜索：<?php print $this->keyword;?>
+	</div>
+
+	<?php if ($this->dealsList):?>
+	<div class="deallistwp">
+		<?php print $this->partial('us/default/dealsList.phtml');?>
+	</div>
+	<?php echo $this->paginationControl($this->paginator, 'Sliding', 'us/default/pagestyle.phtml', array('params' => array('q' => $this->urlKeyword))); ?>
+	<?php else:?>
+	<div class="deallistwp">
+		<div class="headline">
+			<h2>暂无"<?php print $this->keyword;?>"的结果</h2>
+		</div>
+	</div>
+	<?php endif;?>
+</div>

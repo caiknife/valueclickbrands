@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>大红包--网站地图</title>
+<link href="../css/detail.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<!--头部开始-->
+{include file="new/head.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <a href="#"><h1>网站地图</h1></a>
+	</div>
+	<!--category_title 导航结束-->		
+	<!--sidebar 栏目页左边内容开始-->
+	<div id="sidebar">
+		<!--sidebox 热门优惠券开始-->
+		{$hotmerchantin}
+		<!--sidebox 热门优惠券结束-->
+			
+		<!--sidebox 热门优惠券开始-->
+		{$hotcouponin}
+		<!--sidebox 热门优惠券结束-->
+			
+		<!--sidebox 热门优惠券开始-->
+		<div class="sidebox">
+			<div class="title"><h2>论坛热帖</h2></div>
+			<ul>
+				{section name=loop loop=$bbslist start=0 max=10}
+				<li>·<a href="/bbs/read.php?tid={$bbslist[loop].tid}">{$bbslist[loop].subject}</a></li>
+				{/section}
+			</ul>
+		</div>
+		<!--sidebox 热门优惠券结束-->
+	</div>
+	<!--sidebar 栏目页左边内容结束-->	
+	
+	<!--detail 具体内容开始-->
+	<div id="detail">
+		<div id="detail_title"><h2>网站地图</h2></div>
+		<div class="detail_map">
+			<ul>
+			{section name=loop loop=$categoryarray}
+			<li class="liline"><a href="{$categoryarray[loop].category_url}">{$categoryarray[loop].category_name}</a></li>
+			{/section}
+		</ul>
+		</div>
+	</div>
+	<!--detail 具体内容结束-->	
+</div>
+<!--主体内容结束-->
+
+{include file="new/foot.htm"}

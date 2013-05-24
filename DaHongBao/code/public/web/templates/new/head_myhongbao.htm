@@ -1,0 +1,41 @@
+<div id="head" class="main_box">
+	{include file="inc/top_bbs.inc.tpl"}
+	{*}
+	<!--head_top 开始-->
+	<div id="head_top">		
+		<div id="logo">
+			<a href="/"><img src="/images/logo.gif" alt="大红包优惠券" /></a>
+		</div>		
+		<!--head_topnav 开始-->
+		<div id="head_topnav">
+			<div class="head_nav">
+				<div class="head_navimg"><img src="/images/top_navbg_05.gif"  id="id2"/></div>
+				<ul>
+					<li><a href="/" title="优惠券" onmouseover="document.getElementById('id2').src='/images/top_nunun4_1.gif'" onmouseout="document.getElementById('id2').src='/images/top_navbg_05.gif'">优惠券</a></li>
+					<li><a href="/discount_hot.html" title="折扣信息" onmouseover="document.getElementById('id2').src='/images/top_nunun4_2.gif'" onmouseout="document.getElementById('id2').src='/images/top_navbg_05.gif'">折扣信息</a></li>
+					<li><a href="/topic-6.html" title="圣诞节" onmouseover="document.getElementById('id2').src='/images/top_nunun4_3.gif'" onmouseout="document.getElementById('id2').src='/images/top_navbg_05.gif'">圣诞节</a></li>					
+					<li><a href="/bbs" title="社区" onmouseout="document.getElementById('id2').src='/images/top_navbg_05.gif'"><strong>社区</strong></a></li>					
+					<li class="lileft"><a href="/topic.html" title="专题活动" onmouseover="document.getElementById('id2').src='/images/top_nunun4_5.gif'" onmouseout="document.getElementById('id2').src='/images/top_navbg_05.gif'">专题活动</a></li>		
+				</ul>
+			</div>
+			<!--下面的注释为登陆以后的状态-->
+			{include file="new/head_userinfo.htm"}	
+		</div>
+		<!--head_topnav 结束-->			
+	</div>
+	{/*}
+	<!--head_top 结束-->	
+	<!--nav导航 开始-->
+	<div id="nav">
+		<ul>			
+			<li><a href="/profile/myhongbao.php">我的大红包</a> |</li>
+			<li><a href="/profile/mycoupon.php">我的优惠券</a> |</li>
+			<li><a href="/profile/mydiscount.php">我的折扣信息</a> |</li>
+			<li><a href="/bbs/profile.php">我的社区</a> |</li>
+			<li><a href="/profile/myaward.php">我的奖品</a> |</li>
+			<li><a href="/bbs/read.php?tid=99431" target=_blank>积分规则</a></li>
+		</ul>
+		<div class="nav_right">欢迎，<strong>{$userinfo.username}</strong> | 您上次登录的时间是：{$userinfo.lastvisit}</div>
+	</div>
+	<!--nav导航 结束-->		
+</div>

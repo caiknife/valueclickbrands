@@ -1,0 +1,8 @@
+body{font:14px/1.8 Verdana, SimSun}
+img{border:1px solid #CCC; padding:5px; margin:10px; display:block}
+a:link,a:visited{color:#000099;}
+a:hover,a:active{color: #CC0000;text-decoration:none;}	
+h1,h2,h3,h4,h5{font-size:14px;} 
+span{ padding:0 5px;} 
+hr{ height:1px;}
+.red{ color:#FF0000}

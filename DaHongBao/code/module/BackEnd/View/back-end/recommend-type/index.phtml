@@ -1,0 +1,73 @@
+<?php
+/**
+* index.phtml
+*-------------------------
+*
+* 
+*
+* PHP versions 5
+*
+* LICENSE: This source file is from Smarter Ver2.0, which is a comprehensive shopping engine 
+* that helps consumers to make smarter buying decisions online. We empower consumers to compare 
+* the attributes of over one million products in the common channels and common categories
+* and to read user product reviews in order to make informed purchase decisions. Consumers can then 
+* research the latest promotional and pricing information on products listed at a wide selection of 
+* online merchants, and read user reviews on those merchants.
+* The copyrights is reserved by http://www.mezimedia.com. 
+* Copyright (c) 2006, Mezimedia. All rights reserved.
+*
+* @author Yaron Jiang <yjiang@corp.valueclick.com.cn>
+* @copyright (C) 2004-2013 Mezimedia.com
+* @license http://www.mezimedia.com PHP License 5.0
+* @version CVS: $Id: index.phtml,v 1.4 2013/05/20 02:44:46 yjiang Exp $
+* @link http://www.dahongbao.com/
+* @deprecated File deprecated in Release 3.0.0
+*/
+$this->headScript()->appendFile($this->basePath('js/BackEnd/recommend-type.js'));
+?>
+<div class="box">
+<div class="box-header">
+<h2><i class="icon-box"></i>推荐位置管理</h2>
+</div>
+
+<div class="box-content">
+
+<div class="input-group">
+    <a class="btn btn-success" href="<?php echo $this->url(null , array('controller' => 'recommendType' 
+        , 'action' => 'save'))?>?referer=<?php echo $this->referer?>">添加分类</a>
+</div>
+
+<div class="input-group">
+<select class="select-element input-element span2" id="SiteID">
+<?php foreach($this->sites as $k => $v):?>
+<option value="<?php echo $k?>" <?php if($k == $this->SiteID):?>selected="selected"<?php endif?>><?php
+ echo $v?></option>
+<?php endforeach;?>
+</select>
+</div>
+
+<table class="table">
+<thead>
+<tr class="row">
+<th>EnName</th>
+<th>位置</th>
+<th>分类</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<?php foreach($this->list as $v):?>
+<tr>
+<td><?php echo $v['RecommendTypeEnName']?></td>
+<td><?php echo $v['RecommendTypeName']?></td>
+<td><?php echo $v['ContentType']?></td>
+<td><a href="<?php echo $this->url(null , array('controller' => 'recommendType' , 'action' => 'save'))
+?>?RecommendTypeID=<?php echo $v['RecommendTypeID']?>&referer=<?php echo $this->referer
+?>" class="btn btn-edit">编辑</a>
+</tr>
+<?php endforeach;?>
+</tbody>
+</table>
+
+</div>
+</div>

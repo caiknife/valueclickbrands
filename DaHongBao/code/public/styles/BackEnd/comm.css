@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+/*导航*/
+.nav-tabs{
+	z-index:99;
+}
+
+.cls{
+	clear:both;
+}

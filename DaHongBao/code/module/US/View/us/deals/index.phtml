@@ -1,0 +1,38 @@
+<?php
+if ($this->page > 1) {
+    $this->headTitle("您正在访问第".$this->page."页 - 海淘特价促销信息,海外购物精选特价促销打折信息－大红包海淘优惠券");
+    $this->headMeta()->appendName("keywords", "您正在访问第".$this->page."页 - 海淘特价促销,海外购物促销打折信息");
+    $this->headMeta()->appendName("description", "您正在访问第".$this->page."页 - 大红包海淘优惠券网站致力于为用户提供及时有效的海淘特价促销,海外购物促销打折信息。");
+} else {
+	$this->headTitle("海淘特价促销信息,海外购物精选特价促销打折信息－大红包海淘优惠券");
+    $this->headMeta()->appendName("keywords", "海淘特价促销,海外购物促销打折信息");
+    $this->headMeta()->appendName("description", "大红包海淘优惠券网站致力于为用户提供及时有效的海淘特价促销,海外购物促销打折信息。");
+}
+?>
+<div class="mainleft">
+	<!-- 全部优惠券分类 -->
+	<?php print $this->partial('us/default/allCategory.phtml');?>
+
+	<!-- 海淘攻略 && 优惠券使用攻略 -->
+	<?php print $this->partial('us/default/siteHelp.phtml');?>
+
+	<!-- 邮箱订阅 -->
+	<?php print $this->partial('us/default/emailSubcription.phtml');?>
+
+	<!-- 帮助中心 -->
+	<?php print $this->partial('us/default/helpCenter.phtml');?>
+
+	<!-- google ads -->
+	<?php print $this->partial('us/default/googleAdsList.phtml');?>
+</div>
+<div class="mainright">
+	<div class="breadcrumb">
+		当前位置： <a href="/">大红包海淘</a> &gt; 特价促销
+	</div>
+	<?php if ($this->dealsList):?>
+	 <div class="deallistwp">
+		<?php print $this->partial('us/default/dealsList.phtml');?>
+	</div>
+	<?php echo $this->paginationControl($this->paginator, 'Sliding', 'us/default/pagestyle.phtml', array('params' => array())); ?>
+	<?php endif;?>
+</div>

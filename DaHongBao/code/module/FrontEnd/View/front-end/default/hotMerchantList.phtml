@@ -1,0 +1,80 @@
+<?php if ($this->hotMerchantList):?>
+<div class="famousLogo">
+	<?php 
+	$oneline  = 8;
+	$count = count($this->hotMerchantList);
+	$line = (int)($count/$oneline) * $oneline;//从第几个key开始是属于最后一行
+	$last = $count - $line; //最后一行为满
+	if ($last == 0) { $line = $line - $oneline; }
+	?>
+	<?php if ($hotMerchantShow || count($this->hotMerchantList) <= $oneline * 2):?>
+	<div class="famousLogoList">
+		<ul>
+			<?php foreach ($this->hotMerchantList as $key => $hotMerchant):?>
+			<li<?php if ($key >= $line):?> class="nobottom" <?php endif;?>><a href="<?php print $hotMerchant['MerchantDetailUrl'];?>"><img src="<?php print __IMAGE_DOMAIN_NAME."".$hotMerchant['LogoFile'];?>" width="108" height="50" /></a>
+			 <p><a href="<?php print $hotMerchant['MerchantDetailUrl'];?>"><?php print $hotMerchant['MerchantName'];?> <span>(<?php print $hotMerchant['CouponCount'];?>)</span></a></p>
+			</li>
+			<?php endforeach;?>
+		</ul>
+		<div class="cl"></div>
+	</div>
+	<?php else:?>
+	<div class="famousLogoList">
+		<ul>
+			<?php foreach ($this->hotMerchantList as $key => $hotMerchant):?>
+			<li id="hotMerchant_<?php print $key;?>" <?php if ($key >= $line || ($key >= $oneline && $key < $oneline *2)):?> class="nobottom" <?php endif;?> <?php if ($key >= $oneline * 2):?> style="display:none"<?php endif;?>><a href="<?php print $hotMerchant['MerchantDetailUrl'];?>"><img src="<?php print __IMAGE_DOMAIN_NAME."".$hotMerchant['LogoFile'];?>" width="108" height="50" /></a>
+			 <p><a href="<?php print $hotMerchant['MerchantDetailUrl'];?>"><?php print $hotMerchant['MerchantName'];?> <span>(<?php print $hotMerchant['CouponCount'];?>)</span></a></p>
+			</li>
+			<?php endforeach;?>
+		</ul>
+		<div class="cl"></div>
+	</div>
+	<script>
+	var onpage = "<?php print $oneline;?>";
+	var allpage = "<?php print count($this->hotMerchantList);?>";
+	$(function(){
+		$('.seeMore > a').click(
+			function(){
+				var $this = this;
+				allCateTimer = setTimeout(function() {
+					//显示第二行的虚线
+					for (var i = onpage; i < onpage * 2; i ++) {
+						$('#hotMerchant_'+i).removeClass('nobottom');
+					}
+					//显示隐藏的商家
+					for (var i = onpage * 2; i < allpage; i ++) {
+						$('#hotMerchant_'+i).hide()
+					}
+					//显示所有商家信息
+					$('.famousLogoList > ul > li').show();
+					$('.seeMore').hide();
+					$('.moreHide').show();
+				}, delay);
+			}
+		);
+		$('.moreHide > a').click(
+			function(){
+				var $this = this;
+				allCateTimer = setTimeout(function() { 
+					//隐藏第二行的虚线
+					for (var i = onpage; i < onpage * 2; i ++) {
+						$('#hotMerchant_'+i).addClass('nobottom');
+					}
+					for (var i = onpage * 2; i < allpage; i ++) {
+						$('#hotMerchant_'+i).hide()
+					}
+					$('.seeMore').show();
+					$('.moreHide').hide();
+					
+				}, delay);
+			}
+		);
+	})
+	</script>
+	<div class="seeMore"><a href="#">更多商家</a></div>
+	<div class="moreHide" style="display:none"><a href="#">收回</a></div>
+	<?php endif;?>
+	<div class="cl"></div>
+</div>
+<div class="cl"></div>
+<?php endif;?>

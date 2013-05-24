@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>专题首页--大红包</title>
+<META NAME="description" CONTENT="{$topicrow.description}">
+<META NAME="keywords" CONTENT="{$topicrow.keywords}">
+<link href="../css/topic.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<!--头部开始-->
+{include file="new/head_topic.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <h1>专题首页</h1>
+	</div>
+	<!--category_title 导航结束-->	
+	<!--topic 具体内容开始-->
+	<div id="topic">
+		<div id="topic_box">
+			<div id="topic_left">
+				<div class="topic_banner"><a href="/topicmore-1.html"><img src="/images/topic/spring.jpg" alt="春天专题" /></a></div>
+				<!--begin spring-->
+				<div class="spring">
+					<div class="spring_top"><img src="/images/topic/spring_top.gif" alt="春天专题" /></div>
+					<div class="spring_box">
+						<!--begin spring_left-->
+						<div class="spring_left">
+							 <div class="spring_img"><a href="/topic-{$topicmainarray.1.id}.html" target="_blank"><img src="{$__IMAGE_SRC}images/topic/topicindexshow_{$topicmainarray.1.id}_l.gif" alt="{$topicmainarray.1.title}" /></a></div>
+							 <h3><a href="/topic-{$topicmainarray.1.id}.html" title="{$topicmainarray.1.title}" target="_blank">{$topicmainarray.1.smalltitle}</a></h3>
+							 <p><a href="/topic-{$topicmainarray.1.id}.html" target="_blank">{$topicmainarray.1.topicdetail}</a></p>
+						</div>
+						<!--end spring_left-->
+						<!--begin spring_right-->
+						<div class="spring_right">
+							{section name=loop loop=$topiclistnewarray.1 max=4}
+							<div class="spring_rightbox">
+								<div class="spring_rightimg"><a href="/topic-{$topiclistnewarray.1[loop].id}.html" target="_blank"><img src="{$__IMAGE_SRC}images/topic/topicindexshow_{$topiclistnewarray.1[loop].id}_s.gif" alt="{$topiclistnewarray.1[loop].title}" /></a></div>
+								<a href="/topic-{$topiclistnewarray.1[loop].id}.html" target="_blank" title="{$topiclistnewarray.1[loop].title}">{$topiclistnewarray.1[loop].smalltitle}</a>
+							</div>
+							{/section}
+							<div class="clr"></div>
+							<div class="spring_button"><a href="/topicmore-1.html">更多春天专题</a></div>
+						</div>
+						<!--end spring_right-->
+					</div>
+					<div class="spring_top"><img src="/images/topic/spring_bottom.gif" alt="春天专题" /></div>
+				</div>
+				<!--end spring-->
+				
+				<div class="topic_banner"><a href="/topicmore-2.html"><img src="/images/topic/summer.jpg" alt="夏天专题" /></a></div>
+				<!--begin summer-->
+				<div class="summer">
+					<div class="spring_top"><img src="/images/topic/summer_top.gif" alt="夏天专题" /></div>
+					<div class="spring_box">
+						<!--begin summer_left-->
+						<div class="summer_left">
+							 <div class="summer_img"><a href="/topic-{$topicmainarray.2.id}.html" target="_blank"><img src="{$__IMAGE_SRC}images/topic/topicindexshow_{$topicmainarray.2.id}_l.gif" alt="{$topicmainarray.2.title}" /></a></div>
+							 <h3><a href="/topic-{$topicmainarray.2.id}.html" title="{$topicmainarray.2.title}" target="_blank">{$topicmainarray.2.smalltitle}</a></h3>
+							 <p><a href="/topic-{$topicmainarray.2.id}.html" target="_blank">{$topicmainarray.2.topicdetail}</a></p>
+						</div>
+						<!--end summer_left-->
+						<!--begin summer_right-->
+						<div class="summer_right">
+							{section name=loop loop=$topiclistnewarray.2 max=4}
+							<div class="spring_rightbox">
+								<div class="spring_rightimg"><a href="/topic-{$topiclistnewarray.2[loop].id}.html" target="_blank"><img src="{$__IMAGE_SRC}images/topic/topicindexshow_{$topiclistnewarray.2[loop].id}_s.gif" alt="{$topiclistnewarray.2[loop].title}" /></a></div>
+								<a href="/topic-{$topiclistnewarray.2[loop].id}.html" target="_blank" title="{$topiclistnewarray.2[loop].title}">{$topiclistnewarray.2[loop].smalltitle}</a>
+							</div>
+							{/section}
+							<div class="clr"></div>
+							<div class="summer_button"><a href="/topicmore-2.html">更多夏天专题</a></div>
+						</div>
+						<!--end summer_right-->
+					</div>
+					<div class="spring_top"><img src="/images/topic/summer_bottom.gif" alt="夏天专题" /></div>
+				</div>
+				<!--end summer-->
+				<div class="topic_banner"><a href="/topicmore-3.html"><img src="/images/topic/autumn.jpg" alt="秋天专题" /></a></div>
+				<!--begin autumn-->
+				<div class="autumn">
+					<div class="spring_top"><img src="/images/topic/autumn_top.gif" alt="秋天专题" /></div>
+					<div class="spring_box">
+						<!--begin autumn_left-->
+						<div class="autumn_left">
+							 <div class="autumn_img"><a href="/topic-{$topicmainarray.3.id}.html" target="_blank"><img src="{$__IMAGE_SRC}images/topic/topicindexshow_{$topicmainarray.3.id}_l.gif" alt="{$topicmainarray.3.title}" /></a></div>
+							 <h3><a href="/topic-{$topicmainarray.3.id}.html" title="{$topicmainarray.3.title}" target="_blank">{$topicmainarray.3.smalltitle}</a></h3>
+							 <p><a href="/topic-{$topicmainarray.3.id}.html" target="_blank">{$topicmainarray.3.topicdetail}</a></p>
+						</div>
+						<!--end autumn_left-->
+						<!--begin autumn_right-->
+						<div class="autumn_right">
+							{section name=loop loop=$topiclistnewarray.3 max=4}
+							<div class="spring_rightbox">
+								<div class="spring_rightimg"><a href="/topic-{$topiclistnewarray.3[loop].id}.html" target="_blank"><img src="{$__IMAGE_SRC}images/topic/topicindexshow_{$topiclistnewarray.3[loop].id}_s.gif" alt="{$topiclistnewarray.3[loop].title}" /></a></div>
+								<a href="/topic-{$topiclistnewarray.3[loop].id}.html" target="_blank" title="{$topiclistnewarray.3[loop].title}">{$topiclistnewarray.3[loop].smalltitle}</a>
+							</div>
+							{/section}
+							<div class="clr"></div>
+							<div class="autumn_button"><a href="/topicmore-3.html">更多秋天专题</a></div>
+						</div>
+						<!--end autumn_right-->
+					</div>
+					<div class="spring_top"><img src="/images/topic/autumn_bottom.gif" alt="秋天专题" /></div>
+				</div>
+				<!--end autumn-->
+				<div class="topic_banner"><a href="/topicmore-4.html"><img src="/images/topic/winter.jpg" alt="冬天专题" /></a></div>
+				<!--begin winter-->
+				<div class="winter">
+					<div class="spring_top"><img src="/images/topic/winter_top.gif" alt="冬天专题" /></div>
+					<div class="spring_box">
+						<!--begin winter_left-->
+						<div class="winter_left">
+							 <div class="winter_img"><a href="/topic-{$topicmainarray.4.id}.html" target="_blank"><img src="{$__IMAGE_SRC}images/topic/topicindexshow_{$topicmainarray.4.id}_l.gif" alt="{$topicmainarray.4.title}" /></a></div>
+							 <h3><a href="/topic-{$topicmainarray.4.id}.html" title="{$topicmainarray.4.title}" target="_blank">{$topicmainarray.4.smalltitle}</a></h3>
+							 <p><a href="/topic-{$topicmainarray.4.id}.html" target="_blank">{$topicmainarray.4.topicdetail}</a></p>
+						</div>
+						<!--end winter_left-->
+						<!--begin winter_right-->
+						<div class="winter_right">
+							{section name=loop loop=$topiclistnewarray.4 max=4}
+							<div class="spring_rightbox">
+								<div class="spring_rightimg"><a href="/topic-{$topiclistnewarray.4[loop].id}.html" target="_blank"><img src="{$__IMAGE_SRC}images/topic/topicindexshow_{$topiclistnewarray.4[loop].id}_s.gif" alt="{$topiclistnewarray.4[loop].title}" /></a></div>
+								<a href="/topic-{$topiclistnewarray.4[loop].id}.html" target="_blank" title="{$topiclistnewarray.4[loop].title}">{$topiclistnewarray.4[loop].smalltitle}</a>
+							</div>
+							{/section}
+							<div class="clr"></div>
+							<div class="winter_button"><a href="/topicmore-4.html">更多冬天专题</a></div>
+						</div>
+						<!--end winter_right-->
+					</div>
+					<div class="spring_top"><img src="/images/topic/winter_bottom.gif" alt="冬天专题" /></div>
+				</div>
+				<!--end winter-->
+				
+				<div class="topic_banner"><a href="/topicmore-5.html"><img src="/images/topic/especially.jpg" alt="特别专题" /></a></div>
+				<!--begin especially-->
+				<div class="especially">
+					<div class="spring_top"><img src="/images/topic/especially_top.gif" alt="特别专题" /></div>
+					<div class="spring_box">
+						<!--begin especially_left-->
+						<div class="especially_left">
+							 <div class="especially_img"><a href="/topic-{$topicmainarray.5.id}.html" target="_blank"><img src="{$__IMAGE_SRC}images/topic/topicindexshow_{$topicmainarray.5.id}_l.gif" alt="{$topicmainarray.5.title}" /></a></div>
+							 <h3><a href="/topic-{$topicmainarray.5.id}.html" title="{$topicmainarray.5.title}" target="_blank">{$topicmainarray.5.smalltitle}</a></h3>
+							 <p><a href="/topic-{$topicmainarray.5.id}.html" target="_blank">{$topicmainarray.5.topicdetail}</a></p>
+						</div>
+						<!--end especially_left-->
+						<!--begin especially_right-->
+						<div class="especially_right">
+							{section name=loop loop=$topiclistnewarray.5 max=4}
+							<div class="spring_rightbox">
+								<div class="spring_rightimg"><a href="/topic-{$topiclistnewarray.5[loop].id}.html" target="_blank"><img src="{$__IMAGE_SRC}images/topic/topicindexshow_{$topiclistnewarray.5[loop].id}_s.gif" alt="{$topiclistnewarray.5[loop].title}" /></a></div>
+								<a href="/topic-{$topiclistnewarray.5[loop].id}.html" target="_blank" title="{$topiclistnewarray.5[loop].title}">{$topiclistnewarray.5[loop].smalltitle}</a>
+							</div>
+							{/section}
+							<div class="clr"></div>
+							<div class="especially_button"><a href="/topicmore-5.html">更多特别专题</a></div>
+						</div>
+						<!--end especially_right-->
+					</div>
+					<div class="spring_top"><img src="/images/topic/especially_bottom.gif" alt="特别专题" /></div>
+				</div>
+				<!--end especially-->				
+			</div>
+			
+			<div id="topic_right">
+				<img src="/images/topic/feast.gif" alt="节日专题" />
+				{section name=loop loop=$topiclistnewarray.6 max=9}
+				<!--begin feast_box-->
+				<div class="feast_box">
+					<div class="feast_top"><img src="/images/topic/right_top.gif"/></div>
+					<div class="feast_img"><a href="/topic-{$topiclistnewarray.6[loop].id}.html" target="_blank"><img src="{$__IMAGE_SRC}images/topic/topicindexshow_{$topiclistnewarray.6[loop].id}_m.gif" alt="{$topiclistnewarray.6[loop].title}" /></a></div>
+					<a href="/topic-{$topiclistnewarray.6[loop].id}.html" target="_blank" title="{$topiclistnewarray.6[loop].title}">{$topiclistnewarray.6[loop].smalltitle}</a>
+					<div class="feast_bottom"><img src="/images/topic/right_bottom.gif"/></div>
+				</div>
+				<!--end feast_box-->
+				{/section}
+				<!--begin feast_more-->
+				<div class="feast_more">
+					<div class="feast_top"><img src="/images/topic/right_top.gif" alt="节日专题" /></div>
+					<a href="/topicmore-6.html">查看更多节日专题</a>
+					<div class="feast_bottom"><img src="/images/topic/right_bottom.gif" alt="节日专题" /></div>
+				</div>
+				<!--end feast_more-->
+			</div>
+		</div>
+	</div>
+	<!--topic 具体内容结束-->
+</div>
+<!--主体内容结束-->
+{include file="new/foot.htm"}

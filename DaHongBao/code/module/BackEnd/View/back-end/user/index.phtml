@@ -1,0 +1,80 @@
+<?php
+/**
+ * index.phtml
+ * -------------------------
+ *
+ * 
+ *
+ * PHP versions 5
+ *
+ * LICENSE: This source file is from Smarter Ver2.0, which is a comprehensive shopping engine 
+ * that helps consumers to make smarter buying decisions online. We empower consumers to compare 
+ * the attributes of over one million products in the common channels and common categories
+ * and to read user product reviews in order to make informed purchase decisions. Consumers can then 
+ * research the latest promotional and pricing information on products listed at a wide selection of 
+ * online merchants, and read user reviews on those merchants.
+ * The copyrights is reserved by http://www.mezimedia.com. 
+ * Copyright (c) 2006, Mezimedia. All rights reserved.
+ *
+ * @author Yaron Jiang<yjiang@corp.valueclick.com>
+ * @copyright (C) 2004-2013 Mezimedia.com
+ * @license http://www.mezimedia.com PHP License 5.3
+ * @version CVS: $Id: index.phtml,v 1.2 2013/04/15 13:51:57 yjiang Exp $
+ * @link http://www.dahongbao.com
+ * @deprecated File deprecated in Release 3.0.0
+ */
+?>
+<div class="box">
+    <div class="box-header">
+        <h2><i class="icon-box"></i>用户列表</h2>
+    </div>
+    <div class="box-content">
+        <p><a class="btn btn-success" href="<?php echo $this->url('backend' 
+            , array('controller' => 'user' , 'action' => 'save'))?>">
+        <i class="icon-plus"></i>新增用户</a></p>
+        <form class="form-inline" action="<?php echo $this->url('backend', array('controller' 
+            => 'user', 'action' => 'index')); ?>" method="get">
+                <div class="input-group">
+                    <label>搜索用户</label>
+                    <input class="input-element span3" name="username" type="text">
+                    
+                <button class="button-element" type="submit">搜索</button>
+                </div>
+        </form>
+        <table class="table">
+            <thead>
+                <tr class="row">
+                    <th>用户名</th>
+                    <th>Email</th>
+                    <th>职位</th>
+                    <th>角色</th>
+                    <th>最后修改时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($this->paginaction as $user): ?>
+                    <tr class="row">
+                        <td><?php echo $user->Name; ?></td>
+                        <td><?php echo $user->Mail; ?></td>
+                        <td><?php echo $user->Remark; ?></td>
+                        <td><?php echo $user->DahongbaoRole; ?></td>
+                        <td><?php echo $user->LastChangeDate; ?></td>
+                        <td>
+                            <a class="btn btn-edit" href="<?php echo $this->url('backend', array('controller' 
+                                => 'user', 'action' => 'save')) ?>?id=<?php echo $user->UserID; ?>">
+                                <i class="icon-edit"></i>编辑
+                            </a>&nbsp;&nbsp;
+                            <a class="btn btn-delete" href="<?php echo $this->url('backend', array('controller' 
+                                => 'user', 'action' => 'delete')) ?>
+                               ?id=<?php echo $user->UserID; ?>"><i class="icon-delete"></i>删除
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        <?php echo $this->paginationControl($this->paginaction,'Sliding','layout/pagination' , array('link' 
+            => $this->url('backend' , array('controller' => 'user' , 'action' => 'index'))));?>
+    </div>
+</div>

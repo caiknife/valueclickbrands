@@ -1,0 +1,13 @@
+<?php if ($this->relatedCouponList):?>
+<div class="ratingCoupon">
+	<div class="line"></div>
+	<h2>相关优惠券推荐</h2>
+	<div class="ratingCouponList">
+		<ul>
+			<?php foreach ($this->relatedCouponList as $key => $relatedCoupon):?>
+			<li><span<?php if ($key < 3):?> class="top"<?php endif;?>><?php print $key + 1;?></span><a target="_blank" href="<?php print $relatedCoupon['CouponDetailUrl'];?>" title="<?php print $this->escapeHtml($relatedCoupon['CouponName']);?>">【<?php print $relatedCoupon['MerchantName'];?>】<?php print strip_tags($relatedCoupon['CouponName']);?></a></li>
+			<?php endforeach;?> 
+		</ul>
+	</div>
+</div>
+<?php endif;?>

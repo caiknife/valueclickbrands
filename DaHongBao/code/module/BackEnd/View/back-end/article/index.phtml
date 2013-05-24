@@ -1,0 +1,197 @@
+<?php
+/**
+* index.phtml
+*-------------------------
+*
+* 
+*
+* PHP versions 5
+*
+* LICENSE: This source file is from Smarter Ver2.0, which is a comprehensive shopping engine 
+* that helps consumers to make smarter buying decisions online. We empower consumers to compare 
+* the attributes of over one million products in the common channels and common categories
+* and to read user product reviews in order to make informed purchase decisions. Consumers can then 
+* research the latest promotional and pricing information on products listed at a wide selection of 
+* online merchants, and read user reviews on those merchants.
+* The copyrights is reserved by http://www.mezimedia.com. 
+* Copyright (c) 2006, Mezimedia. All rights reserved.
+*
+* @author Yaron Jiang <yjiang@corp.valueclick.com.cn>
+* @copyright (C) 2004-2013 Mezimedia.com
+* @license http://www.mezimedia.com PHP License 5.0
+* @version CVS: $Id: index.phtml,v 1.5 2013/04/18 12:06:08 yjiang Exp $
+* @link http://www.dahongbao.com/
+* @deprecated File deprecated in Release 3.0.0
+*/
+$this->headScript()->appendFile($this->basePath('js/jquery-ui-1.10.2.custom.min.js'))
+->appendFile($this->basePath('js/BackEnd/article-index.js'));
+$this->headLink()->appendStylesheet($this->basePath('styles/jquery-ui-1.10.2.custom.min.css'));
+
+$categories = new \RecursiveIteratorIterator($this->categories, \RecursiveIteratorIterator::SELF_FIRST);
+?>
+
+<div class="box">
+    <div class="box-header">
+        <h2><i class="icon-box"></i>文章管理</h2>
+    </div>
+    
+    <div class="box-content">
+        <div class="form-inline">
+        <div class="input-group">
+            <a class="btn btn-success" href="<?php echo $this->url('backend' , array('controller' => 'article' 
+        ,'action' => 'save'))?>?siteid=<?php echo $this->siteId?>"><i class="icon-plus"></i>新增文章</a>
+        </div>
+            <div class="input-group">
+            <form class="box-form" action="<?php echo $this->url('backend' , array('controller' => 'article' 
+                , 'action' => 'index'))?>" method="get">
+                <select class="select-element input-element span2" id="sites" name="siteid">
+                    <?php foreach($this->sites as $k => $v):?>
+                    <option <?php if($k == $this->siteId):?>selected="selected"<?php endif;?> value="<?php echo $k?>">
+                    <?php echo $v?>
+                    </option>
+                    <?php endforeach;?>
+                </select>&nbsp;&nbsp;
+                <label>选择类别</label>
+                <select class="select-element input-element span2"  name="CategoryID">
+                    <option value="">所有</option>
+                    <?php foreach($categories as $cate):?>
+                    <?php 
+                        $depth = $categories->getDepth();
+                        $myDepth = '';
+                        if($depth > 0){
+                            $myDepth = '└' . str_repeat('----', $depth);
+                        }
+                    ?>
+                    
+                    <option <?php if($cate->CategoryID == $this->CategoryID):?>
+                     selected="selected" <?php endif;?>value="<?php echo $cate->CategoryID?>">
+                        <?php echo $myDepth . $cate->CnName?>
+                    </option>
+                    <?php endforeach;?>
+                </select>&nbsp;&nbsp;
+                
+                <label>选择作者</label>
+                <select class="select-element input-element span2" name="AuthorID">
+                    <option value="">不限</option>
+                    <?php foreach($this->authors as $author):?>
+                        <option <?php if($author->UserID == $this->AuthorID):?>selected="selected"<?php endif;?>>
+                        <?php echo $author->Name?>
+                        </option>
+                    <?php endforeach;?>
+                </select>
+                
+                <label>文章状态</label>
+                <select class="select-element input-element span2" name="State">
+                    <option <?php if(1 == $this->State):?>selected="selected"<?php endif;?> value="1">发布</option>
+                    <option <?php if(2 == $this->State):?>selected="selected"<?php endif;?> value="2">草稿</option>
+                    <option <?php if(3 == $this->State):?>selected="selected"<?php endif;?> value="3">回收站</option>
+                </select>&nbsp;&nbsp;
+                
+                <label>选择时间范围</label>
+                <input class="input-element span2" type="date" name="startTime" id="startTime"  
+                placeholder="yy-mm-dd"
+                value="<?php echo $this->startTime?>" />--<input 
+                class="input-element span2" type="date" name="endTime" id="endTime" 
+                placeholder="yy-mm-dd"
+                value="<?php echo $this->endTime?>">
+                </div>
+                
+                <div class="input-group">
+                <label>标题</label>
+                <input name="Title" type="text" class="input-element" placeholder="按标题搜索" value="<?php echo 
+                $this->Title?>" />
+                
+                <button type="submit" class="btn btn-primary">搜索</button>
+                <a href="<?php echo $this->url(null , array('controller' => 'article'));
+                ?>" class="btn btn-inverse">清除条件</a>
+                </div>
+                
+            </form>
+            </div>
+            
+            <form action="<?php
+                if(3 == $this->State){
+                echo $this->url('backend' , array('controller' => 'article' , 'action' 
+                => 'recover'));
+                }else{
+                echo $this->url('backend' , array('controller' => 'article' , 'action'
+                => 'delete'));
+                }
+            ?>" method="post">
+            <table class="table">
+                <thead>
+                    <tr class="row">
+                        <th width="12"><input type="checkbox" id="allCheck" /></th>
+                        <th>ID</th>
+                        <th>标题</th>
+                        <th>类别</th>
+                        <th>排序</th>
+                        <th>添加时间</th>
+                        <th width="180">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($this->articles as $v):?>
+                    <tr class="row">
+                        <td><input type="checkbox" name="id[]" value="<?php echo $v->ArticleID?>" /></td>
+                        <td><?php echo $v->ArticleID?></td>
+                        <td><?php echo $v->Title?></td>
+                        <td><?php echo $this->categoriesResult[$v->CategoryID]->CnName?></td>
+                        <td><?php echo $v->Order?></td>
+                        <td><?php echo $v->CreatDateTime?></td>
+                        <td>
+                        <div class="btn-group">
+                            <a class="btn btn-edit" href="<?php echo $this->url('backend' , array(
+                                'controller' => 'Article' , 'action' => 'save'))?>?id=<?php echo $v
+                            ->ArticleID?>&siteid=<?php echo $v->SiteID?>">
+                                编辑</a>
+                                
+                            <?php if(3 == $this->State):?>
+                            <a class="btn btn-success" href="<?php echo $this->url('backend' , array(
+                                'controller' => 'Article' , 'action' => 'recover'))?>?id=<?php echo $v->ArticleID?>">
+                                恢复到草稿</a>
+                            <?php elseif(1 == $this->State):?>
+                            <a class="btn btn-delete" href="<?php echo $this->url('backend' , array(
+                                'controller' => 'Article' , 'action' => 'delete'))?>?id=<?php echo $v->ArticleID?>">
+                                删除</a>
+                            <?php else:?>
+                                
+                                <a class="btn btn-primary" href="<?php echo $this->url('backend' , array(
+                                'controller' => 'Article' , 'action' => 'publish'))?>?id=<?php echo $v->ArticleID?>">
+                                发布</a>
+                                <a class="btn btn-delete" href="<?php echo $this->url('backend' , array(
+                                'controller' => 'Article' , 'action' => 'delete'))?>?id=<?php echo $v->ArticleID?>">
+                                删除</a>
+                            <?php endif;?>
+                            <a class="btn btn-success" href="<?php echo $this->url(null , array('controller' 
+                                => 'recommend' , 'action' => 'save'))?>?ID=<?php 
+echo $v->ArticleID?>&ContentType=ARTICLE&SiteID=<?php echo $this->siteId?>&referer=<?php echo $this->uri
+?>">推荐</a>
+</div>
+                        </td>
+                    </tr>
+                    <?php endforeach;?>
+                </tbody>
+                 <tfoot>
+                     <tr>
+                     <td colspan=7><?php echo $this->paginationControl($this->articles,'Sliding','layout/pagination' 
+                         , array('link' => $this->url('backend' , array('controller' 
+                        => 'Article' , 'action' => 'index')) . '?' . $this->query));?></td>
+                     </tr>
+                     
+                     <tr>
+                         <td colspan=7>
+                         <?php if(3 == $this->State):?>
+                         <button type="submit" name="submit" class="btn btn-success"><i class="icon-repeat"></i>
+                         恢复</button>
+                         <?php elseif(1 == $this->State):?>
+                         <button type="submit" name="submit" class="btn btn-delete"><i class="icon-delete"></i>
+                         删除</button>
+                         <?php endif;?>
+                         </td>
+                     </tr>
+                 </tfoot>
+            </table>
+            </form>
+    </div>
+</div>

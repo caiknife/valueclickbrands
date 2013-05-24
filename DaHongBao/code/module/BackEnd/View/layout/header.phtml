@@ -1,0 +1,19 @@
+<header class="topHeader">
+        <article>
+            <div class="logo">
+                <a href="/">
+                    <img alt="大红包logo" src="/img/BackEnd/logo.gif">
+                </a>
+            </div>
+            <div class="userInfo">
+                Welcome
+                <a href="#"><?php echo $_SESSION['user']['Name'];?></a>
+                <span>|</span>
+                <a href="#">Help</a>
+                <span>|</span>
+                <a href="#">Profile Settings</a>
+                <span>|</span>
+                <a href="<?php echo $this->url('backend' , array('controller' => 'login' , 'action' => 'logout'));?>">Log out</a>
+            </div>
+        </article>
+</header>

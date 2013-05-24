@@ -1,0 +1,689 @@
+<!--<?php
+print <<<EOT
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=$db_charset">
+<title>$subject $forumname $db_bbsname $db_bbstitle - powered by phpwind.net</title>
+<meta http-equiv="Expires" content="-1">
+<meta name="robots" content="index,follow">
+<meta name="keywords" content="phpwind,bbs,board,php,mysql,forums">
+<base href="$db_bbsurl/" />
+<style type="text/css">
+body{font-size:12px;background:$bgcolor;}
+*{font-family:Tahoma;padding:0;margin:0}
+td,th,div{word-break:break-all;word-wrap:break-word}
+table{empty-cells:show;}
+img{border:0}
+h3,h2{display:inline;font-size:1.0em;}
+h3{font-weight:normal}
+h2 a,h3 a{color:#000}
+h4{margin:20px 0 10px;font-size:1.1em}
+textarea,input,select{font:12px Arial;padding:1px 3px 0 3px;vertical-align:middle;margin-bottom:1px}
+.c{clear:both;height:0;font:0/0 Arial;}
+.b{font-weight:bold}
+.tal{text-align:left}
+.tac{text-align:center}
+.tar{text-align:right}
+.fr{float:right}
+.fl{float:left}
+/*a link 基本连接颜色*/
+a{text-decoration:none;color:$linkcolor}
+a:hover{text-decoration:underline;}
+/*字体大小*/
+.f9{font-size:11px;}
+.f10{font-size:11px;}
+.f12{font-size:12px}
+.f14{font-size:14px}
+.fn,.fn a{font-weight:normal}
+/*span color 数值自定义*/
+.s1{color:#008000;}
+.s2{color:#984B98;}
+.s3{color:#FA891B;}
+.s4{color:#0033FF;}
+.s5{color:#659B28}
+.gray{color:#818a89} /*次要文字颜色-可定义*/
+/*main color 数值自定义*/
+.f_one,.t_one,.r_one{background:$forumcolorone;}
+.f_two,.t_two,.r_two{background:$forumcolortwo;}
+/*form*/
+textarea,input,select{font:12px Arial;padding:1px 3px 0 3px;vertical-align:middle;margin-bottom:1px}
+select{border:solid 1px $tdcolor;}
+.btn{background:$tablecolor;color:$headfontone;border-width:1px;padding-left:15px;padding-right:15px;vertical-align:middle}
+.input{border:solid 1px $tablecolor;padding:2px 0px 2px 1px;font-size:1.0em;vertical-align:middle}
+form{display:inline;}
+textarea{border:solid 1px $tablecolor;}
+/*header*/
+#header{width:$mtablewidth;margin:auto}
+/*toolbar*/
+.toptool{border-bottom:1px solid $cbgborder;}
+.toptool span{padding:1px 5px;line-height:150%}
+/*banner*/
+.banner{padding-right:3%}
+.banner img{vertical-align:middle;}
+/*guide*/
+.guide{}
+/*table*/
+.t{border:1px solid $tablecolor;margin:0px auto 8px;}
+.t table{border:1px solid #fff;margin:0 auto;width:99.98%;}
+.t2{border-top:$tablecolor 1px solid;margin:0px auto 5px;}
+.t3{margin:auto}
+.t4{padding:1px 0 1px 1px}
+/*table head*/
+.h{border-bottom:4px solid $headborder;background:$headcolor;text-align:left;color:$headfontone;padding:5px 7px 3px 7px;}
+.h span{font-weight:normal;}
+.h h2{font-weight:bold}
+.h a{font-family:Arial;color:$headfontone}
+.h span a,.h span{color:$headfonttwo;}
+.h a.a2{margin-left:12px;}
+/*table tr1*/
+.tr1 th{padding:5px 10px;text-align:left;vertical-align:top;font-weight:normal;}
+.tr1 td.td1{border:1px solid $tdcolor;}
+/*table tr2*/
+.tr2{background:$cbgcolor;color:$cbgfont;}
+.tr2 td,.tr2 th{line-height:21px;border-bottom:1px solid $cbgborder;padding:0px 6px 0px;border-top:1px solid $tablecolor;}
+.tr2 a{color:$cbgfont;margin:2px}
+/*table tr3*/
+.tr3 td,.tr3 th{border-bottom:1px solid $tdcolor;padding:5px 8px}
+.tr3 th{text-align:left;font-weight:normal;}
+.tr4{background:$headcolor;color:$headfontone;}
+.tr4 td{padding:4px 10px;}
+.tr td,.tr th{padding:2px}
+/*topic content tips*/
+.tpc_content{font-size:14px;font-family:Arial;padding:0 2% 0 0.5%;margin:0 0 2%}
+.tips{background:$forumcolortwo;border:$tdcolor 1px solid;padding:5px;margin:0 1% 1% 0;float:left;text-align:center;}
+.tips li{list-style:none;width:30%;padding:0 5px;float:left;overflow: hidden;text-overflow:ellipsis;white-space:nowrap}
+.tiptop{border-bottom:1px solid $tdcolor;padding:0 0 5px 0;vertical-align:middle;}
+.tipad{border-top:1px solid $tdcolor;margin:10px 0 0;padding:5px 0 0;}
+.quote{font-size:70%;color:$headfontone;margin:2px;padding:0}
+blockquote{width:92%;font-size:85%;color:#81888c;border:1px solid $tdcolor;border-left-width:3px;padding:5px;margin:0 0 1%}
+/*menu*/
+.menu{position:absolute;background:#fff;border:1px solid $tablecolor;}
+.menu td, .menu li{background:$headcolor;}
+.menu li{list-style:none;padding:0;}
+.menu a{display:block;padding:3px 15px 3px 15px}
+.menu a:hover{background:$linkcolor;text-decoration:none;color:#fff;}
+.menu ul.ul1 li a{display:inline;padding:0}
+/*pages*/
+.pages{margin:3px 0;font:11px/12px Tahoma}
+.pages *{vertical-align:middle;}
+.pages a{padding:1px 4px 1px;border:1px solid $tablecolor;margin:0 1px 0 0;text-align:center;text-decoration:none;font:normal 12px/14px verdana;}
+.pages a:hover{border:$cbgfont 1px solid;background:$cbgcolor;text-decoration:none;color:$headfontone}
+.pages input{margin-bottom:0px;border:1px solid $cbgfont;height:15px;font:bold 12px/15px Verdana;padding-bottom:1px;padding-left:1px;margin-right:1px;color:$cbgfont;}
+.signature {height: expression(this.scrollHeight > parseInt(this.currentStyle.maxHeight) ? this.currentStyle.maxHeight : "auto");}
+/*face*/
+.face{ height:23px;padding:7px 0 0 8px;text-align:left;background:#000 url($imgpath/$stylepath/th1.png);}
+.face div{ width:56px;height:18px;text-align:center;padding:5px 0 0;cursor:pointer;}
+.face div.lian{ background:#ffffff url($imgpath/$stylepath/tag.jpg) no-repeat;cursor:auto;}
+/*footer*/
+#footer{width:$mtablewidth;text-align:right;border-top:2px solid $headborder;margin:auto;padding:5px 0;border-bottom:$cbgcolor 12px solid}
+#main{width:$tablewidth;margin:auto}
+</style><!--css-->
+<!--
+EOT;
+if($yeyestyle){ print <<<EOT
+-->
+<style type="text/css">/*竖线风格输出*/
+.tr3 td,.tr3 th{border-right:1px solid $tdcolor;}
+.y-style{text-align:center;}
+.t table{border:0;width:100%;}
+.tr1 th{border-right:1px solid $tdcolor;}
+.tr1 td.td1{border-left:0}
+.t{padding:1px}
+</style>
+<!--[if IE]>
+<style type="text/css">
+.t table{border:1px solid #fff;}
+</style><![endif]-->
+<!--
+EOT;
+} print <<<EOT
+-->
+<!--[if IE]>
+<style type="text/css">
+.btn{border:3px double $tablecolor; height:21px;padding-left:0.15em;padding-right:0.15em;}
+.tr1 td.td1{border-top:0}
+.t4{padding:0}
+.pages a{padding:1px 4px 2px;}
+.t table{width:100%;border-collapse:collapse;}
+.t {padding:0}
+.menu a{height:14px}
+</style>
+<![endif]-->
+</head><body>
+<div id="header">
+<div class="toptool tr2 tar">
+	<span>$db_head
+	<a href="simple/" target="_blank">无图版</a></span>
+</div>
+<table cellspacing="0" cellpadding="0" align="center" width="100%">
+	<tr><td class="banner"><a href="./"><img src="$imgpath/$stylepath/logo.png" style=" margin:0 0.5% 5px" /></a></td>	<td class="banner" align="right">$header_ad</td></tr>
+	<tr><td align="center" height="1" colspan="2"></td></tr>
+</table>
+<div class="h guide" colspan="2">
+	<a href="profile.php">控制面板</a>
+	| <a href="message.php">短消息</a>
+	| <a href="search.php">搜索</a>
+	| <a href="member.php">会员</a>
+	| <a href="faq.php">帮助</a>
+	| <a href="$db_bfn">社区</a>
+	| <a href="$db_wwwurl/$db_cfn">首页</a>
+	| <a href="simple/" target="_blank">无图版</a>
+</div>
+<div id="showmenu" style="z-index:100;display:none;"></div>
+</div>
+<div id="main" style="margin-top:20px">
+<!--
+EOT;
+if($votedb){print <<<EOT
+-->
+<form action="job.php?votejop=vote" method="post" name="vote">
+<div class="t">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr><td class="h" colspan="2">投票主题：$subject
+<!--
+EOT;
+if($vote_close){ print <<<EOT
+-->
+(本次投票已结束)
+<!--
+EOT;
+} print <<<EOT
+-->
+</td><td style="text-align:right" class="h">
+<a href="read.php?fid=$fid&tid=$tid&viewvoter=yes&toread=1">
+查看投票的会员</a></td></tr>
+<!--
+EOT;
+foreach($votedb as $key=>$vote){
+print <<<EOT
+-->
+<tr class="tr3">
+<th width="30%">
+<input type="$votetype" value="$key" name="voteid[]" />
+<b>$vote[name]</b></th>
+<th>
+<img src="$imgpath/post/vote/bar1.gif" width="$vote[width]" height="10" />
+&nbsp;$vote[num]&nbsp;票</th>
+<th bgcolor="$forumcolorone">$vote[voter]</th>
+</tr>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+<tr class="tr4"><td colspan="4">总共有<b>{$votesum}</b>人参与本次投票 发起于：$tpc_date
+<!--
+EOT;
+if($tpc_endtime){ print <<<EOT
+-->
+&nbsp; 至 $tpc_endtime 结束
+<!--
+EOT;
+} print <<<EOT
+-->
+</td></tr></table></div>
+<!--
+EOT;
+if($vote_close==0){ print <<<EOT
+-->
+<div style="text-align:center;">
+<!--
+EOT;
+if($modifiable){ print <<<EOT
+-->
+<a href="read.php?tid=$tid&action=modify&toread=1">修改投票</a>
+<!--
+EOT;
+}if($multi){print <<<EOT
+-->
+| 限选个数：$multi
+<!--
+EOT;
+}
+print <<<EOT
+-->
+<input type="hidden" value="$tid" name="tid" />
+&nbsp;&nbsp;<input class="btn" type="submit" value="提 交" /></div>
+</form>
+<!--
+EOT;
+}}print <<<EOT
+-->
+<div class="t3">
+<table width="100%" cellspacing="0" cellpadding="0" align="center">
+<tr><td>
+<img src="$imgpath/$stylepath/index/home.gif" align="absbottom" />
+<b><a href="$db_bfn">$db_bbsname</a> &raquo; <a href="thread.php?fid=$fid">$foruminfo[name]</a> &raquo; $subject</b></td><td align="right">
+<b><a href="read.php?fid=$fid&tid=$tid&toread=1">转到动态网页</a>
+</b></td></tr><tr><td height="5" colspan="2"></td></tr></table></div>
+
+<div class="t3"><table width="100%" align="center" cellspacing="0" cellpadding="0">
+<tr><td align="left">$pages</td><td align="right"><a href="post.php?action=reply&fid=$fid&tid=$tid"><img src="$imgpath/$stylepath/reply.png" /></a> <a href="post.php?fid=$fid" onMouseOver="mouseover_open('menu_post','td_post','4');"><img src="$imgpath/$stylepath/post.png" id="td_post" /></a></td></tr>
+</table></div>
+<div id="menu_post" class="menu tac f14" style="display:none;"><ul style="width:100px;">
+<!--
+EOT;
+if($forumset[allowsale]!=2){print <<<EOT
+-->
+	<li><a href="post.php?fid=$fid&special=4">交  易</a></li>
+<!--
+EOT;
+}if($foruminfo['allowreward'] && $_G['allowreward']){ print<<<EOT
+-->
+	<li><a href="post.php?fid=$fid&special=3">悬  赏</a></li>
+<!--
+EOT;
+}if($forumset[allowactive] && $gp_allowactive){ print <<<EOT
+-->
+	<li><a href="post.php?fid=$fid&special=2">活  动</a></li>
+<!--
+EOT;
+}print <<<EOT
+-->
+	<li><a href="post.php?fid=$fid&special=1">投  票</a></li></ul>
+</div>
+
+<div class="t" style="margin-bottom:0; border-bottom:0">
+<table cellspacing="0" cellpadding="0" width="100%" align="center">
+<tr><td class="h"> --> <b>本页主题:</b> $subject</td>
+<td class="h" style="text-align:right;"><span>
+<a href="#" onClick="Addtoie('$db_bbsurl/read.php?fid=$fid&tid=$tid','$db_bbsname_a--$favortitle')">加为IE收藏</a> 
+| <a href="job.php?action=favor&job=add&tid=$tid">收藏主题</a> 
+| <a href="job.php?rd_previous=1&fid=$fid&tid=$tid&fpage=$fpage&goto=previous">上一主题</a> 
+| <a href="job.php?rd_previous=1&fid=$fid&tid=$tid&fpage=$fpage&goto=next">下一主题</a></span>
+</td></tr>
+<tr><td></td></tr>
+<tr class="tr2"><th colspan="2" class="tar"><br /></th></tr>
+<tr><td></td></tr>
+</table></div>
+<!--
+EOT;
+foreach($readdb as $key=>$read){
+if($read){
+$style=$key ? '' : 'style="border-top:0"';
+print <<<EOT
+-->
+$read[jupend]
+<div class="t t2" $style>
+<table cellspacing="0" cellpadding="0" width="100%" align="center">
+<tr class="tr3 tr1">
+<th width="20%" rowspan="2" class="r_two">
+<font color="#000066" face="Gulim"><b>$read[author]</b></font>
+<div style="padding:10px 0;">
+<table width="98%" cellspacing="0" cellpadding="0" style="border:0">
+	<tr><td class="tac" style="overflow:hidden; border:0;">$read[face]</td></tr>
+</table>
+</div>
+$read[medals]<br />
+<!--
+EOT;
+if($read[honor]){print <<<EOT
+-->
+<img src="$imgpath/$stylepath/read/rongyu.gif" alt="头衔：$read[honor]" />$read[honor]<br />
+<!--
+EOT;
+}print <<<EOT
+-->
+<img src="$imgpath/$stylepath/level/$read[lpic].gif" />
+<br />
+级别: <font color="#555555">{$read[level]}</font><br />
+精华: <font color="green"><b>$read[digests]</b></font><br />
+发帖: <font color="green"><b>$read[postnum]</b></font><br />
+$db_rvrcname: <font color="#984b98"><b>$read[aurvrc] $db_rvrcunit</b></font><br />
+$db_moneyname: <font color="#984b98"><b>$read[money] $db_moneyunit</b></font><br />
+<!--
+EOT;
+if($db_ads){print <<<EOT
+-->
+$db_creditname: <font color="red"><b>$read[credit] $db_creditunit</b></font><br />
+<!--
+EOT;
+}if($db_showcustom){
+foreach($_CREDITDB as $k=>$v){
+if(strpos($db_showcustom,",$k,")!==false){
+!$customdb[$read[authorid]][$k] && $customdb[$read[authorid]][$k]=0;
+print <<<EOT
+-->
+$v[0]: <font color="#0033FF"><b>{$customdb[$read[authorid]][$k]} $v[1]</b></font><br />
+<!--
+EOT;
+}}}
+if($customfield){
+foreach($customfield as $key=>$val){
+if($val[viewinread]&&!$val[viewright]){
+$field="field_".(int)$val[id];
+if($val[type]==3){
+foreach(explode("\n",$val[options]) as $k=>$v){
+list($k,$v)=explode('=',$v);
+if($read[$field]==$k){
+$read[$field]=$v;
+}}}print <<<EOT
+-->
+$val[title]:$read[$field]<br />
+<!--
+EOT;
+}}}
+if($db_showcolony && $colonydb[$read[authorid]]){
+$v=$colonydb[$read[authorid]];print <<<EOT
+-->
+{$db_hackdb[colony][0]}:
+<a href="hack.php?H_name=colony&cyid=$v[id]&job=view&id=$v[id]" target="_blank">$v[cname]</a><br />
+<!--
+EOT;
+}if($db_ifonlinetime){print <<<EOT
+-->
+在线时间:$read[ontime](小时)<br />
+<!--
+EOT;
+}print <<<EOT
+-->
+$read[loction]
+注册时间:{$read[regdate]}<br />
+</th>
+<th height="100%" class="r_one" valign="top" style="padding:5px 15px 0 15px; border:0;width:80%; overflow:hidden">
+<table width="100%" align="center" cellspacing="0" cellpadding="0" style="TABLE-LAYOUT: fixed;WORD-WRAP: break-word; height:100%;">
+<tr height="100%"><td bgcolor="$read[colour]" valign="top">
+<div class="tiptop">
+<!--
+EOT;
+if($db_hackdb[blog][2]){
+include_once(D_P.'data/bbscache/bg_config.php');
+if($bg_ifopen){
+print <<<EOT
+-->
+<a href="$bg_blogurl/blog.php?bbsuid=$read[authorid]" target="_blank">
+<img src="$imgpath/$stylepath/read/homepage.gif" align="absmiddle" alt="进入个人主页" /></a>
+<!--
+EOT;
+}}print <<<EOT
+-->
+<a href="profile.php?action=show&uid=$read[uid]">
+<img src="$imgpath/$stylepath/read/profile.gif" align="absmiddle" alt="查看作者资料" /></a>
+<a href="message.php?action=write&touid=$read[authorid]">
+<img src="$imgpath/$stylepath/read/message.gif" align="absmiddle" alt="发送短消息" /></a>
+<a  href="sendemail.php?uid=$read[uid]">
+<img src="$imgpath/$stylepath/read/email.gif" align="absmiddle" alt="发送邮件" /></a>
+<a href="post.php?action=quote&fid=$fid&tid=$tid&pid=$read[pid]&article=$read[lou]"><img src="$imgpath/$stylepath/read/quote.gif" align="absmiddle" alt="引用回复这个帖子" /></a>
+<a href="sendemail.php?action=tofriend&tid=$tid"><img src="$imgpath/$stylepath/read/emailto.gif" align="absmiddle" alt="推荐此帖" /></a>
+<a href="post.php?action=modify&fid=$fid&tid=$tid&pid=$read[pid]&article=$read[lou]"><img src="$imgpath/$stylepath/read/edit.gif" align="absmiddle" /></a>
+<!--
+EOT;
+if($read[payemail]){
+list($pay,$payemail) = explode("\t",$read[payemail]);
+if($pay==1){
+$payurl="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=$payemail&item_number=phpw*&currency_code=CNY&charset=$db_charset";
+}else{
+$payurl="https://www.alipay.com/payto:$payemail?partner=8868";
+}print <<<EOT
+-->
+<a href="$payurl" title="使用网上银行与该用户进行交易" target="_blank"><img src="$imgpath/$stylepath/read/buy.gif" align="absmiddle" /></a>
+<!--
+EOT;
+}if($read[oicq]){print <<<EOT
+-->
+<a href="http://wpa.qq.com/msgrd?V=1&Uin=$read[oicq]&Site=$db_bbsname&Menu=yes" title="QQ:$read[oicq]" target="_blank"><img src="$imgpath/$stylepath/read/qq.gif" align="absmiddle" /></a>
+<!--
+EOT;
+}if($read[kf]){ print <<<EOT
+-->
+<img src="$imgpath/$stylepath/read/53kf.gif" align="absmiddle" onclick="open_kf('$read[kf]')" style="cursor:pointer;" />
+<!--
+EOT;
+}print <<<EOT
+-->
+</div>
+<br /><br />
+$read[icon]
+<h4>$read[subject]</h4>
+<!--
+EOT;
+if($read['pic']){
+foreach($read['pic'] as $pic){
+if($pic){print <<<EOT
+-->
+<br /><br />
+<!--
+EOT;
+if($pic[2]){print <<<EOT
+-->
+描述：$pic[2]<br />
+<!--
+EOT;
+}print <<<EOT
+-->
+图片： $pic[1]
+<!--
+EOT;
+}}}print <<<EOT
+-->
+<br /><div class="tpc_content">$read[content]</div><br />
+<!--
+EOT;
+if($read['picurl']){
+foreach($read['picurl'] as $key=>$picture){
+if($picture){print <<<EOT
+print <<<EOT
+-->
+<br /><br />远程图片：{$picture}
+<!--
+EOT;
+}}}if($read['downattach']){
+foreach($read['downattach'] as $attach){
+if($attach){print <<<EOT
+-->
+<br /><br />
+<!--
+EOT;
+if($attach[6]){print <<<EOT
+-->
+描述：$attach[6]<br />
+<!--
+EOT;
+}print <<<EOT
+-->
+附件： <img src="$imgpath/$stylepath/file/$attach[5].gif" align="absbottom" />
+<a href="job.php?action=download&pid=$read[pid]&tid=$tid&aid=$attach[0]" target="_blank">
+<font color="red">$attach[1]</font></a> ($attach[2] K) 下载次数:$attach[3] 
+<!--
+EOT;
+if($attach[4]){print <<<EOT
+-->
+需要{$db_rvrcname}:$attach[4]
+<!--
+EOT;
+}}}}print <<<EOT
+-->
+</td></tr></table>
+</th></tr>
+<tr class="tr1 r_one">
+<th style="vertical-align:bottom; padding-left:1.5%; border:0">
+<!--
+EOT;
+if($read[mark]){
+print <<<EOT
+-->
+<div class="tips tal" style="word-break: keep-all;word-wrap:no-wrap"><div class="tal s3">本帖最近评分记录：</div><div class="tal">$read[mark]</div></div><div class="c"></div>
+<!--
+EOT;
+}if($advertdb[article]){
+$rand_ad=array_rand($advertdb[article]);
+print <<<EOT
+-->
+<div class="tips" style="width:auto">{$advertdb[article][$rand_ad][code]}</div><div class="c"></div>
+<!--
+EOT;
+}if($read[signature]){print <<<EOT
+-->
+<div><img src="$imgpath/$stylepath/sigline.gif" align="absbottom" /></div>
+<div class="signature" style="max-height:{$db_signheight}px;maxHeight:{$db_signheight}px; overflow:hidden;"><table width="100%"><tr><td>$read[signature]</td></tr></table></div>
+<!--
+EOT;
+}print <<<EOT
+-->
+<div class="tipad">
+<span style="float:right">
+<a href="javascript:scroll(0,0)"><img src="$imgpath/$stylepath/read/top.gif" alt="顶端" /></a></span>
+Posted:$read[postdate] | 
+<!--
+EOT;
+if($read[lou]==0){print <<<EOT
+-->
+<span><a class="s3" title="回复此楼" style="cursor:pointer;" onclick="postreply('回 楼主($read[author])的帖子');">[楼 主]</a></span>
+<!--
+EOT;
+}else{print <<<EOT
+-->
+<span><a class="s3" title="回复此楼" style="cursor:pointer;" onclick="postreply('回 $read[lou]楼($read[author])的帖子');">$read[lou] 楼</a></span>
+<!--
+EOT;
+}print <<<EOT
+-->
+</div></th></tr></table></div>
+<!--
+EOT;
+}}print <<<EOT
+-->
+<div class="t3"><table cellspacing="0" cellpadding="0" width="100%" align="center">
+<form name="jump" method="post"><tr><td align="left">$pages</td>
+<td valign="center" align="right">
+<select onchange="Fjumpr(this.options[this.selectedIndex].value,'$path')">
+<option value='' selected>快速跳至</option>
+$forumcache
+</select>
+</td></tr></form>
+<tr><td align="left"><br /><img src="$imgpath/$stylepath/index/home.gif" align="absbottom" />&nbsp;<b><a href="$db_bfn">$db_bbsname</a> -> <a href="thread.php?fid=$fid">$foruminfo[name]</a></b></td>
+<td style="padding-top: 12px;text-align: right;"><a href="post.php?action=reply&fid=$fid&tid=$tid"><img src="$imgpath/$stylepath/reply.png" /></a> <a href="post.php?fid=$fid" onMouseOver="mouseover_open('menu_post','td_post1','4');"><img src="$imgpath/$stylepath/post.png" id="td_post1" /></a></td></tr></table></div>
+
+<form name="FORM" method="post" action="post.php?" onsubmit="return checkpost(document.FORM);">
+<div class="t"><table cellspacing="0" cellpadding="0" width="100%">
+<tr><td class="h" colspan="2">
+<b>快速发帖</b></td>
+<td class="h" width="20%" style="text-align:right">
+<a href="javascript:scroll(0,0)"><b>顶端</b></a></td></tr>
+<tr><td valign="top" width="20%" bgcolor="$forumcolorone" style="padding:7px"><!-- 20宽跟下面搭配 -->
+<b>内容</b>：<br />
+<font face="verdana"> HTML 代码不可用<br /><br />
+<input type="checkbox" name="atc_usesign" value="1" checked />使用签名<br />
+<input type="checkbox" name="atc_convert" value="1" checked />Wind Code自动转换
+<input type="hidden" name="atc_autourl" value="1" /><br /><br />
+<a style="cursor:pointer;border:1px solid $tablecolor;color:$linkcolor;padding:2px 8px 2px 8px;" onclick="javascript:checklength(document.FORM,'$db_postmax');">字数检查</a>
+<a style="cursor:pointer;border:1px solid $tablecolor;color:$linkcolor;padding:2px 8px 2px 8px;" onclick="loadData('msg');">恢复数据</a>
+</td>
+<td width="60%" bgcolor="$forumcolorone">
+<div style="margin:5px 0">
+<input class="input" type="text" name="atc_title" value="Re:$subject" size="50" maxlength="45" />
+<!--
+EOT;
+list(,,$postgd)=explode("\t",$db_gdcheck);
+if($postgd){
+print <<<EOT
+-->
+&nbsp;认证码: <input class="input" type="text" maxLength="4" name="gdcode" size="5" />&nbsp;<img src="ck.php?" align="absmiddle" onclick="this.src='ck.php?'" style="cursor:pointer;" />
+<!--
+EOT;
+}print <<<EOT
+-->
+</div>
+<textarea onkeydown="quickpost(event)" name="atc_content" cols="100" rows="8"></textarea>
+<input type="hidden" value="2" name="step" />
+<input type="hidden" value="reply" name="action" />
+<input type="hidden" value="$fid" name="fid" />
+<input type="hidden" value="$tid" name="tid" />
+<input type="hidden" value="none" name="atc_attachment" />
+<input type="hidden" value="verify" name="verify" />
+<div style="margin:5px 0"><div style="padding:4px 10px 0 0;float:left;color:#FF0000">按 Ctrl+Enter 直接提交</div>
+<input class="btn" type="submit" name="Submit" value="提 交" /></div>
+</td>
+<td width="20%">
+<div style="padding:3px; text-align:center; width:200px;">
+<fieldset id="smiliebox" style="border:1px solid $tdcolor">
+	<legend>表情</legend>
+	<div id="menu_show"></div>
+	<span style="float:right; margin:3px 10px 5px;"><a id="td_face" style="cursor:pointer;" onClick="showDefault();" align="absmiddle">[更多]</a></span>
+</fieldset></div>
+<div id="menu_face" class="menu" style="display:none;"></div>
+</td></tr></table></div></form>
+</div>
+<script language="JavaScript" src="$imgpath/global.js"></script>
+<center>$footer_ad
+<small><font color="#999999">Powered by <a href="http://www.phpwind.net/" style="color: #000000" target="_blank"><b>PHPWind</b> <b style="color:#FF9900">v$wind_version</b></a>&nbsp;Code &copy; 2003-05 <a href="http://www.phpwind.net/" target="_blank"><b>PHPWind</b></a> <br />
+This is html template view this page faster</center><br />
+<div id="footer">
+  <span class="f12 fl">{$GLOBALS['db_foot']}</span><a href="$db_ceoconnect">Contact us</a> | <a href="wap/index.php">Wap</a> | <a href="javascript:scroll(0,0)">Top</a>
+</div>
+</body></html>
+<script language="JavaScript">
+var charset='$db_charset';
+var imgpath='$imgpath';
+var stylepath='$stylepath';
+var cnt = 0;
+function Addtoie(value,title){
+	window.external.AddFavorite(value,title);
+}
+function Fjumpr(value,path){
+	if(value!= ''){
+		window.location=(path+'/thread.php?fid='+value);
+	}
+}
+function checkpost(obj){
+	if(obj.atc_title.value==""){
+		alert("标题不能为空");
+		obj.atc_title.focus();
+		return false;
+	}else if(strlen(obj.atc_title.value)>$db_titlemax){
+		alert("标题超过最大长度 $db_titlemax 个字节");
+		obj.atc_title.focus();
+		return false;
+	}
+	if(strlen(obj.atc_content.value)<$db_postmin){
+		alert("文章内容少于 $db_postmin 个字节");
+		obj.atc_content.focus();
+		return false;
+	}else if(strlen(obj.atc_content.value)>$db_postmax){
+		alert("文章内容大于 $db_postmax 个字节");
+		obj.atc_content.focus();
+		return false;
+	}
+	document.FORM.Submit.disabled=true;
+	cnt++;
+	if(cnt!=1){
+		alert('Submission Processing. Please Wait');
+		return false;
+	}
+	return true;
+}
+function checklength(theform,postmaxchars){
+	if (postmaxchars != 0) {
+		message = '\\n'+postmaxchars+' 字节';
+	}else {
+		message = '';
+	}
+	alert('您的信息已有字节数： ' + strlen(theform.atc_content.value) + ' 字节'+message);
+}
+function addsmile(NewCode){
+    document.FORM.atc_content.value += ' [s:'+NewCode+'] ';
+}
+function CopyCode(obj){
+	var js = document.body.createTextRange();
+	js.moveToElementText(obj);
+	js.select();
+	js.execCommand("Copy");
+}
+function open_kf(com){
+	window.open("http://www.53kf.com/company.php?arg=" + com + "&style=1&keyword=" + escape(document.referrer), "_blank","height=467,width=696,top=200,left=200,status=yes,toolbar=no,menubar=no,resizable=no,scrollbars=no,location=no,titlebar=no");
+}
+function postreply(txt){
+	if(typeof document.FORM != "undefined"){
+		document.FORM.atc_title.value = txt;
+		document.FORM.atc_content.focus();
+	}
+}
+</script>
+<script src="/files/setting/bbsdata/data/bbscache/face.js"></script>
+<script src="$imgpath/post.js"></script>
+<script src="hitcache.php?tid=$tid"></script>
+<!--
+EOT;
+?>-->

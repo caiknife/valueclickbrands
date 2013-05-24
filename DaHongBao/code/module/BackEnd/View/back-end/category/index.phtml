@@ -1,0 +1,110 @@
+<?php
+/**
+* index.phtml
+*-------------------------
+*
+* 
+*
+* PHP versions 5
+*
+* LICENSE: This source file is from Smarter Ver2.0, which is a comprehensive shopping engine 
+* that helps consumers to make smarter buying decisions online. We empower consumers to compare 
+* the attributes of over one million products in the common channels and common categories
+* and to read user product reviews in order to make informed purchase decisions. Consumers can then 
+* research the latest promotional and pricing information on products listed at a wide selection of 
+* online merchants, and read user reviews on those merchants.
+* The copyrights is reserved by http://www.mezimedia.com. 
+* Copyright (c) 2006, Mezimedia. All rights reserved.
+*
+* @author Yaron Jiang <yjiang@corp.valueclick.com.cn>
+* @copyright (C) 2004-2013 Mezimedia.com
+* @license http://www.mezimedia.com PHP License 5.0
+* @version CVS: $Id: index.phtml,v 1.3 2013/04/18 09:17:07 yjiang Exp $
+* @link http://www.dahongbao.com/
+* @deprecated File deprecated in Release 3.0.0
+*/
+?>
+
+<div class="box">
+    <div class="box-header">
+        <h2><i class="icon-box"></i>分类管理</h2>
+    </div>
+    
+    <div class="box-content">
+        <div class="input-group">
+        <a href="<?php echo $this->url('backend' , array('controller' => 'category' , 'action' 
+            => 'save'))?>?<?php echo $this->query?>"
+         class="btn btn-success">添加分类</a>
+         </div>
+        <div class="form-inline">
+        <form class="box-form" action="<?php echo $this->url('backend' , array('controller' => 'category' , 'action' 
+            => 'index'))?>" method="get">
+            <select class="select-element input-element span2" id="sites" name="SiteId">
+                <?php foreach($this->sites as $k => $v):?>
+                <option value="<?php echo $k?>" <?php if($k == $this->SiteId):?>selected="selected"<?php endif;?>>
+                <?php echo $v?>
+                </option>
+                <?php endforeach;?>
+            </select>
+                <select class="select-element input-element span2" name="IsActive">
+                    <option <?php if('YES' == $this->IsActive):?>selected="selected"
+                        <?php endif;?> value="YES">在线分类</option>
+                    <option <?php if('NO' == $this->IsActive):?>selected="selected"
+                        <?php endif;?> value="NO">下线分类</option>
+                </select>
+                <button class="btn btn-primary">搜索</button>
+         </div>
+         
+         
+        </form>
+        
+            <table class="table">
+                <thead>
+                <tr class="row">
+                    <th>分类</th>
+                    <th>Coupons</th>
+                    <th>商家数</th>
+                    <th>排序</th>
+                    <th width="100">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php if(isset($this->cateList)):?>
+                <?php foreach($this->cateList as $k => $v):?>
+                <tr>
+                    <td><?php echo $v['CategoryName']?></td>
+                    <td><?php echo $v['CouponCount']?></td>
+                    <td>
+                    <?php if ($v['MerchantCount'] > 0):?>
+                    <a href="<?php echo $this->url('backend' , array('controller' 
+                        => 'merchant' , 'action' => 'index'))?>?SiteId=<?php echo $this
+          ->SiteId?>&CategoryID=<?php echo $k?>"><?php echo $v['MerchantCount']?></a>
+                   <?php else:?>
+                   <?php echo $v['MerchantCount']?>
+                   <?php endif;?>
+                  </td>
+                    <td><?php echo $v['Sequence']?></td>
+                    <td>
+                    <div class="btn-group">
+                    <?php if($this->IsActive == 'YES'):?>
+                        <a class="btn btn-delete" href="<?php echo $this
+                        ->url('backend' , array('controller' => 'category' , 'action' 
+=> 'inActive'))?>?<?php echo $this->query?>&id=<?php echo $k?>">下线</a>
+                   <?php else:?>
+                       <a class="btn btn-inverse" href="<?php echo $this
+                        ->url('backend' , array('controller' => 'category' , 'action' 
+=> 'active'))?>?<?php echo $this->query?>&id=<?php echo $k?>">上线</a>
+                   <?php endif;?>
+                   
+                   <a class="btn btn-edit" href="<?php echo $this->url('backend' , array('controller' 
+                                    => 'category' , 'action' => 'save'))?>?<?php echo $this
+->query?>&id=<?php echo $k?>">编辑</a>
+                   </div>
+                    </td>
+                </tr>
+                <?php endforeach;?>
+                <?php endif;?>
+                </tbody>
+            </table>
+    </div>
+</div>

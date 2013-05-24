@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/default/common.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/default/account.css" rel="stylesheet" type="text/css" media="all" />
+<title>海淘-首页</title>
+</head>
+<body>
+<div class="header">
+	<div class="toplink"><div class="toplinkcontent"><a href="#" title="">注册</a>|<a href="#" title="">登录</a>|<a href="#" title="">帮助中心</a>|<a href="#" title="">大红包中国优惠券</a></div></div>
+    <div class="headercontent clearfix">
+    	<div class="logo"><a href="/"><img src="images/default/haitao_logo.png" alt="" title=""></a></div>
+        <div class="searchbox">
+            <form id="cscsearch" onsubmit="return glb_searchTextOnSubmit('cscsearch');" method="get" action="/dofind.php" name="cscsearch">
+                <div class="coll">
+                    <input type="text" maxlength="70"  value="美国海淘，轻松购物享优惠..." class="inputtxt" name="q" autocomplete="off">  
+                    <ul class="selectcate">
+                    	<li class="active"><a href="#">优惠券</a></li>
+                        <li><a href="#">促 销</a></li>                        
+                    </ul> 
+                </div>
+                <div class="colr">
+                	<input type="submit" value="" class="inputbut">
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+<div class="wrapper">
+
+<div class="loginwrapper clearfix">
+	<div class="coll">
+    	<div class="loginform">
+            <div class="topcow">大红包会员</div>
+                        <form method="post" action="" class="Userlogin" redirect="" enctype="application/x-www-form-urlencoded" name="stdform" id="stdform"><div>
+
+<div class="formitem account ">
+  <strong><label for="account">账 号</label></strong>
+  <input type="text" class="formtxt" maxlength="45" size="30" helper="formText" value="用户名/邮箱" id="account" name="account">  <span class="disn"><img src="/images/default/icon_loading.gif?69"></span>
+    <div class="msg"><p><span></span></p></div>
+  </div>
+
+<div class="formitem pass">
+  <strong><label for="pass">密  码</label></strong>
+  <input type="password" class="formtxt" maxlength="15" size="30" helper="formPassword" value="" id="loginPass" name="pass">  <span class="disn"><img alt="" src="/images/default/icon_loading.gif?69"></span>
+    <a target="_blank" href="/auth/forgetpass/">忘记密码？</a>
+        <div class="msg"><p><span></span></p></div>
+  </div>
+
+<div class="formitem captcha ">
+  <strong id="captcha-label"><label for="captcha">验证码</label></strong>
+  <input type="text" class="formtxt shorttxt" maxlength="45" size="30" helper="formText" value="" id="captcha" name="captcha">  <span class="disn"><img src="/images/default/icon_loading.gif?69"></span>
+  <img id="authImage" src="/ajax/getAuthCode?s=116889410"><a onclick="getAuthUrl('/ajax/getAuthCode');return false;" href="javascript:void(0);" class="changevalida">换一张</a>
+    <div class="msg"><p><span></span>请输入图片中的字符，不区分大小写</p></div>
+  </div>
+
+<div class="formitem chkRememberUsername">
+<input type="hidden" value="0" name="chkRememberUsername"><input type="checkbox" checked="checked" value="1" id="chkRememberUsername" name="chkRememberUsername">
+<em class="hint">记住用户名</em></div>
+
+<input type="hidden" id="redirect" value="" name="redirect">
+<div class="formitem">
+<input type="submit" class="btn loginbut" value="立即登录" id="submitbutton" name="submit"></div></div></form>            <div class="othermethod">
+            	<span>使用其他账号登录：</span>
+                <a class="qqzone" href="/connect/index/type/QQ">腾讯QQ</a> 
+                <a class="qqweibo" href="/connect/index/type/TencentWeibo">腾讯微博</a> 
+                <a class="sinaweibo" href="/connect/index/type/SinaWeibo">新浪微博</a>
+            </div>
+        </div>
+    </div>
+    <div class="colr">
+    	<div class="registerinfo">
+            <p>还不是聪明点用户？ 现在免费注册成为聪明点用户，便能立即 享受便宜又放心的购物乐趣。</p>
+            <a class="registerlink" href="/auth/register">注册送积分</a>
+        </div>
+    </div>
+</div>    
+
+        
+</div>
+
+<div class="footer">
+	<div class="footerlink"><a href="#">免责声明</a>|<a href="#">隐私声明</a>|<a href="#">使用条件</a></div>
+    <div class="copyright">版权归&copy; 2012 上海惠可网络技术有限公司 所有<a href="#">www.dahongbao.com</a>沪ICP备05026064号 </div>
+</div>
+</body>
+</html>

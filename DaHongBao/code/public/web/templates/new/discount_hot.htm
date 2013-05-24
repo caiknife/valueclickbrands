@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>各类热门商品折扣信息，热门商家打折促销资讯---大红包折扣信息频道</title>
+
+<link href="/css/discount.css" rel="stylesheet" type="text/css" media="all" />
+<script src="/jscript/prototype.js"></script>
+<script src="/jscript/cellgo.js"></script>
+</head>
+<body>
+<!--头部开始-->
+{include file="new/head_discount.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <h1>热门折扣信息</h1>
+	</div>
+	<!--category_title 导航结束-->
+	<!--主体内容开始-->
+	<div id="main">
+		<!--begin left-->
+		<div id="left">
+			<!--左侧导航开始-->
+			<div id="left_nav">
+				<ul>
+					<li class="nav1"><a href="/discount.html">生效时间</a></li>
+					<li class="nav2"><a href="/discount_overdue.html">快过期</a></li>
+					<li class="navun3">热门</li>
+					<li class="nav4"><a href="/discount_new.html">最新发布</a></li>
+				</ul>
+			</div>
+			<!--左侧导航结束-->
+			<div id="left_mainbg"></div>
+			<!--具体内容开始-->
+
+			{if count($list1) gt 0}
+			<div id="left_main">				
+				<div id="left_top">
+					<h3>热门折扣信息</h3>
+				</div>
+				<div id="left_maxbox">
+					<!--begin left_box-->
+					{section name=loop loop=$list1}
+					<div class="left_box left_border">
+						<!--详细信息开始-->
+						<div class="left_text">
+							<!--标题开始-->
+							<div class="title_text">
+								<ul>					
+									<li class="h3"><a href="/discount_detail-{$list1[loop].Coupon_}.html" target="_blank" title="{$list1[loop].Descript}">{$list1[loop].DescriptCut}</a></li>
+									<li class="li_img"><a href="account.php?action=save&p={$list1[loop].Coupon_}" target="_blank"><img src="/images/discount/collection.gif" alt="加入收藏" /></a></li>
+									<li class="li_img"><a href="JavaScript:window.open('/send_friend.php?p={$list1[loop].Coupon_}&c=','sendfriend{$list1[loop].Coupon_}','width=415,height=550,resizable=0,scrollbars=yes');void(0);"><img src="/images/discount/friend.gif" alt="推荐朋友" /></a></li>
+								</ul>
+							</div>	
+							<!--标题结束-->								
+							<strong>活动时间：{$list1[loop].StartDate} 至 {$list1[loop].ExpireDate}</strong>
+
+							{if $list1[loop].ImageDownload==1}
+							<div class="left_img">
+								<a href="/discount_detail-{$list1[loop].Coupon_}.html" target="_blank"><img src="{$list1[loop].ImageURL}"/></a>
+							</div>
+							<div class="left_min">
+								<p>
+
+								{$list1[loop].Detail}
+								</p>	
+								{if $list1[loop].tagname neq ""}
+								标签：{$list1[loop].tagname}<br />
+								{/if}
+	发布人：{$list1[loop].author} &nbsp;&nbsp;推荐：{$list1[loop].digest}人 &nbsp;&nbsp;举报：{$list1[loop].delate}人 &nbsp;&nbsp;评论：{$list1[loop].replies}人
+							</div>
+
+							{else}
+							<p>
+							{$list1[loop].Detail}
+							</p>	
+							{if $list1[loop].tagname neq ""}
+							标签：{$list1[loop].tagname}<br />
+							{/if}
+发布人：{$list1[loop].author} &nbsp;&nbsp;推荐：{$list1[loop].digest}人 &nbsp;&nbsp;举报：{$list1[loop].delate}人 &nbsp;&nbsp;评论：{$list1[loop].replies}人	
+							{/if}
+
+
+						</div>
+						<!--详细信息结束-->
+						<div class="left_commend">
+							<a href="/discount_detail-{$list1[loop].Coupon_}.html?tui" target="_blank">{$list1[loop].digest}</a>
+						</div>
+					</div>
+					{/section}
+					<!--end left_box-->
+					<!--翻页开始-->
+					<div class="new_page">
+						<ul>
+							<li class="li_ico">{if $pageid!=1 && $pageall!=1}{if $pageid==2}<a href="/discount_hot.html">{else}<a href="/discount_hot--Pg-{$pageid-1}.html">{/if}<img src="/images/discount/calendar_ico1.gif" alt="ico" /></a>{/if}</li>
+							<li class="li_date">{if $pageall==1}共一页热门折扣信息{else}{$pageStr}{/if}</li>
+							<li class="li_ico">{if $pageid!=$pageall && $pageall!=1}<a href="/discount_hot--Pg-{$pageid+1}.html"><img src="/images/discount/calendar_ico2.gif" alt="ico" /></a>{/if}</li>
+						</ul>
+					</div>
+					<!--翻页结束-->
+				</div>
+			</div>
+			{else}
+				<div id="left_main">对不起，暂时没有热门的折扣信息。</div>
+			{/if}
+			<!--具体内容结束-->			
+		</div>
+		<!--end left-->
+		<!--begin right-->
+		<div id="right">
+			<!--日历开始-->
+			<div id="calendar">
+				<div class="calendar_top"></div>
+				<div class="calendar_box">
+					<div class="calendar_date">
+						<ul>
+							<li class="li_ico"></li>
+							<li class="li_date">{$selectedYear}年{$selectedMonth}月</li>
+							<li class="li_ico"></li>
+						</ul>
+					</div>
+					{$datastr}
+				</div>
+				<div class="calendar_top"></div>
+			</div>
+			<!--日历结束-->
+			<!--充值开始-->
+			<div class="sidebox_phone">			
+				<div class="title_phone">手机充值</div>
+				<div class="phone_box"><FORM METHOD=POST action="http://cz.eachnet.com/selernie.do?adid=song_tkisswin_015_080505_mcash_dahongbao" target="_blank" name="FORM" onsubmit="return checkCellNumber('formsubmit',1);">
+					<ul>
+						<li class="phone_left">请输入号码</li>
+						<li class="phone_right"><input id="inputId" maxlength="11" name="mphone" type="text" class="phone_input" onKeyUp="return checkCellNumber();"/></li>
+						<li class="phone_left">请选择面额</li>
+						<li class="phone_right"><input name="amount" type="radio" value="50" onclick="checkCellNumber('',1);"/>50元 <input name="amount" type="radio" value="100" checked="checked" onclick="checkCellNumber('',1);"/>100元 <input name="amount" type="radio" value="300" onclick="checkCellNumber('',1);"/>300元</li>
+						<li class="phone_ico"><span id="phonealert">现在充值9.8折起</span></li>
+						<li><input type="image" src="/images/phone_button.gif"></li>
+					</ul></FORM>
+				</div>
+			
+			</div>
+			<!--手机充值结束-->
+			
+			<div id="ad1" style="margin-top:5px;"></div>
+			<div id="ad2" style="margin-top:5px;"></div>
+			<div id="ad3" style="margin-top:5px;"></div>
+			<div id="ad4" style="margin-top:5px;"></div>
+			<div id="ad5" style="margin-top:5px;"></div>
+			<div id="ad6" style="margin-top:5px;"></div>
+			<div id="ad7" style="margin-top:5px;"></div>
+			<div id="ad8" style="margin-top:5px;"></div>
+		</div>
+		<!--end right-->
+	</div>
+	<!--主体内容结束-->
+</div>
+
+</div>
+
+{literal}
+<script type="text/javascript">
+{/literal}
+smarter_adhost = "{$__ADHOST}";
+condition = "";
+{literal}
+var arr = [];
+for(i=1;i<9;i++){
+	arr.push({DocID: "ad"+i,PageKey: "dhb_discount",SectionKey: "right_block"+i,ConditionKey: condition});
+}
+smarter_ad = arr;
+</script>
+{/literal}
+<script type="text/javascript" src="{$__ADHOST}js/load.js"></script>
+{include file="new/foot.htm"}

@@ -1,0 +1,30 @@
+<div class="colLeft">
+    <div class="sidebar-nav">
+        <ul class="nav-tabs" id="menu">
+            <li class="nav-header">Main</li>
+            <li>
+                <a href="/">
+                    <i class="icon-home"></i>
+                    <span class="hidden-tablet">主页</span>
+                </a>
+            </li>
+            
+            <?php $prevDepth=0;foreach($this->container as $page):?>
+                <?php $depth = $page->depth;?>
+                <?php if($depth > $prevDepth):?>
+                <ul>
+                    
+                <?php elseif($prevDepth > $depth):?>
+                        </li>
+                    </ul>
+                <?php else:?>
+                <?php endif;?>
+                <li <?php if($page->isActive):?> class="active"<?php endif;?>>
+                    <a href="<?php echo $page->getHref();?>">
+                        <span class="hidden-tablet"><?php echo $page->label;?></span>
+                    </a>
+                <?php $prevDepth = $depth;?>
+            <?php endforeach;?>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,350 @@
+/* CSS Document */
+@import url(common.css);
+h2,h3,h4,h5,p{ padding:0; margin:0;}
+#head {height: auto; position: relative;}
+#nav_discount {height: 12px; background: url(../images/discount/nav_discount.gif) repeat-x #eacf9a;position: relative;}
+#nav_discount ul {margin: 0px 7px; line-height: 11px;height: 11px;border-bottom: 1px solid #9d7c49;}
+
+.navtab{background: url(../images/categroy_titlebg.gif) repeat-x bottom; height:35px; padding-top:5px;}
+.navtab ul{ padding-left:270px;}
+.navtab ul li{ display:inline;}
+.navtab a:link,.navtab a:active,.navtab a:visited{ display:block; margin-right:30px; width:90px; height:27px; line-height:27px; padding-top:8px; float:left; font-size:16px; color:#fff; text-align:center; font-weight:bold;text-decoration:none;}
+.navtab a:hover{ background:#f9e6b4 url(../images/travel/navtab_bg.gif) no-repeat; color:#b80000; text-decoration:none;}
+.navtab a.active:link,.navtab a.active:active,.navtab a.active:visited,.navtab a.active:hover{background:#f9e6b4 url(../images/travel/navtab_bg.gif) no-repeat; color:#b80000; cursor:default;}
+.main{ clear:both; padding:5px 0 0 0;}
+.main .leftcol{ width:308px; float:left; overflow:hidden;}
+.main .rightcol{ width:677px; float:right; overflow:hidden;}
+
+.searchwrapper{ border:#e0ccaf 1px solid; margin-bottom:6px;}
+.searchwrapper .tabbox{ height:32px; line-height:32px;}
+.searchwrapper .tabbox ul{ background:#fffdf9 url(../images/travel/search_tab_bg.gif) no-repeat; height:32px;}
+.searchwrapper .tabbox ul.ticket{ background-position:0 0;}
+.searchwrapper .tabbox ul.hotel{ background-position:0 -32px;}
+.searchwrapper .tabbox ul.line{ background-position:0 -64px;}
+.searchwrapper .tabbox ul li{ display:inline;}
+.searchwrapper .tabbox ul li a:link,
+.searchwrapper .tabbox ul li a:active,
+.searchwrapper .tabbox ul li a:visited{ display:block; width:101px; height:32px; float:left; text-align:center; font-size:14px; color:#ac6b23; font-weight:bold;}
+.searchwrapper .tabbox ul li a:hover{ color:#b80000; font-weight:bold; text-decoration:none;}
+.searchwrapper .content{ background:#fff6e0 url(../images/travel/searchwrapper_bg.gif) repeat-x; padding:5px 10px 5px 10px; color:#946d02;}
+.searchwrapper dl,.searchwrapper dl dt,.searchwrapper dl dd{ margin:0; padding:0;}
+.searchwrapper dl dt{ font-size:12px; font-weight:bold; padding:15px 0 8px 0; color:#000;}
+.searchwrapper dl dd{ padding-bottom:5px;}
+.searchwrapper dl img,.searchwrapper dl select,.searchwrapper dl input{ vertical-align:middle;}
+.searchwrapper dl input.txt{ width:80px;}
+.destination {width:120px;}
+.searchwrapper dl select.departCity{ width:80px;}
+.searchwrapper dl input.but{ border:0; margin-left:54px; margin-top:5px;}
+.searchtour dl input.txt{ width:75px;}
+
+.travelmodule { padding:2px; border: 1px solid #e0ccaf; background:#FFF; margin-bottom:6px;}
+.travelmodule .header { height:25px; background: url(../images/category_h2bg.gif) repeat-x;}
+.travelmodule h2 { line-height:25px; color:#B80000; font-size:14px; font-weight:bold; margin:0; padding-left:6px;float:left;}
+.travelmodule h1 { line-height:25px; color:#B80000; font-size:14px; font-weight:bold; margin:0; padding-left:6px;float:left;}
+.travelmodule .content { padding:5px;}
+
+.hotdestination h3 { padding:12px 0 5px 0; font-size:14px; color:#683700;}
+.hotdestination a:link,.hotdestination a:active,.hotdestination a:visited { color:#00C; margin:0 5px 0 0; line-height:22px; text-decoration:underline;}
+.hotdestination a:hover { color:#00C; margin:0 5px 0 0; line-height:22px; text-decoration:underline;}
+
+.featurecoupon ul li{ line-height:22px;}
+
+.traveltopbanner{ height:140px; margin-bottom:6px;}
+.travelmidbanner{ margin-bottom:6px;}
+
+
+.hottravel .content{ padding:15px 10px 5px 10px;}
+.hottravel .travelmodule{ height:160px;}
+.hotlinelist { clear:both;}
+.hotlinelist .coll{ float:left; width:60px; font-size:14px; color:#683700; font-weight:bold;}
+.hotlinelist .colr{ float:left; width:590px;}
+.hotlinelist .row{ clear:both; height:30px;}
+.hotlinelist .row .homepageHot{ width:400px; float:left; font-weight:600; line-height:16px; height:16px; overflow:hidden;}
+.homepageHot a:link, .homepageHot a:active, .homepageHot a:visited{ color:#00C; font-size:14px; text-decoration:underline;}
+.homepageHot a:hover{ color:#00C; font-size:14px; text-decoration:underline;}
+.hotlinelist .row p{ width:150px; float:right; text-align:right}
+.hotlinelist .row p span{ color:#EE5E17; font-size:14px; font-weight:bold;}
+.hotlinelist .row img{ vertical-align:middle; margin-left:10px;}
+
+.specialTicket h2{ display:inline;}
+.specialTicket .tabbox{ float:right; margin-top:3px; padding-right:10px;}
+.specialTicket .tabbox ul li{ float:left; padding:0 5px 0 0; display:inline;}
+.specialTicket .tabbox ul li a:link,
+.specialTicket .tabbox ul li a:active,
+.specialTicket .tabbox ul li a:visited{ display:block; height:22px; line-height:22px; text-align:center; padding:0 8px; float:left;}
+.specialTicket .tabbox ul li a:hover{ background:url(../images/travel/tabbox_bg.gif) no-repeat; text-decoration:none;}
+.specialTicket .tabbox ul li a.active{  background:url(../images/travel/tabbox_bg.gif) no-repeat;}
+.specialTicket .content{ padding:10px;}
+.specialTicket .ticketlist ul li{ width:190px; padding:0 10px 0 5px; height:28px; line-height:28px; margin-right:15px; border-right:#e0ccaf 1px solid; float:left; color:#00C;}
+.specialTicket .ticketlist ul li.last{ border:0; margin:0;}
+.specialTicket .ticketlist ul li span{ float:right; color:#EE5E17; font-weight:bold; text-align: right;}
+.specialTicket .ticketlist ul li a{ color:#00C; display:block; float:left; width:80px;overflow:hidden;height:28px;}
+
+.specialHotel h2{ display:inline;}
+.specialHotel .tabbox{ float:right; margin-top:3px; padding-right:10px;}
+.specialHotel .tabbox ul li{ float:left; padding:0 5px 0 0; display:inline;}
+.specialHotel .tabbox ul li a:link,
+.specialHotel .tabbox ul li a:active,
+.specialHotel .tabbox ul li a:visited{ display:block; height:22px; line-height:22px; text-align:center; padding:0 8px; float:left;}
+.specialHotel .tabbox ul li a:hover{ background:url(../images/travel/tabbox_bg.gif) no-repeat; text-decoration:none;}
+.specialHotel .tabbox ul li a.active{  background:url(../images/travel/tabbox_bg.gif) no-repeat;}
+.specialHotel .content{ padding:10px;}
+.specialHotel .hotellist ul li{ width:295px; padding:0 15px 0 5px; height:28px; line-height:28px; margin-right: 15px; border-right:#e0ccaf 1px solid; float:left;}
+.specialHotel .hotellist ul li.last{ border:0; margin:0;}
+.specialHotel .hotellist ul li span{ float:right; color:#EE5E17; font-weight:bold;}
+.specialHotel .hotellist ul li span b{ color:#666; font-weight:normal; margin-left:3px;}
+.specialHotel .hotellist ul li strong{ width:60px; display:block; float:left; font-weight:normal;}
+.specialHotel .hotellist ul li a{ color:#00C;}
+
+.recommendHotel{ padding-bottom:6px;}
+.recommendHotel .content{ padding-top:10px;}
+.recommendHotel .list{ width:300px; float:left; padding-left:5px; padding-right:0px; margin: 5px 10px 15px 0;}
+.recommendHotel .last{ border:0; margin-right:0;}
+.recommendHotel .list h3{ font-size:14px; padding:2px 0 0 0; line-height: 25px; border-bottom:#E0CCAF 2px solid; margin-bottom:2px;}
+.recommendHotel .list ul{ clear:both; padding:5px 0 10px 0;}
+.recommendHotel .list li{ padding-bottom:3px;}
+.recommendHotel .list li.hotelimg{ width:90px; float:left; height:90px; padding: 10px;}
+.recommendHotel .list li.hotelimg img{ width:90px; height: 90px; border:#ccc 1px solid;}
+.recommendHotel .list li.hotelimg p img{ width:auto; border:0;}
+.recommendHotel .list li.hotelname a:link, .recommendHotel .list li.hotelname a:active, .recommendHotel .list li.hotelname a:visited { font-size:14px; font-weight: bold; color:#00C; height: 16px; display: block; overflow: hidden;}
+.recommendHotel .list li.hotelname a:hover{ text-decoration:underline;}
+.recommendHotel .list li.hotelstar { margin: 5px 0 8px 0;}
+.recommendHotel .list li.desc { color:#666; height: 30px; display: block; overflow: hidden; line-height: 18px; margin: 4px 0 8px 0;}
+.recommendHotel .list li.hotelname { padding-top:10px; height:16px;}
+.recommendHotel .list li.hotelname span { float:right; color:#EE5E17; width:50px; height:22px; text-align:right; padding-top:3px;}
+
+.recommendHotel .list li.tourname a:link, .recommendHotel .list li.tourname a:active, .recommendHotel .list li.tourname a:visited { font-size:12px; color:#5C2600;}
+.recommendHotel .list li.tourname a:hover{ text-decoration:underline;}
+.recommendHotel .list li.tourname { padding-top:5px; height:16px;}
+.recommendHotel .list li.tourname span { float:right; color:#EE5E17; width:50px; height:22px; text-align:right; padding-top:3px;}
+
+
+.newTourList{float:left;}
+
+
+/*hotel channel*/
+.hothotel .content{ padding:10px 5px 0 5px;}
+.hothotel .list{ margin-bottom:0;}
+
+/*detail page*/
+.detailwrapper{padding: 2px; border: 1px solid #e0ccaf; width:671px;}
+.detailwrapper .header{	line-height: 25px;	padding-left: 10px;	background: #fef6df;}
+.detailwrapper .header h1{	color: #960000;	font-size: 14px;margin: 0px;}
+.detailwrapper .baseinfo{ padding:10px; margin-bottom: 10px; float:left;}
+.detailwrapper .baseinfo .imgbox{ width:250px; margin-right: 5px; float:left;}
+.detailwrapper .baseinfo .colr{ width:390px; float:left;}
+.detailwrapper .baseinfo ul li{ padding-bottom:14px;}
+.detailwrapper .baseinfo ul li strong{ font-size:12px; color:#000;}
+.detailwrapper .baseinfo ul li span.price{ font-size:18px; color:#BF1717; font-weight:bold; font-family: Arial, Helvetica, sans-serif;}
+.detailwrapper .baseinfo ul li.tel{ font-weight: bold; border:#F5DFAB 1px solid; padding:4px 10px; background:#faf3e7; line-height: 26px; vertical-align: middle; font-size:12px; margin-top: 10px; text-align: center}
+.detailwrapper .baseinfo ul li.tel .tour_tel{ font-size:18px; color:#BF1717;}
+
+.detailwrapper .moreinfo{ padding:10px; margin-top: 10px; clear:both;}
+.detailwrapper .moreinfo h2{ font-size:14px; color:#960000; border-bottom:#960000 2px solid; padding-bottom:5px;}
+.detailwrapper .moreinfo h2 a:link, .detailwrapper .moreinfo h2 a:active, .detailwrapper .moreinfo h2 a:visited{ font-size:12px; font-weight:normal; float:right; text-decoration:none;}
+.detailwrapper .moreinfo h2 a:hover{ font-size:12px; font-weight:normal; float:right; text-decoration:underline;}
+.detailwrapper .moreinfo .content{ padding:10px; line-height:24px;}
+
+.detailwrapper a:link, .detailwrapper a:active, .detailwrapper a:visited{ text-decoration:underline; color:#960000;}
+.detailwrapper a:hover{ text-decoration:none;}
+.disn{ display:none;}
+
+.cityTourList { display:none; left:10px; z-index:5;	position:relative; clear:both; top:0px; }
+.famousList { left:0px;	text-align:left; margin:0 auto;	z-index:10px; color:#0000CC; line-height:23px; background:#FFFFFF; border:1px solid #F55C00; position:absolute;	font-family:Tahoma,Helvetica,Arial,'ËÎÌו',sans-serif;z-index:5px;}
+
+.cityTourList div a:link, .cityTourList div a:active, .cityTourList div a:visited{ text-decoration:underline; color:#0000CC;padding-left:5px;}
+.famousList a {
+	float:left; 
+	word-break:normal;
+	white-space:nowrap; 	
+}
+.cityTourList div a:hover{ text-decoration:none;}
+
+
+.leftHot ul li { background : url(../images/google_icnfour.gif) no-repeat scroll 2px 6px; height:22px; margin-top:5px; padding-left:15px;}
+.leftHot ul li a:link, .leftHot ul li a:active, .leftHot ul li a:visited { float:left; color:#683700; width:200px; line-height:22px; height:22px; overflow:hidden; text-decoration:none;}
+.leftHot ul li a:hover{ text-decoration:underline;}
+.leftHotListName { float:left; width:200px; }
+.leftHotFlightListName { float:left; width:120px; }
+.leftHotFlightListName a {
+	width:120px !important;
+}
+.leftHotListPrice { width:40px;  color:#EE5E17;}
+.leftHotFlightListPrice { width:40px;  color:#EE5E17; float:right;padding-top:5px;}
+.leftHotListPrice {	float:right; padding-right:15px; text-align:right; padding-top:5px;}
+
+.priorityList { padding-left: 80px;	padding-top: 5px; color:#683700;}
+
+.cat_month_hot { width:650px; float:left; padding-bottom:20px;}
+.cat_month_hot h3 a { padding-left: 15px; width:500px; overflow:hidden; height:16px; line-height:16px; display:block; font-size:14px;}
+
+
+/*.travelmodule .content { padding:10px;}*/
+
+/*tour channel list*/
+.travelmodule .tourlist ul li { font-size: 14px; padding:0 15px 0 5px; height:28px; line-height:28px; margin-right:15px; float:left; color:#00C; width:640px;}
+.travelmodule .tourlist ul li span { float:right; color:#EE5E17; text-align:right; width:50px;}
+.travelmodule .tourlist ul li a { color:#5C2600; font-size:14px; float:left; }
+
+/*tour search list*/
+.travelmodule .toursearchlist ul li { font-size: 14px; padding:0 15px 0 5px; height:28px; line-height:28px; margin-right:15px; float:left; color:#00C; width:640px;}
+.travelmodule .toursearchlist ul li span { float:right; color:#EE5E17; text-align:right; width:50px;}
+.travelmodule .toursearchlist ul li a { color:#5C2600; font-size:14px; display:block; float:left; width:580px; line-height:28px; height:28px; overflow:hidden;}
+
+.placeslist ul li {	float:left;	width:160px; }
+.relatePlacePicture {}
+.relatePlaceName { padding-top:6px;	padding-bottom:6px;	text-align:center;}
+.route_view_module { float:left; margin:0 10px 5px 0;}
+.placename { text-align:center;}
+
+.tourSectionContent h3{ padding: 2px;}
+.tourSectionContent h3 span{ padding-left: 0px; font-size:14px;}
+
+.hot_mudidi { background: url(../images/travel/mudidi_title_bg.jpg) repeat-x scroll 0 0; color:#FFF; font-size:12px; padding:0 10px;}
+.hot_mudidi span { float: right; padding-right: 8px; display: block; cursor: pointer;}
+.hotel_name { padding-bottom:5px; color:#5C2600; font-size:14px;}
+.hotel_intro { color:#666; line-height: 18px; padding:5px 0 10px 0;}
+.hotel_title_h2 { color: #B90101; background-color: #FEF6E1; font-size: 14px; height: 30px; line-height: 30px; vertical-align: middle; margin:15px 2px 2px 2px;}
+
+.ht_rsd { width:100%;}
+.tdtitle{ width:45%;}
+.tdtitle_price { width:30%;}
+.tdtitle_order { width:25%;}
+
+
+ht_rsd { padding-bottom:5px;}
+.ht_rsd td { text-align:center; padding:5px; border-bottom:1px solid #EEE;}
+.ht_rsd th { background:#EEE; none repeat scroll 0 0; border-bottom:2px solid #B0B0B0; text-align:center; height:30px; padding-top:2px; font-weight:blod; font-size:14px; color:#C96702;}
+.hotel_dtitle div { float:left; background:#EEE; none repeat scroll 0 0; border-bottom:2px solid #B0B0B0; text-align:center; height:30px; padding-top:2px; cursor:pointer; font-weight:bold; font-size:14px; color:#C96702; width:220px; line-height:32px; overflow:hidden;}
+.travel_hotelName{ line-height:28px; height:28px; overflow:hidden; width:170px; float:left;padding-left:6px;}
+.travel_hotelCategoryName{ float:left;}
+.hotel_search_list { float:left; padding-right:5px;}
+.hotel_search_list p { padding-left:0px; text-align:center;}
+.hotel_description { float:right; width:485px; text-align:left;}
+
+ /*ticket css*/
+.flightsDate { float:left; padding-top:5px;}
+.ticketList { color:#00C; float:left; height:28px; line-height:28px; margin-right:10px; width:300px;}
+.ticketList span { float:right;	padding-right:10px;	float:right;}
+.ticketList a { color:#0000CC; display:block; float:left; padding-left:10px; height:28px; overflow:hidden; width:120px;}
+.ticketPrice { color:#EE5E17;}
+
+.loadingPic { padding: 5px;	text-align: center;}
+.loadingPic p { color:#FF0000; font-size:14px; }
+
+.c_name { display:block; margin-left:40px; color:#0069CA; font-size:14px; font-weight:700;}
+.c_company { font-size:14px;}
+
+.air_list { background:#E9E9E9;; margin-bottom:10px;}
+.air_list_com { border:#666 1px solid; }
+.air_list_title { height:30px; background:#EEE none repeat scroll 0 0; margin-bottom:5px; line-height:30px; font-weight:bold; border-bottom:2px solid #B0B0B0;}
+.air_list_title a { color:#9b3236;}
+.air_list .fb_div ul { padding:10px 0 0 10px; height:50px;}
+.air_list .other_price ul {padding:10px 0 0 0px; height:30px;}
+.air_list .other_price .merchant_tel {
+	width:140px;
+	padding-right:100px;
+	color:#999999;
+	font-weight:bold;
+}
+.air_list_title li {float:left; width:90px; height:30px; text-align:center;}
+.air_list ul li { text-align:center; line-height:20px;}
+.company { width: 158px !important; text-align: left !important; padding-left: 3px;}
+.air_list li { float: left;  margin: 0px;}
+.airlogo { float: left; height: 16px !important; width: 16px !important; padding-top:10px; padding-right:5px;}
+.airlogo img { height: 16px !important; width: 16px !important; padding-top: 0px;}
+
+.other_price { background:#ffffff; padding-left:10px; overflow:hidden;}
+.other_price ul { overflow:hidden; border-bottom:1px solid #CCC;}
+.other_price a { text-decoration:underline; color:#9b3236; font-weight:bold;}
+.merchant_li {
+	width:180px;
+}
+.merchant_li a:link, .merchant_li a:active, merchant_li a:visited { 
+	width:158px !important;
+	font-size:14px;
+	font-weight:700px;
+	color:#0000CC;
+	text-decoration:none;
+}
+.merchant_li a:hover {
+	text-decoration:underline;
+}
+
+.fb_time { color:#0069CA;}
+.fn { font-weight:bold;}
+.fb_div { background-color:#FFF8DE; border-bottom:1px solid #CCC; cursor:pointer; vertical-align: middle }
+.fb_div .title_airname {
+	width:110px;
+}
+.fb_div .flight_price { color:#0069CA; font-size:14px; font-weight: 600; padding-top:10px; width:90px;}
+.fb_div .flight_plane {
+	padding-top:10px;
+	width:75px;
+}
+.fb_div .flight_tax {
+	padding-top:10px;
+	width:75px;
+}
+.fb_div .air_time {
+	width:90px;
+}
+.air_list .other_price .price_merchant {
+	width:120px;
+	padding-right:10px;
+	font-size:14px;
+	color:#0069CA;
+	font-weight:bold;
+}
+.air_list .other_price .price_merchant b{
+	color:#B80000;
+}
+.load_message { padding-left: 200px; color:#B80000;	font-weight: 700;}
+.air_list_title .company_name {	width:177px; padding-left:15px; text-align:left;}
+.air_list_title .air_tax {
+	width:75px;
+}
+.air_list_title .air_plane {
+	width:75px;
+}
+.air_list_title .title_airname {
+	width:110px;
+}
+.cat_month_hot_description { float:left; width:500px; padding-left:5px;}
+.cat_month_hot_image { float:left;}
+.navtab ul li h1{ font-size:16px; height:27px; margin-top:0; font-weight:bold; display:inline;}
+.cat_month_hot .tour_center_image {	float:left;	padding-right:10px;}
+.cat_month_hot .tour_center_image img {	height:90px; width:90px;}
+
+.tour_center_normal { float:left;}
+.tour_center_normal .tour_des {	float:left;	width:440px;}
+.tour_center_normal .tour_des ul li a {	font-size:14px;	font-weight:bold; color:#00C; line-height: 20px; text-decoration:underline;}
+.tour_center_normal .tour_des .tour_text { color:#666; line-height: 18px;}
+.tour_center_normal .priorityPrice { width: 75px; height: 70px; float: left; padding: 10px; margin-left: 5px; background: url(../images/travel/clinpine.gif) no-repeat; }
+.tour_center_normal .tour_des .tour_name { padding-bottom:4px;}
+
+.priorityPrice ul li { width: 70px; padding:5px; text-align: center;}
+.priorityPrice .price_view { font-size:14px; font-weight:bold; color:#EE5E17;}
+
+.hoteldetail_merchant_name { height:50px; font-size:14px; font-weight:bold;}
+.hoteldetail_merchant_name a:link, .hoteldetail_merchant_name a:active, .hoteldetail_merchant_name a:visited { height:50px; color:#00C; font-size:14px; font-weight:bold; text-decoration:none;}
+.hoteldetail_merchant_name a:hover { text-decoration:underline;}
+.hoteldetail_merchant_price { font-size:14px;}
+.hotelerror {
+	font-size:14px;
+	color:#0000CC;
+}
+.hot_tour_channel {
+	width:580px; 
+	line-height:28px; 
+	height:28px; 
+	overflow:hidden;
+}
+.new_tour_channel {
+	width:250px; 
+	line-height:22px; 
+	height:22px; 
+	overflow:hidden;
+	float:left;
+}
+

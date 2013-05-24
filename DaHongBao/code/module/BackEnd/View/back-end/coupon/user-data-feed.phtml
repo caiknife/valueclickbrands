@@ -1,0 +1,186 @@
+<?php
+
+/**
+* userDataFeed.phtml
+*-------------------------
+*
+* 
+*
+* PHP versions 5
+*
+* LICENSE: This source file is from Smarter Ver2.0, which is a comprehensive shopping engine 
+* that helps consumers to make smarter buying decisions online. We empower consumers to compare 
+* the attributes of over one million products in the common channels and common categories
+* and to read user product reviews in order to make informed purchase decisions. Consumers can then 
+* research the latest promotional and pricing information on products listed at a wide selection of 
+* online merchants, and read user reviews on those merchants.
+* The copyrights is reserved by http://www.mezimedia.com. 
+* Copyright (c) 2006, Mezimedia. All rights reserved.
+*
+* @author Yaron Jiang <yjiang@corp.valueclick.com.cn>
+* @copyright (C) 2004-2013 Mezimedia.com
+* @license http://www.mezimedia.com PHP License 5.0
+* @version CVS: $Id: user-data-feed.phtml,v 1.5 2013/04/23 03:18:54 yjiang Exp $
+* @link http://www.dahongbao.com/
+* @deprecated File deprecated in Release 3.0.0
+*/
+$this->headScript()->appendFile($this->basePath('js/BackEnd/coupon-list.js'));
+?>
+
+<div class="box">
+    <div class="box-header">
+        <h2><i class="icon-box"></i>未审核列表</h2>
+    </div>
+    
+    <div class="box-content">
+        
+        <form class="form-inline" method="get" action="<?php echo $this->url('backend' , array('controller' 
+                => 'coupon' , 'action' => 'userDataFeed'));?>">
+            <div class="input-group">
+                <label>Affiliates</label>
+                <select class="select-element input-element span2" id=AffiliateID name="AffiliateID">
+                <option value="">所有</option>
+                <?php foreach($this->affiliates as $k => $v):?>
+                <option <?php if($k == $this->AffiliateID):?>selected="selected"<?php endif;?> value="<?php 
+                echo $k?>"><?php echo $v?></option>
+                <?php endforeach;?>
+                <option value="0" <?php if('0' === $this->AffiliateID):?>selected="selected"<?php endif;?>>无</option>
+                </select>
+                
+                &nbsp;&nbsp;
+                
+                <label>Coupon类别</label>
+                <select class="select-element input-element span2" name="CouponType">
+                <option value="">所有</option>
+                <?php foreach($this->couponTypes as $v):?>
+                <option value="<?php echo $v?>"><?php echo $v?></option>
+                <?php endforeach;?>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label>Coupon名</label>
+                <input class="input-element span3" type="text" value="<?php echo $this
+                ->CouponName?>" placeholder="按Coupon名搜索" name="CouponName" />
+                &nbsp;&nbsp;
+                <select class="select-element input-element span2" name="MerchantType">
+                <option <?php if('id' == $this->MerchantType):?>selected="selected"<?php endif;
+                ?> value="id">商家ID</option>
+                <option <?php if('name' == $this->MerchantType):?>selected="selected"<?php endif;
+                ?> value="name">商家名</option>
+                </select>
+                <input class="input-element span3" type="text" value="<?php echo $this
+                ->Merchant?>" placeholder="按商家名搜索" name="Merchant" />
+            </div>
+            
+            <div class="input-group">
+            <button type="submit" class="btn btn-primary">搜索</button>
+            <a href="<?php echo $this->url('backend' , array('controller' => 'coupon' , 'action' => 'userDataFeed'))
+            ?>" class="btn btn-inverse">清除条件</a>
+            </div>
+        </form>
+        
+        <form class=box-form action="<?php echo $this->url('backend' , array('controller' 
+            => 'coupon' , 'action' => 'userDataFeedToCoupon'))?>?<?php echo $this->query?>" method="post">
+            <table class="table">
+            <thead>
+                <tr class="row">
+                <th width="5"><input type="checkbox" id="allCheck" /></th>
+                    <th width="70">商家名</th>
+                    <th width="70">联盟</th>
+                    <th width="70">Coupon名</th>
+                    <th width="70">CouponType</th>
+                    <th width="100">图片</th>
+                    <th width="90">使用时间</th>
+                    <th width="120">操作</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <?php foreach($this->list as $v):?>
+                <tr class="row <?php if(empty($v->MerchantID)):?> warning<?php endif;?>">
+                <td><?php if(!empty($v->MerchantID)):?><input type="checkbox" name="ID[]" value="<?php echo $v->ID?>" />
+                <?php endif;?></td>
+                <td><a href="<?php echo $this->url(null , array('controller' => 'coupon' 
+                    , 'action' => 'userDataFeed'))?>?MerchantType=id&Merchant=<?php echo $v->MerchantID?>"><?php echo
+                     $v->MerchantFeedName?></a></td>
+                
+                <td><?php if(empty($v->AffiliateID)):?>无<?php else:?><?php echo $this
+                ->affiliates[$v->AffiliateID];?><?php endif;?></td>
+                
+                <td>
+                <a href="#" data-original-title="<?php echo $this->escapeHtml($v->CouponDescription)?><?php echo 
+$this->escapeHtml($v->CouponRestriction)?>" class="CouponName"><?php if(!empty($v->CouponUrl)):
+                ?><a target="_blank" href="<?php echo $v->CouponUrl?>"><?php 
+                echo $v->CouponName?></a><?php else:?><?php echo $v->CouponName?><?php endif;?></a>
+                
+                </td>
+                
+                <td><?php echo $v->CouponType?></td>
+                <td>
+                    <?php if(!empty($v->CouponImageUrl)):?>
+                    <img width="100" src="<?php echo $v->CouponImageUrl?>" />
+                    <?php else:?>
+                    无图片
+                    <?php endif;?>
+                </td>
+                <td>
+                    <p><?php echo strstr($v->CouponStartDate , ' ', true)?></p>
+                    <p><?php if($v->CouponEndDate):?>
+                    <?php echo strstr($v->CouponEndDate, ' ', true)?>
+                    <?php else:?>
+                    长期有效
+                    <?php endif;?>
+                    </p>
+                </td>
+                <td>
+                <div class="btn-group">
+                <?php if(empty($v->MerchantID)):?>
+                <a href="<?php echo $this->url('backend' , array('controller' => 'merchant' , 'action' => 'mapping'))
+                ?>?MerchantAliasName=<?php echo $v->MerchantFeedName?>&AffiliateID=<?php echo $v
+                ->AffiliateID?>&referer=<?php echo $this->uri?>" class="btn btn-inverse">
+                新增商家</a>
+                <?php else:?>
+                
+                <a href="<?php echo $this->url('backend' , array('controller' => 'coupon' , 'action' 
+                    => 'save'))?>?userDataFeedId=<?php echo $v->ID
+                ?>&referer=<?php echo $this->uri?>" class="btn btn-edit">
+                编辑
+                </a>
+                <a href="<?php echo $this->url('backend' , array('controller' => 'coupon' , 'action' 
+                    => 'userDataFeedToCoupon'))?>?ID=<?php 
+                echo $v->ID?>&referer=<?php echo $this->uri?>" class="btn btn-success">
+                上线
+                </a>
+                <a href="javascript:void(0)" data-href="<?php echo $this->url('backend' , array('controller' 
+                    => 'coupon' , 'action' 
+                    => 'userDataFeedDelete'))?>?ID=<?php 
+                echo $v->ID?>&referer=<?php echo $this->uri?>" class="btn btn-delete">
+                删除
+                </a>
+                <?php endif;?>
+                </div>
+                </td>
+                </tr>
+                <?php endforeach;?>
+            </tbody>
+            
+            <tfoot>
+            <tr class="row">
+            <td colspan=10>
+            <?php echo $this->paginationControl($this->list,'Sliding','layout/pagination' , array('link' 
+            => $this->url('backend' , array('controller' => 'coupon' , 'action' => 'userDataFeed')) . '?' 
+                .$this->query));?>
+            </td>
+            </tr>
+            
+            <tr class="row">
+            <td colspan=10>
+            <button type="submit" class="btn btn-success"><i class="icon-white icon-thumbs-up"></i>上线</button>
+            </td>
+            </tr>
+            </tfoot>
+            </table>
+        </form>
+    </div>
+</div>

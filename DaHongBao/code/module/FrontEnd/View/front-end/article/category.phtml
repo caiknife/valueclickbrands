@@ -1,0 +1,16 @@
+<?php
+$this->headTitle($helpCenterName."_大红包优惠券");
+$this->headMeta()->appendName("keywords", $helpCenterName);
+$this->headMeta()->appendName("description", "大红包优惠券网站第一时间提供优惠券使用帮助信息，让用户享受到真正的促俏优惠。");
+$this->headLink()->prependStylesheet($this->basePath() . '/styles/CN/static.css');
+?>
+<div class="main">
+    <div class="breadcrumb">
+        <span>当前位置：</span> <a href="/">大红包 </a>   &gt; <a href="<?php print $this->helpCenterUrl;?>"><?php print $this->helpCenterName;?></a> &gt; <?php print $this->articleInfo['CategoryName'];?> &gt; <?php print strip_tags($this->articleInfo['Title']);?>
+    </div>
+    <div class="content">
+        <?php print $this->partial('front-end/default/articleLeft.phtml'); ?>
+        <?php print $this->partial('front-end/default/articleRight.phtml'); ?>
+    </div>
+    <div class="cl"></div>
+</div>

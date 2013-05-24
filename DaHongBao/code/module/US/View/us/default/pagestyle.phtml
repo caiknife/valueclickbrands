@@ -1,0 +1,41 @@
+<?php if ($this->pageCount > 1): ?>
+<div class="page">
+<?php if (isset($this->previous)): ?>
+    <?php if ($this->params):?>
+        <a href="<?php echo $this->url($this->route, array_merge(array('page' => $this->page), $this->params)); ?>">首页</a>
+        <a href="<?php echo $this->url($this->route, array_merge(array('page' => $this->previous), $this->params)); ?>">上一页</a>
+    <?php else:?>
+        <a href="<?php echo $this->url($this->route, array('page' => $this->page)); ?>">首页</a>
+        <a href="<?php echo $this->url($this->route, array('page' => $this->previous)); ?>">上一页</a>
+    <?php endif;?>
+<?php endif; ?>
+
+<?php foreach ($this->pagesInRange as $page): ?>
+    <?php if ($page != $this->current): ?>
+        <?php if ($this->params):?>
+            <a href="<?php echo $this->url($this->route, array_merge(array('page' => $page), $this->params)); ?>"><?php echo $page; ?></a>
+        <?php else:?>
+            <a href="<?php echo $this->url($this->route, array('page' => $page)); ?>"><?php echo $page; ?></a>
+        <?php endif;?>
+    <?php else: ?>
+        <a class="current"><?php echo $page; ?></a>
+    <?php endif; ?>
+<?php endforeach; ?>
+
+<?php if (isset($this->next)): ?>
+    <?php if ($this->params):?>
+        <a href="<?php echo $this->url($this->route, array_merge(array('page' => $this->next), $this->params)); ?>">下一页</a>
+    <?php else:?>
+        <a href="<?php echo $this->url($this->route, array('page' => $this->next)); ?>">下一页</a>
+    <?php endif;?>
+<?php endif; ?>
+
+<?php if($this->last > $this->current ):?>
+    <?php if ($this->params):?>
+        <a href="<?php echo $this->url($this->route, array_merge(array('page' => $this->last), $this->params)); ?>">末页</a>
+    <?php else:?>
+        <a href="<?php echo $this->url($this->route, array('page' => $this->last)); ?>">末页</a>
+    <?php endif;?>
+<?php endif;?>
+</div>
+<?php endif; ?>

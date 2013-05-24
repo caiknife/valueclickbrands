@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>红包换礼品，多重好礼等你拿--大红包兑奖中心</title>
+<META NAME="description" CONTENT="{$topicrow.description}">
+<META NAME="keywords" CONTENT="{$topicrow.keywords}">
+<link href="../css/priceinfo.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<div id="head" class="main_box">
+	<ul>
+		<li class="liimg1"><img src="/images/price/head1.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></li>
+		<li class="liimg2"><a href="/"><img src="/images/price/head3.jpg" alt="大红包" /></a></li>
+		<li class="liimg3"><img src="/images/price/head4.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></li>
+		<li class="liimg4"><img src="/images/price/head_info4.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></li>
+		<li class="liimg4"><img src="/images/price/head_info5.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></li>
+		<li class="liimg4"><img src="/images/price/head_info6.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></li>					
+	</ul>
+</div>
+
+<div id="info" class="main_box">
+	<div class="info_box">
+		<div class="info_img"><img src="/images/price/info_top.jpg" alt="兑奖流程" /></div>
+		<div class="info_text">
+			<h1><img src="/images/price/ico_price.jpg" alt="兑换奖品" /></h1>
+			{if $canaward}		
+			<ul>
+				<li class="liuser">您要兑换的奖品是<strong>{$awarddetail.AwardName}</strong>，该奖品所需的红包数为<strong>{$awarddetail.NeedHB}</strong>个。</li>
+				<li class="li_ascertain"><a href="/pricemakesure.php?id={$useraddawardid}"><img src="/images/price/ascertain_button.jpg" alt="确定兑换" /></a></li>
+				<li class="li_dishonor"><a href="/price.php"><img src="/images/price/dishonor_button.jpg" alt="暂不兑换" /></a></li>
+			</ul>	
+			{else}
+			<ul>
+				<li class="liuser bring">抱歉，您的红包数不够，无法兑换该奖品！</li>
+				<li class="li_gain"><a href="/bbs/read.php?tid=99431" target=_blank><img src="/images/price/gain_button.jpg" alt="如何获得红包" /></a></li>
+				<li class="li_dishonor"><a href="/price.php"><img src="/images/price/other_button.jpg" alt="兑换其他奖品" /></a></li>
+			</ul>
+			{/if}	
+		</div>
+		<div class="info_img"><img src="/images/price/info_bottom.jpg" alt="兑奖流程" /></div>
+	</div>
+	
+	<div class="price_left"></div>
+</div>
+</body>

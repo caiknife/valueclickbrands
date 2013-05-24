@@ -1,0 +1,95 @@
+<?php
+/**
+* merchant-list.phtml
+*-------------------------
+*
+* 
+*
+* PHP versions 5
+*
+* LICENSE: This source file is from Smarter Ver2.0, which is a comprehensive shopping engine 
+* that helps consumers to make smarter buying decisions online. We empower consumers to compare 
+* the attributes of over one million products in the common channels and common categories
+* and to read user product reviews in order to make informed purchase decisions. Consumers can then 
+* research the latest promotional and pricing information on products listed at a wide selection of 
+* online merchants, and read user reviews on those merchants.
+* The copyrights is reserved by http://www.mezimedia.com. 
+* Copyright (c) 2006, Mezimedia. All rights reserved.
+*
+* @author Yaron Jiang <yjiang@corp.valueclick.com.cn>
+* @copyright (C) 2004-2013 Mezimedia.com
+* @license http://www.mezimedia.com PHP License 5.0
+* @version CVS: $Id: merchant-list.phtml,v 1.2 2013/05/20 02:44:46 yjiang Exp $
+* @link http://www.dahongbao.com/
+* @deprecated File deprecated in Release 3.0.0
+*/
+
+$this->headScript()->appendFile($this->basePath('js/jquery-ui-1.10.2.custom.min.js'))
+        ->appendFile($this->basePath('js/BackEnd/recommend-merchant-list.js'))
+        ->appendFile($this->basePath('js/BackEnd/recommend-list.js'));
+$this->headLink()->appendStylesheet($this->basePath('styles/jquery-ui-1.10.2.custom.min.css'))
+->appendStylesheet($this->basePath('styles/BackEnd/recommend-list.css'));
+?>
+<div class="box">
+<div class="box-header">
+<h2><i class="icon-box"></i>商家推荐</h2>
+</div>
+
+<div class="box-content">
+<div class="form-inline">
+<div class="input-group">
+<a href="<?php echo $this->url(null , array('controller' => 'merchant' , 'action' => 'index'))
+?>" class="btn btn-success">添加推荐</a>
+</div>
+<form action="<?php echo $this->url(null , array('controller' => 'recommend' , 'action' => 'merchantList'))
+?>?SiteID=<?php echo $this->SiteID?>" method="get">
+<select class="select-element input-element span2" id="sites" name="SiteID">
+                    <?php foreach($this->sites as $k => $v):?>
+                    <option value="<?php echo $k?>" <?php if($k == $this->SiteID):?>selected="selected"<?php endif;?>>
+                    <?php echo $v?>
+                    </option>
+                    <?php endforeach;?>
+                </select>
+&nbsp;&nbsp;
+<label>位置</label>
+<select name="RecommendTypeID" class="select-element input-element span3">
+<option value="">无</option>
+<?php foreach($this->recommendTypes as $v):?>
+<option <?php if($this->RecommendTypeID == $v['RecommendTypeID']):?>selected="selected"<?php endif;?> value="<?php 
+echo $v['RecommendTypeID']?>"><?php echo $v['RecommendTypeName']?></option>
+<?php endforeach;?>
+</select>
+<button class="btn btn-primary" type="submit">搜索</button>
+</form>
+</div>
+
+<?php if(!empty($this->list)):?>
+<form action="<?php echo $this->url(null , array('controller' => 'recommend' , 'action' => 'setOrder'))
+?>?referer=<?php echo $this->uri?>&RecommendTypeID=<?php echo $this->RecommendTypeID?>" method="post">
+<ul class="list" id="list">
+<?php foreach($this->list as $k => $v):?>
+<li class="ui-state-default"><span class="orderNumber"></span>
+<input type="hidden" name="recommendid_<?php echo $k?>" value="" />
+<table class="table">
+<tr>
+<td width="100px"><img width="100px" src="<?php echo $v['RecommendImage']?>" alt="<?php echo $v['MerchantName']?>" /></td>
+<td class="MerchantName"><span>商家:</span><?php echo $v['MerchantName']?></td>
+<td width="25px"><a href="<?php echo $this->url(null , array('controller' => 'recommend' , 'action' => 'delete'))
+?>?RecommendID=<?php echo $k?>&referer=<?php echo $this->uri?>" class="btn btn-delete"><i class="icon-delete"></i>
+</a></td>
+</tr>
+</table>
+</li>
+<?php endforeach;?>
+</ul>
+<div class="cls"></div>
+<div class="button-group">
+<button id="submit" class="btn btn-primary" type="submit">提交</button>
+</div>
+</form>
+<?php else:?>
+<p>没有推荐</p>
+<?php endif;?>
+
+</div>
+</div>

@@ -1,0 +1,98 @@
+<!--<?php
+include_once PrintEot("css2");
+print <<<EOT
+-->
+</head>
+<body topmargin=5 leftmargin=5>
+<table width="99%" align=center cellspacing=1 cellpadding=2 border=0>
+    <tr>
+        <td class=head align=center>
+            <a target=main href="$admin_file?adminjob=admin"><b>管理区首页</b></a> | 
+            <a target="_top" href="$admin_file?adminjob=quit"><b>退出</b></a>
+        </td>
+    </tr>
+    <tr>
+        <td class=b align=center>
+            <a href="#" onclick="return ClearAdminDeploy()">+ 全部展开</a> 
+            <a href="#" onclick="return SetAdminDeploy()">- 全部收缩</a><br />
+        </td>
+    </tr>
+	 <tr><td>
+		<table width=98% align=center cellspacing=1 cellpadding=3 class=i_table>
+        <td class=head align=center>
+			<a href="#" onclick="return skin('$admin_file?adskin=0');">体验新风格</a>
+        </td>
+		</table>
+    </td></tr>
+    <tr>
+        <td>
+            <table width=98% align=center cellspacing=1 cellpadding=3 class=i_table>
+                <tr><td class=head>
+					 <a style="float:right" href="#" onclick="return IndexDeploy('a2',1)">
+						<img id="img_a2" src="$imgpath/wind/cate_$imgtype[a2].gif" border=0 alt='open'>
+					</a>
+					<b>管理员信息</b>
+					</td>
+				</tr>
+				<tbody id="cate_a2" style="$styletype[a2]">
+                <tr>
+                    <td class=b>
+                        用户名:$admin_name<br>
+                        级别:$admin_level<br>
+                    </td>
+                </tr>
+				</tbody>
+            </table>
+        </td>
+    </tr>
+<!--
+EOT;
+if(If_manager){
+print <<<EOT
+-->
+<tr><td>
+<table width=98% align=center cellspacing=1 cellpadding=3 class=i_table>
+    <tr>
+        <td class=head height=18>
+            <a style="float:right" href="#" onclick="return IndexDeploy('a0',1)">
+                <img id="img_a0" src="$imgpath/wind/cate_$imgtype[a0].gif" border=0 alt='open'>
+            </a>
+            <b>创始人选项</b>
+        </td>
+    </tr>
+    <tbody id="cate_a0" style="$styletype[a0]">
+    <tr>
+		<td class=b onmouseover="this.className='left_over';" onmouseout="this.className='b';">
+			<a target=main href="$admin_file?adminjob=rightset">后台权限设置</a>
+		</td>
+	</tr>
+	<tr>
+		<td class=b onmouseover="this.className='left_over';" onmouseout="this.className='b';">
+			<a target=main href="$admin_file?adminjob=manager">修改论坛创始人</a>
+		</td>
+	</tr>
+	<tr>
+		<td class=b onmouseover="this.className='left_over';" onmouseout="this.className='b';">
+			<a target=main href="$admin_file?adminjob=code"><font color="blue">论坛营销计划</font></a>
+		</td>
+	</tr>
+    </tbody>
+</table>
+</td></tr>
+<!--
+EOT;
+}print <<<EOT
+-->
+$leftinfo
+    <tr>
+        <td class=head_2 align=center>
+            <a href='http://www.phpwind.net' target=_blank><b>PHPWind<font color="red">.Net</font></b></a>
+        </td>
+    </tr>
+</table>
+</td>
+<script language="JavaScript" src="$imgpath/Deploy.js"></script>
+<script language="JavaScript" src="$imgpath/DeployInit.js"></script>
+<!--
+EOT;
+?>-->

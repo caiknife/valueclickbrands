@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>{$newdetail.0.subject},大红包{$newdetail.0.name}资讯</title>
+<link href="/css/detail.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+{literal}
+<script>
+	function checkgo(){
+		if(document.form.content.value=='')
+		{
+			alert('请输入内容');
+			return false;
+		}else{
+			document.form.submit();
+		}
+
+	}
+
+	function page(value){
+			var page = value;
+			var tid = document.hiddenall.couponwindid.value;
+			var pageall = document.hiddenall.couponwindpage.value;
+			var url = '/async_getreply.php'
+			var pars = 'id=' + page +'&tid='+tid+'&pageall='+pageall;
+			var myAjax = new Ajax.Request(
+			url,
+			{
+			method: 'get',
+			parameters: pars,
+			onComplete: showResponse
+			});
+		}
+		function showResponse(originalRequest)
+		{
+			var returnstr = originalRequest.responseText;
+			var all = returnstr.split("^^%%!!@@##");
+			var reply = all[0];
+			var replyitem = reply.split("!#%$#@");
+			var repstr = "";
+			for(var i=0;i<replyitem.length-1;i++){
+				reprow = replyitem[i].split("***$$$###");
+				repstr += "<li class='libg'><span class='bring'>"+reprow[0]+"</span> 在 "+reprow[1]+" 发表评论: </li><li class='libg1'>"+reprow[2]+"</li>";
+
+			}
+			//alert(repstr);
+		
+			document.getElementById('replycontent').innerHTML=repstr;
+			document.getElementById('pagestr').innerHTML=all[1];
+			//document.getElementById(b).innerHTML=parseInt(document.getElementById(b).innerHTML)+1;
+		}
+</script>
+<script src="/jscript/prototype.js"></script>
+{/literal}
+<body>
+<!--头部开始-->
+{include file="new/head_news.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <a href="/news.html">导购资讯</a> > <a href="/news---Ca-{$NameURL}--Ci-{$smarty.get.cid}.html">{$newdetail.0.name}</a> > <h1>{$newdetail.0.subject}</h1>
+	</div>
+	<!--category_title 导航结束-->
+	
+	
+	<!--detail 具体内容开始-->
+	<div id="detail">
+		<div id="detail_title1"><h2>{$newdetail.0.subject}</h2></div>
+		<!--company_box 商家具体内容开始-->
+		<div class="company_box1">
+			<div class="company_message">
+			查看({$newdetail.0.hits}) 评论({$newdetail.0.replies})  {$newdetail.0.postdate}
+			</div>
+			
+			
+			
+			
+			<P>			
+			{$newdetail.0.content}</P>
+			<div class="clr"></div>	
+			
+			{if $showtopic==1}<div class="subject_link">相关专题:<a href="/topic-{$topicid}.html">{$topicname}</a></div>{/if}
+			<div class="company_message">{if $other[0].fid==""}{else}
+			上一篇： <a href="/news---Ca-{$NameURL}--Ci-{$other[0].fid}--number-{$other[0].tid}.html">{$other[0].subject}</a>{/if}<br />{if $other[1].fid==""}{else}
+			下一篇： <a href="/news---Ca-{$NameURL}--Ci-{$other[1].fid}--number-{$other[1].tid}.html">{$other[1].subject}</a>{/if}
+			</div>	
+			<FORM METHOD=POST NAME="hiddenall" ACTION="">
+					<INPUT TYPE="hidden" NAME="couponwindid" value="{$newdetail.0.tid}">
+					<INPUT TYPE="hidden" NAME="couponwindpage" value="{$pageAll}">
+				</FORM>
+		</div>
+		<!--company_box 商家具体内容结束-->	
+					
+		<!--detail_text 相关评论开始-->	
+		<div class="detail_text">
+			{if $newdetail.0.replies==0}
+			<h2>暂无相关评论</h2>
+			{else}
+			<h2>（{$newdetail.0.replies}）条相关评论：</h2>
+			<ul id=replycontent>
+				{section name=loop loop=$forumreview start=0 max=10}
+				<li class="libg"><span class="bring">{$forumreview[loop].author}</span> 在&nbsp;{$forumreview[loop].postdate}&nbsp;发表评论: </li>
+				<li class="libg1">{$forumreview[loop].content}</li>
+				{/section}
+			</ul>
+			{/if}
+			
+		</div>
+		<!--detail_text 相关评论结束-->	
+		<!--begin page-->
+		<div id=pagestr>
+		{$pageString}
+		</div>
+		<!--page end-->
+		<!--detail_text 相关评论开始-->	
+		<div class="detail_text"><FORM METHOD=POST ACTION="/windreply.php" NAME="form" onsubmit="if(this.content.value=='') alert('请输入您想发表的内容');return false;"><INPUT TYPE="hidden" name="rep" value="true1"><INPUT TYPE="hidden" name=tid value={$smarty.get.id}><INPUT TYPE="hidden" name=fid value={$smarty.get.cid}>
+			<h3>发表评论</h3>
+			<ul>
+				{if $islogon==1}
+				<li class="lileft">昵  称：</li>
+				<li class="liright">{$userinfo.username}<INPUT TYPE="hidden" name="author" value="{$userinfo.username}"><INPUT TYPE="hidden" name="authorid" value="{$userid}"></li>
+				<li class="lileft">内  容：</li>
+				<li class="liright"><textarea name="content" cols="" rows="" class="inputmax"></textarea></li>
+				<li class="licenter"><input name="" type="button" class="inputbut"  value="重 写" onclick="javascript:this.form.content.value='';this.form.content.focus();"/> &nbsp;<input name="" type="button" class="inputbut"  value="发表评论" onclick="checkgo();"/></li>
+				{else}
+				<li class="liright">只有注册用户才能发表评论！</li>
+				{/if}
+				<!-- <li class="lileft">验证码：</li>
+				<li class="liright"><input name="" type="text" class="input1" /></li> -->
+				
+				{if $islogon==1}
+				{else}
+				<li class="limessage">已注册用户可以先<a href="/bbs/login.php">登录</a>，如果您还不是大红包的注册用户，建议您<a href="/bbs/register.php">注册</a>帐号。</li>
+				{/if}
+			</ul></FORM>
+		</div>
+		<!--detail_text 相关评论结束-->	
+	</div>
+	<!--detail 具体内容结束-->
+
+	<!--sidebar 栏目页左边内容开始-->
+	<div id="sidebar">
+		
+		<!--sidebox 热门优惠券开始-->
+		<div class="sidebox">
+			<div class="title"><h2>热门优惠券</h2></div>
+			<ul>
+				{section name=loop loop=$allhotcategorycouponlist start=0 max=10}
+				<li>·【<a href="/Me-{$allhotcategorycouponlist[loop].NameURL}--Mi-{$allhotcategorycouponlist[loop].Merchant_}.html">{$allhotcategorycouponlist[loop].name1}</a>】<a href="/{$allhotcategorycouponlist[loop].NameURL}/coupon-{$allhotcategorycouponlist[loop].Coupon_}/">{$allhotcategorycouponlist[loop].Descript}</a></li>
+				{/section}
+			</ul>
+		</div>
+		<!--sidebox 热门优惠券结束-->
+			
+		<!--sidebox 热门优惠券开始-->
+		<div class="sidebox">
+			<div class="title"><h2>相关资讯</h2></div>
+			<ul>
+				{section name=loop loop=$hotinfo start=0 max=10}
+				<li>·<a href="/news---Ca-{$NameURL}--Ci-{$smarty.get.cid}--number-{$hotinfo[loop].tid}.html">{$hotinfo[loop].subject}</a></li>
+				{/section}
+			</ul>
+		</div>
+		<!--sidebox 热门优惠券结束-->
+			
+		<!--sidebox 热门优惠券开始-->
+		<div class="sidebox">
+			<div class="title"><h2>论坛相关</h2></div>
+			<ul>
+				{section name=loop loop=$hotbbs start=0 max=10}
+				<li>·<a href="/bbs/read.php?tid={$hotbbs[loop].tid}">{$hotbbs[loop].subject}</a></li>
+				{/section}
+			</ul>
+		</div>
+		<!--sidebox 热门优惠券结束-->
+	</div>
+	<!--sidebar 栏目页左边内容结束-->
+</div>
+<!--主体内容结束-->
+
+{include file="new/foot.htm"}

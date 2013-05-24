@@ -1,0 +1,467 @@
+/* CSS Document */
+/*全局属性开始*/
+body {
+	margin: 0px;
+	border: 0px;
+	font-size: 12px;
+	color: #333;
+	font-family: "宋体";
+	background: #333;
+}	
+form {
+	margin: 0px;
+	padding: 0px;
+}
+ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+img {
+	border:0px;
+}
+a:link,a:visited {
+	color: #683700;
+	text-decoration: none;
+}
+a:hover {
+	color: #683700;
+	text-decoration: underline;
+}
+.main_box {
+	width: 1003px;
+	margin: 0px auto;
+	background: #fefcbf;
+}
+.clr {
+	clear: both;
+}
+/*全局属性结束*/
+#head {
+	height: 145px;
+	overflow: hidden;
+}
+#head ul li {
+	width: 1003px;
+	overflow: hidden;
+}
+#head .liimg1 {
+	height: 23px;
+	overflow: hidden;
+}
+#head .liimg2 {
+	height: 54px;
+	background: url(/images/price/head2.jpg) no-repeat;
+	overflow: hidden;
+	text-align: right;
+	padding-right: 26px;
+	width: 977px;
+}
+#head .liimg3 {
+	height: 34px;
+	overflow: hidden;
+}
+#top {
+	height: 123px;
+	overflow: hidden;
+}
+#top_left {
+	width: 612px;
+	height: 123px;
+	float: left;
+	overflow: hidden;
+}
+/*begin top_right*/
+#top_right {
+	width: 391px;
+	height: 123px;
+	float: right;
+	overflow: hidden;
+	background: url(/images/price/top_right.jpg) no-repeat;
+}
+#top_right p {
+	width: 325px;
+	height: 84px;
+	line-height: 21px;
+	overflow: hidden;
+	background: #eee;
+	margin: 0px 0px 8px 0px;
+	padding: 0px 0px 0px 10px;
+}
+#top_right ul {
+	width: 243px;
+	height: 26px;
+	overflow: hidden;
+	float: left;
+}
+#top_right ul li {
+	float: left;
+	line-height: 25px;
+}
+#top_right .lileft {
+	width: 98px;
+	padding-left: 20px;
+	line-height: 25px;
+}
+#top_right .libring{
+	line-height: 23px;
+	padding: 2px 3px 0px 0px;
+	color: #fb9c3e;
+	font-weight: 600;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+/*end top_right*/
+#banner {
+	height: 98px;
+	overflow: hidden;
+}
+#price {
+	height: 198px;
+	background: #fefcbf;
+	overflow: hidden;
+}
+/*begin price_left*/
+.price_left {
+	width: 469px;
+	height: 198px;
+	float: left;
+	overflow: hidden;	
+}
+.price_left p {
+	width: 165px;
+	height: 63px;
+	line-height: 21px;
+	overflow: hidden;
+	color: #6f6f6f;
+	margin: 55px 0px 0px 258px;
+}
+.price_left ul {
+	width: 192px;
+	height: 46px;
+	margin: 5px 0px 0px 275px;
+}
+.price_left ul li {
+	float: left;
+}
+.price_left .libutton {
+	width: 72px;
+	height: 26px;
+	padding: 0px 0px 20px 0px;
+}
+.price_left .linum {
+	width: 119px;
+	text-align: right;
+	height: 26px;
+	line-height: 26px;
+	padding: 16px 0px 0px 0px;
+	font-size: 26px;
+	font-weight: 600;
+	color: #e05b32;
+}
+/*end price_left*/
+.price_right {
+	width: 496px;
+	height: 198px;
+	float: right;
+	overflow: hidden;	
+}
+.price_right p {
+	width: 165px;
+	height: 63px;
+	line-height: 21px;
+	overflow: hidden;
+	color: #6f6f6f;
+	margin: 55px 0px 0px 175px;
+}
+.price_right ul {
+	width: 190px;
+	height: 46px;
+	margin: 5px 0px 0px 191px;
+}
+.price_right ul li {
+	float: left;
+}
+.price_right .libutton {
+	width: 72px;
+	height: 26px;
+	padding: 0px 0px 20px 0px;
+}
+.price_right .linum {
+	width: 118px;
+	text-align: right;
+	height: 26px;
+	line-height: 26px;
+	padding: 16px 0px 0px 0px;
+	font-size: 26px;
+	font-weight: 600;
+	color: #e05b32;
+}
+/*end price_right*/
+/*begin gift*/
+.gift {
+	width: 1003px;
+	height: 331px;
+	margin: 0px auto;
+	background: #fefcbf;
+	overflow: hidden;
+	padding: 19px 0px 0px 0px;
+}
+.gift ul {
+	float: left;
+	height: 331px;
+}
+.gift ul li {
+	float: left;
+}
+.price_left .linum .linum_small,.price_right .linum .linum_small,.gift1 .linum .linum_small,.gift2 .linum .linum_small,.gift3 .linum .linum_small,.gift4 .linum .linum_small,.gift5 .linum .linum_small,.gift6 .linum .linum_small,.gift7 .linum .linum_small,.gift8 .linum .linum_small{
+	font-size: 20px;
+}
+/*begin gift1*/
+.gift1 {	
+	width: 240px;	
+}
+.gift1 .litext {
+	width: 150px;
+	height: 54px;
+	line-height: 18px;
+	overflow: hidden;
+	padding: 193px 0px 0px 53px;
+}
+.gift1 .libutton {
+	width: 73px;
+	height: 28px;
+	padding: 10px 0px 20px 61px;
+}
+.gift1 .linum {
+	width: 105px;
+	text-align: right;
+	height: 26px;
+	line-height: 26px;
+	padding: 28px 0px 0px 0px;
+	font-size: 26px;
+	font-weight: 600;
+	color: #e05b32;
+}
+/*end gift1*/
+/*begin gift2*/
+.gift2 {
+	width: 245px;	
+}
+.gift2 .litext {
+	width: 150px;
+	height: 54px;
+	line-height: 18px;
+	overflow: hidden;
+	padding: 193px 0px 0px 60px;
+}
+.gift2 .libutton {
+	width: 73px;
+	height: 28px;
+	padding: 10px 0px 20px 63px;
+}
+.gift2 .linum {
+	width: 106px;
+	text-align: right;
+	height: 26px;
+	line-height: 26px;
+	padding: 28px 0px 0px 0px;
+	font-size: 26px;
+	font-weight: 600;
+	color: #e05b32;
+}
+/*end gift2*/
+/*begin gift3*/
+.gift3 {
+	width: 244px;	
+}
+.gift3 .litext {
+	width: 150px;
+	height: 54px;
+	line-height: 18px;
+	overflow: hidden;
+	padding: 193px 0px 0px 56px;
+}
+.gift3 .libutton {
+	width: 73px;
+	height: 28px;
+	padding: 10px 0px 20px 63px;
+}
+.gift3 .linum {
+	width: 105px;
+	text-align: right;
+	height: 26px;
+	line-height: 26px;
+	padding: 28px 0px 0px 0px;
+	font-size: 26px;
+	font-weight: 600;
+	color: #e05b32;
+}
+/*end gift3*/
+/*begin gift4*/
+.gift4 {
+	width: 245px;	
+}
+.gift4 .litext {
+	width: 150px;
+	height: 54px;
+	line-height: 18px;
+	overflow: hidden;
+	padding: 193px 0px 0px 60px;
+}
+.gift4 .libutton {
+	width: 73px;
+	height: 28px;
+	padding: 10px 0px 20px 63px;
+}
+.gift4 .linum {
+	width: 107px;
+	text-align: right;
+	height: 26px;
+	line-height: 26px;
+	padding: 28px 0px 0px 0px;
+	font-size: 26px;
+	font-weight: 600;
+	color: #e05b32;
+}
+/*end gift4*/
+/*begin gift5*/
+.gift5 {
+	width: 264px;	
+}
+.gift5 .litext {
+	width: 150px;
+	height: 54px;
+	line-height: 18px;
+	overflow: hidden;
+	padding: 195px 0px 0px 60px;
+}
+.gift5 .libutton {
+	width: 73px;
+	height: 28px;
+	padding: 8px 0px 20px 65px;
+}
+.gift5 .linum {
+	width: 107px;
+	text-align: right;
+	height: 26px;
+	line-height: 26px;
+	padding: 26px 0px 0px 0px;
+	font-size: 26px;
+	font-weight: 600;
+	color: #e05b32;
+}
+/*end gift5*/
+/*begin gift6*/
+.gift6 {
+	width: 227px;	
+}
+.gift6 .litext {
+	width: 150px;
+	height: 54px;
+	line-height: 18px;
+	overflow: hidden;
+	padding: 195px 0px 0px 43px;
+}
+.gift6 .libutton {
+	width: 73px;
+	height: 28px;
+	padding: 8px 0px 20px 48px;
+}
+.gift6 .linum {
+	width: 104px;
+	text-align: right;
+	height: 26px;
+	line-height: 26px;
+	padding: 26px 0px 0px 0px;
+	font-size: 26px;
+	font-weight: 600;
+	color: #e05b32;
+}
+/*end gift6*/
+/*begin gift7*/
+.gift7 {
+	width: 244px;	
+}
+.gift7 .litext {
+	width: 150px;
+	height: 54px;
+	line-height: 18px;
+	overflow: hidden;
+	padding: 195px 0px 0px 58px;
+}
+.gift7 .libutton {
+	width: 73px;
+	height: 28px;
+	padding: 8px 0px 20px 65px;
+}
+.gift7 .linum {
+	width: 105px;
+	text-align: right;
+	height: 26px;
+	line-height: 26px;
+	padding: 26px 0px 0px 0px;
+	font-size: 27px;
+	font-weight: 600;
+	color: #e05b32;
+}
+/*end gift7*/
+/*begin gift8*/
+.gift8 {
+	width: 244px;	
+}
+.gift8 .litext {
+	width: 150px;
+	height: 54px;
+	line-height: 18px;
+	overflow: hidden;
+	padding: 193px 0px 0px 58px;
+}
+.gift8 .libutton {
+	width: 73px;
+	height: 28px;
+	padding: 10px 0px 20px 60px;
+}
+.gift8 .linum {
+	width: 108px;
+	text-align: right;
+	height: 26px;
+	line-height: 26px;
+	padding: 28px 0px 0px 0px;
+	font-size: 26px;
+	font-weight: 600;
+	color: #e05b32;
+}
+/*end gift8*/
+/*end gift*/
+/*begin message*/
+#message {
+	width: 936px;
+	padding: 19px 34px 19px 33px;
+}
+.message_img {
+	width: 936px;
+	height: 17px;
+	overflow: hidden;
+}
+.message_text {
+	width: 915px;
+	margin-left: 1px;
+	height: auto;
+	overflow: auto;
+	border-left: 10px solid #fb9c3e;
+	border-right: 10px solid #fb9c3e;
+	background: #fff;
+	color: #6f6f6f;
+}
+.message_text p {
+	margin: 0px;
+	padding: 6px 22px 3px 22px;
+	line-height: 22px;
+}
+.message_text a:link,.message_text a:visited,.message_text a:hover {
+	color: #d44a20;
+	text-decoration: underline;
+	font-weight: 600;
+}
+/*end message*/

@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+.menu{ top:104px;}
+.couponLists .coupon{ margin-left:26px;}
+
+.merchantCoupon .bgBox{ width:auto;}
+.merchantCoupon .couponLists .coupon{ margin:0 5px;}
+
+.remainCoupon .couponLists{ width:auto;}
+.remainCoupon .couponLists .coupon{ margin-right:17px; margin-left:0;}
+
+.ratingCoupon li span{ left:-25px;}
+
+
+.merchantInfoRight{ width:480px; float:left;}
+
+.merchantDetailBox h2{ margin-bottom:0; padding-bottom:0; }
+.merchantDetail{ padding-left:0;}
+.merchantDetailBox{ height:140px; padding-bottom:10px;}
+
+.ratingCoupon{ float:left; width:355px;}
+
+.famousLogo{ float:left;}
+
+
+.famousChannel ul{ padding:0; margin:0; float:left;}
+.famousLogo .seeMore{ bottom:-24px;}
+.famousLogo .moreHide{ bottom:-24px;}
+.famousChannel li a:link, .famousChannel li a:visited, .famousChannel li a:hover, .famousChannel li a:active{  padding: 0 27px;}
+.famousChannel li.homeSelect a:link, .famousChannel li.homeSelect a:visited, .famousChannel li.homeSelect a:hover, .famousChannel li.homeSelect a:active,.famousChannel li.home a:link, .famousChannel li.home a:visited, .famousChannel li.home a:hover, .famousChannel li.home a:active{ width:60px; padding: 0 27px;}
+.famousChannel li.homeSelect,.famousChannel li.home{ width:114px}
+
+
+.famousChannel li.border a:link,
+.famousChannel li.border a:visited,
+.famousChannel li.border a:hover,
+.famousChannel li.border a:active{ border:0; padding: 0 26px 0 27px;}
+
+
+
+.famousChannel li.home a:link span,
+.famousChannel li.home a:visited span, 
+.famousChannel li.home a:hover span,
+.famousChannel li.home a:active span, 
+.famousChannel li.homeSelect a:link span,
+.famousChannel li.homeSelect a:visited span, 
+.famousChannel li.homeSelect a:hover span, 
+.famousChannel li.homeSelect a:active span{ width:115px}
+	 
+ 
+ h2{ line-height:30px; padding-bottom:0px;}
+.scrollCoupon, .dotRed{margin: 0 18px;}

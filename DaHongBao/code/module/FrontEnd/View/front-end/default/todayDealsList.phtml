@@ -1,0 +1,16 @@
+<?php if ($this->todayDealsList):?>
+<div class="todayCoupon">
+	<div class="line"></div>
+	<h2>今日精选促销</h2>
+	<div class="todayCouponList">
+		<ul>
+			<?php foreach ($this->todayDealsList as $todayDeals):?>
+			<li>
+			<span><img width="100" height="46" alt="" src="<?php print $todayDeals['LogoFile'];?>"></span>
+			<a target="_blank" href="<?php print $todayDeals['DealsDetailUrl'];?>" title="<?php print $this->escapeHtml($todayDeals['CouponName']);?>"><?php print strip_tags($todayDeals['CouponName']);?>！</a>
+			</li>
+			<?php endforeach;?>
+		</ul>
+	</div>
+</div>
+<?php endif;?>

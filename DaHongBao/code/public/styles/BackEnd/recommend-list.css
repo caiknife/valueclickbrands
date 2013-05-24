@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+.list{
+	width:92%;
+}
+
+.list li{
+	float:left;
+    width:30%;
+    margin-right:5px;
+    margin-bottom: 5px;
+    height:160px;
+}
+.list li .orderNumber{
+	color:red;
+    font-size:16px;
+}
+
+.MerchantName{
+	color:#669533;
+}
+.table th, .table td{
+	text-align: left;
+}
+
+.table{
+	height:120px;
+}

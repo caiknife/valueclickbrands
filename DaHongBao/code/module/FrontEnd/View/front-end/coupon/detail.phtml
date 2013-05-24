@@ -1,0 +1,193 @@
+<?php
+$this->headTitle(strip_tags($this->couponInfo['CouponName'])."_大红包优惠券");
+$this->headMeta()->appendName("keywords", strip_tags($this->couponInfo['CouponName']).",优惠券, ".strip_tags($this->couponInfo['CouponName']));
+$this->headMeta()->appendName("description", "大红包优惠券网站第一时间提供".strip_tags($this->couponInfo['CouponName'])."信息，让用户享受到真正的优惠。");
+$this->headLink()->prependStylesheet($this->basePath().'/styles/CN/coupon.css');
+?>
+<div class="main">
+    <div class="famous">
+        <?php print $this->partial('front-end/default/topCategoryList.phtml'); ?>
+        <?php print $this->partial('front-end/default/hotMerchantList.phtml'); ?>  
+    </div>
+
+    <div class="breadcrumb ">
+        <span>当前位置：</span> <a href="/">大红包</a>  &gt; <a href="<?php print $this->couponUrl;?>">优惠券</a>  &gt;  <?php print $this->couponInfo['MerchantName'];?><?php print strip_tags($this->couponInfo['CouponName']);?>
+    </div>
+
+    <div class="content">
+        <div class="contentLeft">
+            <div class="merchantDetail">
+                <div class="decorate"></div>
+                <div class="merchantDetailBox">
+                    <h2><?php print $this->couponInfo['MerchantName'];?><span><?php print strip_tags($this->couponInfo['CouponName']);?></span></h2>
+                    <div class="seeMore"><a href="<?php print $this->couponInfo['MerchantDetailUrl'];?>">更多优惠券&gt;&gt;</a></div>
+                    <div class="couponLists">
+                        <div class="coupon">
+                            <div class="couponbox">
+                                <p class="merchantName"></p>
+                                <img src="<?php print __IMAGE_DOMAIN_NAME."".$this->couponInfo['LogoFile'];?>" width="100" height="47" />
+                                <p class="info">
+                                <?php
+                                $couponName = strip_tags($this->couponInfo['CouponName']);
+                                $replace = array($this->couponInfo['CouponAmount'], $this->couponInfo['CouponReduction'], $this->couponInfo['CouponDiscount']);
+                                rsort($replace);
+                                foreach ($replace as $key => $r) {
+                                    $key ++;
+                                    if ($r > 0) {
+                                        $couponName = str_replace($r, "<span>\\".$key."</span>", $couponName);
+                                    }
+                                }
+                                foreach ($replace as $key => $r) {
+                                    $key ++;
+                                    if ($r > 0) {
+                                        $couponName = str_replace("\\".$key, $r, $couponName);
+                                    }
+                                }
+                                ?>
+                                <?php print $couponName;?>
+                                </p>
+                                <p class="useIt">
+                                    <?php if ($this->couponInfo['CouponCodeUser']):?>
+                                        <a href="javascript:;" onclick="return false;">您已领取</a>
+                                    <?php elseif (time() > strtotime($this->couponInfo['CouponEndDate'])):?>
+                                        <a href="javascript:;" onclick="return false;">已过期</a>
+                                    <?php elseif ($this->couponInfo['TotalCnt'] == 0):?>
+                                        <a href="javascript:;" onmouseup="redirectLink('<?php print $this->couponInfo['OfferUrl'];?>', this)" target="_blank">立即使用</a>
+                                    <?php elseif ($this->couponInfo['LeaveCnt'] == 0):?>
+                                        <a href="javascript:;" onclick="return false;">已领取完</a>
+                                    <?php else:?>
+                                        <a href="javascript:;" onclick="getCouponCode('<?php print $this->couponInfo['CouponID'];?>', this)">立即领取</a>
+                                    <?php endif;?>
+                                </p>
+                            </div>
+                        </div>
+                        <ul>
+                            <?php if ($this->couponInfo['UsePoints']):?><li>所需积分：<span><?php print $this->couponInfo['UsePoints'];?></span> 积分</li><?php endif;?>
+                            <?php if ($this->couponInfo['CouponEndDate'] > '0000-00-00 00:00:00' && $this->couponInfo['CouponEndDate'] < '3333-03-03 00:00:00'):?>
+                            <li class="date">有效期：<?php print date('Y-m-d', strtotime($this->couponInfo['CouponStartDate']));?>至<?php print date('Y-m-d', strtotime($this->couponInfo['CouponEndDate']));?></li>
+                            <?php endif;?>
+                            <li>人气：<span><?php print $this->couponInfo['ViewCnt'];?></span></li>
+                            <?php if (strip_tags($this->couponInfo['CouponRestriction'])):?>
+                            <li>使用限制：<?php print strip_tags($this->couponInfo['CouponRestriction']);?></li>
+                            <?php endif;?>
+                            <li class="link">
+                                <?php if (!$this->couponInfo['CouponFavorite']):?>
+                                <a href="javascript:;" onclick="favorite('<?php print $this->couponInfo['CouponID'];?>', this)" class="collection">收藏</a><!--<a href="#howtouse" class="color">如何使用京东优惠券 ？</a>-->
+                                <?php else:?>
+                                <a href="javascript:;" onclick="return false;" class="collectioned">已收藏</a>
+                                <?php endif;?>    
+                            </li>
+                            <li class="button">
+                                <?php if ($this->couponInfo['CouponCodeUser']):?>
+                                    <a href="javascript:;" onclick="return false;" class="getIted">您已领取</a>
+                                <?php elseif (time() > strtotime($this->couponInfo['CouponEndDate'])):?>
+                                    <a href="javascript:;" onclick="return false;" class="getIted">已过期</a>
+                                <?php elseif ($this->couponInfo['TotalCnt'] == 0):?>
+                                    <a href="javascript:;" onmouseup="redirectLink('<?php print $this->couponInfo['OfferUrl'];?>', this)" target="_blank" class="getIt">立即使用</a>
+                                <?php elseif ($this->couponInfo['LeaveCnt'] == 0):?>
+                                    <a href="javascript:;" onclick="return false;" class="getIted">已领取完</a>
+                                <?php else:?>
+                                    <a href="javascript:;" onclick="getCouponCode('<?php print $this->couponInfo['CouponID'];?>', this, 'getIted')" class="getIt">立即领取</a>
+                                <?php endif;?>
+                                <a href="javascript:;" onmouseup="redirectLink('<?php print $this->couponInfo['OfferUrl'];?>', this)" target="_blank" class="go">去商城购物</a>
+                            </li>
+                        </ul> 
+                    </div>
+                    <div class="share">
+                        <!-- Baidu Button BEGIN -->
+                        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+                        <span class="bds_more">分享到：</span>
+                        <a class="bds_tsina">新浪微博</a>
+                        <a class="bds_sqq">QQ好友</a>
+                        <a class="bds_tqq">腾讯微博</a>
+                        <a class="bds_renren">人人网</a>
+                        <a class="bds_kaixin001">开心网</a>
+                        <a class="bds_hi">百度空间</a>
+                        <a class="shareCount"></a>
+                        </div>
+                        <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=762856" ></script>
+                        <script type="text/javascript" id="bdshell_js"></script>
+                        <script type="text/javascript">
+                        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+                        </script>
+                        <!-- Baidu Button END -->
+                    </div>
+                </div>
+            </div>
+            <div class="useStep">
+                <?php if ($this->couponInfo['CouponDescription']):?>
+                <h2>优惠券详情</h2>
+                <?php print $this->couponInfo['CouponDescription'];?>
+                <?php endif;?>
+                <div class="title"><?php print $this->couponInfo['MerchantName'];?>介绍</div>
+                <p class="merchantDesc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php print $this->couponInfo['DescriptionCN'];?></p>
+                <div class="tips">
+                <h4>温馨提示：</h4> 
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本券为“收录券”，不是大红包直接提供优惠券，而是收录其它网站的优惠券信息。收录其它网站的优惠券是为了方便大家找到想要的优惠券，需要大家访问提供的网址去免费领取或购买。 大红包不支持批发，代购，倒卖优惠券等违规方式，如果发现此类违规行为或其它恶意领取优惠券行为，我们将公开优惠券，购买的券也会不退款，并封掉支付宝账号！</p>
+                </div>
+            </div>
+            <?php if ($this->couponList):?>
+            <div class="remainCoupon">
+                <h2><?php print $this->couponInfo['MerchantName'];?>其他优惠券</h2>
+                <div class="seeMore">
+                    <a href="<?php print $this->couponInfo['MerchantDetailUrl'];?>">更多&gt;&gt;</a>
+                </div>
+                <div class="couponLists">
+                    <?php foreach ($this->couponList as $key => $couponList):?>
+                    <div class="coupon">
+                        <div class="couponbox">
+                            <p class="merchantName"><a target="_blank" href="<?php print $couponList['MerchantInfo']['MerchantDetailUrl'];?>"><?php print $couponList['MerchantName'];?></a></p>
+                            <a target="_blank" href="<?php print $couponList['CouponDetailUrl'];?>"><img src="<?php print __IMAGE_DOMAIN_NAME."".$couponList['MerchantInfo']['LogoFile'];?>" width="100" height="47" /></a>
+                            <p class="info"><a target="_blank" href="<?php print $couponList['CouponDetailUrl'];?>">
+                            <?php
+                            $couponName = strip_tags($couponList['CouponName']);
+                            $replace = array($couponList['CouponAmount'], $couponList['CouponReduction'], $couponList['CouponDiscount']);
+                            rsort($replace);
+                            foreach ($replace as $key => $r) {
+                                $key ++;
+                                if ($r > 0) {
+                                    $couponName = str_replace($r, "<span>\\".$key."</span>", $couponName);
+                                }
+                            }
+                            foreach ($replace as $key => $r) {
+                                $key ++;
+                                if ($r > 0) {
+                                    $couponName = str_replace("\\".$key, $r, $couponName);
+                                }
+                            }
+                            ?>
+                            <?php print $couponName;?>
+                            </a></p>
+                            <p class="useIt">
+                            <?php if (time() > strtotime($couponList['CouponEndDate'])):?>
+                            <a href="javascript:;" onclick="return false;">该券已过期</a>
+                            <?php else:?>
+                            <a target="_blank" href="<?php print $couponList['CouponDetailUrl'];?>">立即领取</a>
+                            <?php endif;?>
+                            </p>
+                        </div>
+                    </div>
+                    <?php endforeach;?>
+                    <div class="cl"></div>
+                </div>
+            </div>
+            <?php endif;?>
+            <!--
+            <div class="howToUse">
+                <h2><?php print $this->couponInfo['MerchantName'];?>优惠券<span>如何使用</span>？</h2>
+                <?php print $dealsInfo['DescriptionCN'];?>
+            </div>
+            -->
+        </div>
+        <div class="sidebar">
+            <?php print $this->partial('front-end/default/googleAdsList.phtml'); ?>
+        
+            <?php print $this->partial('front-end/default/relatedCouponList.phtml'); ?>
+        
+            <?php print $this->partial('front-end/default/newCouponList.phtml'); ?> 
+        
+            <?php print $this->partial('front-end/default/hotCouponList.phtml'); ?>
+        </div>
+        <div class="cl"></div>
+    </div>
+</div>

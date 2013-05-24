@@ -1,0 +1,233 @@
+<!--<?php
+include_once PrintEot('left');
+if(empty($action)){
+print <<<EOT
+-->
+<table width="98%" align="center" cellspacing="1" cellpadding="3" class="i_table">
+	<tr>
+		<td class="b">
+			[<b>分卷管理</b>]
+			[<a href="$basename&action=movedata">转移回复</a>]
+		</td>
+	</tr>
+</table><br />
+<table width="98%" align="center" cellspacing="1" cellpadding="3" class="i_table">
+	<tr><td class="head" colspan="2"><b>提示信息</b></td></tr>
+	<tr><td class="b" style="line-height:150%">数据库分卷技术实现将一个数据量非常大的表拆分成多个数据较小的表，从而提高数据库查询效率，让您的论坛在超大数据量下仍然能高效运行，目前支持回复表（pw_posts）、主题内容表（pw_tmsgs）进行分卷操作</td></tr>
+</table><br />
+<form action="$basename" method="post">
+<input type="hidden" name="action" value="create" />
+<table width="98%" align="center" cellspacing="1" cellpadding="3" class="i_table">
+<tr><td class="head" colspan="3">创建新表</td></tr>
+<tr class="b">
+	<td align="center" style="padding:20px">创建一张新表，供开启分卷功能或做数据转移使用<br /><br />
+	<center><input type="radio" name="type" value="1" checked />主题表 <input type="radio" name="type" value="2" />回复表 <input type="submit" value=" 创建新表 " /></center></td>
+</tr></table>
+</form>
+<br />
+<table width="98%" align="center" cellspacing="1" cellpadding="3" class="i_table">
+	<tr><td class="head" colspan="2"><b>提示信息</b></td></tr>
+	<tr><td class="b" style="line-height:150%"><b>主题内容表分卷功能使用步骤：</b><br />　1. 进入 后台 -> 核心设置 关闭论坛<br />　2. 创建一张新的主题表 <br />　3. 自定义 tid 分界点<br />　4. 当 tid 范围出现蓝色字体并有“转移”字样时，表明该表的数据与其他表存在重叠区间，可使用转移功能将其转移到相应表中。<br />　5. 进入 后台 -> 核心设置 开启论坛<br />
+	</td></tr>
+</table><br />
+<form action="$basename" method="post">
+<input type="hidden" name="step" value="3" />
+<table width="98%" align="center" cellspacing="1" cellpadding="3" class="i_table">
+	<tr><td class="head" colspan="7">已有主题内容表信息（pw_tmsgs）</td></tr>
+	<tr class="head_2" align="center">
+		<td width="15%">表名</td>
+		<td width="15%">记录数</td>
+		<td width="15%">数据表大小(M)</td>
+		<td width="*">tid范围</td>
+		<td width="20%">创建时间</td>
+		<td width="10%">tid分界点</td>
+	</tr>
+<!--
+EOT;
+foreach($tmsgdb as $key=>$table){
+print <<<EOT
+-->
+	<tr class="b" align="center">
+		<td>$table[Name]</td>
+		<td>$table[Rows]</td>
+		<td>$table[Data_length]</td>
+<!--
+EOT;
+if($table[tmin] && ($table[tidmax] && $table[tmax]>$table[tidmax] || $table[tmin]<=$table[tidmin])){print <<<EOT
+-->
+		<td><font color="blue">$table[tmin] - $table[tmax]</font> [<a href="$basename&action=movetmsg&id=$key">转移</a>]</td>
+<!--
+EOT;
+}else{print <<<EOT
+-->
+		<td>$table[tmin] - $table[tmax]</td>
+<!--
+EOT;
+}print <<<EOT
+-->
+		<td>$table[Create_time]</td>
+<!--
+EOT;
+if(!$key){print <<<EOT
+-->
+		<td> -- </td>
+<!--
+EOT;
+}else{print <<<EOT
+-->
+		<td><input type="text" size="8" name="ttable[$key]" value="$tlistdb[$key]" /></td>
+<!--
+EOT;
+}print <<<EOT
+-->
+	</tr>
+<!--
+EOT;
+}print <<<EOT
+-->
+</table><br />
+<center><input type="submit" value="提 交" /></center>
+</form>
+<table width="98%" align="center" cellspacing="1" cellpadding="3" class="i_table">
+	<tr><td class="head" colspan="2"><b>提示信息</b></td></tr>
+	<tr><td class="b" style="line-height:150%"><b>回复表分卷功能使用步骤：</b><br />　1. 进入 后台 -> 核心设置 关闭论坛<br />　2. 创建一张新的回复表 <br />　3. 选择将新创建的回复表设置为“当前回复表”，所有新发表的回复数据将记录在这个表里<br />　4. 进入 后台 -> 核心设置 开启论坛<br />　数据库分卷完成，新发表的回复数据都将记录在“当前回复表”中！<br /><br /><font color="red">注：</font>如果您原来的‘回复表(pw_posts)’已经非常大，您可以使用‘数据转移’功能，来降低原来的回复表的负载，进入数据“转移功能”查看详细介绍</td></tr>
+</table><br />
+<form action="$basename" method="post">
+<input type="hidden" name="step" value="5" />
+<table width="98%" align="center" cellspacing="1" cellpadding="3" class="i_table">
+	<tr><td class="head" colspan="7">已有回复表信息（pw_posts）</td></tr>
+	<tr class="head_2" align="center">
+		<td width="15%">表名</td>
+		<td width="15%">记录数</td>
+		<td width="15%">数据表大小(M)</td>
+		<td width="*">tid范围</td>
+		<td width="20%">创建时间</td>
+		<td width="10%">当前回复表</td>
+	</tr>
+<!--
+EOT;
+foreach($postdb as $key=>$table){
+print <<<EOT
+-->
+	<tr class="b" align="center">
+		<td>$table[Name]</td>
+		<td>$table[Rows]</td>
+		<td>$table[Data_length]</td>
+		<td>$table[tmin] - $table[tmax]</td>
+		<td>$table[Create_time]</td>
+		<td><input type="radio" name="ktable" value="$table[key]" $table[sel] /></td>
+	</tr>
+<!--
+EOT;
+}print <<<EOT
+-->
+</table><br	/>
+<center><input type="submit" value="更改当前回复表" /></center>
+</form>
+<!--
+EOT;
+}elseif($action=='movedata'){ print <<<EOT
+-->
+<table width="98%" align="center" cellspacing="1" cellpadding="3" class="i_table">
+	<tr>
+		<td class="b">
+			[<a href="$basename">分卷管理</a>]
+			[<b>转移回复</b>]
+		</td>
+	</tr>
+</table>
+<br />
+<table width="98%" align="center" cellspacing="1" cellpadding="3" class="i_table">
+	<tr><td class="head" colspan="2"><b>提示信息</b></td></tr>
+	<tr class="b">
+		<td colspan="2"><b>数据转移使用步骤：</b><br />　1. 进入 后台 -> 核心设置 关闭论坛<br />　2. 在“分卷管理”中创建一张新的回复表<br />　3. 设置数据转移选项：<br />　　源数据表：　要拆分的数据库表<br />　　目标数据表：　拆分的目标数据库表<br />　　指定tid范围：　指定要转移的tid（主题id）范围<br />　　每次转移帖子数：　根据服务器负载调整该值<br />　4. 点击提交按钮开启转移数据，程序会自动完成数据转移，请耐心等待，数据转移全部完成后会有相关提示<br />　5. 数据转移完成后，选择一张表做为接收新数据的表，即“当前回复表”<br />　6. 进入 后台 -> 核心设置 开启论坛<br />　数据转移完成，新发表的回复数据都将保存在“当前回复表”中！<br /><br /><font color="red">注：</font>此功能比较消耗数据库资源，不要经常使用，使用时请务必先将论坛关闭！</td>
+	</tr>
+</table>
+<br />
+<form action="$basename" method="post">
+<input type="hidden" name="action" value="$action" />
+<input type="hidden" name="step" value="1" />
+<table width="98%" align="center" cellspacing="1" cellpadding="3" class="i_table">
+	<tr class="head">
+		<td colspan="2">数据转移</td>
+	</tr>
+	<tr class="b">
+		<td width="30%">源数据表</td>
+		<td width="*"><select name="tfrom">$table_sel</select></td>
+	</tr>
+	<tr class="b">
+		<td width="30%">目标数据表</td>
+		<td width="*"><select name="tto">$table_sel</select></td>
+	</tr>
+	<tr>
+		<td class="b">指定 tid 范围<br>(可只用单个条件)</td>
+		<td class="b">
+			<input type="text" name="tstart" size="8" />
+			&nbsp;-&nbsp;
+			<input type="text" name="tend" size="8" />
+		</td>
+	</tr>
+	<tr>
+		<td class="b">每次转移帖子数</td>
+		<td class="b"><input type="text" size="8" name="lines" value="200" /></td>
+	</tr>
+</table>
+<br	/>
+<center><input type="submit" value="提 交" /></center>
+</form>
+<!--
+EOT;
+}elseif($action=='movetmsg'){ print <<<EOT
+-->
+<table width="98%" align="center" cellspacing="1" cellpadding="3" class="i_table">
+	<tr>
+		<td class="b">
+			[<a href="$basename">分卷管理</a>]
+			[<a href="$basename&action=movedata">转移回复</a>]
+			[<b>转移主题</b>]
+		</td>
+	</tr>
+</table>
+<br />
+<table width="98%" align="center" cellspacing="1" cellpadding="3" class="i_table">
+	<tr><td class="head" colspan="2"><b>提示信息</b></td></tr>
+	<tr class="b">
+		<td colspan="2">该功能将会把 $pw_tmsgs 表中不在设定 tid 范围内的数据，转移到相应的数据表中去!<br />
+		请根据服务器负载情况适当调整每次转移的帖子数</td>
+	</tr>
+</table>
+<br />
+<form action="$basename" method="post">
+<input type="hidden" name="action" value="$action" />
+<input type="hidden" name="id" value="$id" />
+<input type="hidden" name="step" value="1" />
+<input type="hidden" name="tmin" value="$tmin" />
+<input type="hidden" name="tmax" value="$tmax" />
+<table width="98%" align="center" cellspacing="1" cellpadding="3" class="i_table">
+	<tr class="head">
+		<td colspan="2">数据转移</td>
+	</tr>
+	<tr class="b">
+		<td width="30%">数据表</td>
+		<td width="*">$pw_tmsgs</td>
+	</tr>
+	<tr class="b">
+		<td width="30%">数据表 tid 范围</td>
+		<td width="*">$tmin - $tmax</td>
+	</tr>
+	<tr>
+		<td class="b">需转移的数据 tid 范围</td>
+		<td class="b">$tiderror</td>
+	</tr>
+	<tr>
+		<td class="b">每次转移帖子数</td>
+		<td class="b"><input type="text" size="8" name="lines" value="5000" /></td>
+	</tr>
+</table>
+<br	/>
+<center><input type="submit" value="确认提交" /></center>
+</form>
+<!--
+EOT;
+}include_once PrintEot('adminbottom');
+?>-->

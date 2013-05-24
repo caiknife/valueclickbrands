@@ -1,0 +1,41 @@
+<?php if ($this->couponList):?>
+<div class="bg color1"><div class="bgBox">
+<?php foreach ($this->couponList as $key => $couponList):?>
+    <?php if ($key%3 == 0 && $key > 0):?></div></div><div class="bg <?php echo $this->cycle(array("", "color1"))->next()?>"><div class="bgBox"><?php endif;?>
+    <div class="coupon">
+        <div class="couponbox">
+            <p class="merchantName"><a target="_blank" href="<?php print $couponList['MerchantInfo']['MerchantDetailUrl'];?>"><?php print $couponList['MerchantInfo']['MerchantName'];?></a></p>
+            <a target="_blank" href="<?php print $couponList['CouponDetailUrl'];?>"><img src="<?php print __IMAGE_DOMAIN_NAME."".$couponList['MerchantInfo']['LogoFile'];?>" width="100" height="47" /></a>
+            <p class="info"><a target="_blank" href="<?php print $couponList['CouponDetailUrl'];?>">
+            <?php
+            $couponName = strip_tags($couponList['CouponName']);
+            $replace = array($couponList['CouponAmount'], $couponList['CouponReduction'], $couponList['CouponDiscount']);
+            rsort($replace);
+            foreach ($replace as $key => $r) {
+                $key ++;
+                if ($r > 0) {
+                    $couponName = str_replace($r, "<span>\\".$key."</span>", $couponName);
+                }
+            }
+            foreach ($replace as $key => $r) {
+                $key ++;
+                if ($r > 0) {
+                   $couponName = str_replace("\\".$key, $r, $couponName);
+                }
+            }
+            ?>
+            <?php print $couponName;?>
+            </a></p>
+            <p class="useIt">
+            <?php if (time() > strtotime($couponList['CouponEndDate'])):?>
+            <a href="javascript:;" onclick="return false;">该券已过期</a>
+            <?php else:?>
+            <a target="_blank" href="<?php print $couponList['CouponDetailUrl'];?>">立即领取</a>
+            <?php endif;?>
+            </p>
+        </div>
+    </div>
+<?php endforeach;?>
+</div></div>
+<div class="cl"></div>
+<?php endif;?>

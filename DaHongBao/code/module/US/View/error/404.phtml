@@ -1,0 +1,8 @@
+<?php if ($this->searchErrorTpl):?>
+    <?php print $this->partial($this->searchErrorTpl.".phtml"); ?>
+<?php else:?>
+    <?php 
+    $this->headTitle("抱歉！您输入的URL不存在－海外购物找优惠券找海淘攻略教程首选大红包网站");
+    ?>
+    <div class="pagenotfound"><h1>404，页面不存在。</h1>抱歉！您输入的URL不存在。</div>
+<?php endif;?>

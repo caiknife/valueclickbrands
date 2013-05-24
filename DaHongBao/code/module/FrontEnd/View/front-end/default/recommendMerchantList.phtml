@@ -1,0 +1,14 @@
+<!-- 推荐商城 -->
+<?php if ($this->recommendMerchantList):?>
+<div class="ratingCoupon">
+	<div class="line"></div>
+	<h2>推荐商城</h2>
+	<div class="ratingCouponList">
+		<ul>
+			<?php foreach ($this->recommendMerchantList as $key => $recommendMerchant):?>
+			<li><span<?php if ($key < 3):?> class="top"<?php endif;?>><?php print $key + 1;?></span><a target="_blank" href="<?php print $recommendMerchant['MerchantDetailUrl'];?>"><b><?php print $recommendMerchant['MerchantName'];?></b></a> ，<a target="_blank" href="<?php print $recommendMerchant['CouponDetailUrl'];?>"><?php print strip_tags($recommendMerchant['CouponName']);?></a></li>
+			<?php endforeach;?>
+		</ul>
+	</div>
+</div>
+<?php endif;?>

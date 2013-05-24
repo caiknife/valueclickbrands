@@ -1,0 +1,364 @@
+<!--<?php @require_once(D_P.'data/bbscache/newspoto.php'); print <<<EOT
+-->
+<div class="t"><table cellspacing="0" cellpadding="0" width="100%">
+	<tr class="tr2">
+	<td width="*" style="padding-right:8px; height:24px; border-top:0">
+<!--
+EOT;
+if($notice){print <<<EOT
+-->
+		<marquee direction="left" scrolldelay="1" scrollamount="2" onmouseout="if(document.all!=null){this.start()}" onmouseover="if(document.all!=null){this.stop()}">$notice
+		</marquee>
+<!--
+EOT;
+}else{ print <<<EOT
+-->
+		最近没有论坛公告
+<!--
+EOT;
+} print <<<EOT
+-->
+	</td>
+	<tr><td></td></tr>
+</table>
+<table cellspacing="0" cellpadding="0" width="100%">
+	<tr class="tr3">
+		<td style="line-height:1.4em;border-right:0;word-break:keep-all">
+<!--
+EOT;
+if($groupid=='guest'){print <<<EOT
+-->
+		<form action="login.php" method="post">
+			<div>快速登录:
+			<input class="gray input" onclick="this.value='';this.className='input black'" type="text" size="8" name="pwuser" value="输入用户名" /> <input class="input" type="password" size="8" name="pwpwd" onclick="this.value='';" /> 
+<!--
+EOT;
+list(,$logingd)=explode("\t",$db_gdcheck);
+if($logingd){
+print <<<EOT
+-->
+			<input class="gray input" type="text" maxLength="4" name="gdcode" size="4" value="验证码" onclick="this.value='';this.className='input black'" />
+			<img src="ck.php?" style="vertical-align: middle;cursor:pointer;" onclick="this.src='ck.php?'" />
+<!--
+EOT;
+}print <<<EOT
+-->
+			<input class="btn" type="submit" value="登 录" />
+			<input type="hidden" name="jumpurl" value="$db_bfn" />
+			<input type="hidden" name="step" value="2" />
+			<input type="hidden" name="cktime" value="31536000" />
+			</div>
+		</form>
+<!--
+EOT;
+}else{print <<<EOT
+-->
+		您的等级: <span class="s3">$level</span> | 上次登录时间:{$lastlodate} | 您的IP : $onlineip<br />$db_rvrcname: $userrvrc $db_rvrcunit | $db_moneyname: $winddb[money] $db_moneyunit | $db_creditname: $winddb[credit] $db_creditunit | 共发表帖子: $winddb[postnum] | <a href="personal.php" class="s5">我的主题</a> | <a href="personal.php?action=post" class="s5">我的回复</a>
+<!--
+EOT;
+}print <<<EOT
+-->
+	</td>
+	<td style="border-left:0;text-align:right;padding-right:12px;line-height:1.4em;word-break:keep-all">
+<!--
+EOT;
+if($db_todaypost==1){print <<<EOT
+-->
+		今日 $tposts 帖 | 昨日 $yposts 帖 |
+<!--
+EOT;
+}print <<<EOT
+-->
+		最高日 $hposts 帖 | <a href="job.php?action=sign">标记已读</a> | <a href="search.php?digest=1" target="_blank">精华区</a> | <a href="search.php?sch_time=all&orderway=lastpost&asc=desc&newatc=1" target="_blank">最新帖子</a> <a href="rss.php" target="_blank" title="RSS订阅本版面最新帖子"><img align="absmiddle" src="$imgpath/$stylepath/rss.png" /></a><br />
+		共 $topics 篇主题 | $article  篇帖子 | $totalmember  位会员 | 欢迎新会员 <a href="profile.php?action=show&username=$rawnewuser" target="_blank">$newmember</a>
+		</td>
+	</tr>
+</table><table width=$tablewidth border=0 cellspacing=0 cellpadding=0 align=center><tr><td>
+<table cellspacing=1 cellpadding=5 width=100% border=0 $i_table>
+<tr>
+<td width="11%" class=head height=25 align=center><span class=bold>论坛最新图片</span</td>
+<td width="30%" class=head height=25 align=center><span class=bold>最新发表主题</span></td>
+<td width="29%" class=head height=25 align=center><span class=bold>最新回复主题</span</td>
+<td width="30%" class=head height=25 align=center><span class=bold>浏览最多主题</span></td>
+</tr>
+<tr>
+<td class='f_one'><script type="text/javascript">
+<!--
+var focus_width=300 
+var focus_height=200 
+var text_height=25
+var swf_height = focus_height+text_height 
+var swf_height = focus_height+text_height
+
+var pics="$topicarray[pics]"
+var links="$topicarray[links]"
+var texts="$topicarray[texts]"
+
+document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ focus_width +'" height="'+ swf_height +'">');
+document.write('<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="pixviewer.swf"><param name="quality" value="high"><param name="bgcolor" value="#FEC0ED">');
+document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
+document.write('<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'">');
+document.write('<embed src="pixviewer.swf" wmode="opaque" FlashVars="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'" menu="false" bgcolor="#FFFFFF" quality="high" width="'+ focus_width +'" height="'+ swf_height +'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+document.write('</object>');
+
+//-->
+</script></td>
+<td class='index_two'>$newthreads</td>
+<td class='index_one'>$replythreads</td>
+<td class='index_two'>$hitthreads</td>
+</tr>
+</table>
+<tr><td>
+</table><br></div>
+<!--
+EOT;
+foreach($catedb as $key=>$cate){
+if($forumdb[$cate[fid]]){
+if($cate[across]){print <<<EOT
+-->
+<div class="t t4">
+<table cellspacing="0" cellpadding="0" width="100%" style="border-collapse: collapse; table-layout:fixed">
+	<tr><th class="h" colspan="$cate[across]"><a style="float:right" href="#" onclick="return IndexDeploy('$cate[fid]',0)"><img id="img_$cate[fid]" src="$imgpath/$stylepath/index/cate_$cate[deploy_img].gif" /></a>
+<!--
+EOT;
+if($cate[admin]){print <<<EOT
+-->
+	<span class="fr" style="margin-right:20px">分类版主：$cate[admin]</span>
+<!--
+EOT;
+}print <<<EOT
+-->
+	&raquo; <h2><a href="index.php?cateid=$cate[fid]" class="cfont">$cate[name]</a></h2></th>
+	</tr>
+	<tr></tr>
+	<tr class="tr2"><td colspan="$cate[across]" style="padding:0;border-bottom:0;font:0/0 Arial"></td></tr>
+	<tbody id="cate_$cate[fid]" style="$cate[tbody_style]">
+<!--
+EOT;
+$a=0;
+foreach($forumdb[$cate[fid]] as $key=>$forums){
+if($a==0){
+print <<<EOT
+-->
+	<tr class="tr1 tr">
+<!--
+EOT;
+}$a++;
+print <<<EOT
+-->
+		<td class="td1" style="padding:0"><div class="t3" style="margin:0px">
+			<table cellspacing="0" cellpadding="0" width="100%" border="0">
+			<tr><td colspan="3" height="20" style="padding-left:12px"><h2><a href="thread.php?fid=$forums[fid]" class="fnamecolor"><b>$forums[name]</b></a></h2></td></tr>
+			<tr valign="middle" height="15">
+				<td class="tinytxt f10" style="padding-left:12px">topic :<span class="s3"> $forums[topics]</span></td>
+				<td class="tinytxt f10">post :<span class="s3"> $forums[article]</span></td>
+<!--
+EOT;
+if($db_todaypost==1){print <<<EOT
+-->
+				<td class="tinytxt f10">today :<span class="s3"> $forums[tpost]</span></td>
+<!--
+EOT;
+}print <<<EOT
+-->
+			</tr>
+			<tr><td colspan="3" style="padding:2px 0 2px 12px; ">版主:
+<!--
+EOT;
+if($db_adminshow && $forums[admin]){print <<<EOT
+-->
+				<select name="admin" onchange="Ajump(this.options[this.selectedIndex].value)">
+					<option value=""> 版主列表</option>
+					$forums[admin]
+				</select>
+<!--
+EOT;
+}else{print <<<EOT
+-->
+				$forums[admin]
+<!--
+EOT;
+}print <<<EOT
+-->
+				</td></tr>
+			</table></div></td>
+<!--
+EOT;
+if($a==$cate[across]){
+$a=0;
+print <<<EOT
+-->
+	</tr>
+	<tr class="tr1">
+<!--
+EOT;
+}}
+if($a!=0){
+for($i=$a;$i<$cate[across];$i++){print <<<EOT
+-->
+		<td width="25%" class="f_one td1"><br /></td>
+<!--
+EOT;
+}print <<<EOT
+-->
+	</tr>
+<!--
+EOT;
+}print <<<EOT
+-->
+	</tbody>
+</table></div>
+<!--
+EOT;
+}else{print <<<EOT
+-->
+<div class="t"><table cellspacing="0" cellpadding="0" width="100%">
+	<tr><th class="h" colspan="6"><a style="float:right" href="#" onclick="return IndexDeploy('$cate[fid]',0)"><img id="img_$cate[fid]" src="$imgpath/$stylepath/index/cate_$cate[deploy_img].gif" /></a>
+<!--
+EOT;
+if($cate[admin]){print <<<EOT
+-->
+		<span class="fr a2 fn" style="margin-right:20px">分类版主：$cate[admin]</span>
+<!--
+EOT;
+}print <<<EOT
+-->
+		&raquo; <h2><a href="$db_bfn?cateid=$cate[fid]" class="cfont">$cate[name]</a></h2> </th>
+	</tr>	
+	<tr></tr>
+	<tr class="tr2">
+	<td width="*" colspan="2" class="tac">论坛</td>
+	<td style="width:6%" class="tal y-style">主题</td>
+	<td style="width:6%" class="tal y-style">文章</td>
+	<td style="width:20%" class="tal y-style">最后发表</td>
+	<td style="width:12%" class="y-style">版主</td>
+	</tr>
+	<tbody id="cate_$cate[fid]" style="$cate[tbody_style]">
+<!--
+EOT;
+foreach($forumdb[$cate[fid]] as $key=>$forums){
+print <<<EOT
+-->
+	<tr class="tr3 f_one" onMouseOver="this.className='tr3 f_two'" onMouseOut="this.className='tr3 f_one'">
+		<td class="icon tac" width="4%"><a href="thread.php?fid=$forums[fid]" target="_blank"><img src="$imgpath/$stylepath/$forums[pic].gif" /></a></td>
+		<th><a href="thread.php?fid=$forums[fid]" target="_blank">$forums[llogo]</a><h2><a href="thread.php?fid=$forums[fid]">$forums[name]</a></h2>
+<!--
+EOT;
+if($db_todaypost==1){print <<<EOT
+-->
+		<span class="s3 f12">($forums[tpost])</span>
+<!--
+EOT;
+}print <<<EOT
+-->
+		<br /><span class="smalltxt gray">$forums[descrip]</span>
+<!--
+EOT;
+if($showsub[$forums['fid']]){ print <<<EOT
+-->
+		<div>子版：<span>{$showsub[$forums[fid]]}</span></div>
+<!--
+EOT;
+} print <<<EOT
+-->
+		</th>
+		<td class="tal y-style"><span class="f10">$forums[topics]</span><br /></td>
+		<td class="tal y-style"><span class="f10">$forums[article]</span><br /></td>
+		<th>
+<!--
+EOT;
+if($forums[au]){print <<<EOT
+-->
+		<a href="$forums[ft]" class="a2">$forums[t]</a><br />
+		<span class="f12">$forums[au]</span> <span class="f9 gray">[ $forums[newtitle] ]</span>
+<!--
+EOT;
+}if($forums[pic]=='lock'){print <<<EOT
+-->
+		认证论坛
+<!--
+EOT;
+}print <<<EOT
+-->
+		&nbsp;</th>
+		<td class="y-style" style="word-break: keep-all;word-wrap:no-wrap">
+<!--
+EOT;
+if($db_adminshow && $forums[admin]){print <<<EOT
+-->
+		<select name="admin" onchange="Ajump(this.options[this.selectedIndex].value)">
+			<option value=""> 版主列表</option>		
+			$forums[admin]
+		</select>
+<!--
+EOT;
+}else{print <<<EOT
+-->
+$forums[admin]
+<!--
+EOT;
+}print <<<EOT
+-->
+		&nbsp;</td>
+	</tr>
+<!--
+EOT;
+}print <<<EOT
+-->
+	<tr><td style="height:8px"></td></tr>
+	</tbody>
+</table>
+</div>
+<!--
+EOT;
+}}}print <<<EOT
+-->
+<script language="JavaScript" src="$imgpath/Deploy.js"></script>
+<div class="t">
+<table cellspacing="0" cellpadding="0" width="100%">
+<tr>
+	<th colspan="2" class="h"><a style="float:right" href="#" onclick="return IndexDeploy('info',0)"><img id="img_info" src="$imgpath/$stylepath/index/cate_$cate_img.gif" /></a>论坛相关</th>
+</tr><tr></tr>
+
+<tr class="tr4">
+	<td colspan="2">&raquo; 在线用户<a name="online"></a> -  共 $usertotal 人在线,$userinbbs 位会员,$guestinbbs 位访客,最多 $higholnum 人发生在 $mostinbbstime </td>
+</tr>
+<tr class="tr3">
+	<td class="f_two tac" style="padding:0" width="4%"><img src="$imgpath/$stylepath/index/online.gif" /></td>
+	<td class="f_one tal" style="padding:15px 20px"><div>
+<!--
+EOT;
+foreach($showgroup as $key=>$value){
+if($value && file_exists(D_P."$imgpath/$stylepath/group/$value.gif")){print <<<EOT
+-->
+		<img src="$imgpath/$stylepath/group/$value.gif" align="absmiddle" /> $ltitle[$value]&nbsp; &nbsp; 	
+<!--
+EOT;
+}}print <<<EOT
+-->
+		<img src="$imgpath/$stylepath/group/6.gif" align="absmiddle" /> 普通会员
+<!--
+EOT;
+if($doonlinefu){
+$pw_forum='论坛';$pw_time='时间';$pw_hide='隐身';$pw_hideman='隐身会员';
+include_once(R_P.'require/showonline.php');
+print <<<EOT
+-->
+		<a name="online"></a> [<a href="index.php?online=no#online">关闭在线列表</a>] </div>
+	<div style="padding:5px 0"><hr class="hr" color="#D3EAF0" size="1"></div>
+	$index_whosonline
+<!--
+EOT;
+}else{print <<<EOT
+-->
+	<a name="online"></a> [<a href="index.php?online=yes#online">打开在线列表</a>]
+</div>
+<!--
+EOT;
+}print <<<EOT
+-->
+</td></tr></table></div>
+<!--
+EOT;
+$head_pop && require PrintEot($head_pop);
+?>-->

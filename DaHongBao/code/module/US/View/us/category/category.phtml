@@ -1,0 +1,55 @@
+<?php
+if ($this->page > 1) {
+    $this->headTitle("您正在访问第".$this->page."页 - ".$categoryName."优惠券,".$categoryName."海外购物优惠券－大红包海淘优惠券");
+    $this->headMeta()->appendName("keywords", "您正在访问第".$this->page."页 - ".$categoryName."优惠券");
+    $this->headMeta()->appendName("description", "您正在访问第".$this->page."页 -大红包海淘优惠券为您展示了最为齐全的".$categoryName."优惠券。");
+} else {
+	$this->headTitle($categoryName."优惠券,".$categoryName."海外购物优惠券－大红包海淘优惠券");
+    $this->headMeta()->appendName("keywords", $categoryName."优惠券");
+    $this->headMeta()->appendName("description", "大红包海淘优惠券为您展示了最为齐全的".$categoryName."优惠券。");
+}
+?>
+<div class="mainleft">
+	<!-- 全部优惠券分类 -->
+	<?php print $this->partial('us/default/allCategory.phtml');?>
+
+	<!-- google ads -->
+	<?php print $this->partial('us/default/googleAdsList.phtml');?>
+
+	<!-- 热门优惠券 -->
+	<?php print $this->partial('us/default/hotCouponList.phtml');?>
+
+	<!-- 热门促销 -->
+	<?php print $this->partial('us/default/hotDealsList.phtml');?>
+
+	<!-- 海淘攻略 && 优惠券使用攻略 -->
+	<?php print $this->partial('us/default/siteHelp.phtml');?>
+	
+	<!-- 邮箱订阅 -->
+	<?php print $this->partial('us/default/emailSubcription.phtml');?>
+
+	<!-- 帮助中心 -->
+	<?php print $this->partial('us/default/helpCenter.phtml');?>
+</div>
+<div class="mainright">
+	<!-- 推荐商家 -->
+	<?php print $this->partial('us/default/recommendMerchantList.phtml');?>
+
+	<!-- 优惠券列表 -->
+	<?php if ($this->couponList):?>
+	<div class="couponlistwp">
+		<div class="headline">
+			<h2><strong><?php print $categoryName;?></strong>所有优惠券</h2>
+		</div>
+		<?php print $this->partial('us/default/couponList.phtml');?>
+	</div>
+	<?php echo $this->paginationControl($this->paginator, 'Sliding', 'us/default/pagestyle.phtml', array('params' => array('cid' => $this->categoryID))); ?>
+    <?php else:?>
+    <div class="couponlistwp">
+		<div class="headline">
+			<h2>暂无<strong><?php print $categoryName;?></strong>所有优惠券</h2>
+		</div>
+		<?php print $this->partial('us/default/couponList.phtml');?>
+	</div>
+	<?php endif;?>
+</div>

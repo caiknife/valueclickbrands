@@ -1,0 +1,83 @@
+.f-ff5603-20-B {
+	font-size: 20px;
+	color: #ff5603;
+	font-weight: bold;
+}
+.f-FFFF02-20-B {
+	font-size: 20px;
+	color: #FFFF02;
+	font-weight: bold;
+}
+.f-14-000000 {
+	font-size: 14px
+	color: #000000;
+}
+.f-14-000000-B {
+	font-size: 14px; 
+	font-weight: bold; 
+}
+.f-18-000000-B {
+	font-family: "ºÚÌå";
+	font-size: 18px;
+	font-weight: bold;
+}
+.f-ff55b3 {
+	color: #ff55b3
+}
+.f-18-ffffff {
+	font-family: "ºÚÌå";
+	font-size: 18px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.f-42-ffff00 {
+	font-size: 42px;
+	color: #ffff00;
+	font-weight: bold;
+	font-style: italic;
+	font-family: Uighursoft Cap Hei;
+}
+.f-ff9900 {
+	color: #ff9900;
+	font-weight: bold;
+}
+.f-14 {
+	font-size: 14px
+}
+.f-14-B {
+	font-size: 14px; 
+	font-weight: bold; 
+}
+.f-ff9900-B {
+	color: #ff9900;
+	font-weight: bold;
+}
+.f-30-ffcc00 {
+	font-size: 30px; 
+	color: #FFCC00; 
+	font-family: Arial, Helvetica, sans-serif; 
+}.tab-f3f3f3-2 {
+	border: 2px solid #f3f3f3;
+}
+.quan-02 {
+	font-size: 12px;
+	border-right: 1px dotted #333333;
+	border-bottom: 1px dotted #333333;
+	border-left: 1px dotted #333333;
+	background-image: url(/images/quanbg.gif);
+
+}
+.f-ffcc00-24-b {
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: bold;
+	color: #FF6600;
+	text-decoration: none;
+}
+.f-24-ffff00-b {
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: bold;
+	color: #FFFF00;
+	text-decoration: none;
+}

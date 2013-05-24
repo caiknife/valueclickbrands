@@ -1,0 +1,114 @@
+<?php
+/*
+* package_name : file_name
+* ------------------
+* typecomment
+*
+* PHP versions 5
+*
+* @Author   : thomas fu(tfu@mezimedia.com)
+* @Copyright: Copyright (c) 2004-2011 Mezimedia Com. (http://www.mezimedia.com <http://www.mezimedia.com/> )
+* @license  : http://www.mezimedia.com/license/
+* @Version  : CVS: $Id: merchant-feed-config.phtml,v 1.2 2013/04/17 13:32:41 thomas_fu Exp $
+*/
+$this->headScript()->prependFile($this->basePath('js/BackEnd/feed-config.js'));
+?>
+<div class="box">
+    <div class="box-header">
+        <h2><i class="icon-box"></i>商家feed管理</h2>
+    </div>
+            <div class="table-form-filter">
+            <form  action="<?php echo $this->prefix?>" method="get">
+                <div class="input-group">
+                    <label class="">联盟:</label>
+                    <select class="select-element input-element span2" name="AffiliateID">
+                        <option value="">所有</option>
+                        <?php foreach($this->affliateList as $k => $v):?>
+                        <option value="<?php echo $k?>" <?php if($k == $this->params['AffiliateID']):?>selected="selected"<?php endif;?> >
+                        <?php echo $v['Name']?>
+                        </option>
+                        <?php endforeach;?>
+                    </select>
+                    <select name="searchType" class="select-element input-element span2">
+                        <option value="name" <?php if('name' == $this->params['searchType']):?>selected="selected"<?php endif;?> >
+                                                                         商家名
+                        </option>
+                        <option value="id" <?php if('id' == $this->params['searchType']):?>selected="selected"<?php endif;?>>
+                                                                         商家ID
+                        </option>
+                    </select>
+                    <input name="search" type="text" class="input-element" placeholder="搜索商家" value="<?php echo 
+                    $this->escapeHtml($this->params['search'])?>" style="width:180px;"/>
+                    <button class="btn btn-primary" type="submit">搜索</button>
+                    
+                    <a class="btn btn-inverse" href="<?php echo $this->prefix;?>">取消</a>
+                    <a class="btn btn-inverse" href="<?php echo $this->prefix;?>?syncMerchantFeedConfig=1">同步非联盟商家配置</a>
+                </div>
+            </form>
+            </div>
+    <div class="box-content">
+        <form action="" method="post">
+            <table class="table">
+                <thead>
+                    <tr class="row">
+                        <th>
+                            <a href='<?php echo $this->prefix?>?<?php echo $this->orderQuery?>&orderField=ID&orderType=<?php echo ($this->params['orderField'] == 'ID') ? ($this->params['orderType'] == 'ASC' ? 'DESC' : 'ASC') : 'DESC'?>'>商家ID
+                            </a>
+                        </th>
+                        <th>商家名称</th>
+                        <th>联盟名称</th>
+                        <th><a href='<?php echo $this->prefix?>?<?php echo $this->orderQuery?>&orderField=ImportFeedFileDateTime&orderType=<?php echo ($this->params['orderField'] == 'ImportFeedFileDateTime') ? ($this->params['orderType'] == 'ASC' ? 'DESC' : 'ASC') : 'DESC'?>'>导入文件名</a></th>
+                        <th><a href='<?php echo $this->prefix?>?<?php echo $this->orderQuery?>&orderField=ImportFeedFileTotalCount&orderType=<?php echo ($this->params['orderField'] == 'ImportFeedFileTotalCount') ? ($this->params['orderType'] == 'ASC' ? 'DESC' : 'ASC') : 'DESC'?>'>导入FEED记录数</a></th>
+                        <th><a href='<?php echo $this->prefix?>?<?php echo $this->orderQuery?>&orderField=ImportFeedNewCouponCount&orderType=<?php echo ($this->params['orderField'] == 'ImportFeedNewCouponCount') ? ($this->params['orderType'] == 'ASC' ? 'DESC' : 'ASC') : 'DESC'?>'>新增优惠卷</a></th>
+                        <th><a href='<?php echo $this->prefix?>?<?php echo $this->orderQuery?>&orderField=ImportFeedExistCouponCount&orderType=<?php echo ($this->params['orderField'] == 'ImportFeedExistCouponCount') ? ($this->params['orderType'] == 'ASC' ? 'DESC' : 'ASC') : 'DESC'?>'>更新优惠卷</a></th>
+                        <th><a href='<?php echo $this->prefix?>?<?php echo $this->orderQuery?>&orderField=ImportFeedNewDiscountCount&orderType=<?php echo ($this->params['orderField'] == 'ImportFeedNewDiscountCount') ? ($this->params['orderType'] == 'ASC' ? 'DESC' : 'ASC') : 'DESC'?>'>新增折扣信息</a></th>
+                        <th><a href='<?php echo $this->prefix?>?<?php echo $this->orderQuery?>&orderField=ImportFeedExistDiscountCount&orderType=<?php echo ($this->params['orderField'] == 'ImportFeedExistDiscountCount') ? ($this->params['orderType'] == 'ASC' ? 'DESC' : 'ASC') : 'DESC'?>'>更新折扣信息</a></th>
+                        <th><a href='<?php echo $this->prefix?>?<?php echo $this->orderQuery?>&orderField=ImportFeedUserDataRemainCount&orderType=<?php echo ($this->params['orderField'] == 'ImportFeedUserDataRemainCount') ? ($this->params['orderType'] == 'ASC' ? 'DESC' : 'ASC') : 'DESC'?>'>临时表剩余记录数</a></th>
+                        <th><a href='<?php echo $this->prefix?>?<?php echo $this->orderQuery?>&orderField=ImportFeedRunStatus&orderType=<?php echo ($this->params['orderField'] == 'ImportFeedRunStatus') ? ($this->params['orderType'] == 'ASC' ? 'DESC' : 'ASC') : 'DESC'?>'>导入状态</a></th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                <?php if(isset($this->merList)):?>
+                
+                <?php foreach($this->merList as $k => $v):?>
+                    <tr class="<?php echo $this->cycle(array("", "odd"))->next();?>">
+                        <td><?php echo $v['MerchantID']?></td>
+                        <td><?php echo $v['MerchantName']?></td>
+                        <td><?php echo !empty($v['AffiliateName']) ? $v['AffiliateName'] : '无'?></td>
+                        <td><?php echo isset($v['ImportFeedFileName']) ? $v['ImportFeedFileName'] : '无';?></td>
+                        <td><?php echo isset($v['ImportFeedFileTotalCount']) ? $v['ImportFeedFileTotalCount'] : 0;?></td>
+                        <td><?php echo isset($v['ImportFeedNewCouponCount']) ? $v['ImportFeedNewCouponCount'] : 0;?></td>
+                        <td><?php echo isset($v['ImportFeedExistCouponCount']) ? $v['ImportFeedExistCouponCount'] : 0;?></td>
+                        <td><?php echo isset($v['ImportFeedNewDiscountCount']) ? $v['ImportFeedNewDiscountCount'] : 0;?></td>
+                        <td><?php echo isset($v['ImportFeedExistDiscountCount']) ? $v['ImportFeedExistDiscountCount'] : 0;?></td>
+                        <td><?php echo isset($v['ImportFeedUserDataRemainCount']) ? $v['ImportFeedUserDataRemainCount'] : 0;?></td>
+                        <td class="importFeed"><span class="label label-<?php echo isset($v['ImportFeedRunStatus']) ? strtolower($v['ImportFeedRunStatus']) : "";?>">
+                            <?php echo isset($v['ImportFeedRunStatus']) ? $v['ImportFeedRunStatus'] : 'INIT'?></span>
+                        </td>
+                        <td width="150px;">
+                            <?php if (isset($v['ImportFeedRunStatus']) && $v['ImportFeedRunStatus'] == 'RUNNING'):?>
+                            <img src='/img/BackEnd/loading.gif' align='center' style='padding-right:25px;'>
+                            <?php else:?>
+                            <a title="<?php echo $v['ImportFeedRunDetailInfo'];?>" href="<?php echo $this->ServerUrl()?>/feedConfig/merchantImport?id=<?php echo $v['MerchantID']?>&<?php echo $this->merchantImportQuery;?>" class="btn btn-delete importFeed">
+                            <i class="icon-upload icon-white"></i>导入</a>
+                            <?php endif;?>
+                        </td>
+                    </tr>
+                <?php endforeach;?>
+                <?php endif;?>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan=12>
+                        <?php 
+                            echo $this->paginationControl($this->paginator,'Sliding','layout/pagination', 
+                                    array('link' => $this->url('backend' ,  array('controller' => 'feedConfig' , 'action' => 'merchantFeedConfig')) . '?' . $this->query));?>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </form>
+    </div>
+</div>

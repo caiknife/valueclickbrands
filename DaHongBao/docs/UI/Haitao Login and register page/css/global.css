@@ -1,0 +1,164 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0;}
+body{ font-family:"microsoft yahei","宋体",Arial,Verdana; font-size:13px; background:url(../images/bg.jpg);}
+a{ font-size:13px; text-decoration:none; color:#333333;}
+a:hover{ text-decoration:underline; color:#333333;}
+
+img,input{ border:0;}
+li{ list-style-type:none;}
+.cl{ clear:both;}
+
+.headerbg{ background:#bd0101; height:140px; border-bottom:1px solid #8e0505; margin-bottom:20px;}
+.header,.footer,.footerInfo,.friendly,.main{width:1180px; margin:0 auto;}
+.footer{ text-align:center; padding:25px 0 35px;}
+.footer span{ padding-right:20px;}
+.footerLink{ padding-bottom:5px;}
+.footerLink a{ margin:0 5px;}
+.address{ color:#666666;}
+
+
+.logo{ float:left; padding-top:20px; padding-right:110px;}
+
+.searchBox{ box-shadow:4px 4px 0 #a10101; margin-top:20px; width:630px; float:right; position:relative;}
+.searchInput{ padding:13px 12px 12px; font-size:14px; color:#000000; font-weight:bold; width:510px;}
+.searchButton{ width:96px;padding:9px 0 10px 25px; line-height:40px; position:absolute; right:0px; top:0px; cursor:pointer;background:url(../images/button.png); font-weight:bold; color:#fff; font-size:18px;}
+.searchMenu{ background:#e9e9e9 url(../images/icons.png) no-repeat 55px -454px; width:50px; height:41px; border-left:1px solid #d9d9d9; position:absolute; top:0px; right:96px; color:#666666; font-size:14px; line-height:41px; padding-right:20px; padding-left:10px; cursor:pointer;}
+
+
+.menu{ float:left; clear:left; padding-top:33px;}
+.menu li{ display:inline; margin-right:12px;}
+.menu li a{ color:#fff; font-size:16px; padding:6px 18px; font-weight:bold;border:1px solid #bd0101; border-bottom:0;}
+.menu li.select a,.menu li a:hover{ color:#cd0000;background:#ffffff;border:1px solid #8e0505; border-bottom:0; text-decoration:none;}
+.menu li.channel > a{ padding-right:30px; background:url(../images/icons.png) no-repeat 84px -857px;border:2px solid #bd0101;border-bottom:0;}
+.menu li.channelSelect{ position:relative; z-index:999999;}
+.menu li.channelSelect a.allChannel{background:#fff url(../images/icons.png) no-repeat 84px -928px; border:2px solid #e54128; border-bottom:0; padding:5px 16px 6px; color:#cd0000;padding-right: 30px;box-shadow: 2px 2px 0 #aa0101;}
+.menu .subChannel{ border:2px solid #e54128; position:absolute; top:25px; left:0; border-top:0; padding:5px 5px 5px; background:#fff url(../images/couponDot.png) no-repeat 0 -432px; }
+ul.subChannel{ background:#fff; width:155px;box-shadow: 2px 2px 0 #e5e5e5;}
+ul.subChannel li{ margin:0;}
+ul.subChannel a{ color:#000000; display:block; font-size:15px; font-weight:normal;}
+
+.userLink{ float:right; padding-top:33px;}
+.userLink li{ display:inline; color:#fff;}
+.userLink li a{ color:#fff; margin-right:5px; margin-left:5px;}
+
+
+.menu li.channelSelect .subChannel a{background:url(../images/icons.png) no-repeat right -795px; padding-left:5px;border:0;box-shadow:0;}
+.menu li.channelSelect .subChannel a:hover{ background:#fef5e8 url(../images/icons.png) no-repeat right -977px; color:#cd0000; text-decoration:none;}
+.menu li.channelSelect .subChannel a span{ padding:3px 12px; background:url(../images/icons.png) no-repeat 0 -1031px;}
+.menu li.channelSelect .subChannel a:hover span{padding:3px 12px; background:url(../images/icons.png) no-repeat 0 -1031px;}
+
+.footerInfoBg{ background:#fff; border-top:1px solid #d4d4d4; border-bottom:1px solid #d4d4d4; padding:20px 0; clear:both;}
+.footerInfo h3{ color:#cd0000; padding-bottom:5px;}
+.footerInfo li{ padding:5px 0;}
+.footerInfo .col{ float:left; width:220px;} 
+
+.iconLinks{ float:right;}
+.iconLinks ul{ padding-top:60px}
+.iconLinks li{ display:inline; padding:60px 15px 0 15px;}
+.iconLinks li a{ font-size:14px;}
+
+.help{ background:url(../images/icons.png) no-repeat 20px -522px;}
+.suggest{background:url(../images/icons.png) no-repeat 15px -623px;}
+.subscription{background:url(../images/icons.png) no-repeat 23px -706px ;}
+
+.friendly{ padding:20px 0; line-height:22px; }
+.friendly h3{ padding-bottom:10px; background:url(../images/button.png) no-repeat 67px -77px; font-weight:normal;}
+
+
+
+h2{color:#000; font-weight:normal; font-size:16px; }
+
+
+.hotMerchant{ background:#fff; padding:15px; margin-bottom:20px; }
+.hotMerchant h2{padding-bottom:10px; background:url(../images/button.png) no-repeat 99px -127px ; }
+.hotMerchant h2 span{ background:url(../images/icons.png) no-repeat 0 -49px ;padding:3px 15px; }
+.hotListLogo{ background:#eefafc; width:420px; padding:15px 10px 0; float:left;}
+.hotListLogo ul{ width:430px; overflow:hidden;}
+.hotListLogo li{ float:left; padding-right:5px; padding-bottom:20px; padding-top:5px; height:50px; position:relative}
+.hotListLogo li a span{ display:none;}
+.hotListLogo li a:hover span{ background:red; width:100px; padding-left:3px;text-align:center; height:31px; display:block; position:absolute; top:5px; left:0; padding-top:15px;filter:alpha(opacity=80);-moz-opacity:0.8;	-khtml-opacity: 0.8;	opacity: 0.8; color:#fff; }
+
+
+.banner{ float:right; width:690px; position:relative; border-bottom:1px dashed #e64329;}
+.bannerPage{ position:absolute; top:5px; right:5px;}
+.bannerPage a{ padding:2px 7px; font-weight:bold; background:#ebebeb; color:#e64329; font-family:arial;}
+.bannerPage a.select{ padding:3px 8px;background:#ebebeb;
+filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f75d44', endColorstr='#e64329'); /* IE6,IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#f75d44', endColorstr='#e64329')"; /* IE8 */
+background: -moz-linear-gradient(top,  #f75d44 , #e64329 );
+background: -webkit-gradient(linear, 0 0, 0 100%, from(#f75d44), to(#e64329));
+background:-o-linear-gradient(top, #e4e4e4, #e64329); color:#fff;
+}
+
+
+.newest{ clear:both; margin-bottom:20px;}
+.seeMore{ float:right;}
+.seeMore a{ color:#e64329;}
+
+.newest h2{ background:url(../images/button.png) no-repeat 136px -174px ; padding-bottom:10px; padding-left:10px;}
+.newest h2 span{ background:url(../images/icons.png) no-repeat 5px -111px ;padding:3px 18px; }
+.newestCoupon{ width:220px; float:left; margin-right:20px; }
+.newestInfo{background:url(../images/bg.png) repeat-x 0 0; height:30px; padding-bottom:3px; line-height:30px; text-align:center; color:#fff;}
+.newestCoupon .double{background:url(../images/bg.png) repeat-x 0 -57px;}
+.newestImg{ background:#fff; text-align:center;}
+.newestInfo strong{ font-size:20px; font-family:arial;}
+.newestInfo a span{  margin-right:5px;}
+.newestInfo a{ color:#fff;}
+.newestList{ clear:both;}
+.newestbg{ width:1225px;}
+
+
+.goodMerchant{ background:#fff; padding:15px 0; margin-bottom:20px;}
+.goodMerchant h2 span{ background:url(../images/icons.png) no-repeat 2px -176px ;padding:3px 14px; }
+.goodMerchant h2{ background:url(../images/button.png) no-repeat 146px -223px ; padding-bottom:10px;}
+
+
+.goodMerchantList{ height:220px;}
+.arrowLeft,.arrowRight{ padding-top:80px; float:left;}
+.arrowLeft{ padding-left:12px;}
+.arrowRight{ padding-right:12px;}
+.arrowLeft span{ width:35px; height:52px; background:url(../images/icons.png) no-repeat 2px -310px; display:block;}
+.arrowRight span{ width:35px; height:52px; background:url(../images/icons.png) no-repeat 4px -386px; display:block;}
+.scrollList{ float:left; height:220px; width:1086px; }
+.scrollCoupon,.dotRed{ border:1px solid #ededed; box-shadow: 4px 4px 0 #eefafc; width:220px; height:192px; padding-top:25px; float:left; margin:0 23px; background:url(../images/couponDot.png) no-repeat 12px 13px; text-align:center; position:relative;}
+.dotRed{ background:url(../images/couponDot.png) no-repeat 11px -205px; }
+
+.scrollCoupon .code a{font-family:arial; font-size:16px; }
+.scrollCoupon .code a span{ color:#cd0000;font-size:25px; font-weight:bold;}
+.scrollCoupon .code a strong{  color:#7ccbf0;font-size:25px;font-weight:bold;}
+.scrollCoupon .useIt,.dotRed .useIt{ background:#eefafc url(../images/couponDot.png) no-repeat 12px -154px ; text-align:right; padding-right:28px; height:50px; line-height:38px; position:absolute; bottom:0; left:0; right:0;}
+.dotRed .useIt{background:#eefafc url(../images/couponDot.png) no-repeat 11px -373px ;}
+.scrollCoupon .useIt a{ color:#000;}
+.dotRed .useIt a{ color:#e64329;}
+.scrollCoupon .merchant{ padding:8px 0;}
+.scrollCoupon .merchant a{ color:#333;}
+.scrollLogo{ padding:6px 0;}
+.scrollLogo a{ display:block; width:100px; height:46px; margin:0 auto; box-shadow:0 0 5px #c5c5c5; padding:3px;}
+
+
+.promotion{ background:#fff; padding:15px;}
+.promotion h2 span{ background:url(../images/icons.png) no-repeat 2px -246px ;padding:3px 15px; }
+.promotion h2{ background:url(../images/button.png) no-repeat 103px -277px ; padding-bottom:10px;}
+
+
+.promotionLeft{ width:265px; float:left;}
+.promotionRight{ width:860px; float:right; padding-top:10px; }
+
+
+.promotionCouponBox{ width:885px;}
+.promotionCoupon{ width:235px; float:left;border:1px solid #ededed; box-shadow: 4px 4px 0 #eefafc;  height:309px;  padding:13px 10px; float:left; margin:0 15px 20px 15px;  position:relative;}
+.promotionImg{ padding-bottom:13px;}
+.promotionInfo{ padding-bottom:11px; line-height:19px;}
+.promotionInfo a span{ color:#e64329} 
+.promotionDate{ color:#666666;}
+.promotionDate span{ margin-right:10px; background:#e64329; border-radius:3px; padding:1px 5px; color:#fff; font-size:12px;}
+
+
+.promotionList{ margin-bottom:17px;}
+.promotionList li{ border-bottom:1px dashed #d4d4d4; padding:8px 0;}
+.promotionList li a span{ color:#e64329;}
+
+
+.leftBanner{ border:1px solid #ececec; padding:6px;}
+

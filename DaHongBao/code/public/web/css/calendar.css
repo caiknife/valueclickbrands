@@ -1,0 +1,37 @@
+.Milan_InternationalPanel *{padding:0;margin:0;font-size:12px;font-family:Arial,ËÎÌו;}
+#MilanCalendarPanel{filter:alpha(opacity=950);opacity:0.95;display:none;width:419px;overflow:hidden;text-align:center;	position:absolute; border-bottom:4px solid #666; border-right:3px solid #666;}
+#MilanLeftPanel{float:left;border-right:none;text-align:center;background:white left center;}
+#MilanRightPanel{float:right;border-left:none;border-left:1px solid #ccc;background:white left center;}
+#MilanRightPanel tr td,#MilanLeftPanel tr td{text-align:center;}
+.outerLine{border:1px solid #ccc;background:white;font-size:12px}
+.clearboth{font-size:0px;line-height:0px;height:0px;clear:both;}
+.MilanInputItems{padding:0px;}
+.MilanInputItems span{cursor:default;}
+#MilanMotherCalendarPanel{width:auto;padding-top:0px !important;padding-top:0px;}
+.CloseCalendarBtn{text-align:center;height:22px;line-height:22px;cursor:pointer;clear:both;padding-left:305px;color:White;font-size:14px;font-weight:bold;background:url(../images/travel/closeCalendarBtn.gif) no-repeat right bottom;}
+.MilanInputItems input{background:white;}
+.MilanCalendarArrowLeft{background:url(../images/travel/arrowLeft.gif) no-repeat 8px center;cursor:pointer;height:20px;}
+.MilanCalendarArrowRight{background: url(../images/travel/arrowRight.gif) no-repeat 8px center;cursor:pointer;height:20px;}
+/******/
+.Milan_InternationalPanel{width:390px;height:auto;padding:5px 10px 20px 10px;border:1px solid #70a731;}
+.Milan_InternationalPanel h2{font-size:14px;color:#ff7800;background:white;height:45px;line-height:45px;border-bottom:1px dotted #ff7800;text-align:right;}
+.Milan_InternationalHeader span{margin-right:10px;}
+.Milan_InternationalHeader span input{margin-left:3px; }
+.Milan_InternationalItems{height:25px;line-height:25px;margin:5px 0px;}
+.Milan_InternationalItems img{margin-left:5px;}
+.Milan_InternationalItems a{margin-left:10px;}
+.Milan_InternationalItems a:link,.Milan_InternationalItems a:visited{color:Black;text-decoration:none;}
+.Milan_InternationalItems a:hover,.Milan_InternationalItems a:active{color:#666;text-decoration:underline;}
+.Milan_InternationalFooter{ height:25px;line-height:25px;margin-top:25px;text-align:center;}
+.Milan_InternationalFooter a{margin:0 auto;width:100px;display:block;font-size:14px;text-align:center;background:#ff7800;border:1px solid red;color:White;line-height:22px;height:22px;text-decoration:none;font-weight:bold;}
+#MilanIntel_StartCitySelect{width:170px;margin-left:3px;}
+#MilanIntel_EndedCitySelect{width:170px;margin-left:3px;}
+#MilanIntel_StartTimeSelect{width:52px;}
+.Milan_InternationalItems input{margin-left:3px;width:85px;}
+#Milan_InternationalMessage{width:156px;height:50px;background:url(../images/travel/messageAlert.gif) left top;opacity:0.9;filter:alpha(opacity=90);display:none;margin-left:15px;line-height:30px;color:Red;padding-left:44px;}
+.clearboth{	font-size:0px;line-height:0px;height:0px;clear:both;}
+h2.Milan_addedlog{background:white left center;}
+.Milan_InternationalFooter a#MilanIntel_SearchGo:link,.Milan_InternationalFooter a#MilanIntel_SearchGo:visited{color:white;}
+.Milan_InternationalFooter a#MilanIntel_SearchGo:hover,.Milan_InternationalFooter a#MilanIntel_SearchGo:active{color:white;} 
+.selectedCityForGoAndArivved {padding-left:10px}
+.Milan_InternationalHeader,.Milan_InternationalItems{margin-left:30px; padding-top:10px;}

@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{$topicrow.title}</title>
+<META NAME="description" CONTENT="{$topicrow.description}">
+<META NAME="keywords" CONTENT="{$topicrow.keywords}">
+<link href="../css/subject_blue.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<!--头部开始-->
+<div id="head" class="main_box">
+	<!--begin head_top-->
+	<div class="head_top"><form method="GET" name="searchform" action="/search.php" target="_parent">
+		<h1><img src="{$__IMAGE_SRC}/images/topic/topichead_{$topicrow.id}.gif"/></h1>
+		<ul>
+			<li class="search_input"><input name="searchText" type="text" class="input" value="{$searchtextformer}"/></li>
+			<li class="butimage"><input type="image" src="../images/subject/subject_blue/but_search.gif"/></li>
+			{if $islogon==1}
+
+			<li class="login_name">您已登录，</li>
+			<li class="login"><a href="/bbs/login.php?action=quit">退出</a></li>
+			{else}
+			<li class="login login_left"><a href="/bbs/login.php">登录</a></li>
+			<li	class="login"><a href="/bbs/register.php">注册</a></li>
+			{/if}
+			
+		</ul></form>
+	</div>
+	<!--end head_top-->
+	<img src="{$__IMAGE_SRC}/images/topic/topichead_{$topicrow.id}_2.gif"/><img src="{$__IMAGE_SRC}/images/topic/topichead_{$topicrow.id}_3.gif"/><img src="{$__IMAGE_SRC}/images/topic/topichead_{$topicrow.id}_4.gif"/><img src="{$__IMAGE_SRC}/images/topic/topichead_{$topicrow.id}_5.gif"/>
+</div>
+<!--头部结束-->
+<!--主体开始-->
+<div id="content" class="main_box">	
+	<div id="sidebar">	
+	<img src="{$__IMAGE_SRC}/images/topic/topichead_{$topicrow.id}_6.gif"/>
+	<!--左侧导航开始-->
+	<div id="nav">
+		<ul>
+			<li><a href="/" target="_blank">优惠券</a></li>
+			<li><a href="/discount_hot.html" target="_blank">折扣信息</a></li>
+			<li><a href="/life/" target="_blank">同城生活</a></li>
+			<li><a href="/bbs/" target="_blank">社&nbsp;区</a></li>
+		</ul>
+	</div>
+	<!--左侧导航结束-->
+	<!--begin sidebox-->
+	<div class="sidebox">
+		<div class="sidebar_box">
+			{section name=loop loop=$topiccontent}
+			<div class="sidebar_img sidebar_line"><img src="{$__IMAGE_SRC}images/topic/{$topiccontent[loop].id}/topic10.gif"/></div>
+			{/section}
+		</div>
+		<div class="sidebar_bottom"></div>
+	</div>
+	<!--end sidebox-->
+	<div class="clr"></div>
+	<!--begin sidebar_coupon-->
+	<div class="sidebar_coupon">
+		<div class="sidebar_couponbox">
+			<ul>
+				<li class="liline"><a href="/topiccoupon-{$topiccontent.0.id}.html" target="_blank">更多该专题优惠券</a></li>
+				<li><a href="/useraddcoupon.php" target="_blank">我有该专题优惠券</a></li>
+			</ul>
+		</div>
+		<div class="sidebar_couponbottom"></div>
+	</div>	
+	<!--end sidebar_coupon-->
+	</div>
+	
+	<div id="main">
+		<!--主体内容开始-->
+		<div id="main_top"><img src="{$__IMAGE_SRC}images/topic/topichead_{$topicrow.id}_7.gif" alt="图片" /></div>
+		<div class="main_max">	
+			<!--begin main_left-->		
+			<div class="main_left">
+				<!--begin main_box-->
+				{section name=loop loop=$topiccontent}
+				<div class="main_leftbox">
+					<div class="main_min">
+						<!--begin main_bar-->
+						<div class="main_bar">
+							<div class="main_barimg"><img src="{$__IMAGE_SRC}images/topic/{$topiccontent[loop].id}/topic11.gif"/></div>
+							<div class="main_barbox">
+								<ul>
+									<!-- <li class="lititle"></li> -->
+									{section name=loop2 loop=$topiccontent[loop].couponarray start=0 max=5}
+									<li class="liline"><a href="{$topiccontent[loop].couponarray[loop2].couponUrl}" target="_blank">{$topiccontent[loop].couponarray[loop2].Descript}</a></li>
+									{/section}
+									<li class="limore"><a href="/topiccoupon-{$topiccontent[loop].id}.html" target="_blank">更多>></a></li>
+								</ul>
+							</div>
+						</div>
+						<!--end main_bar-->
+						<!--begin main_text-->
+						<div class="main_text">
+							<div class="main_texttop">
+								<h3>{$topiccontent[loop].coupontitle}</h3>
+								<h4><a href="/bbs/read.php?tid={$topiccontent[loop].contentarray.0.tid}" target="_blank">{$topiccontent[loop].contentarray.0.subject}</a></h4>
+							</div>
+							<p>{$topiccontent[loop].contentarray.0.content}</p>
+							<!--begin main_textbox-->
+							<div class="main_textbox">
+								<ul>
+									<li class="lititle"><a href="/bbs/read.php?tid={$topiccontent[loop].contentarray.2.tid}" target="_blank">{$topiccontent[loop].contentarray.2.subject}</a></li>
+									{section name=loop1 loop=$topiccontent[loop].contentarray start=3 max=6}
+									<li class="litext"><a href="/bbs/read.php?tid={$topiccontent[loop].contentarray[loop1].tid}" target="_blank">{$topiccontent[loop].contentarray[loop1].subject}</a></li>
+									{/section}
+									<li class="limore"><a href="/topicinfo-{$topiccontent[loop].id}.html" target="_blank">更多>></a></li>
+								</ul>
+							</div>
+							<!--end main_textbox-->
+							<!--begin main_textbox-->
+							<div class="main_textbox">
+								<ul>
+									<li class="lititle"><a href="/bbs/read.php?tid={$topiccontent[loop].contentarray.9.tid}" target="_blank">{$topiccontent[loop].contentarray.9.subject}</a></li>
+									{section name=loop1 loop=$topiccontent[loop].contentarray start=10 max=6}
+									<li class="litext"><a href="/bbs/read.php?tid={$topiccontent[loop].contentarray[loop1].tid}" target="_blank">{$topiccontent[loop].contentarray[loop1].subject}</a></li>
+									{/section}
+									<li class="limore"><a href="/topicinfo-{$topiccontent[loop].id}.html" target="_blank">更多>></a></li>
+								</ul>
+							</div>
+							<!--end main_textbox-->
+						</div>
+						<!--end main_text-->
+					</div>
+				</div>
+				<!--end main_box-->
+				<div class="main_leftbottom"></div>
+				{/section}
+			</div>	
+			<!--end main_left-->
+			<!--begin main_right-->	
+			<div class="main_right">
+				<!--begin main_rightbox-->
+				<div class="main_rightbox">
+				<div class="main_rightmax">
+					<!--begin main_rightmin-->
+					<div class="main_rightmin">
+						<!--begin ploy_box-->
+						<div class="ploy_box">
+							<!--begin ploy_text-->
+							<div class="ploy_text">
+								<div class="ploy_left">
+									<div class="ploy_img"><img src="{$__IMAGE_SRC}images/up/topic{$smarty.get.id}.jpg"/></div>
+								</div>
+								<div class="ploy_right">
+									<h3>专题简介</h3>
+									<p>{$topicrow.topicdetail}</p>
+								</div>
+							</div>
+							<!--end ploy_text-->
+							<div class="ploy_bottom">
+							</div>
+						</div>
+						<!--end ploy_box-->
+						<!--begin ploy_box-->
+						<div class="ploy_box">
+							<div class="ploy_text">
+								<h4><a href="{$topicrow.bbsurl}" target="_blank">论坛活动简介</a></h4>
+								<p>{$topicrow.bbsdetail}</p>
+							</div>
+							<div class="ploy_bottom">
+							</div>
+						</div>
+						<!--end ploy_box-->
+						<!--begin ploy_box-->
+						<div class="ploy_box">
+							<div class="ploy_text">
+								<ul>
+									{section name=loop loop=$topicbbsarray start=0 max=5}
+									<li><a href="/bbs/read.php?tid={$topicbbsarray[loop].tid}" target="_blank">{$topicbbsarray[loop].subject}</a></li>
+									{/section}
+								</ul>
+							</div>
+							<div class="ploy_bottom">
+							</div>
+						</div>
+						<!--end ploy_box-->
+					</div>
+					<!--end main_rightmin-->
+				</div>
+				</div>
+				<!--end main_rightbox-->
+			
+				
+				<!--begin main_rightbox-->
+				<div class="main_rightbox">
+				<div class="main_rightmax">
+					<!--begin main_rightmin-->
+					<div class="main_rightmin">						
+						<div class="right_min">	
+							<div class="right_mintop"></div>
+							<!--begin right_minbox-->
+							
+							{section name=loop loop=$topiccontent}
+							<div class="right_minbox">
+								<div class="right_minimg"><img src="{$__IMAGE_SRC}images/topic/{$topiccontent[loop].id}/topic12.gif" /></div>
+								<div class="right_mintext">
+									<h4><a href="/bbs/read.php?tid={$topiccontent[loop].contentarray.1.tid}" target="_blank">{$topiccontent[loop].contentarray.1.subject}</a></h4>
+									<p><a href="/bbs/read.php?tid={$topiccontent[loop].contentarray.1.tid}" target="_blank">{$topiccontent[loop].contentarray.1.content}</a></p>
+								</div>								
+							</div>
+							{/section}					
+							
+							<!--end right_minbox-->			
+						</div>
+						<div class="right_minbottom"></div>
+					</div>
+					<!--end main_rightmin-->
+				</div>
+				</div>
+				<!--end main_rightbox-->
+				
+				
+			</div>	
+			<!--end main_right-->				
+		</div>
+		<!--主体内容结束-->
+
+	
+		
+	</div>	
+</div>
+<!--主体结束-->
+<!--底部开始-->
+<div id="foot" class="main_box">
+	<div class="foot_img"><a href="/" target="_blank"><img src="../images/subject/subject_blue/logo.gif" alt="大红包" /></a></div>
+	<div class="foot_text">
+	关于<a href="/About_CouponMountain.html">大红包</a> | <a href="/Contact_Us.html">联系我们</a> | <a href="/sitemap.html">网站地图</a><br />
+	版权归&copy; {$smarty.now|date_format:"%Y"} 上海惠可网络技术有限公司 所有 沪ICP备12034406号
+	</div>
+</div>
+<!--底部结束-->
+</body>
+</html>

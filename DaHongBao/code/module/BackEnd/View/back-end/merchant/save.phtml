@@ -1,0 +1,105 @@
+<?php
+/**
+* save.php
+*-------------------------
+*
+* 
+*
+* PHP versions 5
+*
+* LICENSE: This source file is from Smarter Ver2.0, which is a comprehensive shopping engine 
+* that helps consumers to make smarter buying decisions online. We empower consumers to compare 
+* the attributes of over one million products in the common channels and common categories
+* and to read user product reviews in order to make informed purchase decisions. Consumers can then 
+* research the latest promotional and pricing information on products listed at a wide selection of 
+* online merchants, and read user reviews on those merchants.
+* The copyrights is reserved by http://www.mezimedia.com. 
+* Copyright (c) 2006, Mezimedia. All rights reserved.
+*
+* @author Yaron Jiang <yjiang@corp.valueclick.com.cn>
+* @copyright (C) 2004-2013 Mezimedia.com
+* @license http://www.mezimedia.com PHP License 5.0
+* @version CVS: $Id: save.phtml,v 1.3 2013/04/26 04:05:26 yjiang Exp $
+* @link http://www.dahongbao.com/
+* @deprecated File deprecated in Release 3.0.0
+*/
+$this->headLink()->appendStylesheet($this->basePath('styles/jquery.cleditor.css'));
+$this->headScript()->appendFile($this->basePath('js/jquery.cleditor.min.js'))
+->appendFile($this->basePath('js/BackEnd/merchant-save.js'));
+
+$form = $this->form;
+?>
+<div class="box">
+    <div class="box-header">
+        <h2><a class="btn btn-inverse" href="<?php echo $this->gobackUrl?>">
+            <i class="icon-white icon-chevron-left"></i>返回列表</a><i class="icon-box"></i>编辑商家</h2>
+    </div>
+    
+    <div class="box-content">
+        <form class="box-form" action="<?php echo $this->url('backend' , array('controller' => 'merchant' 
+            , 'action' => 'save'))?>?<?php echo $this->query?>" method="post" enctype="multipart/form-data">
+        <?php echo $this->formHidden($form->get('MerchantID'))?>
+        <?php echo $this->formHidden($form->get('SiteID'))?>
+        <?php echo $this->formText($form->get('MerchantName'))?>
+        <?php echo $this->formText($form->get('MerchantAliasName'))?>
+        <?php echo $this->formText($form->get('MerchantNameEN'))?>
+        <?php echo $this->formText($form->get('MerchantUrl'))?>
+        <?php echo $this->formText($form->get('CompanyName'))?>
+        <?php echo $this->formTextarea($form->get('DescriptionCN'))?>
+        <?php echo $this->formTextarea($form->get('DescriptionEn'))?>
+        
+        <div class="input-group">
+        <img alt="<?php echo $form->get('MerchantName')->getValue()?>" src="<?php echo $form
+        ->get('LogoFile')->getValue()?>"
+        title="<?php echo $form->get('MerchantName')->getValue()?>" />
+        </div>
+        <?php echo $this->formFile($form->get('LogoFile'))?>
+        <?php echo $this->formHidden($form->get('LogoFile'))?>
+        <?php echo $this->formEmail($form->get('ContactCSEmail'))?>
+        <?php echo $this->formText($form->get('ContactCSPhone'))?>
+        <?php echo $this->formText($form->get('ContactCSAddress'))?>
+        
+        <?php echo $this->formTextarea($form->get('MainSales'))?>
+        <?php echo $this->formTextarea($form->get('Instructions'))?>
+        
+        <?php echo $this->formSelect($form->get('AffiliateID'))?>
+        
+        <?php echo $this->formText($form->get('AffiliateUrl'))?>
+        
+        <div class="input-group">
+        <label class="input-label"><?php echo $form->get('CategoryID')->getLabel()?></label>
+        <div class="controls">
+        <?php echo $this->formMultiCheckbox($form->get('CategoryID'))?>
+        </div>
+        </div>
+        
+        <div class="input-group">
+        <label class="input-label"><?php echo $form->get('PaymentID')->getLabel()?></label>
+        <div class="controls">
+        <?php echo $this->formMultiCheckbox($form->get('PaymentID'))?>
+        </div>
+        </div>
+        
+        <?php if(1 == $this->SiteId):?>
+        <div class="input-group">
+        <label class="input-label"><?php echo $form->get('ShippingID')->getLabel()?></label>
+        <div class="controls">
+        <?php echo $this->formMultiCheckbox($form->get('ShippingID'))?>
+        </div>
+        </div>
+        <?php endif;?>
+        
+        <div class="input-group">
+        <label class="input-label">属性</label>
+        <div class="controls">
+        <?php echo $this->formCheckbox($form->get('IsActive'))?>
+        <?php echo $this->formCheckbox($form->get('Authorized'))?>
+        <?php echo $this->formCheckbox($form->get('SupportCN'))?>
+        <?php echo $this->formCheckbox($form->get('SupportDeliveryCN'))?>
+        </div>
+        </div>
+        <?php echo $this->formNumber($form->get('Sequence'))?>
+        <?php echo $this->formSubmit($form->get('submit') , '提交')?>
+        </form>
+    </div>
+</div>

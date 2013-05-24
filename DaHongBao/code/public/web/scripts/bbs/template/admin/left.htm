@@ -1,0 +1,34 @@
+<!--<?php
+if(!GetCookie('adskin')){
+include_once PrintEot("css");
+print <<<EOT
+-->
+</head>
+<body>
+<div id="right-top" style="margin:0 1% 2%; border-bottom:1px solid #F0EFEF; padding:5px" align="center"><a href='./index.php' target='_blank'><img src="$imgpath/admin/admin-home.gif">进入首页</a><a href='http://www.phpwind.net/index.php' target='_blank'><img src="$imgpath/admin/admin-forums.gif"/>PW用户交流</a><a style="color:#FF6600" href='http://www.phpwind.net/thread-htm-fid-39.html' target='_blank'><img src="$imgpath/admin/admin-suj.gif"/>程序发展建议</a><a href='http://www.phpwind.net/thread.php?fid=18' target='_blank'><img src="$imgpath/admin/admin-new.gif"/>检查最新版本</a><a href='http://www.phpwind.com' target='_blank'><img src="$imgpath/admin/admin-pw.gif"/>关于PHPWind</a> </div>
+<!--
+EOT;
+}else{
+include_once PrintEot("css2");
+print <<<EOT
+-->
+</head>
+<body topmargin="5" leftmargin="5">
+<table width="99%" align=center cellspacing=1 cellpadding=4 border=0>
+	<tr class=head>
+		<td width='25%' align=center>
+			<a href='http://www.phpwind.com' target='_blank'><b>关于PHPWind</b></a>
+		</td>
+		<td width='25%' align=center>
+			<a href='http://www.phpwind.net/thread.php?fid=18' target='_blank'>检查最新版本</a>
+		</td>
+		<td width='25%' align=center>
+			<a href='http://www.phpwind.net/index.php' target='_blank'>PW用户交流</a>
+		</td>
+		<td width='25%' align=center><a href='./index.php' target='_blank'>进入首页</a></td>
+	</tr>
+</table>
+<br>
+<!--
+EOT;
+}?>

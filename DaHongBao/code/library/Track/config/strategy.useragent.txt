@@ -1,0 +1,142 @@
+###### whitelist@20100206
++~AdsBot-Google
++~Mediapartners-Google
++~sem robot
+
+###### blacklist@20100206
+-=Mozilla/4.0 (compatible; MSIE 6.00; Windows xp)
+-=MSIE
+-=Mozilla/4.0
+-=Mozilla/3.0 (compatible)
+-=Agent
+-=Internet Explorer
+-=pirst
+-=AliWaWa/1.1
+-=KwsAgent
+
+###### blacklist@20100206 top, for performance
+-~GoogleBot
+-~spider
+-~crawler
+-~robot
+-~Java/1.
+-~larbin
+-~libwww-
+-~Nutch-
+-~bot.html
+-~Wget/
+-~Link Sleuth
+-~Slurp
+-~Yandex/
+
+###### blacklist@20100206, recent
+-~ApacheBench
+-~Ask Jeeves/Teoma
+-~Baiduspider
+-~BeyondMeSpider
+-~Comodo-Certificates-Spider
+-~DotBot
+-~DoubleVerify Crawler
+-~DRKSpider
+-~Exabot
+-~GingerCrawler
+-~Googlebot
+-~hpsps.cn
+-~HTMLParser
+-~ia_archiver
+-~InetURL
+-~Jakarta Commons-HttpClient
+-~KaloogaBot
+-~libcurl
+-~libghttp
+-~Linguee Bot
+-~LWP::Simple
+-~Mediapartners-Google
+-~MJ12bot
+-~MSIECrawler
+-~msnbot
+-~psbot
+-~QBCrawler
+-~qihoobot
+-~SearchSpider
+-~SheenBot
+-~SmarterSCTBot
+-~Sogou-Test-Spider
+-~Sosospider
+-~Taobao Spider
+-~Tasapspider
+-~TurnitinBot
+-~Twiceler
+-~Yahoo! China Slurp
+-~Yahoo! Slurp
+-~YodaoBot
+-~YoudaoBot
+
+###### blacklist@20080805, history
+-~abot/0.1
+-~aipbot/
+-~AnswerBus (http://www.answerbus.com/)
+-~appie 1.1
+-~arachnophilia
+-~architext
+-~backrub
+-~BecomeBot
+-~BigCliqueBOT
+-~cfetch/1.0
+-~checkbot
+-~CJNetworkQuality
+-~ColdFusion
+-~Faxobot/1.0
+-~finder
+-~findlinks/
+-~Firefly
+-~freecrawl
+-~Gaisbot
+-~gazz@nttrd.com
+-~genieBot
+-~geturl
+-~Gigabot
+-~GoodSeacher
+-~gulliver
+-~HLoader
+-~ichiro/1.0
+-~IECheck
+-~indexer
+-~infoseek
+-~internetseer
+-~Java1.3.1
+-~Jetbot/
+-~lanshanbot
+-~LexiBot/1.00
+-~LMQueueBot/
+-~lwp-trivial
+-~lycos
+-~mercator
+-~NG/2.0
+-~nicebot/
+-~NPBot
+-~NutchCVS
+-~Ocelli/1.1
+-~OmniExplorer_Bot
+-~OmniExplorer_Bot/1.09
+-~Openfind
+-~OutfoxBot
+-~P.Arthur 1.1
+-~PHPCrawl
+-~POE-Component-Client-HTTP/
+-~Pompos/1.3
+-~scooter
+-~searcher
+-~searchhippo
+-~ShowLinks/1.0 libwww/5.4.0
+-~SlySearch
+-~sna-0.0.1
+-~Snoopy v1.2
+-~Sohu Agent
+-~ultraseek
+-~apex.sjtu.edu.cn
+-~WatchMouse/1.25
+-~wotbox.com
+-~www.netforex.org
+-~Z-Add Link Checker
+-~ZyBorg

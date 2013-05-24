@@ -1,0 +1,632 @@
+/* CSS Document */
+@import url(common.css); 
+/*begin main*/
+#main {
+	height: 218px;
+	margin: 4px 0px 0px 0px;
+}
+/*begin main_left*/
+#main_left {
+	height: 212px;
+	width: 302px;
+	border: 1px solid #e0ccaf;
+	float: left;
+	padding: 2px;
+}
+#main_left h1 {
+	font-size: 14px;
+	font-weight: 600;
+	color: #b80000;
+	margin: 0px;
+	float: left;
+	width: 180px;
+	line-height: 25px;
+}
+.more {
+	float: right;
+	width: 43px;
+	height: 25px;	
+	margin: 0px 4px;
+}
+.more1 {
+	background: url(../images/icn_more1.gif) no-repeat 0px 9px;
+	float: right;
+	padding: 2px 5px 0px 10px;
+	color: #333;
+}
+.more1 a:link,.more1 a:visited {
+	color: #333;
+}
+.more1 a:hover {
+	color: #333;
+}
+.main_leftimg img {
+	width: 68px;
+	height: 82px;
+	float: left;
+	margin: 4px 3px 4px 4px;
+	overflow: hidden;
+	border: 0px;
+}
+#main_left ul li {
+	color: #5c2600;
+	line-height: 24px;
+}
+#main_left ul li a:link,#main_left ul li a:visited {
+	color: #5c2600;
+}
+#main_left ul li a:hover {
+	color: #5c2600;
+}
+/*end main_left*/
+#main_right {
+	width: 677px;
+	float: right;
+	height: 218px;
+}
+#main_right img{
+	width: 677px;
+	height: 218px;
+	overflow: hidden;
+}
+/*end main*/
+/*begin sidebar*/
+#contentmax #sidebar {
+	width: 308px;
+	float: left;
+}
+#contentmax #sidebar .sidebox {
+	width: 302px;
+	border: 1px solid #e0ccaf;
+	padding: 2px;
+	height: auto;
+	overflow: auto;
+	background: #fff;
+	margin-bottom: 6px;
+}
+#contentmax #sidebar .sidebox h2 {
+	font-size: 14px;
+	font-weight: 600;
+	color: #b80000;
+	margin: 0px;
+	float: left;
+	width: 180px;
+	line-height: 25px;
+}
+/*手机充值开始*/
+#sidebar .sidebox_phone {
+	width: 306px;
+	height: 118px;
+	overflow: hidden;
+	border: 1px solid #eba34e;
+	margin-top: 6px;
+}
+#sidebar .title_phone {
+	width: 278px;
+	height: 23px;
+	background: url(../images/phone_title.gif) no-repeat;
+	padding-left: 28px;
+	font-weight: 600;
+	color: #666;
+	line-height: 23px;
+}
+#sidebar .phone_box {
+	width: 306px;
+	height: 85px;
+	overflow: hidden;
+	background: url(../images/phone_bg.gif) repeat-x;
+	padding-top: 10px;
+}
+#sidebar .phone_box ul li {
+	float: left;
+}
+#sidebar .phone_box .phone_left {
+	width: 132px;
+	height: 20px;
+	padding: 5px 0px 3px 8px;
+}
+#sidebar .phone_box .phone_right {
+	width: 166px;
+	height: 28px;
+}
+.phone_input {
+	width: 148px;
+	height: 17px;
+	border: 1px solid #7e9db9;
+}	
+.phone_ico {
+	width: 147px;
+	background: url(../images/phone_ico.gif) no-repeat 12px 6px;
+	padding-left: 28px;
+	color: #e11313;
+	height: 24px;
+	line-height: 24px;
+}
+/*手机充值结束*/
+/*tag 热门标签开始*/
+#sidebar .sidebox .tag {
+	color: #aa4800;
+	padding: 8px;
+	line-height: 20px;
+}
+#sidebar .sidebox .tag .big {
+	font-size: 14px;
+	font-weight: 600;
+}
+#sidebar .sidebox .tag a:link,#sidebar .sidebox .tag a:visited {
+	color: #aa4800;
+}
+#sidebar .sidebox .tag a:hover {
+	color: #aa4800;
+}
+/*tag 热门标签结束*/
+/*shopping 热门商家开始*/
+#sidebar .sidebox .shopping {
+	padding: 5px;
+	margin-top: 1px;
+	border-bottom: 1px dotted #c5c5c5;
+	height: auto !important;
+	height: 35px;
+	overflow: auto !important;
+	overflow: visible;
+}
+#sidebar .sidebox .shopping img {
+	width: 92px;
+	height: 34px;
+	border: 1px solid #d1d1d1;
+	float: left;
+	overflow: hidden;
+}
+#sidebar .sidebox .shopping ul {
+	width: 190px !important;
+	float: right;
+	line-height: 18px;
+	height: auto;
+	overflow: auto;
+	padding: 0px;
+	text-align: left;
+}
+#sidebar .padding {
+	padding-bottom: 6px;
+}
+#sidebar .sidebox .shopping .bring {
+	color: #aa4800;
+	font-weight: 600;
+	text-align: center;
+}
+#sidebar .sidebox .shopping .bring a:link,#sidebar .sidebox .shopping .bring a:visited{
+	color: #aa4800;
+}
+#sidebar .sidebox .shopping .bring a:hover {
+	color: #aa4800;
+}
+#sidebar .sidebox .bg {
+	background: #fff6e0;
+}
+/*shopping 热门商家结束*/
+/*graph曲线图开始*/
+#sidebar .sidebox .graph {
+	padding: 5px;
+}
+#sidebar .sidebox .graph h3 {
+	font-size: 14px;
+	font-weight: 400;
+	color: #f15e22;
+	margin: 0px;
+	line-height: 28px;
+}
+#sidebar .sidebox .graph .bring {
+	font-weight: 600;
+	line-height: 40px;
+	padding-left: 12px;
+}
+#sidebar .sidebox .graph_box {
+	height: auto;
+	overflow: auto;
+}
+#sidebar .sidebox .graph_bottom {
+	line-height: 30px;
+	height: 30px;
+}	
+/*graph曲线图结束*/
+/*list 惠友排行榜开始*/
+.list {
+	height: auto !important;
+	height: 0px;
+	overflow: auto !important;
+	overflow: visible;
+	background: #fff6e0;
+	padding: 0px 3px 10px 3px;
+}
+.list ul {
+	height: auto !important;
+	height: 0px;
+	overflow: auto !important;
+	overflow: visible;
+}
+.list ul li {
+	float: left;
+	text-align: center;
+	line-height: 22px;
+	height: 22px;
+}
+.list .lileft {
+	width: 90px;
+	overflow: hidden;
+}
+.list .liright {
+	width: 57px;
+	overflow: hidden;
+}
+/*list 惠友排行榜结束*/
+/*rss订阅开始*/
+#sidebar .sidebox .rss {
+	margin-top: 2px;
+}
+#sidebar .sidebox .rss ul {
+	padding-top: 7px;
+	background: #fff6e0;
+	height: auto !important;
+	height: 10px;
+	overflow: auto !important;
+	overflow: visible;
+}
+#sidebar .sidebox .rss ul li {
+	float: left;
+	width: 120px;
+	padding: 0px 17px 3px 12px;
+	height: 25px;
+}
+
+/*rss订阅结束*/
+/*email 订阅活动预告邮件开始*/
+#sidebar .sidebox .email {
+	background: #fff6e0;
+	padding: 0px 0px 10px 5px;
+	color: #9f0931;
+	line-height: 20px;
+}
+#sidebar .sidebox .email h3 {
+	font-weight: 600;
+	font-size: 14px;
+	color: #9F0931;
+	line-height: 25px;
+	margin: 0px;	
+}
+#sidebar .sidebox .email .input {
+	height: 20px;
+	width: 195px;
+	border: 1px solid #a0a0a0;
+	margin-top: 0px;
+}
+#sidebar .sidebox .email .red {
+	height: 26px;
+	line-height: 26px;
+	width: 195px;
+	float: left;
+	padding-right: 15px !important;
+	padding-right: 10px;
+}
+#sidebar .sidebox .but1 {
+	background: url(../images/read.gif) no-repeat 0px 0px;
+	width: 71px;
+	height: 26px;
+	color: #fff;
+	line-height: 26px;
+	cursor: pointer;
+	text-align: center;
+	border: 0px;
+	font-weight: 600;
+}
+/*email 订阅活动预告邮件结束*/
+/*end sidebar*/
+/*begin contont*/
+#contont {
+	width: 677px;
+	float: right;
+	margin-top: 6px;
+}
+#contont .contont_box {
+	width: 671px;
+	border: 1px solid #e0ccaf;
+	padding: 2px;
+	height: auto;
+	overflow: auto;
+	margin-bottom: 6px;
+}
+#contont .contont_box h2 {
+	font-size: 14px;
+	font-weight: 600;
+	color: #b80000;
+	margin: 0px;
+	float: left;
+	width: 180px;
+	line-height: 25px;
+}
+#contont .bg {
+	background: #fff6e0;
+}
+/*导购咨询开始*/
+/*begin contont_minbox*/
+#contont .contont_box .contont_minbox {
+	width: 628px;
+	height: 150px;
+	position: relative;
+	margin: 6px 0px 6px 10px;
+	border: 1px solid #ccc;
+	background: #fff;	
+	padding: 9px 9px 9px 22px;
+}
+#contont .contont_box .contont_minbox .contont_minleft {
+	width: 128px;
+	height: 148px;
+	overflow: hidden;
+	text-align: center;
+	float: left;
+	border: 1px solid #d4d4d4;
+}
+#contont .contont_box .contont_minbox .contont_minleft img {
+	width: 120px;
+	height: 140px;
+	margin: 4px;
+	overflow: hidden;
+}
+/*contont_minright begin*/
+#contont .contont_box .contont_minbox .contont_minright {
+	width: 490px;
+	float: right;
+	height: 150px;
+}
+#contont .contont_box .contont_minbox .contont_minmid {
+	width: 175px;
+	height: 150px;
+	float: left;
+}
+#contont .contont_box .contont_minbox .contont_minbar {
+	width: 280px;
+	height: 145px;
+	background: #fff6e0;
+	float: right;
+	padding: 5px 0px 0px 20px;
+}
+#contont .contont_box .contont_minbox h4 {
+	font-size: 12px;
+	font-weight: 600;
+	color: #000;
+	margin: 0px;
+	line-height: 25px;
+}
+#contont .contont_box .contont_minbox h4 a:link,#contont .contont_box .contont_minbox h4 a:visited {
+	color: #000;
+}
+#contont .contont_box .contont_minbox h4 a:hover {
+	color: #000;
+}
+#contont .contont_box .contont_minbox p {
+	height: 40px;
+	line-height: 20px;
+	color: #4a4a4a;
+	margin: 0px 0px 10px 0px;
+	text-indent: 25px;
+}
+#contont .contont_box .contont_minbox p a:link,#contont .contont_box .contont_minbox p a:visited {
+	color: #4a4a4a;
+}
+#contont .contont_box .contont_minbox p a:hover {
+	color: #4a4a4a;
+}
+#contont .contont_box .contont_minbox ul li {
+	height: 24px;
+	line-height: 24px;
+	color: #5c2600;
+}
+#contont .contont_box .contont_minbox ul li a:link,#contont .contont_box .contont_minbox ul li a:visited {
+	color: #5c2600;
+}
+#contont .contont_box .contont_minbox ul li a:hover {
+	color: #5c2600;
+}
+#contont .contont_box .contont_minbox .liline {
+	width: 280px;
+	height: 24px;
+	overflow: hidden;
+}
+/*contont_minright end*/
+#contont .contont_box h3 {
+	position: absolute;
+	top: 40px;
+	left:-12px;
+	font-weight: 400;
+	font-size: 12px;
+	margin: 0px;
+	width: 27px;
+	height: 85px;
+	line-height: 18px;
+}
+#contont .contont_box .contont_minbox .bg1 {
+	background: url(../images/h3_bg1.gif) no-repeat;
+	padding-left: 7px;
+	width: 20px;
+	padding-top: 8px;
+	margin: 1px;
+	color: #731800;
+}
+#contont .contont_box .contont_minbox .bg2 {
+	background: url(../images/h3_bg2.gif) no-repeat;
+	padding-left: 7px;
+
+	width: 20px;
+	padding-top: 8px;
+	margin: 1px;
+	color: #01264c;
+}
+#contont .contont_box .contont_minbox .bg3 {
+	background: url(../images/h3_bg3.gif) no-repeat;
+	padding-left: 7px;
+	width: 20px;
+	padding-top: 8px;
+	margin: 1px;
+	color: #222f00;
+}
+#contont .contont_box .contont_minbox .bg4 {
+	background: url(../images/h3_bg4.gif) no-repeat;
+	padding-left: 7px;
+	width: 20px;
+	padding-top: 8px;
+	margin: 1px;
+	color: #4f0018;
+}
+/*导购咨询结束*/
+/*大红包社区开始*/
+#contont .contont_box .bbs_left {
+	width: 319px;
+	border-right: 1px dotted #c5c5c5;
+	float: left;
+	height: auto;
+	overflow: auto;
+	padding: 0px 8px 0px 8px;
+	margin-top: 8px;
+}
+#contont .contont_box .bbs_right {
+	width: 319px;
+	float: right;
+	height: auto;
+	overflow: auto;
+	padding: 8px 8px 0px 0px;
+}
+#contont .contont_box .bbs_left h4,#contont .contont_box .bbs_right h4 {
+	font-size: 14px;
+	font-weight: 400;
+	color: #5c2600;
+	border-bottom: 2px solid #9b7714;
+	line-height: 24px;
+	margin: 0px;
+	padding-left: 5px;
+}
+#contont .contont_box .bbs_left ul,#contont .contont_box .bbs_right ul {
+	margin: 10px 0px 6px 0px;
+}
+#contont .contont_box .bbs_left ul li,#contont .contont_box .bbs_right ul li {
+	color: #683700;
+	line-height: 22px;
+}
+/*大红包社区结束*/
+/* 大红包推荐商家开始*/
+.contont_business {
+	width: 666px;
+	height: 80px;
+	overflow: hidden;
+	margin: 5px 0px 5px 5px;
+}
+.contont_business span {
+	float: left; 
+	width: 100px;
+	height: 74px;
+	line-height: 14px;
+	text-align: center;
+	margin: 5px;
+	overflow: hidden;
+}
+.contont_business img {
+	width: 90px;
+	height: 50px;
+	overflow: hidden;
+	margin: 5px;
+}
+/* 大红包推荐商家结束*/
+/*title 大红包优惠小贴士开始*/
+.contont_boxhelp {
+	line-height: 20px;
+	width: 661px;
+	height: 95px;
+	margin: 10px 0px 5px 10px;
+	overflow: hidden;
+}
+.contont_boxhelp .help_nav {
+	float: left;
+	width: 35px;
+	background: url(../images/help.gif) no-repeat;
+	overflow: hidden;
+}
+.contont_boxhelp dl {
+	display: inline;
+}
+.contont_boxhelp dl dt {
+	width: 13px;
+	height: 36px;
+	float: left;
+	overflow: hidden;
+	display: inline;
+	line-height: 16px;
+	padding: 5px 6px 5px 8px;
+	cursor: pointer;
+}
+.contont_boxhelp dl dt a:hover {
+	text-decoration: none;
+	color: #000;
+}
+/*title 大红包优惠小贴士结束*/
+/*end contont_minbox*/
+/*end contont*/
+/*城市切换开始*/
+#head .city {
+	border: 1px solid #ccc;
+	width: 330px;
+	background: #fff;
+	padding: 0px 10px 10px 10px;
+	height: 250px;
+	z-index: 5;
+	left: 120px;
+	top: 180px;
+	position: absolute;
+}
+#head .city ul {	
+	height: auto;
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+}
+#head .city ul li {
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	white-space: nowrap;
+	float: left;
+	padding: 0px 5px 0px 0px;
+}
+#head .city strong {
+	color: #ae0000;
+	font-weight: 400;
+	height: 20px;
+}
+#head .city ul li strong a:link,#head .city ul li strong a:visited,#head .city strong ul li a:hover {
+	color: #ae0000;
+	font-weight: 400;
+	text-decoration: underline;	
+}
+#head .city ul li a:link,#head .city ul li a:visited,#head .city ul li a:hover {
+	color: #373400;
+	text-decoration: underline;	
+}
+/*城市切换结束*/
+#kejiji_messleft {
+	width: 225px;
+	float: left;
+	height: 28px;
+	padding-left: 10px;	
+}
+#kejiji_messleft ul li {
+	float: left;
+	padding: 0px 4px;
+	color: #ae0000;
+}
+#kejiji_messleft ul li a:link,#kejiji_messleft ul li a:visited,#kejiji_messleft ul li a:hover {
+	color: #ae0000;
+	text-decoration: underline;
+}
+#kejiji_messleft .kejiji_place {
+	background: url(../images/kejiji_place.gif) no-repeat 0px 8px;
+	padding-left: 10px;
+	color: #393939;
+}

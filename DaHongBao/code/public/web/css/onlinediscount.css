@@ -1,0 +1,40 @@
+/*新增团购分类样式*/
+#nav ul li.home{ position:relative; z-index:500;}
+.homewrapper{ position:absolute;  left:-10px; top:29px; background:#fff; border:#ccc 1px solid;  z-index:500; }
+.homewrapper .topcow{  position:relative; }
+.homewrapper .topcow .arrowimg{height:8px;background:url(../images/homewrapper_bg.gif) no-repeat 0 0;  position:absolute; top:-10px; left:40px; width:15px;}
+#nav ul li .homewrapper ul{ line-height:25px; border-bottom:0; height:auto; float:left; margin:0;}
+#nav ul li .homewrapper ul li{ display:block; float:left; width:130px; padding:0; border-top:1px solid #F2F2F2;
+background:transparent url(../images/google_icnfour.gif) no-repeat scroll 5px 6px;
+}
+#nav ul li .homewrapper ul li.subtitle{ color:#ae0000; font-weight:bold;}
+#nav ul li .homewrapper ul li a {
+	padding-left:15px;
+	padding-right:5px;
+}
+#nav ul li .homewrapper ul li a:link,
+#nav ul li .homewrapper ul li a:visited,
+#nav ul li .homewrapper ul li a:active{ text-decoration:underline; color:#373400;}
+#nav ul li .homewrapper ul li a:hover{ text-decoration:underline; color:#373400;}
+#nav ul li .homewrapper ul li.selected a:link,
+#nav ul li .homewrapper ul li.selected a:visited,
+#nav ul li .homewrapper ul li.selected a:active{ text-decoration:none; color:#731800; background:#fbecb6}
+#nav ul li .homewrapper ul li.selected a:hover{ text-decoration:none; color:#731800; background:#fbecb6}
+#main_min .main_box .topleft h3 {float: left;	position: static;}/*fix ie bug*/
+.menuMouseOver {
+	background:#FF9900 !important;
+}
+.menuMouseOut {
+	background:transparent url(../images/google_icnfour.gif) no-repeat scroll 5px 6px !important;
+}
+.disn { 
+	display:none;
+}
+.disb {
+	display:block;
+}
+.newbring {
+	color:#B70100;
+	font-weight:bold;
+}
+

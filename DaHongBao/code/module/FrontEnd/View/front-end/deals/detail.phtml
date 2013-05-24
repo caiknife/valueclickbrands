@@ -1,0 +1,49 @@
+<?php
+$this->headTitle(strip_tags($this->dealsInfo['CouponName'])."_大红包优惠券");
+$this->headMeta()->appendName("keywords", strip_tags($this->dealsInfo['CouponName'])."促俏优惠信息");
+$this->headMeta()->appendName("description", "大红包优惠券网站第一时间提供".strip_tags($this->dealsInfo['CouponName'])."信息，让用户享受到真正的促俏优惠。");
+$this->headLink()->prependStylesheet($this->basePath().'/styles/CN/coupon.css');
+?>
+<div class="main">
+	<div class="breadcrumb ">
+	<span>当前位置：</span> <a href="/">大红包</a>   &gt; <a href="<?php print $this->dealsUrl;?>">精选促销</a>   &gt; <?php print $this->dealsInfo['CouponNameSort'];?>
+	</div>
+	<div class="content">
+		<div class="contentLeft">
+			<div class="articleList">
+				<div class="articleBox">
+					<div class="post">
+						<h3><a href="javascript:;" onmouseup="redirectLink('<?php print $dealsInfo['OfferUrl'];?>', this)" target="_blank">【<?php strip_tags(print $this->dealsInfo['MerchantName']);?>】<?php strip_tags(print $this->dealsInfo['CouponName']);?></a></h3>
+						<p class="date"><?php print date('Y-m-d', strtotime($dealsInfo['InsertDateTime']));?></p>
+						<?php if ($this->dealsInfo['CouponDescription']):?>
+						<p><?php print $this->dealsInfo['CouponDescription'];?></p>
+						<?php endif;?>
+						<div class="button">
+						<ul>
+						<?php if ($this->dealsInfo['CouponEndDate'] && time() > strtotime($this->dealsInfo['CouponEndDate'])):?>
+						<li class="seeIt"><a href="#">该促销信息已过期</a></li>
+						<?php else:?>
+						<li class="buy"><a href="javascript:;" onmouseup="redirectLink('<?php print $dealsInfo['OfferUrl'];?>', this)" target="_blank">直接购买</a></li>
+						<?php endif;?>
+						</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php if ($this->couponList):?>
+			<div class="merchantCoupon">
+			<h2><?php print $this->dealsInfo['MerchantName'];?>其他优惠券</h2>
+			<div class="couponLists">
+				<?php print $this->partial('front-end/default/couponList3.phtml'); ?>
+			</div>
+			</div>
+			<?php endif;?>
+		</div>
+		<div class="sidebar">
+			<?php print $this->partial('front-end/default/googleAdsList.phtml'); ?>
+			<?php print $this->partial('front-end/default/hotCouponList.phtml'); ?>
+			<?php print $this->partial('front-end/default/newDealsList.phtml'); ?>
+		</div>
+		<div class="cl"></div>
+	</div>
+</div>

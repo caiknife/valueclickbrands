@@ -1,0 +1,10 @@
+<?php if ($this->categoryList):?>
+<div class="categorywp" id="nav">
+	<div class="allcate"><div class="allcateborder"><span><a href="#">全部优惠券分类</a></span></div><b class="cornerl"></b><b class="cornerr"></b></div>
+	<ul class="disn">
+		<?php foreach ($this->categoryList as $key => $category):?>
+		<li><a href="<?php print $category['CategoryUrl'];?>"><?php print $category['CategoryName'];?></a></li>
+		<?php endforeach;?>
+	</ul>
+</div>
+<?php endif;?>

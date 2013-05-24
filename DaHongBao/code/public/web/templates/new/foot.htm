@@ -1,0 +1,18 @@
+<!--脚部开始-->
+<div id="foot" class="main_box">
+	关于<a href="/about_dahongbao.html">大红包</a> | <a href="/Contact_Us.html">联系我们</a> | <a href="/sitemap.html">网站地图</a><br />
+	版权归&copy; {$smarty.now|date_format:"%Y"} 上海惠可网络技术有限公司 所有 沪ICP备12034406号
+</div>
+<!--脚部结束-->
+<script type="text/javascript" src="/jscript/track/tracker.js"></script>
+<script type="text/javascript">
+var sessionId = '{php}echo Tracking_Session::getInstance()->getSessionId();{/php}';
+var requestId = '{php}echo Tracking_Session::getInstance()->getRequestId();{/php}';
+track(requestId, sessionId);
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F19bbc4aab5de3a18739550f2a6d0cc0b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

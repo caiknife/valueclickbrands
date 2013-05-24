@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+{literal}
+<script>
+	function kg(tid){
+		//alert(tid)
+		window.location.href="topicindex.php?act=g&value="+tid;
+
+	}
+</script>
+{/literal}
+<BODY><FORM METHOD=POST ACTION="" enctype="multipart/form-data"><INPUT TYPE="hidden" name="act" value="change">
+<TABLE border=1>
+<TR>
+<TD><INPUT TYPE="hidden" name="c[topicid]" value="{$smarty.get.id}"></TD>
+</TR>
+<TR>
+<TD>°å¿é×ÉÑ¯±êÌâ:<INPUT TYPE="text" NAME="c[contenttitle]"></TD>
+</TR>
+<TR>
+<TD>°å¿éÓÅ»ÝÈ¯±êÌâ:<INPUT TYPE="text" NAME="c[coupontitle]"></TD>
+</TR>
+<TR>
+<TD>°å¿é×ÉÑ¯:<INPUT TYPE="text" NAME="c[contentid]"></TD>
+</TR>
+<TR>
+<TD>°å¿éÓÅ»ÝÈ¯:<INPUT TYPE="text" NAME="c[couponid]"></TD>
+</TR>
+
+<TR>
+<TD>°å¿égoogleads:<INPUT TYPE="text" NAME="c[googlesearch]"></TD>
+</TR>
+
+<TR>
+<TD>Í¼Æ¬1:<INPUT TYPE="file" NAME="image1"></TD>
+</TR>
+<TR>
+<TD>Í¼Æ¬2:<INPUT TYPE="file" NAME="image2"></TD>
+</TR>
+<TR>
+<TD>Í¼Æ¬3:<INPUT TYPE="file" NAME="image3"></TD>
+</TR>
+<TR>
+<TD>Í¼Æ¬4:<INPUT TYPE="file" NAME="image4"></TD>
+</TR>
+<TR>
+<TD>Í¼Æ¬5:<INPUT TYPE="file" NAME="image5"></TD>
+</TR>
+
+<TR>
+<TD><INPUT TYPE="button" value="·µ»Ø" onclick="window.location.href='topicindex.php'"><INPUT TYPE="submit" value="È·ÈÏÐÞ¸Ä"></TD>
+</TR>
+</table></FORM>
+</BODY>
+</HTML>

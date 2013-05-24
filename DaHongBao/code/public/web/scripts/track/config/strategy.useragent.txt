@@ -1,0 +1,444 @@
+##############################################
+# tracking config file, used to define robots
+# ignored HTTP_USER_AGENT
+##############################################
+
+###### white list@20100206
++~AdsBot-Google
++~Mediapartners-Google
++~sem robot
+
+# add by lee(2005-08-01)
+-~arachnophilia
+
+# add by lee(2005-08-01)
+-~architext
+
+# add by lee(2005-08-01)
+-~aspider
+
+# add by lee(2005-08-01)
+-~backrub
+
+# add by lee(2005-08-01)
+-~arachnophilia
+
+# add by lee(2005-08-01)
+-~architext
+
+# add by lee(2005-08-01)
+-~aspider
+
+# add by lee(2005-08-01)
+-~backrub
+
+# add by lee(2005-08-01)
+-~checkbot
+
+# add by lee(2005-08-01)
+-~Firefly
+
+# add by lee(2005-08-01)
+-~freecrawl
+
+# add by lee(2005-08-01)
+-~gazz/2.1 (gazz@nttrd.com)
+
+# add by lee(2005-08-01)
+-~geturl
+
+# add by lee(2005-08-01)
+-~googlebot
+
+# add by lee(2005-08-01)
+-~gulliver
+
+# add by lee(2005-08-01)
+-~infoseek
+
+# add by lee(2005-08-01)
+-~infoseeksidewinder
+
+# add by lee(2005-08-01)
+-~internetseer
+
+# add by lee(2005-08-01)
+-~lycos
+
+# add by lee(2005-08-01)
+-~scooter
+
+# add by lee(2005-08-01)
+-~searchhippo
+
+# add by lee(2005-08-01)
+-~slurp
+
+# add by lee(2005-08-01)
+-~fast-webcrawler
+
+# add by lee(2005-08-01)
+-~mercator
+
+# add by lee(2005-08-01)
+-~MSIECrawler
+
+# add by lee(2005-08-01)
+-~ia_archiver
+
+# add by lee(2005-08-01)
+-~ultraseek
+
+# add by lee(2005-08-01)
+-~Xenu Link Sleuth
+
+# add by lee(2005-08-01)
+-~Xenu's Link Sleuth
+
+# add by lee(2005-08-01)
+-~File Flash Spider
+
+# add by lee(2005-08-01)
+-~TrueRobot/1.4
+
+# add by lee(2005-08-01)
+-~SlySearch
+
+# add by lee(2005-08-01)
+-~Openfind
+
+# add by lee(2005-08-01)
+-~LWP::Simple
+
+# add by lee(2005-08-01)
+-~lwp-trivial
+
+# add by lee(2005-08-01)
+-~libwww-perl
+
+# add by lee(2005-08-01)
+-~libwww-perl/5.48
+
+# add by lee(2005-08-01)
+-~libwww-perl/5.52 FP
+
+# add by lee(2005-08-01)
+-~NPBot
+
+# add by lee(2005-08-01)
+-~Gigabot
+
+# add by lee(2005-08-01)
+-~Baiduspider
+
+# add by lee(2005-08-01)
+-~TurnitinBot
+
+# add by lee(2005-08-01)
+-~Overture-WebCrawler
+
+# add by lee(2005-08-01)
+-~Gaisbot
+
+# add by lee(2005-08-01)
+-~msnbot
+
+# add by lee(2005-08-01)
+-~psbot
+
+# add by lee(2005-08-01)
+-~ZyBorg
+
+# add by lee(2005-08-01)
+-~Jetbot/
+
+# add by lee(2005-08-01)
+-~wotbox.com
+
+# add by lee(2005-08-01)
+-~Mediapartners-Google
+
+# add by lee(2005-08-01)
+-~ShowLinks/1.0 libwww/5.4.0
+
+# add by lee(2005-08-01)
+-~Pompos/1.3
+
+# add by lee(2005-08-01)
+-~Java/
+
+# add by lee(2005-08-01)
+-~Ask Jeeves/Teoma
+
+# add by lee(2005-08-01)
+-~Z-Add Link Checker
+
+# add by lee(2005-08-01)
+-~MS Search 4.0 Robot
+
+# add by lee(2005-08-01)
+-~libwww-perl/5.65
+
+# add by lee(2005-08-01)
+-~libwww-perl/
+
+# add by lee(2005-08-01)
+-~dtSearchSpider
+
+# add by lee(2005-08-01)
+-~HLoader
+
+# add by lee(2005-08-01)
+-~IECheck
+
+# add by lee(2005-08-01)
+-~Java/1.4.2_04
+
+# add by lee(2005-08-01)
+-~Java1.3.1
+
+# add by lee(2005-08-01)
+-~LexiBot/1.00
+
+# add by lee(2005-08-01)
+-~libwww-perl/5.76
+
+# add by lee(2005-08-01)
+-~libwww-perl/5.63
+
+# add by lee(2005-08-01)
+-~Ocelli/1.1
+
+# add by lee(2005-08-01)
+-~NG/2.0
+
+# add by lee(2005-08-01)
+-~Faxobot/1.0
+
+# add by lee(2005-08-01)
+-~Java/1.4.2_06
+
+# add by lee(2005-08-01)
+-~almaden.ibm.com/cs/crawler
+
+# add by lee(2005-08-01)
+-~BecomeBot
+
+# add by lee(2005-08-01)
+-~PHPCrawl
+
+# add by lee(2005-08-01)
+-~Java/
+
+# add by lee(2005-08-01)
+-~findlinks/
+
+# add by lee(2005-08-01)
+-~appie 1.1
+
+# add by lee(2005-08-01)
+-~ColdFusion
+
+# add by lee(2005-08-01)
+-~ApacheBench/
+
+# add by lee(2005-08-01)
+-~LMQueueBot/
+
+# add by lee(2005-08-01)
+-~HTMLParser/
+
+# add by lee(2005-08-01)
+-~abot/0.1
+
+# add by lee(2005-08-01)
+-~aipbot/
+
+# add by lee(2005-08-01)
+-~OmniExplorer_Bot
+
+# add by lee(2005-08-01)
+-~BigCliqueBOT
+
+# add by lee(2005-08-01)
+-~Sensis.com.au Web Crawler
+
+# add by lee(2005-08-01)
+-~OmniExplorer_Bot/1.09
+
+# add by lee(2005-08-01)
+-~cfetch/1.0
+
+# add by lee(2005-08-01)
+-~CJNetworkQuality
+
+# add by lee(2005-08-01)
+-~GoodSeacher
+
+# add by lee(2005-08-01)
+-~Microsoft bCentral Submit-it Indexer
+
+# add by lee(2005-08-01)
+-~noxtrumbot/1.0 (crawler@noxtrum.com)
+
+# add by lee(2005-08-01)
+-~snap.com beta crawler
+
+# add by lee(2005-08-01)
+-~sna-0.0.1
+
+# add by lee(2005-08-01)
+-~http://robots.looksmart.com
+
+# add by lee(2005-08-29)
+-~Googlebot/
+
+# add by lee(2005-08-29)
+-~MJ12bot/
+
+# add by lee(2005-08-29)
+-~nicebot/
+
+# add by lee(2005-08-29)
+-~Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp
+
+# add by lee(2005-08-29)
+-~Snoopy v1.2
+
+# add by lee(2005-08-29)
+-~appie 1.1 (www.walhello.com)
+
+# add by lee(2005-08-29)
+-~AnswerBus (http://www.answerbus.com/)
+
+# add by lee(2005-08-29)
+-~Wget/1.8.2
+
+# add by lee(2005-08-29)
+-~findlinks/0.966 (+http://wortschatz.uni-leipzig.de/findlinks/)
+
+# add by lee(2005-08-29)
+-~NutchCVS/0.06-dev
+
+# add by lee(2005-08-29)
+-~POE-Component-Client-HTTP/
+
+# add by lee(2005-09-12)
+-~WinHttp.WinHttpRequest
+
+# add by lee(2005-09-12)
+-~grub-client
+
+# add by lee(2005-09-12)
+-~nicebot
+
+# add by lee(2005-09-12)
+-~livedoorCheckers/
+
+# add by lee(2005-09-13)
+-~Microsoft URL Control
+
+# add by lee(2005-09-13)
+-~Mister Pix
+
+# add by lee(2005-09-23)
+-~DoCoMo/2.0 P900i(c100;TB;W24H11)
+
+# add by lee(2005-09-23)
+-~Mozilla/4.04 (compatible; Dulance bot; +http://www.dulance.com/bot.jsp)
+
+# add by lee(2005-09-23)
+-~Mozilla/4.04 (compatible; Dulance bot; +http://www.dulance.com/bot.jsp)
+
+# add by lee(2005-09-23)
+-~LapozzBot/1.4 (+http://robot.lapozz.hu)
+
+# add by lee(2005-10-12)
+-~MSNPTC/
+
+# add by lee(2005-12-01)
+-~ichiro/
+-~
+# add by lee(2005-12-01)
+-~voyager/
+
+# add by lee(2005-12-07)
+-~WatchMouse/
+
+# add by lee(2005-12-13)
+-~Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.1;+SearchMarketing+NSA)
+
+# add by lee(2006-03-23)
+-~RufusBot
+
+# add by lee(2006-03-23)
+-~ShopWiki/
+
+# add by lee(2006-03-23)
+-~BDFetch/
+
+# add by lee(2006-03-23)
+-~curl/
+
+# add by lee(2006-03-23)
+-~Download Ninja
+
+#add by lee(2006-03-23)
+-~EasyDL/
+
+#add by lee(2006-03-23)
+-~Exabot-Images/
+
+#add by lee(2006-03-23)
+-~FANGCrawl/
+
+#add by lee(2006-03-23)
+-~FAST Enterprise Crawler
+
+#add by lee(2006-03-23)
+-~Jakarta Commons-HttpClient/
+
+#add by lee(2006-03-23)
+-~Test Spider
+
+#add by lee(2006-03-23)
+-~Yahoo-MMCrawler/
+
+#add by lee(2006-03-23)
+-~NaverBot-1.0
+
+#add by lee(2006-03-23)
+-~Microsoft Small Business Indexer
+
+#add by lee(2006-7-24)
+-~Mozilla/5.0 (compatible; FatBot 2.0; www.FatLens.com)
+
+#add by lee(2006-7-24)
+-~check_http/
+
+#add by lee(2006-7-24)
+-~Mozilla/4.0 (compatible; MSIE 6.0; Windows XP) [WebmasterSolutions] Webmetrics
+
+#add by lee(2006-7-24)
+-~NutchCVS/
+
+#add by lee(2006-7-24)
+-~lwp-request/
+
+#add by lee(2006-7-24)
+-~bot
+
+#add by lee(2006-7-24)
+-~crawler
+
+#add by lee(2006-7-24)
+-~spider
+
+#add by lee(2006-7-24)
+-~indexer
+
+#add by patrick(2007-05-18)
+-~larbin
+-~P.Arthur
+-~cks
+-~Wget/

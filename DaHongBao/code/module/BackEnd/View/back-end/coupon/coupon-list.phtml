@@ -1,0 +1,199 @@
+<?php
+/**
+* coupon-list.phtml
+*-------------------------
+*
+* 
+*
+* PHP versions 5
+*
+* LICENSE: This source file is from Smarter Ver2.0, which is a comprehensive shopping engine 
+* that helps consumers to make smarter buying decisions online. We empower consumers to compare 
+* the attributes of over one million products in the common channels and common categories
+* and to read user product reviews in order to make informed purchase decisions. Consumers can then 
+* research the latest promotional and pricing information on products listed at a wide selection of 
+* online merchants, and read user reviews on those merchants.
+* The copyrights is reserved by http://www.mezimedia.com. 
+* Copyright (c) 2006, Mezimedia. All rights reserved.
+*
+* @author Yaron Jiang <yjiang@corp.valueclick.com.cn>
+* @copyright (C) 2004-2013 Mezimedia.com
+* @license http://www.mezimedia.com PHP License 5.0
+* @version CVS: $Id: coupon-list.phtml,v 1.7 2013/04/20 07:06:18 yjiang Exp $
+* @link http://www.dahongbao.com/
+* @deprecated File deprecated in Release 3.0.0
+*/
+$this->headScript()->appendFile($this->basePath('js/BackEnd/coupon-list.js'));
+
+?>
+<div class="box">
+<div class="box-header">
+<h2><i class="icon-box"></i>Coupon管理</h2>
+</div>
+
+<div class="box-content">
+<div class="input-group">
+            <a class="btn btn-success" href="<?php echo $this->url('backend' , array('controller' 
+                => 'coupon' , 'action' => 'save'));?>?referer=<?php echo $this->uri?>">添加新Coupon</a>
+        </div>
+<form class="form-inline" action="<?php echo $this->url(null , array('controller' => 'coupon' 
+    , 'action' => 'couponList'))?>" method="get">
+
+<div class="input-group">
+<select name="SiteID" class="select-element input-element span2">
+<?php foreach($this->sites as $k => $v):?>
+<option value="<?php echo $k?>" <?php 
+if($k == $this->SiteID):?>selected="selected"<?php endif;?>><?php echo $v?></option>
+<?php endforeach;?>
+</select>
+&nbsp;&nbsp;
+<label>分类</label>
+<select class="select-element input-element span2" name="CategoryID">
+    <option value="">所有</option>
+    <?php foreach($this->categories as $k => $v):?>
+    <option <?php if($k == $this->CategoryID):?>
+        selected="selected"<?php endif;?> value="<?php echo $k?>"><?php echo $v?></option>
+    <?php endforeach;?>
+</select>
+&nbsp;&nbsp;
+<label class="">Affiliate</label>
+<select class="select-element input-element span2" name="AffiliateID">
+    <option value="">所有</option>
+    <?php foreach($this->affiliates as $k => $v):?>
+    <option value="<?php echo $k?>" <?php if($k == $this->AffiliateID):?>selected="selected"<?php endif;?> >
+    <?php echo $v?>
+    </option>
+    <?php endforeach;?>
+</select>
+
+<label>CouponType</label>
+<select name="CouponType" class="select-element input-element span2">
+<option value="">所有</option>
+<?php foreach($this->couponTypes as $v):?>
+<option <?php if($v == $this->CouponType):?>selected="selected"<?php endif?> value="<?php echo $v?>"><?php echo $v
+?></option>
+<?php endforeach;?>
+</select>
+
+<select name="IsActive" class="select-element input-element span2">
+<option <?php if('YES' == $this->IsActive):?>selected="selected"<?php endif;?> value="YES">在线</option>
+<option <?php if('NO' == $this->IsActive):?>selected="selected"<?php endif;?> value="NO">下线</option>
+</select>
+
+
+</div>
+
+<div class="input-group">
+<label class="">标题</label>
+<input type="text" class="input-element span3" name="CouponName" value="<?php
+ echo $this->CouponName?>" />
+ &nbsp;&nbsp;
+ <select name="MerchantSearchType" class="select-element input-element span2">
+<option <?php if('MerchantID' == $this->MerchantSearchType):
+?>selected="selected"<?php endif;?> value="MerchantID">按商家ID搜索</option>
+<option <?php if('MerchantName' == $this->MerchantSearchType):
+?>selected="selected"<?php endif;?> value="MerchantName">按商家名搜索</option>
+</select>
+<input class="input-element span3" type="text" name="MerchantSearch" />
+</div>
+
+
+<div class="input-group">
+<button class="btn btn-primary" type="submit">搜索</button>
+<a class="btn btn-inverse" href="<?php echo $this->url(null , array('controller' => 'coupon' , 'action' 
+    => 'couponList'))?>">清除条件</a>
+</div>
+</form>
+
+<table class="table">
+<thead>
+<tr class="row">
+<th><input type="checkbox" id="allCheck" /></th>
+<th>CouponID</th>
+<th>类别</th>
+<th width="60">商家名</th>
+<th width="60">Coupon名</th>
+<th width="40">地址</th>
+<th>Coupon图片</th>
+<th width="95">使用时间</th>
+<th>优惠</th>
+<th>附加内容</th>
+<th width="200">操作</th>
+</tr>
+</thead>
+<tbody>
+<?php foreach($this->list as $v):?>
+<tr class="row">
+<td><input type="checkbox" name="CouponID[]" value="<?php echo $v->CouponID?>" /></td>
+<td><?php echo $v->CouponID?></td>
+<td><?php echo $v->CouponType?></td>
+<td><?php echo $v->MerchantName?></td>
+<td>
+<a data-original-title="<?php echo $this->escapeHtml($v->CouponDescription)?><?php echo 
+$this->escapeHtml($v->CouponRestriction)?>" class="CouponName" href="#"><?php echo $v->CouponName?></a>
+
+</td>
+<td><?php if(!empty($v->CouponUrl)):?><a target="_blank" title="<?php echo $v->CouponUrl?>" href="<?php 
+echo $v->CouponUrl?>">链接</a>
+<?php else:?>无链接<?php endif;?></td>
+
+<td><img width="50px" src="<?php echo $v->CouponImageUrl?>" /></td>
+<td>
+<p><?php echo strstr($v->CouponStartDate , ' ', true)?></p>
+<?php if(strpos($v->CouponEndDate , '3333') !== false):?>
+<p>长期有效</p>
+<?php else:?>
+<p><?php echo strstr($v->CouponEndDate, ' ', true)?></p>
+<?php endif;?>
+</td>
+<td>
+<?php if(!empty($v->CouponAmount)):?>
+满<?php echo $v->CouponAmount?>减<?php echo $v->CouponReduction?>
+<?php elseif(!empty($v->CouponDiscount)):?>
+<?php echo $v->CouponDiscount?>折
+<?php else:?>
+无
+<?php endif;?>
+</td>
+<td>
+<?php if('YES' == $v->IsFree):?>
+免费
+<?php endif;?>
+
+<?php if('YES' == $v->IsPromote):?>
+手工推荐
+<?php endif;?>
+</td>
+<td>
+<div class="btn-group">
+<?php if('YES' == $v->IsActive):?>
+<a class="btn btn-inverse" href="<?php echo $this->url(null , array('controller' => 'coupon' , 'action' => 'inActive'))
+?>?CouponID=<?php echo $v->CouponID?>&uri=<?php echo $this->uri?>">下线</a>
+<?php else:?>
+<a class="btn btn-success" href="<?php echo $this->url(null , array('controller' => 'coupon' , 'action' => 'active'))
+?>?CouponID=<?php echo $v->CouponID?>&uri=<?php echo $this->uri?>">上线</a>
+<?php endif;?>
+<a class="btn btn-edit" href="<?php echo $this->url(null , array('controller' => 'coupon' , 'action' => 'save'))
+?>?CouponID=<?php echo $v->CouponID?>&referer=<?php echo $this->uri?>">编辑</a>
+<a class="btn btn-primary" href="<?php echo $this->url(null , array('controller' => 'recommend' , 'action' => 'save'))?>?ID=<?php 
+echo $v->CouponID?>&ContentType=COUPON&SiteID=<?php echo $this->SiteID?>&MerchantID=<?php echo $v->MerchantID
+?>&referer=<?php echo $this->uri?>">推荐</a>
+<?php if($this->isAllowed('coupon_delete')):?>
+<a class="btn btn-delete" data-href="<?php echo $this->url(null , array('controller' => 'coupon' , 'action' => 'delete'))
+?>?CouponID=<?php echo $v->CouponID?>&referer=<?php echo $this->uri?>" href="javascript:void(0)">删除</a>
+<?php endif;?>
+</div>
+</td>
+</tr>
+<?php endforeach;?>
+</tbody>
+<tfoot>
+<td colspan=13>
+<?php echo $this->paginationControl($this->list,'Sliding','layout/pagination' 
+                         , array('link' => $this->url(null , array('controller' 
+                        => 'coupon' , 'action' => 'couponList')) . '?' . $this->query));?>
+</td>
+</tfoot>
+</table>
+</div>
+</div>

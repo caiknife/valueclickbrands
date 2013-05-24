@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>大红包生活频道-{$categoryname}</title>
+<link href="../css/kejiji.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+{literal}
+<script>
+	function cityshow(){
+		if(document.getElementById('cityshow').style.display == "inline"){
+			document.getElementById('cityshow').style.display = "none";
+		}else{
+			document.getElementById('cityshow').style.display = "inline";
+		}
+	}
+</script>
+
+{/literal}
+<body>
+{include file="new/headkjj.htm"}
+<!--头部结束-->
+<div class="clr"></div>
+<!--主体内容开始-->
+<div id="ke_channel">
+	<div id="ke_title">		
+		<strong>&nbsp;&nbsp;类目导航：</strong><a href="listing.php?cityId={$cityId}&categoryId={$categoryall}">{$categoryname}</a> {if $hasnextcat==1}-> {$category1name}{/if}<br />
+		<strong>按地区选择：</strong><div class="ke_titlemessage">{if $match1==''}<span class="bring">全市</span>{else}<a href="listing.php?cityId={$cityId}&categoryId={$categoryId}">全市</a>{/if}<span class="red">｜</span>{foreach key=key item=item from=$areas name=areaname}{if $match1==$item->id}<span class="bring">{$item->name}</span>{else}<a href="listing.php?cityId={$cityId}&categoryId={$categoryId}&areaId={$item->id}">{$item->name}</a>{/if}{if $smarty.foreach.areaname.last}{else}<span class="red">｜</span>{/if}{/foreach}<br />{foreach key=key item=item from=$areas1 name=areaname1}{if $match2==$item->id}<span class="bring">{$item->name}</span>{else}<a href="listing.php?cityId={$cityId}&categoryId={$categoryId}&areaId={$item->id}">{$item->name}</a>{/if}{if $smarty.foreach.areaname1.last}{else}<span class="red">｜</span>{/if}{/foreach}</div>
+
+
+		
+	</div>
+	<div id="ke_left">
+		<div class="ke_leftbox">
+			<div class="ke_lefttitle"><img src="../images/ke_lefttitle.gif" alt="客齐集" /></div>			
+			<div class="ke_leftmain">
+				<h2>按类目选择</h2>
+				<ul>
+					{foreach key=key item=item from=$cates}
+					{if $categoryId==$item->id}
+					<li>·<strong><a href="listing.php?cityId={$cityId}&categoryId={$item->id}">{$item->name}</a></strong></li>
+					{else}
+					<li>·<a href="listing.php?cityId={$cityId}&categoryId={$item->id}">{$item->name}</a></li>
+					{/if}
+					{/foreach}
+					<!-- <li>·<a href="#">广告公关媒介类</a></li>
+					<li>·<a href="#">广告公关媒介类</a></li>
+					<li>·<a href="#">广告公关媒介类</a></li>
+					<li>·<a href="#">广告公关媒介类</a></li>
+					<li>·<a href="#">广告公关媒介类</a></li>
+					<li>·<strong><a href="#">广告公关媒介类</a></strong></li>
+					<li>·<a href="#">广告公关媒介类</a></li>
+					<li>·<a href="#">广告公关媒介类</a></li>
+					<li>·<a href="#">广告公关媒介类</a></li> -->
+				</ul>
+			</div>
+			<div class="ke_lefticn"><img src="../images/ke_lefticn.gif" alt="客齐集" /></div>
+
+		</div>
+		<div class="ke_leftad">
+			<a href="http://gary.kijiji.cn/006_site.html "><img src="http://pindao.kijiji.cn/upload_img/img/0712/20071205779061.gif" alt="客齐集" /></a>
+			<a href="http://www.kijiji.cn"><img src="/images/kijijilogo.gif" alt="客齐集" /></a>
+		</div>
+	</div>
+	<div id="ke_right">
+		<!--全部信息开始-->
+		<div class="ke_rightbox">
+			<div class="ke_righttitle"><h2>{if $hasnextcat==1}{$category1name}{else}{$categoryname}{/if}的全部信息</h2></div>
+			{if $adscount==0}<div class="ke_rightmain">
+				<h4>暂无信息</h4>
+			</div>{else}
+			<div class="ke_rightmain">
+				<!--page begin-->
+				<div class="page ke_border">
+					<ul>
+						
+						{if $hiddenlast==1}{else}
+						<li><a href="listing.php?cityId={$nowcityid}&categoryId={$categoryId}&areaId={$nowareaId}&page={$lastpage}">上一页</a></li>
+						{/if}
+						<li>当前第{$nowpage}页</li>
+						{if $hiddennext==1}{else}
+						<li><a href="listing.php?cityId={$nowcityid}&categoryId={$categoryId}&areaId={$nowareaId}&page={$nextpage}">下一页</a></li>
+						{/if}
+						{if $showpage==1}
+						<li>1</li>
+						{/if}
+					</ul>
+				</div>
+				<!--page end-->
+				<!--ke_box begin-->
+				
+	
+				
+				{foreach key=key item=item from=$ads}
+						{if $item->image1!=""}
+						<div class="ke_box">
+							<h3><a href="view.php?id={$item->id}">{$item->title}</a></h3>
+							<div class="ke_message">
+								<div class="ke_img"><a href="view.php?id={$item->id}"><img src="{$item->image1}"/></a></div>
+								<div class="ke_messright">{$item->description}......
+								</div>
+							</div>					
+							<div class="ke_line">
+								<!-- <strong>作者</strong>  -->发表于 <span class="ke_time">{$item->createdTime}</span>
+							</div>
+						</div>
+						{else}
+						<div class="ke_box">
+							<h3><a href="view.php?id={$item->id}">{$item->title}</a></h3>
+							<div class="ke_message">{$item->description}......
+							</div>
+							<div class="ke_line">
+								<!-- <strong>作者</strong>  -->发表于 <span class="ke_time">{$item->createdTime}</span>
+							</div>
+						</div>
+						{/if}
+					{/foreach}
+
+				
+				
+				<!--ke_box end-->
+				
+				<!--page begin-->
+				<div class="page">
+					<ul>
+						{if $hiddenlast==1}{else}
+						<li><a href="listing.php?cityId={$nowcityid}&categoryId={$categoryId}&areaId={$nowareaId}&page={$lastpage}">上一页</a></li>
+						{/if}
+						<li>当前第{$nowpage}页</li>
+						{if $hiddennext==1}{else}
+						<li><a href="listing.php?cityId={$nowcityid}&categoryId={$categoryId}&areaId={$nowareaId}&page={$nextpage}">下一页</a></li>
+						{/if}
+						{if $showpage==1}
+						<li>1</li>
+						{/if}
+					</ul>
+				</div>
+				<!--page end-->
+			</div>{/if}
+		</div>
+		<!--全部信息结束-->		
+	</div>
+</div>
+<!--主体内容结束-->
+<script type="text/javascript">var referrerURL = escape(document.referrer);var trackerURL = '<img src="http://gary.kijiji.cn/image.php?tp=1&amp;ct=999&amp;ref='+referrerURL+'" height="1" width="1" style="display:none" alt="" />';document.write(trackerURL)</script><noscript><img src="http://gary.kijiji.cn/image.php?tp=1&ct=21" height="1" width="1" style="display:none" alt="" /></noscript>
+{include file="new/foot.htm"}

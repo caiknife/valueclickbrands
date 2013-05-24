@@ -1,0 +1,40 @@
+<?php
+$title = strip_tags($this->articleInfo['Title']);
+$this->headTitle($title."－大红包海淘优惠券");
+$this->headMeta()->appendName("keywords", $title);
+$this->headMeta()->appendName("description", "大红包海淘优惠券为您展示了 ".$title." 海淘购物知识。");
+?>
+<div class="mainleft">
+    <!-- 全部优惠券分类 -->
+    <?php print $this->partial('us/default/allCategory.phtml');?>
+
+    <!-- 海淘攻略 && 优惠券使用攻略 -->
+    <?php print $this->partial('us/default/siteHelp.phtml');?>
+
+    <!-- 邮箱订阅 -->
+    <?php print $this->partial('us/default/emailSubcription.phtml');?>
+
+    <!-- 帮助中心 -->
+    <?php print $this->partial('us/default/helpCenter.phtml');?>
+
+    <!-- 特价促销 -->
+    <?php print $this->partial('us/default/specialDealsList.phtml');?>
+
+    <!-- google ads -->
+    <?php print $this->partial('us/default/googleAdsList.phtml');?>
+</div>
+<div class="mainright">
+	<div class="breadcrumb">
+		当前位置： <a href="/">大红包海淘</a>  &gt; <a href="<?php print $this->helpCenterUrl;?>"><?php print $this->helpCenterName;?></a> &gt; <a href="<?php print $this->articleInfo['ArticleCateUrl'];?>"><?php print $this->articleInfo['CategoryName'];?></a> &gt; <?php print strip_tags($this->articleInfo['Title']);?>
+	</div>
+	<div class="articlewp">
+		<div class="headline">
+			<h2><?php print $this->articleInfo['Title'];?></h2>
+		</div>
+		<div class="content">
+			<div class="articledetail">
+				<?php print $this->articleInfo['Detail'];?>
+			</div>
+		</div>
+	</div>
+</div>

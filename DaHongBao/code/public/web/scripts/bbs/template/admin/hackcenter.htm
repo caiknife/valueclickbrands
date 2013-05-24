@@ -1,0 +1,87 @@
+<!--<?php
+include_once PrintEot('left');
+print <<<EOT
+-->
+<table width=98% align=center cellspacing=1 cellpadding=3 class=i_table>
+<tr><td class=b colspan=2>[<a href="$basename">管理插件</a>] [<a href="$basename&action=add">添加插件</a>]</td></tr>
+</table><br>
+<!--
+EOT;
+if(!$action){print <<<EOT
+-->
+<table width=98% align=center cellspacing=1 cellpadding=3 class=i_table>
+<tr><td class=head colspan=2><b>提示信息</b></td></tr>
+<tr><td class=b><br>
+<ul>
+插件安装步骤：<br />1. 上传相应文件到指定插件目录(相对于hack目录)<br />2. 到添加插件处配置插件相关设置</li>
+</ul>
+<br></td></tr></table><br>
+<table width=98% align=center cellspacing=0 cellpadding=0 class=i_table>
+<tr><td><table width=100% cellspacing=1 cellpadding=3>
+<tr class=i_table><td colspan="8" class=head><b>插件管理</b></td></tr>
+<tr class=head_2  align=center>
+<td width=8%>ID</td>
+<td>插件名称</td>
+<td width=15%>插件目录</td>
+<td width=20%>启用</td>
+<td width=15%>插件管理</td>
+<td width=8%>编辑</td>
+<td width=8%>卸载</td></tr>
+<!--
+EOT;
+$id_h=0;
+foreach($db_hackdb as $key=>$hack){
+$j_url=EncodeUrl("$basename&action=del&id=$key");
+$id_h++;
+$ifuse=$hack[2]==2 ? '直接显示' :($hack[2]==1 ? '下拉菜单显示' : '不显示');
+print <<<EOT
+-->
+<tr align=center>
+	<td class=b>$id_h</td>
+	<td class=b align=left>　$hack[0]</td>
+	<td class=b align=left>　$hack[1]</td>
+	<td class=b>$ifuse</td>
+	<td class=b><a href="$admin_file?adminjob=hack&hackset=$hack[1]" style="color:blue" title="点击管理此插件">插件管理</a></td>
+	<td class=b><a href="$basename&action=edit&id=$key">编辑</a></td>
+	<td class=b><a style="cursor:pointer;" onclick="return checkhackset('$j_url')">卸载</a></td>
+</tr>
+<!--
+EOT;
+}print <<<EOT
+-->
+</table></td></tr></table>
+<!--
+EOT;
+}else{print <<<EOT
+-->
+<table width=98% align=center cellspacing=1 cellpadding=3 class=i_table>
+<tr><td class=head colspan=2><b>提示信息</b></td></tr>
+<tr><td class=b>
+<br /><ul>说明（以银行插件为例）：<br><br>插件名称：　　　银行（前后台显示的插件名称）<br />插件目录：　　　bank（比如银行插件的相关文件保存在hack/bank目录下<br />前台显示方式：　直接显示/下拉菜单显示/不显示</ul>
+</td></tr></table><br>
+
+<form action="$basename" method=post>
+<input type=hidden name=action value='$action'>
+<input type=hidden name=step value=1>
+<input type=hidden name=id value='$id'>
+<table width=70% align=center cellspacing=0 cellpadding=0 class=i_table>
+<tr><td><table width=100% cellspacing=1 cellpadding=6>
+<tr><td class=head colspan=5><b>插件设置</b></td></tr>
+<tr><td class=b width=30%>插件名称</td>
+<td class=b><input type=text name=hackname size=50 value='$hackname'></td></tr>
+<tr><td class=b width=30%>插件目录</td>
+<td class=b><input type=text name=hacksign size=50 value='$hacksign'></td></tr>
+<td class=b>前台显示方式</td>
+<td class=b>
+	<input type=radio name=ifopen value=2 $method_2>直接显示
+	<input type=radio name=ifopen value=1 $method_1>下拉菜单显示
+	<input type=radio name=ifopen value=0 $method_0>不显示
+</td>
+</tr>
+</table></td></tr></table>
+<br><center><input type='submit' value='提 交'></center></form>
+<!--
+EOT;
+}include_once PrintEot('adminbottom');
+?>
+-->

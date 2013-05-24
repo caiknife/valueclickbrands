@@ -1,0 +1,166 @@
+<!--<?php
+if($special=='1'){
+print <<<EOT
+-->
+	<tbody><tr class="tr3"><th>投票有效天数：</th>
+		<th><input class="input" type="text" name="timelimit" value="$timelimit" size="10" $voteable />
+<!--
+EOT;
+if(!$vote_close && $action=='modify'){ print <<<EOT
+-->
+		<input type="checkbox" name="vote_close" value="1" />结束投票
+<!--
+EOT;
+} print <<<EOT
+-->
+		</th>
+	</tr></tbody>
+	<tbody><tr class="tr3"><th>投票选项:<br>每行写一个投票选项<br>最多可以有 $db_selcount 个选项<br>多选
+		<input type="checkbox" value="1" name="multiplevote" $multi $voteable /><br />
+		最多选择个数<input class="input" maxlength="10" size="1" name="mostvotes" value="$mostnum" $voteable /><br />
+		是否允许修改投票结果<input type="checkbox" value="1" name="modifiable" $ifmodify $voteable /><br />
+		强制投票才能查看结果<input type="checkbox" value="1" name="previewable" $ifpreview $voteable />
+		
+		</th>
+		<th>
+<!--
+EOT;
+if($action=='modify'){
+foreach($votearray['options'] as $key=>$votes){
+$votes[0]=stripslashes($votes[0]);
+print <<<EOT
+-->
+<input class="input" type="text" maxLength="60" name="vt_selarray[$key]" size="60" value="$votes[0]" $voteable /><br />
+<!--
+EOT;
+}print <<<EOT
+-->
+<input class="input" type="text" maxLength="60" name="vt_selarray[]" size="60" value="" $voteable /> 新的投票项（留空忽略）<br />
+<!--
+EOT;
+}elseif($action=='new'){print <<<EOT
+-->
+<textarea name="vt_select" rows="10" wrap="hard" cols="80">$vt_select</textarea>
+<!--
+EOT;
+}print <<<EOT
+-->
+		</th>
+	</tr></tbody>
+<!--
+EOT;
+}elseif($special=='2'){ print <<<EOT
+-->
+	<tbody><tr class="tr3">
+		<th width="20%" class="t_one">活动标题：</th>
+		<th class="t_one"><input class="input" type="text" name="act_subject" value="$act[subject]" size="60" /> <font color="red">*</font>(必填)</th>
+	</tr></tbody>
+	<tbody><tr class="tr3">
+		<th width="20%" class="t_one">活动时间：</th>
+		<th class="t_one"><input class="input" type="text" name="act_starttime" id="starttime" value="$act[starttime]" onClick="javascript:ShowCalendar(this.id)" />&nbsp;-&nbsp;<input class="input" type="text" name="act_endtime" id="endtime" value="$act[endtime]" onClick="javascript:ShowCalendar(this.id)" /> <font color="red">*</font>(必填)</th>
+	</tr></tbody>
+	<tbody><tr class="tr3">
+		<th width="20%" class="t_one">活动地点：</th>
+		<th class="t_one"><input class="input" type="text" name="act_location" value="$act[location]" size="15" /></th>
+	</tr></tbody>
+	<tbody><tr class="tr3">
+		<th width="20%" class="t_one">人数限制：</th>
+		<th class="t_one"><input class="input" type="text" name="act_num" value="$act[num]" size="5" />&nbsp;人（不限制人数，请留空）</th>
+	</tr></tbody>
+	<tbody><tr class="tr3">
+		<th width="20%" class="t_one">性别要求：</th>
+		<th class="t_one">
+			<input name="act_sex" type="radio" value="0" $sel_0 />不限
+			<input name="act_sex" type="radio" value="1" $sel_1 />男
+			<input name="act_sex" type="radio" value="2" $sel_2 />女
+		</th>
+	</tr></tbody>
+	<tbody><tr class="tr3">
+		<th width="20%" class="t_one">活动费用：</th>
+		<th class="t_one"><input class="input" type="text" name="act_costs" size="8" value="$act[costs]" /> 元</th>
+	</tr></tbody>
+	<tbody><tr class="tr3">
+		<th width="20%" class="t_one">报名截止日期：</th>
+		<th class="t_one">
+		<input class="input" name="act_deadline" id="deadline" value="$act[deadline]" type="text" onClick="javascript:ShowCalendar(this.id)" /> <font color="red">*</font>(必填)
+		</th>
+	</tr></tbody>
+<!--
+EOT;
+}elseif($special=='3' && $foruminfo['allowreward'] && $_G['allowreward']){ print <<<EOT
+-->
+	<tbody><tr class="tr3">
+		<th width="20%">悬赏贴设置</th>
+		<th>
+		最佳答案：悬赏&nbsp;<select id="p_credit" name="ctype[best]" onchange="showreward();">$creditselect</select> <input id="r_credit" name="bonus[best]" value="$rw_b_val" size="4" class="input" onkeyup="showreward();" onchange="showreward();" /> 点 (最少 $rw_b_val 点) <span id="reward_info" class="gray"></span><br />热心助人：悬赏&nbsp;<select name="ctype[active]">$creditselect</select> <input name="bonus[active]" value="$rw_a_val" size="4" class="input" /> 点 (最少 $rw_a_val 点)　<span class="gray">奖励热心回复者的积分点数，将扣除您相应的积分点数</span>
+		</th>
+	</tr></tbody>
+	<script language="JavaScript">
+	var old_credit = document.getElementById('r_credit').value;
+	function showreward(){
+		credit = document.getElementById('r_credit').value;
+		credit2= credit*2;
+		p_credit = document.getElementById('p_credit');
+		cname = p_credit.options[p_credit.selectedIndex].text;
+		
+		if(credit > 0){
+			old_credit = credit;
+			document.getElementById('reward_info').innerHTML = '将扣除<span class="s3">' + credit2 + '</span>点' + cname + '，结束悬赏时，系统自动返回<span class="s3">' + credit + '</span>点' + cname;
+		} else{
+			document.getElementById('r_credit').value = old_credit;
+		}
+	}
+	showreward();
+	</script>
+<!--
+EOT;
+}elseif($special=='4' && $action=='new' && $forumset[allowsale]!=2){print <<<EOT
+-->
+	<tbody><tr class="tr3">
+		<th width="20%" class="t_one">卖家：</th>
+		<th class="t_one"><input class="input" name="seller" size="30" value="$winddb[email]" /></th>
+	</tr>
+	<tr class="tr3">
+		<th width="20%" class="t_one">商品名称：</th>
+		<th class="t_one"><input class="input" name="subject" size="30" /> 价格：<input class="input f14" name="price" size="7" /></th>
+	</tr></tbody>
+	<tbody id="salemethod" style="display:none">
+	<tr class="tr3">
+		<th width="20%" class="t_one">邮费承担方：</th>
+		<th class="t_one">
+			<input type="radio" value="1" name="transport" onclick="this.form.ordinary_fee.disabled=true;this.form.express_fee.disabled=true;" checked /> 卖家承担运费&nbsp;&nbsp; 
+			<input type="radio" value="2" name="transport" onclick="this.form.ordinary_fee.disabled=false;this.form.express_fee.disabled=false;" /> 买家承担运费<br />
+			平邮&nbsp;<input disabled size="7" name="ordinary_fee" class="input" /> 元 &nbsp;&nbsp; 
+			快递&nbsp;<input disabled size="7" name="express_fee"  class="input"/> 元
+		</th>
+	</tr></tbody>
+	<tbody><tr class="tr3">
+		<th width="20%" class="t_one">演示地址：</th>
+		<th class="t_one"><input class="input" name="demo" size="30" /></th>
+	</tr>
+	<tr class="tr3">
+		<th width="20%" class="t_one">联系方式：</th>
+		<th class="t_one"><input class="input" name="contact" size="30" /></th>
+	</tr>
+	<tr class="tr3">
+		<th width="20%" class="t_one">收款方式</th>
+		<th class="t_one">
+			<input type="radio" name="method" value="3" onclick="showmethod(this.value);" checked />使用快钱收款
+			<input type="radio" name="method" value="1" onclick="showmethod(this.value);" />使用贝宝收款
+			<input type="radio" name="method" value="2" onclick="showmethod(this.value);" />使用支付宝收款
+		</th>
+	</tr></tbody>
+	<script language="JavaScript">
+	function showmethod(method){
+		obj=document.getElementById("salemethod");
+		if(method==2){
+			obj.style.display="";
+		}else{
+			obj.style.display="none";
+		}
+	}
+	</script>
+<!--
+EOT;
+}
+?>

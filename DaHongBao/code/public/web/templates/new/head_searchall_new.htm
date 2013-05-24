@@ -1,0 +1,114 @@
+<div id="head" class="main_box">
+	{include file="inc/top_coupon.inc.tpl"}
+	{*}
+	<!--head_top 开始-->
+	<div id="head_top">		
+		<div id="logo"><img src="/images/logo.gif" alt="大红包优惠券" /></div>		
+		<!--head_topnav 开始-->
+		<div id="head_topnav">
+			<div class="head_nav">
+				<div class="head_navimg"><img src="/images/top_navbg_02.gif"  id="id2"/></div>
+				<ul>
+					<li><a href="/" title="优惠券" onmouseover="document.getElementById('id2').src='/images/top_navbg_02.gif'"><strong>优惠券</strong></a></li>
+					<li><a href="/discount_hot.html" title="折扣信息" onmouseover="document.getElementById('id2').src='/images/top_nunun1_01.gif'" onmouseout="document.getElementById('id2').src='/images/top_navbg_02.gif'">折扣信息</a></li>										
+					<li><a href="/bbs" title="社区" onmouseover="document.getElementById('id2').src='/images/top_nunun1_02.gif'" onmouseout="document.getElementById('id2').src='/images/top_navbg_02.gif'">社区</a></li>
+					<li><a href="/topic-6.html" title="圣诞节" onmouseover="document.getElementById('id2').src='/images/top_nunun1_03.gif'" onmouseout="document.getElementById('id2').src='/images/top_navbg_02.gif'">圣诞节</a></li>				
+					<li class="lileft"><a href="/topic.html" title="专题活动" onmouseover="document.getElementById('id2').src='/images/top_nunun1_04.gif'" onmouseout="document.getElementById('id2').src='/images/top_navbg_02.gif'">专题活动</a></li>		
+				</ul>
+			</div>
+			<!--下面的注释为登陆以后的状态-->
+			{include file="new/head_userinfo.htm"}	
+		</div>
+		<!--head_topnav 结束-->			
+	</div>
+	<!--head_top 结束-->	
+	{/*}
+	<!--nav_all导航 开始-->
+	<div id="nav_all">
+		<div class="nav_all">
+	<div id="kejiji_messleft">
+		<ul>
+			<li class="kejiji_place">当前位置：</li>
+			<li>{$nowcityname}</li>
+			<li><a href="#" onclick="cityshow();"> 城市切换</a></li>		
+			<div id="cityshow" class="city" style="display:none">
+				<!-- <strong>按拼音排序</strong> -->
+				<strong>城市列表</strong>
+				<span><a href="/changecity.php?id=all">全国</a></span>
+                <span><a href="/changecity.php?id=10">北京</a></span>
+                <span><a href="/changecity.php?id=21">上海</a></span>
+				<ul>
+					{section name=loop loop=$citylist}
+					<li><a href="/changecity.php?id={$citylist[loop].CityID}">{$citylist[loop].CityName}</a></li>
+					{/section}
+				</ul>
+			</div>
+		</ul>			
+	</div>	
+	{literal}
+	<script>
+		function cityshow(){
+			if(document.getElementById('cityshow').style.display == "inline"){
+				document.getElementById('cityshow').style.display = "none";
+			}else{
+				document.getElementById('cityshow').style.display = "inline";
+			}
+		}
+	</script>
+	{/literal}
+	<div class="message_right">
+		<ul>
+			<form method="get" name="searchform" action="/search.php" target="_parent">
+			<li class="input1"><input name="searchText" type="text" class="input" value="{$searchtextformer|escape}"/></li>			
+			<li class="search_but"><input type="image" src="/images/button_search.gif"/></li></form>					
+		</ul>
+	</div>
+	</div>
+	</div>
+	<!--nav_all导航 结束-->	
+	<!--search搜索 开始-->
+	<!--
+	<div id="search_all">
+		<ul>
+			<li class="lileft">热门标签：</li>
+			<li class="litag"><strong><a href="/se-PPG-1-/">PPG</a></strong> <a href="/se-_nhnengpklcmn-1-/">自助餐</a> <a href="/se-_mgplldlf-1-/">汽车</a> <a href="/se-_llkpnhlbmglh-1-/">化妆品</a> <strong><a href="/se-_mpmkllki-1-/">鲜花</a></strong> <a href="/se-_mkngllpk-1-/">手机</a> <a href="/se-_lfodlpki-1-/">点卡</a> <a href="/se-_lflalioc-1-/">蛋糕</a></li>
+			{if $smarty.get.ci==""}<li class="linonce">{else}<li class="linext">{/if}<a href="/se-{$smarty.get.searchText}-1-/">全部</a></li>
+
+			{if $smarty.get.ci==1}<li class="linonce">{else}<li class="linext">{/if}
+			{if $maxcount1all==""}
+				优惠券<span class="small">(0)</span></li>
+			{else}
+				<a href="/se-{$smarty.get.searchText}-1-1/">优惠券<span class="small">({$maxcount1all})</span></a></li>
+			{/if}
+			
+			
+
+			{if $smarty.get.ci==2}<li class="linonce">{else}<li class="linext">{/if}
+			
+			
+			{if $maxcount2all==""}
+				导购咨讯<span class="small">(0)</span></li>
+			{else}
+				<a href="/se-{$smarty.get.searchText}-1-2/">导购咨讯<span class="small">({$maxcount2all})</span></a></li>
+			{/if}
+			
+
+
+			{if $smarty.get.ci==4}<li class="linonce">{else}<li class="linext">{/if}<a href="/se-{$smarty.get.searchText}-1-4/">同城生活</a></li>
+
+			{if $smarty.get.ci==3}<li class="linonce">{else}<li class="linext">{/if}
+
+			{if $maxcount3all==""}
+				社区<span class="small">(0)</span></li>
+			{else}
+				<a href="/se-{$smarty.get.searchText}-1-3/">社区<span class="small">({$maxcount3all})</span></a></li>
+			{/if}
+			
+			
+		</ul>
+	</div>
+	-->
+	<div id="search_all"><ul style="float: right;"><li class="linonce"><a href="/se-{$smarty.get.searchText}-1-/">全部</a></li></ul></div>
+	<!--search搜索 结束-->
+	
+</div>

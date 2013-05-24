@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>大红包所有商家</title>
+<link href="../css/detail.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<!--头部开始-->
+{include file="new/head.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <h1>全部商家</h1>
+	</div>
+	<!--category_title 导航结束-->		
+	<!--link_box begin-->
+	<div class="link_box">
+		<h2>上千家商家提供优惠信息,省钱尽在大红包</h2>
+		<p>
+			点击下面任何一个商家名称，即可了解此商家最近的优惠活动情况。 商家名称后面的数字代表此商家提供的优惠活动个数. 购物愉快！
+		</p>
+		<h3>特色商家</h3> 
+		<div class="merchant_line">
+			<a href="#0-9">0-9</a> | <a href="#A">A</a> | <a href="#B">B</a> | <a href="#C">C</a> | <a href="#D">D</a> | <a href="#E">E</a> | <a href="#F">F</a> | <a href="#G">G</a> | <a href="#H">H</a> | <a href="#I">I</a> | <a href="#J">J</a> | <a href="#K">K</a> | <a href="#L">L</a> | <a href="#M">M</a> | <a href="#N">N</a> | <a href="#O">O</a> | <a href="#P">P</a> | <a href="#Q">Q</a> | <a href="#R">R</a> | <a href="#S">S</a> | <a href="#T">T</a> | <a href="#U">U</a> | <a href="#V">V</a> | <a href="#W">W</a> | <a href="#X">X</a> | <a href="#Y">Y</a> | <a href="#Z">Z</a>
+		</div>
+		<div class="clr"></div>
+		<div class="merchant_box">
+			{if $MerchantListOfNum}
+			<h4><a name="0-9">0-9</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfNum}
+				<li>{if $MerchantListOfNum[index].MerURL}<a href="{$MerchantListOfNum[index].MerURL}">{$MerchantListOfNum[index].MerInfo}</a>{else}{$MerchantListOfNum[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfA}
+			<h4><a name="A">A</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfA}
+				<li>{if $MerchantListOfA[index].MerURL}<a href="{$MerchantListOfA[index].MerURL}">{$MerchantListOfA[index].MerInfo}</a>{else}{$MerchantListOfA[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfB}
+			<h4><a name="B">B</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfB}
+				<li>{if $MerchantListOfB[index].MerURL}<a href="{$MerchantListOfB[index].MerURL}">{$MerchantListOfB[index].MerInfo}</a>{else}{$MerchantListOfB[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfC}
+			<h4><a name="C">C</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfC}
+				<li>{if $MerchantListOfC[index].MerURL}<a href="{$MerchantListOfC[index].MerURL}">{$MerchantListOfC[index].MerInfo}</a>{else}{$MerchantListOfC[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfD}
+			<h4><a name="D">D</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfD}
+				<li>{if $MerchantListOfD[index].MerURL}<a href="{$MerchantListOfD[index].MerURL}">{$MerchantListOfD[index].MerInfo}</a>{else}{$MerchantListOfD[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfE}
+			<h4><a name="E">E</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfE}
+				<li>{if $MerchantListOfE[index].MerURL}<a href="{$MerchantListOfE[index].MerURL}">{$MerchantListOfE[index].MerInfo}</a>{else}{$MerchantListOfE[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfF}
+			<h4><a name="F">F</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfF}
+				<li>{if $MerchantListOfF[index].MerURL}<a href="{$MerchantListOfF[index].MerURL}">{$MerchantListOfF[index].MerInfo}</a>{else}{$MerchantListOfF[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfG}
+			<h4><a name="G">G</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfG}
+				<li>{if $MerchantListOfG[index].MerURL}<a href="{$MerchantListOfG[index].MerURL}">{$MerchantListOfG[index].MerInfo}</a>{else}{$MerchantListOfG[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfH}
+			<h4><a name="H">H</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfH}
+				<li>{if $MerchantListOfH[index].MerURL}<a href="{$MerchantListOfH[index].MerURL}">{$MerchantListOfH[index].MerInfo}</a>{else}{$MerchantListOfH[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfI}
+			<h4><a name="I">I</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfI}
+				<li>{if $MerchantListOfI[index].MerURL}<a href="{$MerchantListOfI[index].MerURL}">{$MerchantListOfI[index].MerInfo}</a>{else}{$MerchantListOfI[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfJ}
+			<h4><a name="J">J</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfJ}
+				<li>{if $MerchantListOfJ[index].MerURL}<a href="{$MerchantListOfJ[index].MerURL}">{$MerchantListOfJ[index].MerInfo}</a>{else}{$MerchantListOfJ[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfK}
+			<h4><a name="K">K</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfK}
+				<li>{if $MerchantListOfK[index].MerURL}<a href="{$MerchantListOfK[index].MerURL}">{$MerchantListOfK[index].MerInfo}</a>{else}{$MerchantListOfK[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfL}
+			<h4><a name="L">L</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfL}
+				<li>{if $MerchantListOfL[index].MerURL}<a href="{$MerchantListOfL[index].MerURL}">{$MerchantListOfL[index].MerInfo}</a>{else}{$MerchantListOfL[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfM}
+			<h4><a name="M">M</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfM}
+				<li>{if $MerchantListOfM[index].MerURL}<a href="{$MerchantListOfM[index].MerURL}">{$MerchantListOfM[index].MerInfo}</a>{else}{$MerchantListOfM[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfN}
+			<h4><a name="N">N</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfN}
+				<li>{if $MerchantListOfN[index].MerURL}<a href="{$MerchantListOfN[index].MerURL}">{$MerchantListOfN[index].MerInfo}</a>{else}{$MerchantListOfN[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfO}
+			<h4><a name="O">O</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfO}
+				<li>{if $MerchantListOfO[index].MerURL}<a href="{$MerchantListOfO[index].MerURL}">{$MerchantListOfO[index].MerInfo}</a>{else}{$MerchantListOfO[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfP}
+			<h4><a name="P">P</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfP}
+				<li>{if $MerchantListOfP[index].MerURL}<a href="{$MerchantListOfP[index].MerURL}">{$MerchantListOfP[index].MerInfo}</a>{else}{$MerchantListOfP[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfQ}
+			<h4><a name="Q">Q</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfQ}
+				<li>{if $MerchantListOfQ[index].MerURL}<a href="{$MerchantListOfQ[index].MerURL}">{$MerchantListOfQ[index].MerInfo}</a>{else}{$MerchantListOfQ[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfR}
+			<h4><a name="R">R</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfR}
+				<li>{if $MerchantListOfR[index].MerURL}<a href="{$MerchantListOfR[index].MerURL}">{$MerchantListOfR[index].MerInfo}</a>{else}{$MerchantListOfR[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfS}
+			<h4><a name="S">S</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfS}
+				<li>{if $MerchantListOfS[index].MerURL}<a href="{$MerchantListOfS[index].MerURL}">{$MerchantListOfS[index].MerInfo}</a>{else}{$MerchantListOfS[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfT}
+			<h4><a name="T">T</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfT}
+				<li>{if $MerchantListOfT[index].MerURL}<a href="{$MerchantListOfT[index].MerURL}">{$MerchantListOfT[index].MerInfo}</a>{else}{$MerchantListOfT[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfU}
+			<h4><a name="U">U</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfU}
+				<li>{if $MerchantListOfU[index].MerURL}<a href="{$MerchantListOfU[index].MerURL}">{$MerchantListOfU[index].MerInfo}</a>{else}{$MerchantListOfU[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfV}
+			<h4><a name="V">V</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfV}
+				<li>{if $MerchantListOfV[index].MerURL}<a href="{$MerchantListOfV[index].MerURL}">{$MerchantListOfV[index].MerInfo}</a>{else}{$MerchantListOfV[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfW}
+			<h4><a name="W">W</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfW}
+				<li>{if $MerchantListOfW[index].MerURL}<a href="{$MerchantListOfW[index].MerURL}">{$MerchantListOfW[index].MerInfo}</a>{else}{$MerchantListOfW[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfX}
+			<h4><a name="X">X</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfX}
+				<li>{if $MerchantListOfX[index].MerURL}<a href="{$MerchantListOfX[index].MerURL}">{$MerchantListOfX[index].MerInfo}</a>{else}{$MerchantListOfX[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfY}
+			<h4><a name="Y">Y</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfY}
+				<li>{if $MerchantListOfY[index].MerURL}<a href="{$MerchantListOfY[index].MerURL}">{$MerchantListOfY[index].MerInfo}</a>{else}{$MerchantListOfY[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			<div class="clr"></div>
+			{/if}
+			{if $MerchantListOfZ}
+			<h4><a name="Z">Z</a></h4>
+			<ul>
+				{section name=index loop=$MerchantListOfZ}
+				<li>{if $MerchantListOfZ[index].MerURL}<a href="{$MerchantListOfZ[index].MerURL}">{$MerchantListOfZ[index].MerInfo}</a>{else}{$MerchantListOfZ[index].MerInfo}{/if}</li>
+				{/section}
+			</ul>
+			
+			{/if}
+			
+		</div>
+	</div>
+	<!--link_box end-->
+</div>
+<!--主体内容结束-->
+
+
+{include file="new/foot.htm"}

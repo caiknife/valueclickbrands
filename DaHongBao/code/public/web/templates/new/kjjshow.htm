@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>大红包生活频道-{$title}</title>
+<link href="../css/kejiji.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+{literal}
+<script>
+	function cityshow(){
+		if(document.getElementById('cityshow').style.display == "inline"){
+			document.getElementById('cityshow').style.display = "none";
+		}else{
+			document.getElementById('cityshow').style.display = "inline";
+		}
+	}
+</script>
+
+{/literal}
+<body>
+<!--头部开始-->
+{include file="new/headkjj.htm"}
+<!--头部结束-->
+<div class="clr"></div>
+<!--主体内容开始-->
+<div id="ke_channel">
+	<!--左侧开始-->
+	<div id="ke_sort">
+		<!--头部开始-->
+		<div id="sort_title">
+			<div class="sort_message"><a href="/life/cityhome.php">返回</a></div>
+			<!-- <strong>当前位置：</strong><a href="#">频道首页</a> > <a href="#">北京</a><br /> -->
+			<!-- <strong>当前区域：</strong><a href="#">上海</a> > <a href="#">浦东</a> > <a href="#">金桥</a> -->
+
+			{if $areaNames==''}
+			{else}
+			<strong>当前位置：</strong><a href="listing.php?cityId={$nowcityid}&categoryId={$categoryid1}">{$categoryname1}</a> -> <a href="listing.php?cityId={$nowcityid}&categoryId={$categoryid2}">{$categoryname2}</a><br />
+			<strong>当前区域：</strong>{$areaNames}
+			{/if}
+		</div>
+		<!--头部结束-->
+		{if $baixingdetail.Title==''}
+		<h1>该信息已被斑竹删除。</h1>
+		{else}
+		<h1>{$baixingdetail.Title}</h1>
+		<div class="sort_top">
+			信息编号：{$smarty.get.id} &nbsp;&nbsp;发布时间: <span class="sort_time">{$baixingdetail.PostTime}</span>
+		</div>
+		<div class="sort_main">
+			<div class="sort_box">
+				<!-- <img src="../images/kejijji_rightad.gif" alt="图片标题" /> -->
+				{$baixingdetail.Content}
+			</div>
+		</div>
+		{/if}
+	</div>
+	<div class="ke_ad">
+		<img src="/images/kijiji1.gif"/>
+		<img src="/images/kijijilogo.gif"/>
+	</div>
+
+	
+</div>
+<!--主体内容结束-->
+{include file="new/foot.htm"}

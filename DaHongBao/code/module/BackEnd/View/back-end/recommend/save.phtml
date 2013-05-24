@@ -1,0 +1,77 @@
+<?php
+/**
+* save.phtml
+*-------------------------
+*
+* 
+*
+* PHP versions 5
+*
+* LICENSE: This source file is from Smarter Ver2.0, which is a comprehensive shopping engine 
+* that helps consumers to make smarter buying decisions online. We empower consumers to compare 
+* the attributes of over one million products in the common channels and common categories
+* and to read user product reviews in order to make informed purchase decisions. Consumers can then 
+* research the latest promotional and pricing information on products listed at a wide selection of 
+* online merchants, and read user reviews on those merchants.
+* The copyrights is reserved by http://www.mezimedia.com. 
+* Copyright (c) 2006, Mezimedia. All rights reserved.
+*
+* @author Yaron Jiang <yjiang@corp.valueclick.com.cn>
+* @copyright (C) 2004-2013 Mezimedia.com
+* @license http://www.mezimedia.com PHP License 5.0
+* @version CVS: $Id: save.phtml,v 1.2 2013/05/20 02:44:46 yjiang Exp $
+* @link http://www.dahongbao.com/
+* @deprecated File deprecated in Release 3.0.0
+*/
+$form = $this->form;
+$content = $this->content;
+?>
+<div class="box">
+<div class="box-header">
+<h2><i class="icon-box"></i>编辑推荐</h2>
+</div>
+
+<div class="box-content">
+<form class="form" action="<?php echo $this->url(null , array('controller' => 'recommend' , 'action' => 'save'))
+?>?referer=<?php echo $this->referer?>" method="post" enctype="multipart/form-data">
+<table class="table" style="width:50%">
+<?php switch ($this->ContentType):?>
+<?php case 'MERCHANT':?>
+<tr>
+<td><img src="<?php echo $content['LogoFile']?>" width="120px" /><input name="RecommendDefaultImage" type="hidden"
+value="<?php echo $content['LogoFile']?>" /></td>
+<td><?php echo $content['MerchantName']?>
+</tr>
+<?php break; case 'COUPON':?>
+<tr>
+<td rowspan='2'><img src="<?php echo $content['CouponImageUrl']?>" width="120px" />
+<input name="RecommendDefaultImage" type="hidden" value="<?php echo $content['CouponImageUrl']?>" /></td>
+<td><?php echo $content['CouponName']?></td>
+</tr>
+<tr>
+<td><?php echo $content['MerchantName']?></td>
+</tr>
+<?php break; case 'ARTICLE':?>
+<tr>
+<td><?php echo $content['Title']?></td>
+</tr>
+<?php endswitch;?>
+</table>
+
+<?php echo $this->formHidden($form->get('RecommendID'))?>
+<div class="input-group">
+<label class="input-label"><?php echo $form->get('RecommendTypeID')->getLabel()?></label>
+<div class="input-item">
+<?php echo $this->formMultiCheckbox($form->get('RecommendTypeID'))?>
+</div>
+</div>
+<?php echo $this->formHidden($form->get('ID'))?>
+<?php echo $this->formHidden($form->get('MerchantID'))?>
+<?php echo $this->formHidden($form->get('ContentType'))?>
+<?php echo $this->formFile($form->get('RecommendImage'))?>
+<?php echo $this->formHidden($form->get('RecommendImage'))?>
+<?php echo $this->formNumber($form->get('RecommendOrder'))?>
+<?php echo $this->formSubmit($form->get('submit') , '提交')?>
+</form>
+</div>
+</div>

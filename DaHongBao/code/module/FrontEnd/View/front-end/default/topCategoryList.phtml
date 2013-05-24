@@ -1,0 +1,16 @@
+<?php if ($this->topCategoryList):?>
+<?php 
+    foreach ($this->topCategoryList as $topCategory) {
+        $topCateList[$topCategory['CategoryID']] = $topCategory['CategoryID'];
+    }
+?>
+<div class="famousChannel">
+    <ul>
+        <li class="<?php if (!$this->cid || !$topCateList[$this->cid]):?>homeSelect<?php else:?>home<?php endif;?>"><a href="<?php print $this->topCategoryAll;?>">知名商场<span></span></a></li>
+        <?php foreach ($this->topCategoryList as $key => $topCategory): ?>
+        <li class="<?php if ($topCategory['CategoryID'] == $this->cid):?>select<?php endif;?><?php if ($key == count($this->topCategoryList) - 1):?> border<?php endif;?>"><a href="<?php print $topCategory['CategoryUrl'];?>"><?php print $topCategory['CategoryName'];?></a></li>
+        <?php endforeach;?>
+    </ul>
+    <div class="cl"></div>
+</div>
+<?php endif;?>

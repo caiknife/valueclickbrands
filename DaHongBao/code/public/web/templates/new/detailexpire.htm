@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>【{$couponRow.Descript}】最新{$couponRow.name1}{$titleinfomore}</title>
+<link href="/css/detail.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+{literal}
+<script>
+	function checkgo(){
+		if(document.form.content.value=='')
+		{
+			alert('请输入内容');
+			return false;
+		}else{
+			document.form.submit();
+		}
+
+	}
+
+	function vote(id){
+			var cid = id;
+			var url = '/digest.php'
+			var pars = 'id=' + cid ;
+			var myAjax = new Ajax.Request(
+			url,
+			{
+			method: 'get',
+			parameters: pars,
+			onComplete: showResponse
+			});
+		}
+		function showResponse(originalRequest)
+		{
+			var returnstr = originalRequest.responseText;
+			
+			var a = "godigest_"+returnstr;
+			var b = "digest_point_"+returnstr;
+			document.getElementById(a).innerHTML="<input name='' type='image' src='/images/category_bear1.gif' /><p>系统已记录您的投票！</p>";
+			document.getElementById(b).innerHTML=parseInt(document.getElementById(b).innerHTML)+1;
+		}
+	
+	function page(value){
+			var page = value;
+			var tid = document.getElementById('couponwindid').innerHTML;
+			var pageall = document.getElementById('couponwindpage').innerHTML;
+			var url = '/async_getreply.php'
+			var pars = 'id=' + page +'&tid='+tid+'&pageall='+pageall;
+			var myAjax = new Ajax.Request(
+			url,
+			{
+			method: 'get',
+			parameters: pars,
+			onComplete: showResponse1
+			});
+		}
+		function showResponse1(originalRequest)
+		{
+			var returnstr = originalRequest.responseText;
+			var all = returnstr.split("^^%%!!@@##");
+			var reply = all[0];
+			var replyitem = reply.split("!#%$#@");
+			var repstr = "";
+			for(var i=0;i<replyitem.length-1;i++){
+				reprow = replyitem[i].split("***$$$###");
+				repstr += "<li class='libg'><span class='bring'>"+reprow[0]+"</span> 在 "+reprow[1]+" 发表评论: </li><li class='libg1'>"+reprow[2]+"</li>";
+
+			}
+			//alert(repstr);
+		
+			document.getElementById('replycontent').innerHTML=repstr;
+			document.getElementById('pagestr').innerHTML=all[1];
+			//document.getElementById(b).innerHTML=parseInt(document.getElementById(b).innerHTML)+1;
+		}
+
+		function go(){
+			if(this.content.value==''){alert('请输入您想发表的内容');return false;}else{this.submit();}
+		}
+</script>
+<script src="/jscript/prototype.js"></script>
+{/literal}
+<body>
+<!--头部开始-->
+{include file="new/head.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <a href="/Ca-{$NameURL}--Ci-{$cid}.html">{$categoryName}</a> > <a href="/Me-{$couponRow.MerchantNameURL}--Mi-{$couponRow.Merchant_}.html">{$couponRow.name1}</a> > <h1>{$couponRow.Descript}</h1>
+	</div>
+	<!--category_title 导航结束-->		
+	<!--sidebar 栏目页左边内容开始-->
+	<div id="sidebar">
+		<!--sidebox 热门优惠券开始-->
+		<div class="sidebox">
+			<div class="title"><h2>热门优惠券</h2></div>
+			<ul>
+				{section name=loop loop=$allhotcategorycouponlist start=0 max=10}
+					<li>·【<a href="/Me-{$allhotcategorycouponlist[loop].NameURL}--Mi-{$allhotcategorycouponlist[loop].Merchant_}.html">{$allhotcategorycouponlist[loop].name1}</a>】<a href="/{$allhotcategorycouponlist[loop].NameURL}/coupon-{$allhotcategorycouponlist[loop].Coupon_}/">{$allhotcategorycouponlist[loop].Descript}</a></li>
+				{/section}
+			</ul>
+		</div>
+		<!--sidebox 热门优惠券结束-->
+			
+		<!--sidebox 热门优惠券开始-->
+		{ if $categoryName!=="其他"}
+		<div class="sidebox">
+			<div class="title"><h2>{$categoryName}相关资讯</h2></div>
+			<ul>
+				{section name=loop loop=$hotinfo start=0 max=10}
+				<li>·<a href="/news---Ca-{$hotinfo[loop].NameURL}--Ci-{$hotinfo[loop].fid}--number-{$hotinfo[loop].tid}.html">{$hotinfo[loop].subject}</a></li>
+				{/section}
+			</ul>
+		</div>
+		{/if}
+		<!--sidebox 热门优惠券结束-->
+			
+		<!--sidebox 热门优惠券开始-->
+		<div class="sidebox">
+			<h2>论坛热贴</h2>
+				<ul>
+					{section name=loop loop=$hotbbs start=0 max=10}
+					<li>·<a href="/bbs/read.php?tid={$hotbbs[loop].tid}">{$hotbbs[loop].subject}</a></li>
+					{/section}
+				</ul>
+		</div>
+		<!--sidebox 热门优惠券结束-->
+	</div>
+	<!--sidebar 栏目页左边内容结束-->	
+	
+	<!--detail 具体内容开始-->
+	<div id="detail">
+		<div id="detail_title"><h2>{$couponRow.Descript}</h2><img src="/images/guoqi.gif"></div>
+		<!--detail_box 产品具体内容开始-->
+		<div class="detail_box">
+			<!--detail_left 内容开始-->
+			<div class="detail_left">
+				{if $couponRow.ImageDownload}
+				<div class="detail_proimg"><img src="{$couponRow.ImageURL}" alt="{$couponRow.Descript}"/></div>
+				{/if}
+				<input name="" type="image" src="/images/detail_daying.gif" onclick="javascript:window.print();"/>
+				<p>{if $couponRow.Detail}{$couponRow.Detail}{else}暂无详细信息{/if}</p>
+			 	<div class="message">
+					<div class="more"><a href="/Me-{$couponRow.MerchantNameURL}--Mi-{$couponRow.Merchant_}.html">>>{$couponRow.name1}更多优惠</a></div>
+					地区：<span class="red">{$couponRow.City}</span>  优惠类别：<a href="/Ca-{$couponRow.cnameurl}--Ci-{$couponRow.Category_}.html"><span class="red">{$categoryName}</span></a>  评论数量：(<span class="red">{$couponRow.replies}</span>)  
+				</div>
+				<div class="message">							
+					开始时间：{$couponRow.Start} 发布人：<a href="/bbs/profile.php?action=show&uid={$couponRow.authorid}">{$couponRow.author}</a> <a href="/account.php?action=save&p={$couponRow.Coupon_}" target=_blank><span class="join">加入收藏</span></a> <a href="JavaScript:window.open('/send_friend.php?p={$couponRow.Coupon_}&c=','sendfriend{$couponRow.Coupon_}','width=415,height=550,resizable=0,scrollbars=yes');void(0);"><span class="friend">推荐朋友</span></a>						
+				</div>
+				<div id="couponwindid" style="display:none">{$couponRow.tid}</div>
+				<div id="couponwindpage" style="display:none">{$pageAll}</div>
+			</div>
+			<!--detail_left 内容结束-->
+			
+			<!--detail_right 投票开始-->
+			<div class="detail_right">
+				<div class="main_point" id="digest_point_{$smarty.get.cid}">{$couponRow.digest}</div>
+				<div id="godigest_{$smarty.get.cid}">
+					{if $couponRow.IsDigest==1}
+					<input name="" type="image" src="/images/category_bear1.gif" />
+					<P>系统已记录您的投票！</p>
+					{else}
+					<input name="" type="image" src="/images/category_bear.gif" onclick="javascript:vote('{$smarty.get.cid}')"/>
+					<p>如果你觉得此信息对你有用请投上宝贵的一票</p>
+					{/if}
+				</div>
+			</div>
+			<!--detail_right 投票结束-->			
+		</div>
+		<!--detail_box 产品具体内容结束-->	
+		<!--detail_text 相关评论开始-->	
+		{if $couponRow.replies==0}
+		<div class="detail_text">
+			<h2>目前暂无相关评论</h2>
+			<ul><li></li></ul>
+		</div>
+		{else}
+		<div class="detail_text">
+			<h2>总共（{$couponRow.replies}）条相关评论：</h2>
+			<ul id=replycontent>
+				{section name=loop loop=$re start=0 max=10}
+				<li class="libg"><span class="bring">{$re[loop].author}</span> 在 {$re[loop].postdate} 发表评论: </li>
+				<li class="libg1">{$re[loop].content}</li>
+				{/section}
+			</ul>
+		</div>
+		
+		<!--detail_text 相关评论结束-->	
+		<!--begin page-->
+		<div id=pagestr>
+		{$pageString}
+		</div>
+		{/if}
+		<!--page end-->
+		<!--detail_text 相关评论开始-->	
+		<div class="detail_text"><FORM METHOD=POST ACTION="/windreply.php" NAME="form" ><INPUT TYPE="hidden" name="rep" value="true"><INPUT TYPE="hidden" name=tid value={$couponRow.tid}><INPUT TYPE="hidden" name=fid value={$couponRow.fid}><INPUT TYPE="hidden" name="nameurl" value="{$couponRow.MerchantNameURL}"><INPUT TYPE="hidden" name="couponid" value="{$smarty.get.cid}">
+			<h3>发表评论</h3>
+			<ul>
+				{if $islogon==1}
+				<li class="lileft">昵  称：</li>
+				<li class="liright">{$userinfo.username}<INPUT TYPE="hidden" name="author" value="{$userinfo.username}"><INPUT TYPE="hidden" name="authorid" value="{$userid}"></li>
+				<li class="lileft">内  容：</li>
+				<li class="liright"><textarea name="content" cols="" rows="" class="inputmax"></textarea></li>
+				<li class="licenter"><input name="" type="button" class="inputbut"  value="重 写" onclick="javascript:this.form.content.value='';this.form.content.focus();"/> &nbsp;<input name="" type="button" class="inputbut"  value="发表评论" onclick="checkgo();"/></li>
+				{else}
+				<li class="liright">只有注册用户才能发表评论！</li>
+				<!-- <li class="liright">游客&nbsp;&nbsp;(会员可以登录后发言)<INPUT TYPE="hidden" name="author" value="guest"><INPUT TYPE="hidden" name="authorid" value="0"></li> -->
+				{/if}
+				
+				{if $islogon==1}
+				{else}
+				<li class="limessage">已注册用户可以先<a href="/bbs/login.php">登录</a>，如果您还不是大红包的注册用户，建议您<a href="/bbs/register.php">注册</a>帐号。</li>
+				{/if}
+			</ul></form>
+		</div>
+		<!--detail_text 相关评论结束-->	
+	</div>
+	<!--detail 具体内容结束-->	
+</div>
+<!--主体内容结束-->
+
+{include file="new/foot.htm"}

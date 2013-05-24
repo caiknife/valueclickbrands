@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>{$discountDetail.Descript}---大红包折扣信息</title>
+
+<link href="/css/discount.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+{literal}
+<script src="/jscript/prototype.js"></script>
+
+{/literal}
+<script>
+var glbLogin = {$islogon};
+{literal}
+function checkgo(){
+		if(document.form.content.value=='')
+		{
+			alert('请输入内容');
+			document.form.content.focus();
+			return false;
+		}else if(document.form.content.value=='请输入举报内容!'){
+			alert('请输入具体内容');
+			document.form.content.focus();
+			return false;
+		}else{
+			document.form.submit();
+		}
+
+	}
+
+function vote(id){
+	
+	lo = location.href.split("#"); 
+	window.location=lo[0]+"#notlogon";
+	if(glbLogin==1){
+		document.form.icon[1].checked="true";
+		document.form.content.value="这条折扣信息对我很有帮助!"
+		document.form.content.select();
+	}else{
+		document.getElementById("notloginalert").innerHTML ="只有大红包用户才能<span class='detail_bring1'>推荐</span>该信息.";
+		
+	}
+}
+	
+function vote1(id){
+	
+	lo = location.href.split("#"); 
+	location.href=lo[0]+"#notlogon";
+	if(glbLogin==1){
+		document.form.icon[2].checked="true";
+		document.form.content.value="请输入举报内容!"
+		document.form.content.select();
+	}else{
+		document.getElementById("notloginalert").innerHTML ="只有大红包用户才能<span class='detail_bring'>举报</span>该信息.";
+	}
+}
+	
+
+		function page(value,tid,pageall){
+			var page = value;
+			var tid = document.hiddenall.couponwindid.value;
+			var pageall = document.hiddenall.couponwindpage.value;
+			var url = '/async_getreply.php'
+			var pars = 'id=' + page +'&tid='+tid+'&pageall='+pageall;
+			var myAjax = new Ajax.Request(
+			url,
+			{
+			method: 'get',
+			parameters: pars,
+			onComplete: showResponse2
+			});
+		}
+		function showResponse2(originalRequest)
+		{
+			var returnstr = originalRequest.responseText;
+			var all = returnstr.split("^^%%!!@@##");
+			var reply = all[0];
+			var replyitem = reply.split("!#%$#@");
+			var repstr = "";
+			for(var i=0;i<replyitem.length-1;i++){
+				reprow = replyitem[i].split("***$$$###");
+				repstr += "<div class='detail_boxtop'></div><div class='detail_boxmin'><div class='detail_boxleft'><img src=\""+reprow[3]+"\"/></div><div class='detail_boxright'><strong>"+reprow[0]+"</strong> 在 "+reprow[1]+" 对该信息";
+				if(reprow[4]==2){
+					repstr += "<span class='detail_bring'>进行举报</span>";
+				}else if(reprow[4]==1){
+					repstr += "<span class='detail_bring1'>表示支持</span>";
+				}else{
+					repstr += "发表评论";
+				}
+				
+				repstr += "：<br />"+reprow[2]+"</div></div><div class='detail_boxbottom'></div>";
+
+			}
+			document.getElementById('replycontent').innerHTML=repstr+all[1];
+
+			//document.getElementById(b).innerHTML=parseInt(document.getElementById(b).innerHTML)+1;
+		}
+</script>
+{/literal}
+<body>
+<!--头部开始-->
+{include file="new/head_discount.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <a href="discount_hot.html">折扣信息</a> > <h1>{$discountDetail.Descript}</h1>
+	</div>
+	<!--category_title 导航结束-->
+	<!--主体内容开始-->
+	<div id="main">
+		<!--begin left-->
+		<div id="left">			
+			<div id="detail_box">
+				<h2><strong>{$discountDetail.Descript}</strong>({$discountDetail.StartDate} 星期{$discountDetail.StartWeek} 至 {$discountDetail.ExpireDate} 星期{$discountDetail.EndWeek})</h2>
+				<div class="detail">
+					{if $discountDetail.Detail!=""}	
+						<p>{$discountDetail.Detail}</p>	
+					{/if}	
+					{if $discountDetail.ImageDownload==1}	
+						<div class="detail_img"><a href="{$discountDetail.ImageURL}" target=_blank><img src="{$discountDetail.MiddleImageURL}"/></a></div>
+					{/if}
+					<div class="clr"></div>
+					<div class="detail_ico">
+						<ul>
+							<li><a href="javascript:vote('{$discountDetail.Coupon_}')">推 荐</a></li>
+							<li><a href="javascript:vote1('{$discountDetail.Coupon_}')">举 报</a></li>
+							<li><a href="/account.php?action=save&p={$discountDetail.Coupon_}" target="_blank">加入收藏</a></li>
+							<li><a href="JavaScript:window.open('/send_friend.php?p={$discountDetail.Coupon_}&c=','sendfriend{$discountDetail.Coupon_}','width=415,height=550,resizable=0,scrollbars=yes');void(0);">推荐朋友</a></li>
+						</ul>
+					</div>
+					<!--信息开始-->
+					<div class="detail_message">
+						<div class="detail_left">
+						{if $discountDetail.tagname neq ""}
+							标签：{$discountDetail.tagname}<br />
+						{/if}
+
+
+推荐：{$discountDetail.digest}人   举报：{$discountDetail.delate}人   评论：{$discountDetail.replies}人<br />
+发布人：{$discountDetail.author}   {if $discountDetail.AddDate neq ""}发布时间：{$discountDetail.AddDate}{/if}
+						</div>
+						<div class="left_commend"><a href="javascript:vote('{$discountDetail.Coupon_}')">{$discountDetail.digest}</a></div>
+					</div>
+					<!--信息结束-->
+				</div><FORM METHOD=POST NAME="hiddenall" ACTION="">
+					<INPUT TYPE="hidden" NAME="couponwindid" value="{$discountDetail.tid}">
+					<INPUT TYPE="hidden" NAME="couponwindpage" value="{$pageAll}">
+				</FORM>
+			</div>
+			<!--具体内容开始-->
+
+			{if count($discountReply) gt 0}
+			<div class="detail_main">				
+				<div class="detail_top">
+					<h3>最新发布的折扣评论</h3>
+				</div>
+				<!--具体信息内容开始-->
+				<div class="newdetail_box" id="replycontent">
+					
+					{section name=loop loop=$discountReply}
+					<!--评论开始-->
+					<div class="detail_boxtop"></div>
+					<div class="detail_boxmin">
+						<div class="detail_boxleft"><img src="{$discountReply[loop].touxiang}"/></div>
+						<div class="detail_boxright">
+						<strong>{$discountReply[loop].username}</strong> 在 {$discountReply[loop].postdate} 对该信息{if $discountReply[loop].picon==2}<span class="detail_bring">进行举报</span>{elseif $discountReply[loop].picon==1}<span class="detail_bring1">表示支持</span>{else}发表评论{/if}：<br />
+{$discountReply[loop].content}
+						</div>
+					</div>
+					<div class="detail_boxbottom"></div>
+					<!--评论结束-->
+					{/section}
+					<!--翻页开始-->
+					<div id="pagestr">
+					{$pageString}
+					</div>
+					<!--翻页结束-->
+				</div>
+				
+				<!--具体信息内容结束-->				
+			</div>
+			{/if}
+			<!--具体内容结束-->		
+			<!--提示信息开始-->
+			{if $islogon==1}
+			
+
+			<a name="notlogon"></a>
+			<div class="detail_main">				
+				<div class="detail_top">
+					<h3>发表评论</h3>
+				</div>
+
+				<div class="newdetail_box"><FORM METHOD=POST ACTION="/windreply.php" name="form"><INPUT TYPE="hidden" name="rep" value="true2"><INPUT TYPE="hidden" name=tid value={$discountDetail.tid}><INPUT TYPE="hidden" name=couponid value={$discountDetail.Coupon_}><INPUT TYPE="hidden" name=fid value={$discountDetail.fid}><INPUT TYPE="hidden" name="authorid" value="{$userinfo.uid}"><INPUT TYPE="hidden" name="author" value="{$userinfo.username}"><INPUT TYPE="hidden" name="authorbelong" value="{$discountDetail.authorid}">
+					<ul>
+						<li class="lileft">昵称：</li>
+						<li class="liright">{$userinfo.username}</li>
+						<li class="lileft">类别：</li>
+						<li class="liright"><input name="icon" type="radio" value="0" checked="checked" onclick="document.form.content.value='';"/>
+						评论 <input name="icon" type="radio" value="1" onclick="document.form.content.value='';"/> 推荐 <input name="icon" type="radio" value="2" onclick="document.form.content.value='';"/> 举报 </li>
+						<li class="lileft">内容：</li>
+						<li class="liright"><textarea name="content" cols="" rows="" class="input_maxbox"></textarea></li>
+						<li class="licenter"><input class="inputbut" type="button" onclick="javascript:this.form.content.value='';this.form.content.focus();" value="重 写" name=""/> <input class="inputbut" type="button" onclick="checkgo();" value="发表评论" name=""/></li>
+					</ul>				
+				</div>			
+				<!--具体信息内容结束-->				
+			</div>	
+			{else}
+			<a name="notlogon"></a>
+			<div class="detail_main">				
+				<div class="detail_top">
+					<h3>发表评论</h3>
+				</div>
+				<!--具体信息内容开始-->
+				<div class="newdetail_box">
+					<div id=notloginalert>只有注册用户才能发表评论！</div>
+					<div class="newdetail_bottom">
+					已注册用户可以先<a href="/bbs/login.php">登录</a>，如果您还不是大红包的注册用户，建议您注册<a href="/bbs/register.php">帐号</a>。
+					</div>
+				</div>
+				<!--具体信息内容结束-->	
+				
+			</div>	
+
+			{/if}	
+			
+			<!--提示信息结束-->
+		</div>
+		<!--end left-->
+		<!--begin right-->
+		<div id="right">
+			<!--google 广告开始-->
+			{if $adsResult.googleAds[0] }
+			<div class="favBox favBg">
+				<div class="title"></div>
+				<ul>
+					{foreach item=ads from=$adsResult.googleAds[0]}
+					<li>
+						<p class="tit"><a href="{$ads.url}" class="favTit"  rel="nofollow" target="_blank">{$ads.LINE1}</a></p>
+						<p class="Des">{$ads.LINE2} </p>   <span class="www"><a href="{$ads.url}" class="favWww"  rel="nofollow" target="_blank">{$ads.SiteUrl}</a>  </span> 
+					</li>
+					{/foreach}
+				</ul> 
+			</div>
+			{/if}
+			{if $adsResult.baiduAds }
+			<div class="favBox favBg newFavBg">
+				<div class="title"></div>
+				<ul>
+					{foreach item=ads from=$adsResult.baiduAds[0]}
+					<li>
+						<p class="tit"><a href="{$ads.url}" class="favTit"  rel="nofollow" target="_blank">{$ads.title}</a></p>
+						<p class="Des">{$ads.abstract} </p>   <span class="www"><a href="{$ads.url}" class="favWww"  rel="nofollow" target="_blank">{$ads.site}</a>  </span> 
+					</li>
+					{/foreach}
+				</ul> 
+			</div>
+			{/if}
+			<!--google 广告结束-->
+			<!--日历开始-->
+			<div id="calendar">
+				<div class="calendar_top"></div>
+				<div class="calendar_box">
+					<div class="calendar_date">
+						<ul>
+							<li class="li_ico"><!--<img src="/images/discount/calendar_ico1.gif" alt="昨天" />--></li>
+							<li class="li_date">{$selectedYear}年{$selectedMonth}月</li>
+							<li class="li_ico"><!--<img src="/images/discount/calendar_ico2.gif" alt="明天" />--></li>
+						</ul>
+					</div>
+					{$datastr}
+				</div>
+				<div class="calendar_top"></div>
+			</div>
+			<!--日历结束-->
+						
+		</div>
+		<!--end right-->
+	</div>
+	<!--主体内容结束-->
+</div>
+
+</div>
+
+{if $tui==1}
+<script>
+	vote();
+</script>
+{/if}
+
+{include file="new/foot.htm"}

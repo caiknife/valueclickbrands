@@ -1,0 +1,188 @@
+/* CSS Document */
+/*全局属性开始*/
+body {
+	margin: 0px;
+	border: 0px;
+	font-size: 12px;
+	color: #333;
+	font-family: "宋体";
+	background: #333;
+}	
+form {
+	margin: 0px;
+	padding: 0px;
+}
+ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+img {
+	border:0px;
+}
+a:link,a:visited {
+	color: #683700;
+	text-decoration: none;
+}
+a:hover {
+	color: #683700;
+	text-decoration: underline;
+}
+.main_box {
+	width: 1003px;
+	margin: 0px auto;
+}
+.clr {
+	clear: both;
+}
+/*全局属性结束*/
+#head {
+	height: 267px;
+	overflow: hidden;
+}
+#head ul li {
+	width: 1003px;
+	overflow: hidden;
+}
+#head .liimg1 {
+	height: 23px;
+	overflow: hidden;
+}
+#head .liimg2 {
+	height: 54px;
+	background: url(/images/price/head2.jpg) no-repeat;
+	overflow: hidden;
+	text-align: right;
+	padding-right: 26px;
+	width: 977px;
+}
+#head .liimg3 {
+	height: 34px;
+	overflow: hidden;
+}
+#head .liimg4 {
+	height: 52px;
+	overflow: hidden;
+}
+/*begin price_info*/
+#info {
+	background: url(/images/price/info_boxbg.jpg) repeat-x #fffebb;
+	height: auto;
+	padding-bottom: 35px;
+	position: relative;
+}
+.info_box {
+	padding-left: 332px;
+	width: 610px;
+	height: auto;
+	overflow: auto;
+	background: url(/images/price/infobg.jpg) no-repeat;
+}
+.info_img {
+	width: 610px;
+	height: 17px;
+	overflow: hidden;
+}
+.info_text {
+	width: 600px;
+	height: auto;
+	overflow: auto;
+	border-left: 5px solid #ff9a3b;
+	border-right: 5px solid #ff9a3b;
+	background: #fff;
+	color: #6f6f6f;
+}
+.info_text h1 {
+	width: 600px;
+	height: 47px;
+	overflow: hidden;
+	text-align: center;
+	margin: 0px;
+}
+.info_text p {
+	line-height: 24px;
+	padding: 0px 28px;
+}
+.info_text p a:link,.info_text p a:visited,.info_text p a:hover {
+	color: #d44a20;
+	text-decoration: underline;
+	font-weight: 600;
+}
+.info_text .bring {
+	color: #d44a20;
+}
+.info_text ul {
+	width: 540px;
+	padding-left: 60px;
+	height: auto;
+	overflow: hidden;
+}
+.info_text ul li {
+	float: left;
+	line-height: 25px;
+}
+.info_text .lititle {
+	width: 540px;
+	color: #d44a20;
+	line-height: 70px;
+}
+.info_text .lileft {
+	width: 250px;
+}
+.info_text .liright {
+	width: 290px;
+}
+.info_text .liline {
+	width: 540px;
+}
+.info_text .lisure {
+	width: 72px;
+	height: 27px;
+	padding: 15px 20px 10px 155px;
+}
+.info_text .liamend {
+	width: 72px;
+	height: 27px;
+	padding: 15px 20px 10px 0px;
+	overflow: hidden;
+}
+.info_text .libring {
+	padding-bottom: 10px;
+}
+.info_text .liuser {
+	width: 500px;
+	text-align: center;
+	line-height: 20px;
+	padding: 50px 40px 60px 0px;
+}
+.info_text .liuser strong {
+	font-size: 14px;
+	font-weight: 600;
+	color: #e05b32;
+}
+.info_text .li_ascertain {
+	width: 72px;
+	height: 27px;
+	padding: 0px 30px 100px 150px;
+}
+.info_text .li_dishonor {	
+	height: 27px;
+	padding: 0px 0px 100px 0px;
+}
+.info_text .li_gain {
+	width: 94px;
+	height: 27px;
+	padding: 0px 30px 100px 138px;
+}
+.price_left {
+	width: 400px;
+	height: 315px;
+	overflow: hidden;
+	background: url(/images/price/allprices.png) no-repeat !important;
+	background: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/images/price/allprices.png");
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+/*end price_info*/

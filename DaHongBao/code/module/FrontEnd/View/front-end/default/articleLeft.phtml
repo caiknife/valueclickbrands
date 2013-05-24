@@ -1,0 +1,15 @@
+<div class="staticSidebar">
+	<h2><?php print $this->helpCenterName;?></h2>
+	<?php if ($this->articleCategoryInfo):?>
+	<?php foreach ($this->articleCategoryInfo as $articleCategory):?>
+		<div class="title"><?php print $articleCategory['CategoryName'];?></div>
+		<?php if ($articleCategory['ArticleList']):?>
+		<ul>
+			<?php foreach ($articleCategory['ArticleList'] as $articleList):?>
+			<li<?php if ($this->aid == $articleList['ArticleID']):?> class="select"<?php endif;?>><a href="<?php print $articleList['ArticleDetailUrl'];?>"><span></span><?php print $articleList['ArticleTitle'];?></a></li>
+			<?php endforeach;?>
+		</ul>
+		<?php endif;?>
+	<?php endforeach;?>
+	<?php endif;?>
+</div>

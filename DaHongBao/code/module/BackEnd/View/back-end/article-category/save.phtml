@@ -1,0 +1,22 @@
+<?php $form = $this->form;?>
+<div class="box">
+    <div class="box-header">
+        <h2><a class="btn btn-inverse" href="<?php echo $this->url('backend' , array('controller' 
+            => 'ArticleCategory' , 'action' => 'index'))?>?siteid=<?php echo $form->get('SiteID')
+->getValue()?>"><i class="icon-white icon-chevron-left"></i>返回列表</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="icon-box"></i>分类编辑</h2>
+    </div>
+    
+    <div class="box-content">
+        <form class="box-form" action="<?php echo $this->url('backend' , array('controller' 
+             => 'ArticleCategory' , 'action' => 'save'))?>" method="post">
+            <?php echo $this->formHidden($form->get('CategoryID'))?>
+            <?php echo $this->formText($form->get('Name'))?>
+            <?php echo $this->formText($form->get('CnName'))?>
+            <?php echo $this->formSelect($form->get('ParentID'))?>
+            <?php echo $this->formHidden($form->get('SiteID'))?>
+            <?php echo $this->formSubmit($form->get('submit') , '提交')?>
+        </form>
+    </div>
+</div>

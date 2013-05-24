@@ -1,0 +1,15 @@
+<?php
+$siteConfg  = $this->siteConfg;
+$dhbDomain  = $siteConfg['__DHB_DOMAIN'];
+?>
+<div class="footer">
+	<div class="footerlink"><a target="_blank" href="<?php print $dhbDomain;?>/article-9/">关于大红包</a>|<a target="_blank" href="<?php print $dhbDomain;?>/article-13/">免责声明</a>|<a target="_blank" href="<?php print $dhbDomain;?>/article-14/">隐私声明</a>|<a target="_blank" href="<?php print $dhbDomain;?>/article-12/">使用条件</a>|<a target="_blank" href="<?php print $dhbDomain;?>/article-10/">联系我们</a></div>
+    <div class="copyright">版权归&copy; <?php print date('Y');?> 上海惠可网络技术有限公司所有<a href="<?php print $dhbDomain;?>">www.dahongbao.com</a><a href="http://www.miibeian.gov.cn/" target="_blank" style="color:#666666">沪ICP备12034406号</a></div>
+</div>
+<div class="gototop disn"><a href="#"><span>返回顶部<b></b></span></a></div>
+<script language="javascript" type="text/javascript" src="<?php print $this->basePath(); ?>/js/tracker.js"></script>
+<script type="text/javascript">
+var sessionId = '<?php print $this->sessionId;?>';
+var requestId = '<?php print $this->requestId;?>';
+track(requestId, sessionId);
+</script>

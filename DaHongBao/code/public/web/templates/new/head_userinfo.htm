@@ -1,0 +1,11 @@
+{if $islogon==1}
+	<div id="head_message">				
+		<div class="head_messbottom">你好，<a href="/bbs/profile.php">{$userinfo.username}</a> <span><a href="/bbs/login.php?action=quit">退出</a></span></div>
+		<div class="head_messtop">目前红包数：<strong>{$userinfo.money}个</strong> <a href="/profile/myhongbao.php">我的大红包</a></div>
+	</div>
+	{else}
+	<div id="head_login">
+		<a href="/bbs/login.php">登录</a>&nbsp;<a href="/bbs/register.php">注册</a>
+	</div>
+{/if}	
+			

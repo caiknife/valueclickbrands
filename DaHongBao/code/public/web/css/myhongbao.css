@@ -1,0 +1,392 @@
+/* CSS Document */
+@import url(common.css); 
+body {
+	background: #fff;
+}
+#head {
+	height: 123px;
+	overflow: hidden;
+}
+#nav {
+	height: 33px;	
+	background: url(../images/nav_bg.gif) repeat-x #eacf9a;
+	position: relative;
+	border-bottom: 1px solid #ccc;
+}
+#nav ul {
+	line-height: 31px;
+	height: 31px;
+	overflow: hidden;
+	padding-top: 1px;
+	border: 0px;
+	margin: 0px;
+	float: left;
+}
+#nav ul li {
+	float: left;
+	display: inline;
+}
+#nav .nav_right {
+	width: 470px;
+	text-align: right;
+	float: right;
+	line-height: 32px;
+	height: 32px;
+	color: #731800;
+	padding-right: 6px;
+}
+#nav .nav_right strong{
+	color: #000;
+}
+#myhongbao_title {
+	width: 983px;
+	line-height: 40px;
+	background: url(/images/mydahongbao/ico_home.gif) no-repeat 0px 12px #fff;	
+	padding-left: 20px;
+	font-weight: 600;
+	color: #000;
+	height: 40px;
+	overflow: hidden;
+}
+#myhongbao_title h1 {
+	display: inline;
+	font-size: 12px;
+	margin: 0px;
+}
+/*begin myhongbao*/
+#content {
+	height: auto;
+	overflow: hidden;
+	text-align: left;
+	padding: 0px 0px 6px 0px;
+	width: 1003px;
+	margin: 0px auto;
+	background: #fff;
+}
+#myhongbao {
+	width: 999px;
+	border: 1px solid #e9bda2;
+	padding: 1px;
+}
+.my_title {
+	width: 979px;
+	height: 25px;
+	border-bottom: 5px solid #d7ecef;
+	background: url(/images/category_h2bg.gif) repeat-x;
+	line-height: 25px;
+	padding: 0px 14px 0px 6px;
+	color: #004c7d;
+	text-align: right;
+}
+.my_title h2 {
+	margin: 0px;
+	font-size: 12px;
+	display: inherit;
+	float: left;
+}
+.my_title strong {
+	color: #ee5e17;
+}
+.my_box {
+	width: 999px;
+	height: auto;
+	overflow: auto;
+}
+.my_left {
+	width: 150px;
+	float: left;
+	border-bottom: 1px solid #e9bda2;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600;
+	color: #000;
+	padding: 40px 0px 41px 0px;
+	line-height: 45px;
+}
+.my_bbs {
+	width: 150px;
+	float: left;
+	border-bottom: 1px solid #e9bda2;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600;
+	color: #000;
+	padding: 12px 0px 5px 0px;
+	line-height: 30px;
+}
+.my_right {
+	width: 848px;
+	float: right;
+	border-left: 1px solid #e9bda2;
+}
+.my_right ul li {
+	float: left;
+	border-bottom: 1px solid #e9bda2;
+	height: 30px;
+	width: auto;
+}
+.my_right .liimg {
+	width: 25px;
+	padding: 7px 0px 0px 20px;
+	height: 23px;
+	overflow: hidden;
+}
+.my_right .lileft {
+	width: 110px;
+	line-height: 28px;
+	padding-top: 2px;
+	height: 28px;
+	overflow: hidden;
+}
+.my_right .licount {
+	width: 80px;
+	border-left: 1px solid #e9bda2;
+	padding-right: 20px;
+	line-height: 30px;
+	font-weight: 600;
+	color: #e26219;
+	text-align: right;
+}
+.my_right .liright {
+	width: 455px;
+	border-left: 1px solid #e9bda2;
+	line-height: 28px;
+	padding-top: 2px;
+	height: 28px;
+	overflow: hidden;
+	padding-left: 10px;
+}
+.my_right .litext {
+	width: 180px;
+	border-left: 1px solid #e9bda2;
+	line-height: 28px;
+	padding-top: 2px;
+	height: 28px;
+	overflow: hidden;
+	padding-left: 10px;
+}
+.my_right .liico {
+	width: 14px;
+	height: 14px;
+	padding: 8px;
+	overflow: hidden;
+}
+.my_right .libring {
+	width: 245px;
+	line-height: 28px;
+	padding-top: 2px;
+	height: 28px;
+	overflow: hidden;
+	color: #538eca;
+}
+.my_right .libring strong {
+	color: #ee5e17;
+	font-weight: 400;
+}	
+.my_right .lidetail {
+	width: 124px;
+	border-left: 1px solid #e9bda2;
+	line-height: 28px;
+	padding-top: 2px;
+	height: 28px;
+	overflow: hidden;
+	text-align: center;
+}
+.my_right .lidetail a:link,.my_right .lidetail a:visited,.my_right .lidetail a:hover {
+	color: #538eca;
+	text-decoration: underline;
+}
+.my_boxline {
+	width: 989px;
+	line-height: 28px;
+	padding-top: 2px;
+	height: 28px;
+	overflow: hidden;
+	background: #fcf1f5;
+	padding-right: 10px;
+	color: #659b28;
+	text-align: right;
+	border-bottom: 1px solid #e9bda2;
+}
+.my_boxline strong {
+	color: #ee5e17;
+}
+.my_bbsline {
+	width: 989px;
+	line-height: 28px;
+	padding-top: 2px;
+	height: 28px;
+	overflow: hidden;
+	background: #e7f4cb;
+	padding-right: 10px;
+	color: #659b28;
+	text-align: right;
+}
+.my_bbsline strong {
+	color: #ee5e17;
+}
+/*end myhongbao*/
+/*begin mycoupon*/
+#mycoupon {
+	width: 1003px;
+	height: auto;
+	overflow: auto;
+}
+#mycoupon_title {
+	width: 999px;
+	height: 23px;
+	border: 1px solid #e7bea5;
+	line-height: 23px;
+	padding: 1px;
+	margin: 0px 0px 8px 0px;
+}
+#mycoupon_title ul {
+	width: 979px;
+	height: 23px;
+	background: #e0f0f9;
+	padding-left: 20px;
+}
+#mycoupon_title ul li {
+	float: left;
+	padding-right: 50px;
+	width: auto;
+}
+#mycoupon_left {
+	width: 230px;
+	float: left;
+	height: auto;
+	overflow: auto;
+}
+.mycoupon_leftbox {
+	width: 222px;
+	height: auto;
+	padding: 1px 1px 8px 1px;
+	overflow: auto;
+	border: 1px solid #e7bea5;
+	text-align: center;
+	margin: 0px 0px 8px 0px;	
+}
+.mycoupon_leftbox ul {
+	padding: 10px 0px 0px 0px;
+}
+.mycoupon_leftbox ul li{
+	width: 212px;
+	line-height: 20px;
+	height: 20px;
+	text-align: left;
+	overflow: hidden;
+	padding-left: 10px;
+}
+.mycoupon_leftbox img {
+	margin: 10px 0px;
+}	
+#mycoupon_right {
+	width: 765px;
+	float: right;
+	height: auto;
+	overflow: auto;
+}
+.mycoupon_title {
+	height: 25px;
+	border-bottom: 5px solid #d7ecef;
+	background: url(/images/category_h2bg.gif) repeat-x;
+	line-height: 25px;
+	padding: 0px 10px 0px 6px;
+	color: #004c7d;
+	text-align: right;
+}
+.mycoupon_title a:link,.mycoupon_title a:visited,.mycoupon_title a:hover {
+	color: #004c7d;
+}
+.mycoupon_title h2 {
+	margin: 0px;
+	font-size: 12px;
+	display: inherit;
+	float: left;
+}
+.mycoupon_rightbox {
+	width: 761px;
+	height: auto;
+	overflow: auto;
+	border: 1px solid #e7bea5;
+	padding: 1px 1px 0px 1px;
+	margin: 0px 0px 8px 0px;	
+}
+.mycoupon_rightbox ul {
+	width: 761px;
+	height: auto;
+	overflow: auto;
+}
+.mycoupon_rightbox ul li {
+	float: left;
+	width: auto;
+	line-height: 22px;
+	text-align: center;
+}
+.mycoupon_rightbox .lititle1 {
+	width: 65px;
+	height: 22px;
+	overflow: hidden;	
+	background: #fcf1f5;
+	border-top: 1px solid #e7bea5;
+}
+.mycoupon_rightbox .lititle2 {
+	width: 372px;
+	height: 22px;
+	overflow: hidden;	
+	background: #fcf1f5;
+	border-top: 1px solid #e7bea5;
+}
+.mycoupon_rightbox .lititle3 {
+	width: 162px;
+	height: 22px;
+	overflow: hidden;	
+	background: #fcf1f5;
+	border-top: 1px solid #e7bea5;
+}
+.mycoupon_rightbox .lititle4 {
+	width: 162px;
+	height: 22px;
+	overflow: hidden;	
+	background: #fcf1f5;
+	border-top: 1px solid #e7bea5;
+}
+.mycoupon_rightbox .li1 {
+	width: 64px;
+	height: 25px;
+	line-height: 25px;
+	overflow: hidden;	
+	border-top: 1px solid #e7bea5;
+	border-right: 1px solid #e7bea5;
+}
+.mycoupon_rightbox .li2 {
+	width: 371px;
+	height: 25px;
+	line-height: 25px;
+	overflow: hidden;	
+	border-top: 1px solid #e7bea5;
+	border-right: 1px solid #e7bea5
+}
+.mycoupon_rightbox .li3 {
+	width: 161px;
+	height: 25px;
+	line-height: 25px;
+	overflow: hidden;	
+	border-top: 1px solid #e7bea5;
+	border-right: 1px solid #e7bea5
+}
+.mycoupon_rightbox .li4 {
+	width: 162px;
+	height: 25px;
+	line-height: 25px;
+	overflow: hidden;	
+	border-top: 1px solid #e7bea5;
+}
+.mycoupon_rightbox .libg {
+	background: #f4fbff;
+}
+.mycoupon_rightbox .liline {
+	width: 761px;
+	line-height: 50px;
+}
+/*end mycoupon*/

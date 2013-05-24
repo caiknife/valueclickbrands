@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{$title}</title>
+<META NAME="description" CONTENT="{$description}">
+<META NAME="keywords" CONTENT="{$keywords}">
+<meta name="copyright" content="www.dahongbao.com">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="verify-v1" content="QVIPb4M3AU1SQ7HQONfC2lrlH7RkeUn+PL1dLv8l5fs=" />
+<link href="../css/category.css" rel="stylesheet" type="text/css"/>
+</head>
+{literal}
+<script language="JavaScript" src="/jscript/prototype.js"></script>
+<script language="JavaScript" src="/jscript/category.js"></script>
+{/literal}
+<body>
+<!--头部开始-->
+{include file="new/head.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <h1>{$categoryName}</h1>
+	</div>
+	<!--category_title 导航结束-->
+	
+	<!--category 具体内容开始-->
+	<div id="category">
+		
+		<!--main 栏目页主体内容开始-->
+		<div id="main">
+			<!--google 广告开始-->
+			{if $adsResult.googleAds[0]}
+			<div class="favBox favBg" style="margin-bottom:0px;">
+				<div class="title"></div>
+				<ul>
+					{foreach item=ads from=$adsResult.googleAds[0]}
+					<li>
+						<p class="tit"><a href="{$ads.url}" class="favTit"  rel="nofollow" target="_blank">{$ads.LINE1}</a></p>
+						<p class="Des">{$ads.LINE2} </p>   <span class="www"><a href="{$ads.url}" class="favWww"  rel="nofollow" target="_blank">{$ads.SiteUrl}</a>  </span> 
+					</li>
+					{/foreach}
+				</ul> 
+			</div>
+			{/if}
+			{if $adsResult.baiduAds[0]}
+			<div class="favBox favBg newFavBg" style="margin-bottom:0px;">
+				<div class="title"></div>
+				<ul>
+					{foreach item=ads from=$adsResult.baiduAds[0]}
+					<li>
+						<p class="tit"><a href="{$ads.url}" class="favTit"  rel="nofollow" target="_blank">{$ads.title}</a></p>
+						<p class="Des">{$ads.abstract} </p>   <span class="www"><a href="{$ads.url}" class="favWww"  rel="nofollow" target="_blank">{$ads.site}</a>  </span> 
+					</li>
+					{/foreach}
+				</ul> 
+			</div>
+			{/if}
+			<!--google 广告结束-->
+			<!--ad 广告开始-->
+			<div id="ad"></div>
+			<div id="content_ad1"></div>
+			<!--ad 广告结束-->
+			
+			<!--main 栏目页具体内容开始-->
+			<div id="main_min">
+				<!--main_title 头部开始-->
+				<div class="main_title">
+					<ul>
+						<li class="liname">名称  </li>
+						<li class="select">{$sortstring}</li>
+						<li class="liticket">投票</li>
+						<li class="litime">过期时间</li>
+					</ul>
+				</div>
+				<!--main_title 头部结束-->
+				
+				{section name=loop loop=$couponList}
+				<!--main_box 具体内容块开始-->
+				<div class="main_box">
+					<!--main_left 左边开始-->
+					<div class="main_left">
+						<div class="topleft">
+						<h3><a href="{$couponList[loop].couponUrl}" {if $couponList[loop].isFree==0}target=_blank{/if}>{$couponList[loop].couponTitle}</a></h3>
+						{if $couponList[loop].isExpire==0}<img src="/images/guoqi.gif">{/if}
+						</div>
+
+						<div class="main_leftimg">
+						<a href="{$couponList[loop].couponUrl}" target=_blank>
+						{if $couponList[loop].HasImage==1}
+						<img src="{$couponList[loop].ImageURL}" alt="{$couponList[loop].couponTitle}" onerror="this.src='/images/dahongbao.gif'"/>
+						{else}
+						<img src="/images/dahongbao.gif" alt="{$couponList[loop].couponTitle}"/>
+						{/if}
+						</a>
+						</div>
+
+						<p><a href="{$couponList[loop].couponUrl}" target=_blank>{$couponList[loop].Detail}</a></p>
+
+
+						{if $couponList[loop].tagname neq ""}
+						<div class="message">标签：{$couponList[loop].tagname}</div>
+						{/if}
+			 			<div class="message">
+							{if $couponList[loop].merName neq ""}
+							<div class="more"><a href="/Me-{$couponList[loop].NameURL}--Mi-{$couponList[loop].Merchant_}.html">>>{if $couponList[loop].name1 ==""}{$couponList[loop].merName}{else}{$couponList[loop].name1}{/if}更多优惠</a></div>
+							{/if}
+							地区：<span class="red">{if $couponList[loop].City==""}全国{else}{$couponList[loop].City}{/if}</span>  优惠类别：<a href="/Ca-{$NameURL}--Ci-{$smarty.get.cid}.html"><span class="red">{$categoryName}</span></a>  评论数量：(<span class="red">{$couponList[loop].replies}</span>)  
+						</div>
+						<div class="message">
+							<ul>
+							<li>发布时间：{$couponList[loop].StartDate} </li>						
+							<li>发布人：{ if $couponList[loop].author eq ""}游客{else}<a href="/bbs/profile.php?action=show&uid={$couponList[loop].authorid}">{$couponList[loop].author}</a>{/if}</li>
+							<li class="join"><a href="/account.php?action=save&p={$couponList[loop].Coupon_}"  target=_blank>加入收藏</a></li>
+							<li class="friend"><a href="JavaScript:window.open('/send_friend.php?p={$couponList[loop].Coupon_}&c=','sendfriend{$couponList[loop].Coupon_}','width=415,height=550,resizable=0,scrollbars=yes');void(0);">推荐朋友</a></li>						
+							<li class="view"><a href="{$couponList[loop].detailUrl}">查看详细</a></li>
+						</div>
+					</div>
+					<!--main_left 左边结束-->
+					
+					<!--main_right 右边开始-->
+					<div class="main_right">
+						<!--main_img 图片开始-->
+						<div class="{if $couponList[loop].tagname neq ''}main_img{else}main_img1{/if}">
+							<div id="godigest_{$couponList[loop].Coupon_}" class="input">							
+							<a href="{$couponList[loop].printUrl}" {if $couponList[loop].isFree==0}target="_blank"{/if}><img src="/images/ico_click.gif" alt="点击使用" /></a>						
+							</div>
+							<div id="digest_point_{$couponList[loop].Coupon_}" class="main_point"><a href="{$couponList[loop].detailUrl}?tui" target="_blank">{$couponList[loop].digest}</a></div>
+							
+						</div>
+						<!--main_img 图片结束-->
+						
+						<!--main_time 时间开始-->
+						<div class="main_time">
+						{$couponList[loop].couponStatus}
+						</div>
+						<!--main_time 时间结束-->
+					</div>
+					<!--main_left 右边结束-->
+				</div>
+				<!--main_box 具体内容块结束-->
+				{/section}
+				
+				<!-- <div class="page">
+					<ul>
+						<li><a href="#">下一页</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">1</a></li>
+					</ul>
+				</div> -->
+				{$pageString}
+			</div>
+			<!--main 栏目页具体内容结束-->
+
+		
+			<!-- 广告结束-->
+			<div id="content_ad2"></div>
+			<!--google 广告开始-->
+			{if $adsResult.googleAds[1]}
+			<div class="favBox">
+				<div class="foottitle"></div>
+				<ul>
+					{foreach item=ads from=$adsResult.googleAds[1]}
+					<li>
+						<p class="tit"><a href="{$ads.url}" class="favTit"  rel="nofollow" target="_blank">{$ads.LINE1}</a></p>
+						<p class="Des">{$ads.LINE2} </p>   <span class="www"><a href="{$ads.url}" class="favWww"  rel="nofollow" target="_blank">{$ads.SiteUrl}</a>  </span> 
+					</li>
+					{/foreach}
+				</ul> 
+			</div>
+			{/if}
+			{if $adsResult.baiduAds[1]}
+			<div class="favBox newFavBg{if $adsResult.googleAds[1]} newTopBg{/if}">
+				<div class="foottitle"></div>
+				<ul>
+					{foreach item=ads from=$adsResult.baiduAds[1]}
+					<li>
+						<p class="tit"><a href="{$ads.url}" class="favTit"  rel="nofollow" target="_blank">{$ads.title}</a></p>
+						<p class="Des">{$ads.abstract} </p>   <span class="www"><a href="{$ads.url}" class="favWww"  rel="nofollow" target="_blank">{$ads.site}</a>  </span> 
+					</li>
+					{/foreach}
+					
+				</ul> 
+			</div>
+			{/if}
+			<!--google 广告结束-->
+		</div>
+		<!--main 栏目页主体内容结束-->
+
+		<!--sidebar 栏目页左边内容开始-->
+		<div id="sidebar">			
+			{if $categoryMerchantList}
+			<!--sidebox 热门商家开始-->			
+			<div class="sidebox">
+				<div class="title"><h2>热门商家</h2></div>										
+				<ul>
+					{section name=loop loop=$categoryMerchantList start=0 max=15}
+					<li>·<a href="{$categoryMerchantList[loop].MerURL}" target="_blank">{$categoryMerchantList[loop].Name}</a></li>
+					{/section}
+					<li style="text-align:right;padding-right: 10px;height: 18px;overflow: hidden;"><a href="/other_merchants.html" target="_blank">>>查看全部商家</a></li>
+				</ul>
+			</div>			
+			<!--sidebox 热门商家结束-->
+			{/if}
+			
+			<!--sidebox 热门优惠券开始-->
+			{$hotcouponother}
+			<!--sidebox 热门优惠券结束-->
+			
+			<!--sidebox 相关咨询开始-->
+			<div class="sidebox">
+				<div class="title"><h2>热门优惠券</h2></div>
+				<ul>
+					{section name=loop loop=$allhotcategorycouponlist start=0 max=10}
+					<li>·{if $allhotcategorycouponlist[loop].Merchant_>0}【<a href="/Me-{$allhotcategorycouponlist[loop].NameURL}--Mi-{$allhotcategorycouponlist[loop].Merchant_}.html">{if $allhotcategorycouponlist[loop].name1 == ""}{$allhotcategorycouponlist[loop].Name}{else}{$allhotcategorycouponlist[loop].name1}{/if}</a>】{/if}<a href="/{if $allhotcategorycouponlist[loop].NameURL}{$allhotcategorycouponlist[loop].NameURL}{else}merchant{/if}/coupon-{$allhotcategorycouponlist[loop].Coupon_}/">{$allhotcategorycouponlist[loop].Descript}</a></li>
+					{/section}
+				</ul>
+			</div>
+			<!--sidebox 相关咨询结束-->
+			
+			{if $hashotinfo==1}
+
+			{else}
+			<!--sidebox 论坛相关开始-->
+			<div class="sidebox">
+				<div class="title"><h2>{$categoryName}相关资讯</h2></div>
+				<ul>
+					{section name=loop loop=$hotinfo start=0 max=10}
+					<li>·<a href="/news---Ca-{$hotinfo[loop].NameURL}--Ci-{$hotinfo[loop].fid}--number-{$hotinfo[loop].tid}.html">{$hotinfo[loop].subject}</a></li>
+					{/section}
+				</ul>
+			</div>
+			<!--sidebox 论坛相关结束-->
+			{/if}
+
+			{if $hashotbbs==1}
+
+			{else}
+			<div class="sidebox">
+				<div class="title"><h2>论坛热贴</h2></div>
+				<ul>
+					{section name=loop loop=$hotbbs start=0 max=10}
+					<li>·<a href="/bbs/read.php?tid={$hotbbs[loop].tid}">{$hotbbs[loop].subject}</a></li>
+					{/section}
+				</ul>
+			</div>
+			{/if}
+		</div>
+		<!--sidebar 栏目页左边内容结束-->
+	</div>
+	<!--category 具体内容结束-->
+
+	{if $RESOURCE_INCLUDE!=""}
+		{$RESOURCE_INCLUDE}
+	{/if}
+</div>
+<!--主体内容结束-->
+{literal}
+			<script type="text/javascript">
+			{/literal}
+			smarter_adhost = "{$__ADHOST}";
+			
+			
+			condition = "cat-{$smarty.get.cid}";
+		{literal}
+			smarter_ad = [{
+					DocID: 'ad',
+					PageKey: 'dhb_coupon',
+					SectionKey: 'top_banner',
+					ConditionKey: condition
+				},
+				{
+					DocID: 'content_ad2',
+					PageKey: 'dhb_coupon',
+					SectionKey: 'bottom_banner',
+					ConditionKey: condition
+				}
+			];
+
+			</script>
+			{/literal}
+			<script type="text/javascript" src="{$__ADHOST}js/load.js"></script>
+			
+{include file="new/foot.htm"}

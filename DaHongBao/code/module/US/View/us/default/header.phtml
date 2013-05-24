@@ -1,0 +1,27 @@
+<?php
+$siteConfg  = $this->siteConfg;
+$dhbDomain  = $siteConfg['__DHB_DOMAIN'];
+$userDomain = $siteConfg['__USER_DOMAIN'];
+$loginUrl      = $userDomain."/auth/login/?redirect=".$_SERVER["SCRIPT_URI"];
+$registerUrl   = $userDomain."/auth/register/?redirect=".$_SERVER["SCRIPT_URI"];
+$helpCenterUrl = $siteConfg['helpCenterUrl'];
+?>
+<div class="header">
+    <div class="toplink"><div class="toplinkcontent" id="toplinkcontent"><a href="<?php print $helpCenterUrl;?>" title="帮助中心">帮助中心</a>|<a href="<?php print $dhbDomain;?>" title="大红包中国优惠券">大红包中国优惠券</a></div></div>
+    <div class="headercontent clearfix">
+    	<div class="logo"><a href="/"><img src="/img/US/haitao_logo.png" alt="大红包美国海淘优惠券" title="大红包美国海淘优惠券"></a></div>
+        <div class="searchbox">
+            <form id="cscsearch" onsubmit="return dhb_searchTextOnSubmit('cscsearch');" method="get" action="/search" name="cscsearch">
+                <div class="coll">
+                    <input type="text" maxlength="70"  value="<?php if ($this->keyword):?><?php print htmlspecialchars($this->keyword);?><?php else:?>美国海淘，轻松购物享优惠...<?php endif;?>" onblur="dhb_searchTextOnBlur(this);" onfocus="dhb_searchTextOnfocus(this);" class="inputtxt" name="q" autocomplete="off">
+                    <input type="hidden" id="searchType" name="searchType" value="">
+                    <ul class="selectcate" id="selectcate"></ul>
+                </div>
+                <div class="colr">
+                    <input type="submit" value="" class="inputbut">
+                </div>
+            </form>
+            <script>insertSearchType('<?php if ($this->searchType):?><?php print $this->searchType;?><?php endif;?>');</script>
+        </div>
+    </div>
+</div>

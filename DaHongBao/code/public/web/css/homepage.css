@@ -1,0 +1,49 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*homepage middle*/
+
+
+.comcoupon{ margin:10px 0; width:100%; display:table;}
+.comcoupon li{ padding-bottom:10px;}
+.catlist{padding-top:10px; width:48%; float:left;}
+.catimg{ padding:5px; padding-right:10px;}
+.catlistmore{ margin:0 5px 5px 0;}
+
+.reader{margin:10px 0; font-size:0px;}
+.reader img{ margin-right:5px;}
+/*”—«È¡¥Ω”“≥*/
+.link_title {
+	margin-left: 30px;
+	line-height: 25px;
+	padding-top: 20px;
+	width: 200px;
+	height: 25px;
+}
+.link_title a:link,.link_title a:visited {
+	text-decoration: none;
+	color: #000;
+}
+.link_title a:hover {
+	text-decoration: underline;
+	color: #000;
+}
+.link_box {
+	float: left;
+	margin: 40px 0px 0px 30px;
+	padding-bottom: 30px;
+}
+
+.link_box ul li {
+	width: 150px;
+	float: left;
+	margin-bottom: 30px;
+}
+.link_box ul li img {
+	width: 90px;
+	height: 30px;
+	overflow: hidden;
+}
+.border_bottom {
+	border-bottom: 1px solid #cecece;
+}

@@ -1,0 +1,379 @@
+/* CSS Document */
+@import url(common.css); 
+/*头部开始*/
+#head {
+	height: 122px;
+	text-align: left;	
+	background: #b80403;
+	position: relative;
+}
+#nav_all {
+	height: 32px;	
+	background: url(../images/nav_bg.gif) repeat-x #eacf9a;
+	border-bottom: 1px solid #9e7d4b;
+}
+.nav_all {
+	margin: 0px 7px;
+	height: 32px;
+	float: left;
+	width: 535px;
+	overflow: hidden;
+}
+#nav_all .message_right {
+	float: right;
+	width: 318px;	
+	overflow: hidden;
+}
+#nav_all .message_right ul li {
+	float: left;
+}
+#nav_all .message_right .lileft {
+	width: 62px;
+	color: #636363;
+	background: url(../images/icn_gonggao.gif) 0px 6px no-repeat;
+	padding-left: 20px;
+}
+#nav_all input {
+	display: inline;
+}
+#nav_all .input1 {
+	width: 232px;
+	height: 25px;
+	line-height: 25px;
+	padding-top: 4px !important;
+	padding-top: 5px;
+	text-align: right;
+}
+#nav_all .input {	
+	padding: 0px;
+	overflow: hidden;
+	width: 230px;
+	height: 20px;
+	border: 1px solid #a09f9b;
+}
+#nav_all .search_but {
+	width: 85px;
+	text-align: right;
+	height: 29px;
+	padding-top: 4px;
+}
+#nav_all .select {
+	width: 122px;
+	height: 31px;
+	line-height: 31px;
+	padding-top: 0px !important;
+	padding-top: 4px;
+	text-align: right;
+}
+#nav_all .select .select_but {
+	padding: 0px;
+	overflow: hidden;
+	width: 116px;
+	height: 21px;
+	border: 1px solid #a09f9b;
+	overflow: hidden;
+}
+#search_all {
+	width: 425px;
+	height: 32px;
+	float: right;
+	overflow: hidden;
+}
+#search_all ul li {
+	float: left;
+	height: 32px;
+	line-height: 32px;
+}
+#search_all .lileft {
+	font-size: 12px;
+	font-weight: 600;
+	color: #aa4800;
+	width: 70px;	
+}
+#search_all .litag {
+	font-size: 12px;
+	font-weight: 400;
+	color: #aa4800;
+	width: 350px;
+	padding-right: 5px;
+}
+#search_all .litag a:link,#search_all .litag a:visited,#search_all .litag a:hover {
+	color: #aa4800;
+}
+#search_all .litag strong a:link,#search_all .litag strong a:visited,#search_all .litag strong a:hover {
+	font-size: 14px;
+	font-weight: 600;
+}
+/*城市切换开始*/
+#head .city {
+	border: 1px solid #ccc;
+	width: 330px;
+	background: #fff;
+	padding: 0px 10px 10px 10px;
+	height: 250px;
+	left: 120px;
+	top: 115px;
+	position: absolute;
+	z-index: 99;
+}
+#head .city ul {	
+	height: auto;
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+}
+#head .city ul li {
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	white-space: nowrap;
+	float: left;
+	padding: 0px 5px 0px 0px;
+}
+#head .city strong {
+	color: #ae0000;
+	font-weight: 400;
+	height: 20px;
+}
+#head .city ul li strong a:link,#head .city ul li strong a:visited,#head .city strong ul li a:hover {
+	color: #ae0000;
+	font-weight: 400;
+	text-decoration: underline;	
+}
+#head .city ul li a:link,#head .city ul li a:visited,#head .city ul li a:hover {
+	color: #373400;
+	text-decoration: underline;	
+}
+/*城市切换结束*/
+#kejiji_messleft {
+	width: 200px;
+	height: 32px;
+	padding-left: 3px;	
+	float: left;
+	line-height: 33px;
+}
+#kejiji_messleft ul li {
+	float: left;
+	padding: 0px 4px;
+	color: #ae0000;
+}
+#kejiji_messleft ul li a:link,#kejiji_messleft ul li a:visited,#kejiji_messleft ul li a:hover {
+	color: #ae0000;
+	text-decoration: underline;
+}
+#kejiji_messleft .kejiji_place {
+	background: url(../images/kejiji_place.gif) no-repeat 0px 11px;
+	padding-left: 10px;
+	color: #393939;
+}
+/*头部结束*/
+#content{background:#fefbf6;}
+
+/*SOGOU头问广告开始*/
+
+.ad {
+	width: 955px;
+	overflow: hidden;
+	padding: 20px 11px 0px 11px;
+	margin: 10px auto;
+	border:1px solid #d9dee1;
+	background:#f0f8fc url(../images/sogou/txt_ld.gif) no-repeat 858px 11px;
+	
+}
+.ad p{padding:0; margin:0;}
+
+
+.ad .ad_title{
+	font-size: 14px;
+	color: #00c;
+	font-weight: 600;
+	height: 23px;
+	line-height: 20px;
+	padding-left:82px;
+}
+.ad .ad_title a:link,.ad .ad_title a:visited,.ad .ad_title a:hover {
+	color: #00c;
+	text-decoration: underline; 
+}
+.ad .ad_title a:link strong,.ad .ad_title a:visited strong,.ad .ad_title a:hover strong {
+	color: #c03;
+}
+.ad .ad_text {
+	color: #333;
+	line-height: 17px;
+	padding-left:82px;
+	text-decoration:none;
+}
+.ad .ad_text a:link,.ad .ad_text a:visited,.ad .ad_text a:hover,.ad .ad_text a:active{
+	color:#333; 
+	text-decoration:none;
+}
+.ad .ad_text strong,.ad .ad_text strong,.ad .ad_text strong {
+	color: #c03;
+	font-weight: 400;
+}
+.ad .ad_url {
+	height: 20px;
+	overflow: hidden;
+	line-height: 16px;
+	color: #666;
+	padding-left:82px;
+}
+.ad .ad_url a:link,.ad .ad_url a:visited,.ad .ad_url a:hover {
+	color: #008000;
+	text-decoration:none;
+}
+.ad .ad_url a:link strong,.ad .ad_url a:visited strong,.ad .ad_url a:hover strong {
+	color: #666;
+	text-decoration: underline;
+	font-weight: 400;
+}
+.ad_borderB{border-bottom:1px solid #dbe5ea;}
+.ad_borderT{border-top:1px solid #fff;}
+.ad .bg_img_1{ background:url(../images/sogou/ad_one.gif) no-repeat 8px 12px;padding: 6px 0px 5px 0px;}
+.ad .bg_img_2{ background:url(../images/sogou/ad_two.gif) no-repeat 8px 12px;padding: 6px 0px 5px 0px;}
+.ad .bg_img_3{ background:url(../images/sogou/ad_three.gif) no-repeat 8px 12px;padding: 6px 0px 5px 0px;}
+.ad .bg_img_4{ background:url(../images/sogou/ad_four.gif) no-repeat 8px 12px;padding: 6px 0px 5px 0px;}
+.ad .bg_img_5{ background:url(../images/sogou/ad_five.gif) no-repeat 8px 12px;padding: 6px 0px 5px 0px;}
+.ad .bg_img_6{ background:url(../images/sogou/ad_six.gif) no-repeat 8px 12px;padding: 6px 0px 5px 0px;}
+.ad .bg_img_7{ background:url(../images/sogou/ad_seven.gif) no-repeat 8px 12px;padding: 6px 0px 5px 0px;}
+.ad .bg_img_8{ background:url(../images/sogou/ad_eight.gif) no-repeat 8px 12px;padding: 6px 0px 5px 0px;}
+.ad .bg_img_9{ background:url(../images/sogou/ad_nine.gif) no-repeat 8px 12px;padding: 6px 0px 5px 0px;}
+.ad .bg_img_10{ background:url(../images/sogou/ad_ten.gif) no-repeat 8px 12px;padding: 6px 0px 5px 0px;}
+.ad .bg_img_11{ background:url(../images/sogou/ad_eleven.gif) no-repeat 8px 12px;padding: 6px 0px 5px 0px;}
+.ad .bg_img_12{ background:url(../images/sogou/ad_twelve.gif) no-repeat 8px 12px;padding: 6px 0px 5px 0px;}
+
+/*选中 区域背景变色*/
+.ad .ad_title strong{
+	color: #c03;
+}
+.ad .ad_url {
+	color: #008000;
+	text-decoration:none;
+}
+.ad_borderB a{
+    blr:expression(this.onFocus=this.blur());
+    outline:none;
+}
+.ad_borderB a:focus{
+    -moz-outline-style: none;
+}
+.ad .selected{cursor:pointer; background-color:#FCED9D}
+.ad .selected a{text-decoration: none; cursor:pointer}
+.adfill span{display:block}
+/*SOGOU头问广告结束*/
+
+
+.channelTab {
+	width: 1003px;
+	height: 58px;
+}
+
+.channelTab ul {
+	width: 850px;
+	padding: 9px 0px 0px 3px;
+	height: 44px;
+	line-height: 22px;
+	float: left;
+	margin: 0px;
+	overflow: hidden;
+}
+.channelTab ul li {
+	float: left;
+	margin-right: 2px;
+	width: 116px;
+	height:34px;
+	text-align: center;
+	font-weight: 600;
+	color: #666;
+	background: url(../images/sogou/channelTabBg.gif) no-repeat 0 0px;
+	padding-top:10px;
+}
+.channelTab strong {
+	font-size: 14px;
+	color: #aa4800;
+}
+.channelTab .libring {
+	color: #aa4800; padding-right:2px;
+}
+.channelTab ul li a:link,.channelTab ul li a:visited {
+	color: #666;
+}
+.channelTab ul li a:hover {
+	color: #aa4800;
+	text-decoration: none;
+}
+/*new add baidu spl*/
+.adfill{
+	background:#fcfaf0;
+}
+
+
+/* new add yodao spl */
+.adYodao {
+	width: 955px;
+	overflow: hidden;
+	padding: 10px 11px 0px 11px;
+	margin: 10px auto;
+	border:1px solid #d9dee1;
+	background:#f0f8fc url(../images/sogou/txt_ld.gif) no-repeat 858px 3px;
+	
+}
+
+.adYodao p{padding:0; margin:0; display:inline;}
+
+.adYodao .ad_title, .adYodao .ad_text, .adYodao .ad_text strong, .adYodao .ad_url{
+	font-size: 12px;
+	color: #000;
+	padding:0px;
+	height: 22px;
+	line-height: 22px;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+.adYodao .ad_title a:link,.adYodao .ad_title a:visited,.adYodao .ad_title a:hover {
+	color: #000;
+	font-weight:normal;
+	text-decoration: none;
+}
+
+.adYodao .ad_title a:link strong,.adYodao .ad_title a:visited strong,.adYodao .ad_title a:hover strong {
+	color: #000;
+	font-weight:normal;
+	text-decoration: none;
+}
+
+.adYodao .ad_url a:link,.adYodao .ad_url a:visited,.ad .adYodao a:hover {
+	color: #000;
+	font-weight:normal;
+	text-decoration: none;
+}
+
+.adYodao .ad_url a:link strong,.adYodao .ad_url a:visited strong,.adYodao .ad_url a:hover strong {
+	color: #000;
+	font-weight:normal;
+	text-decoration: none;
+}
+
+/* new add yodao2 spl */
+.adYodao2 {
+	width: 927px;
+	overflow: hidden;
+	padding: 10px 25px 0px 25px;
+	margin: 10px auto;
+	border:1px solid #d9dee1;
+	background:#f0f8fc url(../images/sogou/txt_ld.gif) no-repeat 858px 3px;
+	
+}
+
+.adYodao2 p{padding:0; margin:0; display:inline;}
+
+.adYodao2 .ad_title, .adYodao2 .ad_text, .adYodao2 .ad_url{
+	font-size: 12px;
+	color: #000;
+	padding:0px;
+	height: 22px;
+	line-height: 22px;
+}

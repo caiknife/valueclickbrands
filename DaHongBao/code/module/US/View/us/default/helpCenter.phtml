@@ -1,0 +1,13 @@
+<?php if ($this->helpCenterList):?>
+<div class="featuredhelp">
+    <a class="seemore" href="<?php print ($this->helpCenterList['helpCenterUrl']);?>">更多>></a>
+    <h2><?php print ($this->helpCenterList['helpCenterName']);?></h2>
+    <div class="content">
+        <ul>
+            <?php foreach ($this->helpCenterList['ArticleList'] as $key => $help):?>
+            <li<?php if ($key == count($this->helpCenterList['ArticleList']) -1):?> class="last"<?php endif;?>><span>0<?php print $key + 1;?></span><a target="_blank" href="<?php print $help['ArticleDetailUrl'];?>" title="<?php print $this->escapeHtml($help['ArticleTitle']);?>"><?php print $help['ArticleTitle'];?></a></li>
+            <?php endforeach;?>
+        </ul>
+    </div>
+</div>
+<?php endif;?>

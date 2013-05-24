@@ -1,0 +1,167 @@
+<?php
+
+/**
+* save.phtml
+*-------------------------
+*
+* 
+*
+* PHP versions 5
+*
+* LICENSE: This source file is from Smarter Ver2.0, which is a comprehensive shopping engine 
+* that helps consumers to make smarter buying decisions online. We empower consumers to compare 
+* the attributes of over one million products in the common channels and common categories
+* and to read user product reviews in order to make informed purchase decisions. Consumers can then 
+* research the latest promotional and pricing information on products listed at a wide selection of 
+* online merchants, and read user reviews on those merchants.
+* The copyrights is reserved by http://www.mezimedia.com. 
+* Copyright (c) 2006, Mezimedia. All rights reserved.
+*
+* @author Yaron Jiang <yjiang@corp.valueclick.com.cn>
+* @copyright (C) 2004-2013 Mezimedia.com
+* @license http://www.mezimedia.com PHP License 5.0
+* @version CVS: $Id: save.phtml,v 1.7 2013/04/28 03:09:24 yjiang Exp $
+* @link http://www.dahongbao.com/
+* @deprecated File deprecated in Release 3.0.0
+*/
+
+use Custom\Util\Utilities;
+
+$this->headScript()->appendFile($this->basePath('js/jquery-ui-1.10.2.custom.min.js'))
+->appendFile($this->basePath('js/jquery.cleditor.min.js'))
+->appendFile($this->basePath('js/BackEnd/coupon-save.js'));
+$this->headLink()->appendStylesheet($this->basePath('styles/jquery-ui-1.10.2.custom.min.css'))
+->appendStylesheet($this->basePath('styles/jquery.cleditor.css'));
+$form = $this->form;
+
+$siteId = $form->get('SiteID')->getValue();
+if('1' == $siteId){
+    $this->headScript()->appendFile($this->basePath('js/BackEnd/coupon-save-cn.js'));
+}
+$errmsgs = $form->getMessages();
+?>
+<?php if(!empty($this->message)):?>
+<div class="alert alert-error fade in">
+<button class="close" data-dismiss="alert" type="button">×</button>
+<?php foreach($this->message as $v):?>
+<p><?php echo $v?></p>
+<?php endforeach;?>
+</div>
+<?php endif?>
+<input type="hidden" id="query" value="<?php echo $this->query?>" />
+<div class="box">
+<div class="box-header">
+<h2><a class="btn btn-inverse" href="<?php echo Utilities::decode($this->referer)?>">返回上一页</a>
+<i class="icon-box"></i>编辑Coupon</h2>
+</div>
+
+<div class="box-content">
+<form class="box-form" action="<?php echo $this->url(null , array('controller' => 'coupon' 
+    , 'action' => 'save'))?>?referer=<?php echo $this->referer?><?php if(isset($this->userDataFeedId)):
+    ?>&userDataFeedId=<?php echo $this->userDataFeedId
+?><?php endif;?><?php if(isset($this->CouponID)):?>&CouponID=<?php echo $this->CouponID?><?php endif;?>"
+ method="post" enctype="multipart/form-data">
+<?php echo $this->formHidden($form->get('CouponID'))?>
+<?php echo $this->formHidden($form->get('UserDataFeedId'))?>
+<?php echo $this->formSelect($form->get('SiteID'))?>
+
+
+<?php echo $this->formSelect($form->get('CouponType'))?>
+
+<div class="input-group">
+<label class="input-label">商家</label>
+<div class="input-item">
+<span id="merchantName"><?php if($this->MerchantName):?><?php echo $this
+->MerchantName ?><?php else:?>未选择<?php endif;?></span>
+<input type="hidden" name="MerchantName" value="<?php echo $this->MerchantName ?>" />
+<button class="btn btn-primary" id="SearchMechant" type="button">选择商家</button>
+<div id="merchant" class="hidden">
+<input type="text" id="searchMerchant" />
+<button id="search" type="button">搜索</button>
+<img width="20" class="hidden" src="/img/BackEnd/loading.gif" id="loading" />
+<ul id="result">
+</ul>
+</div>
+<?php echo $this->formHidden($form->get('MerchantID'))?>
+</div>
+</div>
+
+<div class="input-group <?php if(isset($errmsgs['CategoryID'])):?>error<?php endif;?>">
+<label class="input-label"><?php echo $form->get('CategoryID')->getLabel()?></label>
+<div class="controls" id="categories">
+<?php echo $this->formMultiCheckbox($form->get('CategoryID'))?>
+<?php if(isset($errmsgs['CategoryID'])):?><span class='help-inline'><?php echo implode('  ' , $errmsgs['CategoryID'])
+?></span><?php endif;?>
+</div>
+</div>
+
+<?php echo $this->formSelect($form->get('AffiliateID'))?>
+<div class="input-group">
+<label class="input-label">优惠</label>
+<div class="input-item">
+满&nbsp;&nbsp;<input class="" type="text" name="<?php echo $form->get('CouponAmount')->getName()?>" value="<?php
+ echo  $form->get('CouponAmount')->getValue()?>" />&nbsp;&nbsp;减&nbsp;&nbsp;<input class="" type="text" name="<?php 
+ echo $form->get('CouponReduction')->getName()?>" value="<?php
+ echo  $form->get('CouponReduction')->getValue()?>" />
+ </div>
+</div>
+<?php echo $this->formText($form->get('CouponDiscount'))?>
+
+<div class="input-group">
+<label class="input-label"></label>
+<div class="input-item">
+<button type="button" id="creatName" class="btn btn-success">生成Coupon名</button>
+</div>
+</div>
+
+<?php echo $this->formText($form->get('CouponName'))?>
+<?php if(empty($this->CouponID)):?>
+<div class="input-group">
+<label class="input-label">
+<?php echo $form->get('CouponCode')->getLabel()?><br />
+(每行为一条Coupon，Coupon格式为：code,密码,使用次数  使用次数和密码可为空)
+</label>
+<div class="input-item">
+<textarea name="<?php echo $form->get('CouponCode')->getName()?>">
+<?php echo $form->get('CouponCode')->getValue()?>
+</textarea>
+</div>
+</div>
+<?php else:?>
+<div class="input-group">
+<label class="input-label">
+</label>
+<div class="input-item"><a target="_blank" class="btn btn-primary" href="<?php echo $this->url(null 
+    , array('controller' => 'CouponCode' , 'action' => 'index'))
+?>?CouponID=<?php echo $this->CouponID?>">管理Code</a></div>
+</div>
+<?php endif;?>
+<?php echo $this->formTextarea($form->get('CouponDescription'))?>
+<?php echo $this->formTextarea($form->get('CouponRestriction'))?>
+<?php echo $this->formText($form->get('CouponUrl'))?>
+<div class="input-group">
+<label class="input-label"></label>
+<?php echo $this->formCheckbox($form->get('IsAffiliateUrl'))?>
+</div>
+<div class="input-gourp">
+<img height="150px" src="<?php echo $form->get('CouponImageUrl')->getValue();?>" />
+</div>
+<?php echo $this->formFile($form->get('CouponImageUrl'))?>
+<?php echo $this->formHidden($form->get('CouponImageUrl'))?>
+<?php echo $this->formText($form->get('CouponStartDate'))?>
+<?php echo $this->formText($form->get('CouponEndDate'))?>
+
+<?php echo $this->formText($form->get('CouponBrandName'))?>
+
+<div class="input-group">
+<label class="input-label">属性</label>&nbsp;&nbsp;&nbsp;&nbsp;
+<?php echo $this->formCheckbox($form->get('IsFree'))?>
+<?php echo $this->formCheckbox($form->get('IsActive'))?>
+<?php echo $this->formCheckbox($form->get('IsPromote'))?>
+</div>
+
+
+<?php echo $this->formSubmit($form->get('submit') , '提交')?>
+</form>
+</div>
+</div>

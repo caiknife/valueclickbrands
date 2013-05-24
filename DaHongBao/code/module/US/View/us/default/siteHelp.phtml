@@ -1,0 +1,7 @@
+<?php if ($this->siteHelpList):?>
+<div class="sitehelp clearfix">
+    <?php foreach ($this->siteHelpList as $key => $siteHelp):?>
+    <a target="_blank" href="<?php print $siteHelp['Url'];?>" class="<?php print $siteHelp['Class'];?>"><?php print $siteHelp['Name'];?></a>
+    <?php endforeach;?>
+</div>
+<?php endif;?>

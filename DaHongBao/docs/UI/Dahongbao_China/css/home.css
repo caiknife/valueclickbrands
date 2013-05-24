@@ -1,0 +1,100 @@
+.friendly{ padding:20px 0; line-height:22px; }
+.friendly h3{ padding-bottom:10px; background:url(../images/button.png) no-repeat 67px -77px; font-weight:normal;}
+
+
+
+h2{color:#000; font-weight:normal; font-size:16px; }
+
+
+.hotMerchant{ background:#fff; padding:15px; margin-bottom:20px; margin-top:20px; }
+.hotMerchant h2{padding-bottom:10px; background:url(../images/button.png) no-repeat 99px -127px ; }
+.hotMerchant h2 span{ background:url(../images/icons.png) no-repeat 0 -49px ;padding:3px 15px; }
+.hotListLogo{ background:#eefafc; width:420px; padding:15px 10px 0; float:left;}
+.hotListLogo ul{ width:430px; overflow:hidden;}
+.hotListLogo li{ float:left; padding-right:5px; padding-bottom:20px; padding-top:5px; height:50px; position:relative}
+.hotListLogo li a span{ display:none;}
+.hotListLogo li a:hover span{ background:red; width:100px; padding-left:3px;text-align:center; height:31px; display:block; position:absolute; top:5px; left:0; padding-top:15px;filter:alpha(opacity=80);-moz-opacity:0.8;	-khtml-opacity: 0.8;	opacity: 0.8; color:#fff; }
+
+
+.banner{ float:right; width:690px; position:relative; border-bottom:1px dashed #e64329;}
+.bannerPage{ position:absolute; top:5px; right:5px;}
+.bannerPage a{ padding:2px 7px; font-weight:bold; background:#ebebeb; color:#e64329; font-family:arial;}
+.bannerPage a.select{ padding:3px 8px;background:#ebebeb;
+filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f75d44', endColorstr='#e64329'); /* IE6,IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#f75d44', endColorstr='#e64329')"; /* IE8 */
+background: -moz-linear-gradient(top,  #f75d44 , #e64329 );
+background: -webkit-gradient(linear, 0 0, 0 100%, from(#f75d44), to(#e64329));
+background:-o-linear-gradient(top, #e4e4e4, #e64329); color:#fff;
+}
+
+
+.newest{ clear:both; margin-bottom:20px;}
+.seeMore{ float:right;}
+.seeMore a{ color:#e64329;}
+
+.newest h2{ background:url(../images/button.png) no-repeat 136px -174px ; padding-bottom:10px; padding-left:10px;}
+.newest h2 span{ background:url(../images/icons.png) no-repeat 5px -111px ;padding:3px 18px; }
+.newestCoupon{ width:220px; float:left; margin-right:20px; }
+.newestInfo{background:url(../images/bg.png) repeat-x 0 0; height:30px; padding-bottom:3px; line-height:30px; text-align:center; color:#fff;}
+.newestCoupon .double{background:url(../images/bg.png) repeat-x 0 -57px;}
+.newestImg{ background:#fff; text-align:center;}
+.newestInfo strong{ font-size:20px; font-family:arial;}
+.newestInfo a span{  margin-right:5px;}
+.newestInfo a{ color:#fff;}
+.newestList{ clear:both;}
+.newestbg{ width:1225px;}
+
+
+.goodMerchant{ background:#fff; padding:15px 0; margin-bottom:20px;}
+.goodMerchant h2 span{ background:url(../images/icons.png) no-repeat 2px -176px ;padding:3px 14px; }
+.goodMerchant h2{ background:url(../images/button.png) no-repeat 146px -223px ; padding-bottom:10px;}
+
+
+.goodMerchantList{ height:220px;}
+.arrowLeft,.arrowRight{ padding-top:80px; float:left;}
+.arrowLeft{ padding-left:12px;}
+.arrowRight{ padding-right:12px;}
+.arrowLeft span{ width:35px; height:52px; background:url(../images/icons.png) no-repeat 2px -310px; display:block;}
+.arrowRight span{ width:35px; height:52px; background:url(../images/icons.png) no-repeat 4px -386px; display:block;}
+.scrollList{ float:left; height:220px; width:1086px; }
+.scrollCoupon,.dotRed{ border:1px solid #ededed; box-shadow: 4px 4px 0 #eefafc; width:220px; height:192px; padding-top:25px; float:left; margin:0 23px; background:url(../images/couponDot.png) no-repeat 12px 13px; text-align:center; position:relative;}
+.dotRed{ background:url(../images/couponDot.png) no-repeat 11px -205px; }
+
+.scrollCoupon .code a{font-family:arial; font-size:16px; }
+.scrollCoupon .code a span{ color:#cd0000;font-size:25px; font-weight:bold;}
+.scrollCoupon .code a strong{  color:#7ccbf0;font-size:25px;font-weight:bold;}
+.scrollCoupon .useIt,.dotRed .useIt{ background:#eefafc url(../images/couponDot.png) no-repeat 12px -154px ; text-align:right; padding-right:28px; height:50px; line-height:38px; position:absolute; bottom:0; left:0; right:0;}
+.dotRed .useIt{background:#eefafc url(../images/couponDot.png) no-repeat 11px -373px ;}
+.scrollCoupon .useIt a{ color:#000;}
+.dotRed .useIt a{ color:#e64329;}
+.scrollCoupon .merchant{ padding:8px 0;}
+.scrollCoupon .merchant a{ color:#333;}
+.scrollLogo{ padding:6px 0;}
+.scrollLogo a{ display:block; width:100px; height:46px; margin:0 auto; box-shadow:0 0 5px #c5c5c5; padding:3px;}
+
+
+.promotion{ background:#fff; padding:15px;}
+.promotion h2 span{ background:url(../images/icons.png) no-repeat 2px -246px ;padding:3px 15px; }
+.promotion h2{ background:url(../images/button.png) no-repeat 103px -277px ; padding-bottom:10px;}
+
+
+.promotionLeft{ width:265px; float:left;}
+.promotionRight{ width:860px; float:right; padding-top:10px; }
+
+
+.promotionCouponBox{ width:885px;}
+.promotionCoupon{ width:235px; float:left;border:1px solid #ededed; box-shadow: 4px 4px 0 #eefafc;  height:309px;  padding:13px 10px; float:left; margin:0 15px 20px 15px;  position:relative;}
+.promotionImg{ padding-bottom:13px;}
+.promotionInfo{ padding-bottom:11px; line-height:19px;}
+.promotionInfo a span{ color:#e64329} 
+.promotionDate{ color:#666666;}
+.promotionDate span{ margin-right:10px; background:#e64329; border-radius:3px; padding:1px 5px; color:#fff; font-size:12px;}
+
+
+.promotionList{ margin-bottom:17px;}
+.promotionList li{ border-bottom:1px dashed #d4d4d4; padding:8px 0;}
+.promotionList li a span{ color:#e64329;}
+
+
+.leftBanner{ border:1px solid #ececec; padding:6px;}
+

@@ -1,0 +1,362 @@
+/* CSS Document */
+@import url(common.css); 
+#head {
+	height: 163px;
+}
+#nav_discount {
+	height: 12px;	
+	background: url(../images/discount/nav_discount.gif) repeat-x #eacf9a;
+	position: relative;
+}
+#nav_discount ul {
+	margin: 0px 7px;
+	line-height: 11px;
+	height: 11px;
+	border-bottom: 1px solid #9d7c49;
+}
+/*城市切换开始*/
+#head .city {
+	border: 1px solid #ccc;
+	width: 330px;
+	background: #fff;
+	padding: 0px 10px 10px 10px;
+	height: 250px;
+	z-index: 5;
+	left: 120px;
+	top: 180px;
+	position: absolute;
+}
+#head .city ul {	
+	height: auto;
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+}
+#head .city ul li {
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	white-space: nowrap;
+	float: left;
+	padding: 0px 5px 0px 0px;
+}
+#head .city strong {
+	color: #ae0000;
+	font-weight: 400;
+	height: 20px;
+}
+#head .city ul li strong a:link,#head .city ul li strong a:visited,#head .city strong ul li a:hover {
+	color: #ae0000;
+	font-weight: 400;
+	text-decoration: underline;	
+}
+#head .city ul li a:link,#head .city ul li a:visited,#head .city ul li a:hover {
+	color: #373400;
+	text-decoration: underline;	
+}
+/*城市切换结束*/
+#kejiji_messleft {
+	width: 225px;
+	float: left;
+	height: 28px;
+	padding-left: 10px;	
+}
+#kejiji_messleft ul li {
+	float: left;
+	padding: 0px 4px;
+	color: #ae0000;
+}
+#kejiji_messleft ul li a:link,#kejiji_messleft ul li a:visited,#kejiji_messleft ul li a:hover {
+	color: #ae0000;
+	text-decoration: underline;
+}
+#kejiji_messleft .kejiji_place {
+	background: url(../images/kejiji_place.gif) no-repeat 0px 8px;
+	padding-left: 10px;
+	color: #393939;
+}
+#topic {
+	width: 989px;
+	height: auto;
+	overflow: auto;
+	margin-top: 7px;
+	background: #fef6e1;
+	border: 1px solid #e0cdaf;
+}
+#topic_box {
+	width: 987px;
+	border: 1px solid #fff;
+	background: url(../images/topic/topic_bg.gif) repeat-y;
+	height: auto;
+	overflow: auto;
+	padding-bottom: 15px;
+}
+/*左边开始*/
+#topic_left {
+	width: 570px;
+	float: left;
+	padding: 13px 0px 0px 19px;
+}
+.topic_banner {
+	width: 670px;
+	height: 69px;
+	overflow: hidden;
+}
+.spring {
+	width: 670px;	
+	background: url(../images/topic/spring_bg.gif) repeat-y;
+}
+.summer {
+	width: 670px;	
+	background: url(../images/topic/summer_bg.gif) repeat-y;
+}
+.autumn {
+	width: 670px;	
+	background: url(../images/topic/autumn_bg.gif) repeat-y;
+}
+.winter {
+	width: 670px;	
+	background: url(../images/topic/winter_bg.gif) repeat-y;
+}
+.especially {
+	width: 670px;	
+	background: url(../images/topic/especially_bg.gif) repeat-y;
+}
+.spring_top {
+	width: 670px;
+	height: 18px;
+	overflow: hidden;
+}
+.spring_box {
+	width: 670px;
+	height: auto;
+	overflow: auto;
+	padding: 10px 0px;
+}
+.spring_left,.summer_left,.autumn_left,.winter_left,.especially_left {
+	width: 280px;
+	float: left;
+	padding-left:26px;
+}
+.spring_img {
+	width: 276px;
+	height: 207px;
+	padding: 1px;
+	border: 1px solid #679800;
+}
+.summer_img {
+	width: 276px;
+	height: 207px;
+	padding: 1px;
+	border: 1px solid #d62f18;
+}
+.autumn_img {
+	width: 276px;
+	height: 207px;
+	padding: 1px;
+	border: 1px solid #ac830d;
+}
+.winter_img {
+	width: 276px;
+	height: 207px;
+	padding: 1px;
+	border: 1px solid #768795;
+}
+.especially_img {
+	width: 276px;
+	height: 207px;
+	padding: 1px;
+	border: 1px solid #ae037b;
+}
+.spring_left h3,.summer_left h3,.autumn_left h3,.winter_left h3,.especially_left h3 {
+	height: 25px;
+	width: 279px;
+	font-size: 14px;
+	margin: 4px 0px 0px 0px;
+	text-align: center;
+	line-height: 25px;
+}
+.spring_left p,.summer_left p,.autumn_left p,.winter_left p,.especially_left p{
+	margin: 0px;
+	text-indent: 25px;
+	line-height: 20px;
+}
+.spring_left a:link,.spring_left a:visited,.spring_left a:hover {
+	color: #679800;
+}
+.summer_left a:link,.summer_left a:visited,.summer_left a:hover {
+	color: #d62f18;
+}
+.autumn_left a:link,.autumn_left a:visited,.autumn_left a:hover {
+	color: #ac830d;
+}
+.winter_left a:link,.winter_left a:visited,.winter_left a:hover {
+	color: #768795;
+}
+.especially_left a:link,.especially_left a:visited,.especially_left a:hover {
+	color: #ae037b;
+}
+.spring_right,.summer_right,.autumn_right,.winter_right,.especially_right {
+	width: 338px;
+	float: right;
+	padding-right: 14px;
+}
+.spring_rightbox {
+	width: 149px;
+	height: 153px;
+	padding: 0px 10px;
+	overflow: hidden;
+	float: left;
+	line-height: 42px;
+	text-align: center;
+}
+.spring_right a:link,.spring_right a:visited,.spring_right a:hover {
+	font-size: 12px;
+	font-weight: 600;
+	color: #679800;
+}
+.summer_right a:link,.summer_right a:visited,.summer_right a:hover {
+	font-size: 12px;
+	font-weight: 600;
+	color: #d62f18;
+}
+.autumn_right a:link,.autumn_right a:visited,.autumn_right a:hover {
+	font-size: 12px;
+	font-weight: 600;
+	color: #ac830d;
+}
+.winter_right a:link,.winter_right a:visited,.winter_right a:hover {
+	font-size: 12px;
+	font-weight: 600;
+	color: #768795;
+}
+.especially_right a:link,.especially_right a:visited,.especially_right a:hover {
+	font-size: 12px;
+	font-weight: 600;
+	color: #ae037b;
+}
+.spring_rightimg {
+	width: 144px;
+	height: 108px;
+	padding: 1px;
+	border: 1px solid #679800;
+}
+.summer_rightimg {
+	width: 144px;
+	height: 108px;
+	padding: 1px;
+	border: 1px solid #d62f18;
+}
+.autumn_rightimg {
+	width: 144px;
+	height: 108px;
+	padding: 1px;
+	border: 1px solid #ac830d;
+}
+.winter_rightimg {
+	width: 144px;
+	height: 108px;
+	padding: 1px;
+	border: 1px solid #768795;
+}
+.especially_rightimg {
+	width: 144px;
+	height: 108px;
+	padding: 1px;
+	border: 1px solid #ae037b;
+}
+.spring_button {
+	font-size: 12px;
+	font-weight: 600;
+	text-align: center;
+	background: url(../images/topic/spring_button.gif) no-repeat;
+	line-height: 21px;
+	width: 304px;
+	height: 21px;
+	margin-left: 14px;
+}
+.summer_button {
+	font-size: 12px;
+	font-weight: 600;
+	text-align: center;
+	background: url(../images/topic/spring_button.gif) no-repeat;
+	line-height: 21px;
+	width: 304px;
+	height: 21px;
+	margin-left: 14px;
+}
+.autumn_button {
+	font-size: 12px;
+	font-weight: 600;
+	text-align: center;
+	background: url(../images/topic/spring_button.gif) no-repeat;
+	line-height: 21px;
+	width: 304px;
+	height: 21px;
+	margin-left: 14px;
+}
+.winter_button {
+	font-size: 12px;
+	font-weight: 600;
+	text-align: center;
+	background: url(../images/topic/winter_button.gif) no-repeat;
+	line-height: 21px;
+	width: 304px;
+	height: 21px;
+	margin-left: 14px;
+}
+.especially_button {
+	font-size: 12px;
+	font-weight: 600;
+	text-align: center;
+	background: url(../images/topic/especially_button.gif) no-repeat;
+	line-height: 21px;
+	width: 304px;
+	height: 21px;
+	margin-left: 14px;
+}
+/*左边结束*/
+/*右边开始*/
+#topic_right {
+	width: 250px;
+	float: right;
+	padding: 15px 10px 0px 0px;
+}
+.feast_top,.feast_bottom {
+	width: 250px;
+	height: 9px;
+	overflow: hidden;
+}
+.feast_box {
+	width: 250px;
+	height: 223px;
+	background: url(../images/topic/right_bg.gif) repeat-y;
+	margin: 8px 0px;
+	line-height: 34px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 600;
+}
+.feast_img {
+	width: 212px;
+	height: 159px;
+	padding: 1px;
+	border: 1px solid #a9a9a9;
+	overflow: hidden;
+	margin: 10px 0px 0px 17px;
+	*margin: 10px 0px 0px 0px;
+}
+#topic_right a:link,#topic_right a:visited,#topic_right a:hover {
+	color: #525252;
+}
+.feast_more {
+	width: 250px;	
+	background: url(../images/topic/right_bg.gif) repeat-y;
+	margin: 10px 0px;
+	line-height: 45px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 600;
+}
+/*右边结束*/

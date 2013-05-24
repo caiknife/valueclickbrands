@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>红包换礼品，多重好礼等你拿--大红包兑奖中心</title>
+<META NAME="description" CONTENT="{$topicrow.description}">
+<META NAME="keywords" CONTENT="{$topicrow.keywords}">
+<link href="../css/price.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<div id="head" class="main_box">
+	<ul>
+		<li class="liimg1"><img src="/images/price/head1.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></li>
+		<li class="liimg2"><a href="/"><img src="/images/price/head3.jpg" alt="大红包" /></a></li>
+		<li class="liimg3"><img src="/images/price/head4.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></li>
+		<li class="liimg3"><img src="/images/price/head5.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></li>				
+	</ul>
+</div>
+<!--begin top-->
+<div id="top" class="main_box">
+	<div id="top_left"><img src="/images/price/top_left.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></div>
+	<div id="top_right">
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;只要有红包，好礼免费拿！大红包网站现隆重推出“红包换奖品”活动，只要您在大红包网站所获得的红包数足够抵扣下列礼品所需要的红包，100％直接兑换得到！还等什么？马上赚取红包吧！<a href="/bbs/read.php?tid=99431" target=_blank>（如何获得红包，去“兑奖交流”看看）</a></p>
+		<ul>
+			{if $islogon ==0 }
+			<li class="lileft">请<a href="/bbs/login.php">登陆</a>或者<a href="/bbs/register.php">注册</a></li>
+			<li class="libring"></li>
+			<li></li>
+			{else}
+			<li class="lileft">你当前的红包数为</li>
+			<li class="libring">{$userhb}</li>
+			<li>个</li>
+			{/if}			
+		</ul>
+		<a href="/priceinfo.php"><img src="/images/price/ico_prize.jpg" alt="兑换奖品" /></a>
+	</div>
+</div>
+<!--end top-->
+<div ic="banner" class="main_box"><img src="/images/price/banner.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></div>
+<!--begin price-->
+<div id="price" class="main_box">
+	<div class="price_left" style="background: url({$__IMAGE_SRC}images/award/{$awardlist.1.ImageSrc}) no-repeat right;">
+		<p>{$awardlist.1.Description}</p>
+		<ul>			
+			<li class="libutton"><a href="/priceuseradd.php?id={$awardlist.1.ID}"><img src="/images/price/ico_button.jpg" alt="兑换奖品" /></a></li>
+			<li class="linum">{$awardlist.1.NeedHB}<span class="linum_small">个</span></li>
+		</ul>
+	</div>
+	<div class="price_right" style="background: url({$__IMAGE_SRC}images/award/{$awardlist.2.ImageSrc}) no-repeat;">
+		<p>{$awardlist.2.Description}</p>
+		<ul>			
+			<li class="libutton"><a href="/priceuseradd.php?id={$awardlist.2.ID}"><img src="/images/price/ico_button.jpg" alt="兑换奖品" /></a></li>
+			<li class="linum">{$awardlist.2.NeedHB}<span class="linum_small">个</span></li>
+		</ul>
+	</div>
+</div>
+<!--end price-->
+
+<!--begin gift-->
+<div class="gift">
+	<ul class="gift1" style="background: url({$__IMAGE_SRC}images/award/{$awardlist.3.ImageSrc}) right no-repeat;">
+		<li class="litext">{$awardlist.3.Description}</li>
+		<li class="libutton"><a href="/priceuseradd.php?id={$awardlist.3.ID}"><img src="/images/price/ico_button1.jpg" alt="兑换奖品" /></a></li>
+		<li class="linum">{$awardlist.3.NeedHB}<span class="linum_small">个</span></li>
+	</ul>
+	<ul class="gift2" style="background: url({$__IMAGE_SRC}images/award/{$awardlist.4.ImageSrc}) right no-repeat;">
+		<li class="litext">{$awardlist.4.Description}</li>
+		<li class="libutton"><a href="/priceuseradd.php?id={$awardlist.4.ID}"><img src="/images/price/ico_button1.jpg" alt="兑换奖品" /></a></li>
+		<li class="linum">{$awardlist.4.NeedHB}<span class="linum_small">个</span></li>
+	</ul>
+	<ul class="gift3" style="background: url({$__IMAGE_SRC}images/award/{$awardlist.5.ImageSrc}) right no-repeat;">
+		<li class="litext">{$awardlist.5.Description}</li>
+		<li class="libutton"><a href="/priceuseradd.php?id={$awardlist.5.ID}"><img src="/images/price/ico_button1.jpg" alt="兑换奖品" /></a></li>
+		<li class="linum">{$awardlist.5.NeedHB}<span class="linum_small">个</span></li>
+	</ul>
+	<ul class="gift4" style="background: url({$__IMAGE_SRC}images/award/{$awardlist.6.ImageSrc}) right no-repeat;">
+		<li class="litext">{$awardlist.6.Description}</li>
+		<li class="libutton"><a href="/priceuseradd.php?id={$awardlist.6.ID}"><img src="/images/price/ico_button1.jpg" alt="兑换奖品" /></a></li>
+		<li class="linum">{$awardlist.6.NeedHB}<span class="linum_small">个</span></li>
+	</ul>
+</div>
+<!--end gift-->
+<!--begin gift-->
+<div class="gift">
+	<ul class="gift5" style="background: url({$__IMAGE_SRC}images/award/{$awardlist.7.ImageSrc}) right no-repeat;">
+		<li class="litext">{$awardlist.7.Description}</li>
+		<li class="libutton"><a href="/priceuseradd.php?id={$awardlist.7.ID}"><img src="/images/price/ico_button1.jpg" alt="兑换奖品" /></a></li>
+		<li class="linum">{$awardlist.7.NeedHB}<span class="linum_small">个</span></li>
+	</ul>
+	<ul class="gift6" style="background: url({$__IMAGE_SRC}images/award/{$awardlist.8.ImageSrc}) right no-repeat;">
+		<li class="litext">{$awardlist.8.Description}</li>
+		<li class="libutton"><a href="/priceuseradd.php?id={$awardlist.8.ID}"><img src="/images/price/ico_button1.jpg" alt="兑换奖品" /></a></li>
+		<li class="linum">{$awardlist.8.NeedHB}<span class="linum_small">个</span></li>
+	</ul>
+	<ul class="gift7" style="background: url({$__IMAGE_SRC}images/award/{$awardlist.9.ImageSrc}) right no-repeat;">
+		<li class="litext">{$awardlist.9.Description}</li>
+		<li class="libutton"><a href="/priceuseradd.php?id={$awardlist.9.ID}"><img src="/images/price/ico_button1.jpg" alt="兑换奖品" /></a></li>
+		<li class="linum">{$awardlist.9.NeedHB}<span class="linum_small">个</span></li>
+	</ul>
+	<ul class="gift8" style="background: url({$__IMAGE_SRC}images/award/{$awardlist.10.ImageSrc}) right no-repeat;">
+		<li class="litext">{$awardlist.10.Description}</li>
+		<li class="libutton"><a href="/priceuseradd.php?id={$awardlist.10.ID}"><img src="/images/price/ico_button1.jpg" alt="兑换奖品" /></a></li>
+		<li class="linum">{$awardlist.10.NeedHB}<span class="linum_small">个</span></li>
+	</ul>
+</div>
+<!--end gift-->
+
+<!--begin message-->
+<div id="message" class="main_box">
+	<div class="message_img"><img src="/images/price/message_top.jpg" alt="大红包" /></div>
+	<div class="message_text">	
+	<p>工作人员会于每月的25至30日对上月25日到本月24日之间提交申请的人进行整理并以快递的方式发送礼品。而本月25日开始提出兑换申请的人则将于下个月进行整理发放。</p>
+	<p>每次发放我们都将在论坛XX板块（需建立，加入链接）登出名单以及兑换礼品名称和数量。若您在我们发出清单后很长一段时间内没有获得礼品，请在论坛上以发帖形式告知我们，我们将查询相关快递来确保您能获得该礼品。
+<a href="/">大红包</a>所有工作人员愿您在大红包能获得美好的网上体验。</p>
+	<p>大红包对此兑奖拥有最终解释权。</p>
+	</div>
+	<div class="message_img"><img src="/images/price/message_bottom.jpg" alt="大红包" /></div>
+</div>
+<!--end message-->
+</body>

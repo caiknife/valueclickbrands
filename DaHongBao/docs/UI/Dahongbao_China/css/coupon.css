@@ -1,0 +1,289 @@
+@charset "utf-8";
+/* CSS Document */
+
+h2{color:#000; font-weight:normal; font-size:16px; padding-bottom:10px; }
+
+
+.famous{ background:#ffffff; padding:15px 15px 38px; margin-top:20px;}
+.famousChannel{ height:35px;border:1px solid #d4d4d4; line-height:35px; background:url(../images/bg.png) repeat-x 0 -134px; margin-bottom:5px;}
+.famousChannel li{ float:left; position:relative;}
+.famousChannel li a{ padding:0px 28px; font-size:15px; border-right:1px solid #fbfbfb; border-right:1px solid #dbdbdb; display:block;}
+.famousChannel li.border a{ border:0; padding:0 30px;}
+
+.famousChannel li.home a{ background:url(../images/button.png) repeat-x left -347px; color:#fff; text-decoration:none}
+
+.famousChannel li.home a:hover span,.famousChannel li.homeSelect a span,.famousChannel li.home a span{ background:url(../images/button.png) repeat-x right -340px; width:100%; height:7px; display:block; position:absolute; top:-7px; right:-5px; padding-right:5px;}
+
+.famousChannel li.home a{ background:url(../images/button.png) repeat-x -1px -404px; color:#fff; text-decoration:none; color:#000;}
+.famousChannel li.home a span{ background:url(../images/button.png) repeat-x right -399px; border-left:1px solid #d4d4d4; }
+
+.famousChannel li a:hover,.famousChannel li.select a,.famousChannel li.homeSelect a{ background:url(../images/button.png) repeat-x left -347px; color:#fff; text-decoration:none}
+
+
+
+.famousLogo{ border:1px solid #d31e1e; padding:15px;}
+.famousLogo ul{width:1120px;  overflow:hidden; }
+.famousLogo li{ width:139px; height:86px; padding-top:12px; float:left; text-align:center; border-right:1px dashed #d4d4d4; border-bottom:1px dashed #d4d4d4;}
+.famousLogoList{width:1118px;  overflow:hidden;}
+.famousLogo li.nobottom{ border-bottom:0;}
+.famousLogo li p{ padding-top:3px;}
+.famousLogo li p a{ font-size:12px;}
+.famousLogo li p a span{ color:#d52316;}
+
+.famousLogo{ position:relative; z-index:99;}
+.famousLogo .seeMore{ position:absolute;  bottom:-23px; left:500px;}
+.famousLogo .seeMore a{border:1px solid #d31e1e; border-radius:0 0 5px 5px; border-top:0; background:#fff url(../images/icons.png) no-repeat 12px -1087px; padding:1px 15px 1px 35px; height:20px; display:block;}
+
+
+.couponLists{ background:#fff; padding:15px;}
+.couponLists .bg{ height:257px; border-bottom:1px dashed #d4d4d4;}
+.couponLists h2{ background:url(../images/button.png) no-repeat scroll 88px -223px transparent;}
+.couponLists .line{ background:url(../images/bg.png) repeat-x 0 -224px; height:3px;}
+.couponLists .color1{ background:#eefafc;}
+.couponLists .coupon{ width:235px; float:left; margin:35px 0px 0 43px; background:url(../images/couponDot.png) no-repeat -266px -5px; text-align:center;}
+.couponLists .couponbox{  height:165px;  margin-bottom:10px;}
+.coupon .allInfo{ padding-right:14px; font-size:13px; height:18px; overflow:hidden;}
+.coupon .allInfo span{ color:#ff3111;}
+.coupon .allInfo a,.coupon .allInfo a span{ font-size:13px;}
+.couponbox .merchantName{ text-align:left; padding:8px 11px 2px; height:17px;}
+
+.couponbox .merchantName a{ color:#e64329;}
+.couponbox .info{ padding:12px 0;}
+.couponbox .info a{ font-size:16px;}
+.couponbox .info a span{ font-size:26px; color:#ec0015; font-weight:bold;}
+.couponbox .useIt{ height:35px; line-height:31px; text-align:right; padding-right:26px;}
+.couponbox .useIt a{ font-size:14px;}
+
+
+.couponLists .hoverRed{background:url(../images/couponDot.png) no-repeat -267px -199px;}
+
+.couponLists .hoverRed .useIt a{ color:#fff;}
+
+
+.sortBy{ float:right; line-height:22px;}
+.sortByList{ border:1px solid #8cd2f2; float:left; background:#eefafc; position:relative; width:95px; padding:0 10px;height:22px; color:#8cd2f2;}
+.sortByList ul{ position:absolute;border:1px solid #8cd2f2;width:128px; padding:5px; background:#fff; left:-1px; top:25px; }
+.sortByList .border{ border-bottom:1px dashed #D4D4D4;}
+.sortByList ul li a{ padding-left:38px; width:90px; height:28px; line-height:28px;  font-size:14px; display:block;}
+.sortBy .arrow{ width:22px; height:22px; float:left;border:1px solid #8cd2f2; border-left:0; cursor:pointer; background:url(../images/icons.png) no-repeat 2px -1121px;}
+.sortByList .hot{ background:url(../images/button.png) no-repeat 3px -485px;}
+.sortByList .hot a:hover{ background:#eefafc url(../images/button.png) no-repeat 3px -485px; text-decoration:none;}
+.sortByList .new{ background:url(../images/button.png) no-repeat 2px -453px;}
+.sortByList .new a:hover{ background:#eefafc url(../images/button.png) no-repeat 2px -453px; text-decoration:none;}
+
+
+
+.contentLeft{ width:800px; float:left;}
+.sidebar{ width:355px; float:right;}
+
+
+
+.sidebar h2{ background:#eefafc; height:30px; line-height:38px; padding-left:25px;}
+.sidebar .line{ background:url(../images/bg.png) repeat-x 0 -224px; height:3px; display:block;}
+
+
+.relativeCoupon ul{ padding:0 20px 20px;}
+.relativeCoupon{ background:#fff; margin-bottom:20px;}
+.relativeCoupon li{padding:10px 5px 10px 25px;background:url(../images/icons.png) no-repeat 0 -1024px;border-bottom:1px dashed #D4D4D4;}
+.relativeCoupon a{ border:0;box-shadow:0;  font-size:13px;}
+
+
+.newestCoupon ul{ padding:0 20px 20px;}
+.newestCoupon{ background:#fff; margin-bottom:20px;}
+.newestCoupon li{padding:10px 5px 10px 25px; border-bottom:1px dashed #D4D4D4;background:url(../images/icons.png) no-repeat 0 -1024px;}
+.newestCoupon a{ border:0;box-shadow:0;  font-size:13px;}
+
+
+.ratingCoupon ul{ padding:0 20px 20px;}
+.ratingCoupon{ background:#fff; margin-bottom:20px;}
+.ratingCoupon li{padding:10px 5px 10px 3px;border-bottom:1px dashed #D4D4D4;}
+.ratingCoupon li span.top{ background:url(../images/icons.png) no-repeat -2px -1159px;}
+.ratingCoupon li span{ background:url(../images/icons.png) no-repeat -23px -1159px; width:17px;height:23px; float:left; color:#fff; font-size:10px; margin-right:10px; font-family:arial; text-align:center; line-height:18px;}
+.ratingCoupon a{ border:0;box-shadow:0;  font-size:13px;}
+
+
+
+.todayCoupon ul{ padding:0 20px 20px;}
+.todayCoupon{ background:#fff; margin-bottom:20px;}
+.todayCoupon li{padding:10px 5px 10px 3px;border-bottom:1px dashed #D4D4D4; clear:both; height:46px;line-height:46px; overflow:hidden;}
+.todayCoupon a{ border:0;box-shadow:0;  font-size:13px;}
+.todayCoupon li span{ float:left; width:100px; height:46px; display:block; margin-right:15px; }
+
+
+
+.merchantDetail{padding:20px 25px 20px 100px; background:#fff;margin-bottom:20px; position:relative; border-bottom:4px solid #eaeaea;}
+.merchantDetail .share{ clear:both; padding-top:5px; }
+.merchantDetail .share ul{ margin-left:0px; float:left; font-size:12px;}
+.merchantDetail .share li{ float:left; margin-right:5px;}
+.merchantDetail .decorate{ width:76px; height:290px; background:url(../images/couponDot.png) no-repeat -512px -6px; position:absolute; top:0px; left:2px;}
+.merchantDetailBox{ border:2px dashed #d4d4d4; padding:10px 0px 29px 35px;}
+.merchantDetailBox h2{ padding-bottom:5px; float:left;}
+.merchantDetailBox h2 span{ color:#cd0000;}
+.merchantDetailBox .seeMore{ float:right; padding-right:15px;}
+.merchantDetailBox ul{ margin-left:30px; float:left;}
+.merchantDetail .share li.title{ padding-left:21px; background:url(../images/icons.png) no-repeat -4px -1243px;}
+.merchantDetail .share img{ float:left; margin-top:2px;}
+.merchantDetailBox li{ font-size:14px; padding-bottom:7px;}
+.merchantDetailBox li span{ color:#e64329; font-weight:bold;}
+.merchantDetailBox li.date{ color:#333333; font-size:12px;}
+.merchantDetailBox li.link a{ font-size:14px; margin-right:25px}
+.merchantDetailBox li.link a.collection{ padding-left:20px; background:url(../images/icons.png) no-repeat -4px -1215px;}
+.merchantDetailBox li.link a.commentLink{ padding-left:25px; background:url(../images/icons.png) no-repeat -4px -1267px ;}
+.merchantDetailBox li.link a.color{ color:#e7432a;}
+.merchantDetailBox li.button{ padding-top:8px;}
+.merchantDetailBox .couponLists{ padding:0; clear:both;}
+.merchantDetailBox .couponLists .coupon{ margin:0;}
+.merchantDetailBox a.getIt{ width:92px; height:30px; background:url(../images/button.png) no-repeat 0 -556px; margin-right:35px; display:block; line-height:29px; color:#fff; font-size:14px; text-align:center; float:left;}
+.merchantDetailBox a.go{ width:81px; padding-left:35px; height:30px; background:url(../images/button.png) no-repeat 0 -590px; display:block; float:left; line-height:29px; color:#fff; font-size:14px;}
+
+
+.useStep{padding:20px 25px; background:#fff; margin-bottom:20px;}
+.useStep h2{ border-bottom:1px solid #d4d4d4; margin-bottom:15px;}
+.useStep h3{ font-weight:normal; padding-bottom:10px;}
+.useStep ul{ margin-left:20px; padding-bottom:20px;}
+.useStep li{ color:#e7432a; padding:5px 0; list-style-type:decimal; font-size:13px;}
+.useStep li span{ color:#333;}
+.useStep img{ margin-bottom:15px;}
+.useStep .title{font-size:16px; padding-top:10px;}
+.useStep .tips{ background:#eefafc; padding:15px;}
+.useStep .tips h4{ font-size:14px; padding-bottom:10px;}
+.useStep .tips p{ font-size:13px; color:#333333; line-height:21px;}
+.useStep  .merchantDesc{ font-size:13px; color:#5c5c5c; padding:10px 0 25px; line-height:22px;}
+
+
+
+.comment{padding:20px 25px; background:#fff; margin-bottom:20px;}
+.comment h2{float:left;}
+.comment .seeMore{ float:right;}
+.comment .seeMore a{ color:#e7432a; text-decoration:underline; font-size:14px;}
+.commentBox{ background:#eefafc; clear:both; padding:20px;}
+.commentBox .row{ clear:both; padding:5px 0 10px;}
+.commentBox span{ width:70px; text-align:right; padding-left:10px; float:left; font-size:14px; padding-bottom:15px;}
+.commentBox input{ float:left; margin-right:10px;}
+.commentBox img{ margin-right:10px; float:left;}
+.commentBox .row a{ float:left; margin-top:5px; color:#e64329;}
+.commentBox .row input{ padding:5px;border-radius:3px; box-shadow:0 1px 1px #afafaf;border:0}
+.commentBox .button{ clear:both; padding:10px 0 15px 80px; }
+.commentBox .button input{background:url(../images/button.png) no-repeat 0 -523px; width:92px; height:30px; border:0; color:#fff; cursor:pointer;}
+.commentBox textarea{ border-radius:3px; box-shadow:0 1px 1px #afafaf; border:0}
+.commentList{ padding:15px 0 0;}
+.commentList .line{ border-bottom:1px solid #f8dfbf;}
+.commentList .post{ position:relative;  padding:15px 0 15px 33px;}
+.commentList .post .number{ position:absolute; width:21px; height:15px; text-align:center; background:url(../images/icons.png) no-repeat  -4px -1191px ; left:1px; font-size:9px; color:#fff;}
+.commentList .post .date{ padding-top:8px; color:#777777;}
+
+
+.remainCoupon{padding:20px 25px; background:#fff; margin-bottom:20px;}
+.remainCoupon h2{ float:left;}
+.remainCoupon .seeMore{ float:right;}
+.remainCoupon .seeMore a{ color:#e7432a;}
+.remainCoupon .couponLists{ clear:both; padding:0; width:780px; background:transparent;}
+.remainCoupon .couponLists .coupon{ margin:0; margin-right:25px;}
+
+
+
+
+.howToUse{ padding:20px 25px; background:#fff;margin-bottom:20px}
+.howToUse h2{ padding-bottom:25px;}
+.howToUse span{ color:#cd0000;}
+
+
+.merchantCoupon{padding:20px 12px; background:#fff;margin-bottom:20px; clear:both;}
+.merchantCoupon h2{ padding-left:15px; padding-bottom:15px;}
+.merchantCoupon span{ padding:0 5px; color:#e7432a; font-size:12px;}
+.merchantCoupon h2 span{ color:#E7432A; font-size:16px; padding:0;}
+.merchantCoupon .couponLists{ padding:0;}
+.merchantCoupon .couponLists .coupon{ margin:0; margin-right:25px;}
+.merchantCoupon .couponLists .bg{ padding:25px 20px 30px 15px; padding-right:0; height:185px}
+.merchantCoupon .bgBox{ width:790px;}
+
+
+
+.merchantInfo{ background:url(../images/merchantInfoBg.png) no-repeat; padding:15px 0; height:255px;}
+.merchantInfo .coupon{ border:1px solid #ededed; box-shadow: 4px 4px 0 #eefafc; width:220px; height:192px; padding-top:25px; float:left; margin:0 15px; background:url(../images/couponDot.png) no-repeat 12px 13px; text-align:center; position:relative;}
+.merchantInfo .coupon .code a{font-family:arial; font-size:16px; }
+.merchantInfo .useIt,.dotRed .useIt{ background:#eefafc url(../images/couponDot.png) no-repeat 12px -154px ; text-align:right; padding-right:28px; height:50px; line-height:38px; position:absolute; bottom:0; left:0; right:0;}
+.merchantInfo .dotRed .useIt{background:#eefafc url(../images/couponDot.png) no-repeat 11px -373px ;}
+.merchantInfo .useIt a{ color:#e7432a;}
+.merchantInfo .dotRed .useIt{ color:#fff;}
+.merchantInfo .dotRed .useIt a{ color:#e64329;}
+.merchantInfo .merchant{ padding:8px 0;}
+.merchantInfo .merchant a{ color:#333; font-size:14px;}
+.merchantInfo .couponLogo{ padding:12px 0 10px;}
+.merchantInfo .couponLogo a{ display:block; width:150px; height:70px; margin:0 auto; box-shadow:0 0 5px #c5c5c5; padding:3px;}
+.merchantInfoRight{ float:left; width:500px;  padding:10px 20px 0 10px;}
+.merchantInfoRight p{ padding-bottom:22px; color:#5c5c5c; line-height:22px;}
+.merchantInfoRight ul{ font-size:13px;}
+.merchantInfoRight ul li a{ font-size:13px; color:#e7432a;}
+.merchantInfoRight li{ padding-bottom:5px;}
+.merchantInfoRight li span{ width:71px; float:left; clear:both;}
+
+
+.searchDetailContent h2{ background:#fff6eb; font-size:16px; margin-bottom:10px; padding-bottom:0; height:38px; line-height:35px}
+.searchDetailContent h2 span{ font-size:16px; padding:0;}
+
+
+.searchResult{ padding:20px 12px 15px; background:#fff;margin-bottom:20px; clear:both;}
+.searchResult h2{ background:#fff6eb; font-size:16px; margin-bottom:10px; padding-bottom:0; height:38px; line-height:35px; padding-left:15px;}
+.searchResult h2 span{ font-size:16px; padding:0; color:#E7432A;}
+.searchResult h2.color{ background:#eefafc;}
+.searchResult  p{ line-height:24px; text-indent:26px; font-size:13px;}
+.searchResult  p a{ color:#e64329;}
+.searchResult .searchLogo{ width:195px; float:left;}
+.searchResult .searchLogo a{ display:block; width:150px; height:70px; margin:0 auto; box-shadow:0 0 5px #c5c5c5; padding:3px;}
+.searchResult .searchLogo p{ padding-top:5px; text-indent:0; text-align:center;}
+.searchResult .searchLogo p a{ height:auto; box-shadow:none; font-size:14px; color:#000;}
+
+
+/*search no result*/
+.searchnoresult{ margin-bottom:10px; padding:15px; background:#fff;}
+.searchnoresult .noresultcontent{ background:#fff6eb; padding:15px 80px 15px 60px; }
+.searchnoresult .noresultcontent .noresultimg{width:120px; float:left;}
+.searchnoresult .noresultcontent p{ font-size:16px; padding:10px 0; color:#301001; line-height:180%;}
+.searchnoresult .noresultcontent strong,
+.searchnoresult .noresultcontent span{color:#cd0000; font-size:16px;}
+.famousnoresult{ padding-bottom:15px; margin-bottom:15px;}
+.promotionList{ background:#fff; padding:10px 25px;}
+.promotionList li{ border-bottom:1px dashed #d4d4d4; padding:8px 0;}
+.promotionList li a{ font-size:13px;}
+.promotionList li a span,
+.promotionList li a:hover span{ color:#e64329; text-decoration:none;}
+
+
+
+.articleList{padding:20px 20px 25px; background:#fff;margin-bottom:20px; clear:both;}
+.articleList h2{ float:left;}
+.articleList .sortBy{ float:right; font-size:14px;}
+.articleList .sortBy a{ font-size:13px; color:#e7432a; margin-left:2px;padding:2px 5px;}
+.articleList .sortBy a.select,.articleList .sortBy a:hover{ background:#e64329; color:#fff; text-decoration:none; }
+
+.articleChannel{ clear:both; border:1px solid #d4d4d4; padding:5px 15px; height:32px; line-height:32px; background:url(../images/bg.png) repeat-x 0 -129px; margin-bottom:15px;}
+.articleChannel li{ float:left; font-size:13px;}
+.articleChannel li strong{font-weight:normal;padding:2px 5px; color:#fff; background:#e64329; margin-right:12px;}
+.articleChannel li a{padding:2px 5px; font-size:13px;}
+.articleChannel li a:hover{ color:#fff; background:#e64329; text-decoration:none;}
+.articleChannel li b{ font-weight:normal; margin-right:8px; color:#c1c1c1;}
+
+.articleBox{ border:1px solid #d4d4d4; padding:0px 25px; margin-bottom:10px;}
+.articleBox .post{ padding-top:25px; }
+.articleBox .line{ border-bottom:1px solid #e7e4e2;}
+.articleBox h3{ padding-bottom:5px;}
+.articleBox h3 a{ font-size:20px; font-weight:bold;}
+.articleBox .date{ color:#999999; font-size:16px;padding-bottom:5px;}
+.articleBox p{ color:#4c4c4c; font-size:13px; padding-bottom:20px; line-height:21px;}
+.articleBox .articleTip{ font-size:13px; padding-bottom:20px;}
+.articleBox .articleTip strong{ color:#cd0000; font-weight:normal;}
+.articleBox .articleTip ul{ display:inline;color:#cd0000;}
+.articleBox .articleTip li{ display:inline}
+.articleBox .articleTip li a{ color:#cd0000; font-size:13px; margin:0 8px 0 5px; text-decoration:underline;}
+.articleBox .picture{ text-align:center; padding-bottom:20px;}
+.articleBox .button{ height:60px; text-align:right;}
+.articleBox .button li{ display:inline;}
+.articleBox .button li.seeIt a{  color:#fff; padding-right:25px; padding:5px 25px 5px 15px; font-size:15px; border-radius:3px; background:#7ccbf0 url(../images/icons.png) no-repeat right -1325px;}
+.articleBox .button li.buy a{  color:#fff; padding-right:25px; padding:5px 25px 5px 15px; font-size:15px;border-radius:3px;background:#e64329 url(../images/icons.png) no-repeat right -1325px; margin-left:8px;}
+
+
+
+
+
+

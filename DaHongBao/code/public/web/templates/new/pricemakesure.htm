@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>红包换礼品，多重好礼等你拿--大红包兑奖中心</title>
+<META NAME="description" CONTENT="{$topicrow.description}">
+<META NAME="keywords" CONTENT="{$topicrow.keywords}">
+<link href="../css/priceinfo.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+{literal}
+<script>
+
+{/literal}
+
+var glb1 = '{$userdetail.field_1}';
+var glb2 = '{$userdetail.field_2}';
+var glb3 = '{$userdetail.field_3}';
+var glb4 = '{$userdetail.field_4}';
+var glb5 = '{$userdetail.field_5}';
+
+{literal}
+
+function checkuser(){
+	if(glb1 && glb2 && glb3 && glb4 && glb5){
+		return true;	
+	}else{
+		alert('您的资料不全，请先修改资料，补充相关信息');
+		return false;
+	}
+}
+</script>
+{/literal}
+<body>
+<div id="head" class="main_box">
+	<ul>
+		<li class="liimg1"><img src="/images/price/head1.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></li>
+		<li class="liimg2"><a href="/"><img src="/images/price/head3.jpg" alt="大红包" /></a></li>
+		<li class="liimg3"><img src="/images/price/head4.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></li>
+		<li class="liimg4"><img src="/images/price/head_info4.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></li>
+		<li class="liimg4"><img src="/images/price/head_info5.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></li>
+		<li class="liimg4"><img src="/images/price/head_info6.jpg" alt="大红包，红包换奖品，多重好礼等你拿" /></li>					
+	</ul>
+</div>
+
+<div id="info" class="main_box">
+	<div class="info_box">
+		<div class="info_img"><img src="/images/price/info_top.jpg" alt="兑奖流程" /></div>
+		<div class="info_text"><FORM METHOD=POST ACTION=""><input type="hidden" name="act" value="go"><input type="hidden" name="uaid" value="{$uaid}">
+		<input type="hidden" name="ApplyTrueName" value="{$userdetail.field_4}"><input type="hidden" name="City" value="{$userdetail.field_2}"><input type="hidden" name="Address" value="{$userdetail.field_1}"><input type="hidden" name="Zip" value="{$userdetail.field_5}"><input type="hidden" name="TelNumber" value="{$userdetail.field_3}">
+		<input type="hidden" name="uid" value="{$uarow.UserID}">
+		<input type="hidden" name="awardid" value="{$uarow.AwardID}">
+		<input type="hidden" name="needhb" value="{$uarow.NeedHB}">
+			<h1><img src="/images/price/ico_message.jpg" alt="资料确认" /></h1>
+			<ul>
+				<li class="lititle">为了确保您能收到奖品，请认真核对以下信息。信息如果有误点击修改按钮进行修改。</li>
+				<li class="lileft libring">用 户 名：{$userdetail.username}</li>
+				<li class="liright libring">邮箱地址：{$userdetail.email}</li>
+				<li class="lileft">真实姓名：{if $userdetail.field_4 != ""}{$userdetail.field_4}{else}暂无{/if}</li>
+				<li class="liright">所在城市：{if $userdetail.field_2 != ""}{$userdetail.field_2}{else}暂无{/if}</li>
+				<li class="liline">收货地址：{if $userdetail.field_1 != ""}{$userdetail.field_1}{else}暂无{/if}</li>
+				<li class="liline">邮政编码：{if $userdetail.field_5 != ""}{$userdetail.field_5}{else}暂无{/if}</li>
+				<li class="liline">联络电话：{if $userdetail.field_3 != ""}{$userdetail.field_3}{else}暂无{/if}</li>
+				<li class="lisure"><input type="image" src="/images/price/sure_button.jpg" alt="继续兑奖" onclick="return checkuser();"/></li>
+				<li class="liamend"><a href="/bbs/profile.php?action=modify&source=hb&sourceid={$smarty.get.id}"><img src="/images/price/amend_button.jpg" alt="修改资料" /></a></li>
+			</ul></FORM>
+		</div>
+		<div class="info_img"><img src="/images/price/info_bottom.jpg" alt="兑奖流程" /></div>
+	</div>
+	
+	<div class="price_left"></div>
+</div>
+</body>

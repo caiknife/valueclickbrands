@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>更多{$topicrow.title}优惠券</title>
+<META NAME="description" CONTENT="{$description}">
+<META NAME="keywords" CONTENT="{$keywords}">
+<meta name="copyright" content="www.dahongbao.com">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="verify-v1" content="QVIPb4M3AU1SQ7HQONfC2lrlH7RkeUn+PL1dLv8l5fs=" />
+<link href="../css/category.css" rel="stylesheet" type="text/css"/>
+</head>
+{literal}
+<script src="/jscript/prototype.js"></script>
+<script language="JavaScript" src="/jscript/category.js"></script>
+{/literal}
+<body>
+<!--头部开始-->
+{include file="new/head.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <a href="/topic-{$topicrow.id}.html">{$topicrow.title}</a> > <h1>更多{$topiclist.contenttitle}</h1>
+	</div>
+	<!--category_title 导航结束-->
+	
+	<!--category 具体内容开始-->
+	<div id="category">
+		
+		<!--main 栏目页主体内容开始-->
+		<div id="main">
+			<!--ad 广告开始-->
+	
+			<!--main 栏目页具体内容开始-->
+			<div id="main_min">
+				<!--main_title 头部开始-->
+				<div class="main_title">
+					<ul>
+						<li class="liname">名称</li>
+						<li class="select">&nbsp;&nbsp;</li>
+						<li class="liticket">投票</li>
+						<li class="litime">过期时间</li>
+					</ul>
+				</div>
+				<!--main_title 头部结束-->
+				
+				{section name=loop loop=$couponList}
+				<!--main_box 具体内容块开始-->
+				<div class="main_box">
+					<!--main_left 左边开始-->
+					<div class="main_left">
+						<div class="topleft">
+						<h3><a href="{$couponList[loop].couponUrl}" {if $couponList[loop].isFree==0}target=_blank{/if}>{$couponList[loop].couponTitle}</a></h3>
+						{if $couponList[loop].isExpire==0}<img src="/images/guoqi.gif">{/if}
+						</div>
+					
+						<div class="main_leftimg">
+						
+						<a href="{$couponList[loop].couponUrl}" {if $couponList[loop].isFree==0}target=_blank{/if}>
+						{if $couponList[loop].HasImage==1}
+						<img src="{$couponList[loop].ImageURL}" alt="{$couponList[loop].couponTitle}"/>
+						{else}
+						<img src="/images/dahongbao.gif" alt="{$couponList[loop].couponTitle}"/>
+						{/if}
+						</a>
+						</div>
+						<p><a href="{$couponList[loop].couponUrl}" {if $couponList[loop].isFree==0}target=_blank{/if}>{$couponList[loop].Detail}</a></p>
+			 			<div class="message">
+							<div class="more"><a href="/Me-{$couponList[loop].NameURL}--Mi-{$couponList[loop].Merchant_}.html">>>{$couponList[loop].name1}更多优惠</a></div>
+							地区：<span class="red">{if $couponList[loop].City}{$couponList[loop].City}{else}全国{/if}</span>  优惠类别：<a href="/Ca-{$couponList[loop].categorynameurl}--Ci-{$couponList[loop].Category_}.html"><span class="red">{$couponList[loop].categoryname}</span></a>  评论数量：(<span class="red">{$couponList[loop].replies}</span>)  
+						</div>
+						<div class="message">							
+							发布时间：{$couponList[loop].StartDate} 发布人：<a href="/bbs/profile.php?action=show&uid={$couponList[loop].authorid}">{$couponList[loop].author}</a> <a href="/account.php?action=save&p={$couponList[loop].Coupon_}"  target=_blank><span class="join">加入收藏</span></a> <a href="JavaScript:window.open('/send_friend.php?p={$couponList[loop].Coupon_}&c=','sendfriend{$couponList[loop].Coupon_}','width=415,height=550,resizable=0,scrollbars=yes');void(0);"><span class="friend">推荐朋友</span> <a href="{$couponList[loop].detailUrl}"><span class="view">查看详细</span></a></a>							
+						</div>
+					</div>
+					<!--main_left 左边结束-->
+					
+					<!--main_right 右边开始-->
+					<div class="main_right">
+						<!--main_img 图片开始-->
+						<div class="{if $couponList[loop].tagname neq ''}main_img{else}main_img1{/if}">
+							<div id="godigest_{$couponList[loop].Coupon_}" class="input">							
+							<a href="{$couponList[loop].printUrl}" {if $couponList[loop].isFree==0}target="_blank"{/if}><img src="/images/ico_click.gif" alt="点击使用" /></a>						
+							</div>
+							<div id="digest_point_{$couponList[loop].Coupon_}" class="main_point"><a href="{$couponList[loop].detailUrl}?tui" target="_blank">{$couponList[loop].digest}</a></div>
+							
+						</div>
+						<!--main_img 图片结束-->
+						
+						<!--main_time 时间开始-->
+						<div class="main_time">
+						{$couponList[loop].couponStatus}
+						</div>
+						<!--main_time 时间结束-->
+					</div>
+					<!--main_left 右边结束-->
+				</div>
+				<!--main_box 具体内容块结束-->
+				{/section}
+				
+				<!-- <div class="page">
+					<ul>
+						<li><a href="#">下一页</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">1</a></li>
+					</ul>
+				</div> -->
+				{$pageString}
+			</div>
+			<!--main 栏目页具体内容结束-->
+
+
+			
+		
+		</div>
+		<!--main 栏目页主体内容结束-->
+
+		<!--sidebar 栏目页左边内容开始-->
+		<div id="sidebar">
+			<!--sidebox 热门优惠券开始-->
+			{$hotcouponother}
+			<!--sidebox 热门优惠券结束-->
+			
+			
+		</div>
+		<!--sidebar 栏目页左边内容结束-->
+	</div>
+	<!--category 具体内容结束-->
+
+	{if $RESOURCE_INCLUDE!=""}
+		{$RESOURCE_INCLUDE}
+	{/if}
+</div>
+<!--主体内容结束-->
+
+{include file="new/foot.htm"}

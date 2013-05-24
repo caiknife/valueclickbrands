@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+.staticSidebar{ width:290px; float:left; background:#eefafc; border:6px solid #fff; padding:15px 10px;}
+.staticSidebar h2{ color:#222222; font-size:16px; padding-left:40px; padding-bottom:15px; background:url(../../img/CN/icons.png) no-repeat 6px -1369px ;height:22px; margin-bottom:10px; padding-bottom:0;}
+.staticSidebar .title{  padding:6px 10px 6px 56px; font-size:16px;background:#fff url(../../img/CN/icons.png) no-repeat scroll 27px -1435px ; font-weight:bold;}
+.staticSidebar ul{ margin-left:59px; padding:15px 0;}
+.staticSidebar li{ padding:5px 0;}
+.staticSidebar li a{ font-size:14px;position:relative;height:18px; display:block;}
+.staticSidebar li a span{border-color: #eefafc #eefafc #eefafc #666666; border-style: solid; border-width: 3px; font-size: 0; height: 0; line-height: 0; position: absolute; left: -17px; top: 6px; width: 0;}
+.staticSidebar li.select a{ color:#e85037; text-decoration:underline;}
+.staticSidebar li.select a span{border-color: #eefafc #eefafc #eefafc #e95c46;}
+
+
+.staticContent{width:800px; float:right;padding:20px; background:#fff;}
+.staticContent h3{ color:#e85037; font-size:16px; border-bottom:1px dashed #dedcdb; padding-bottom:10px; margin-bottom:10px;}
+
+.qList{ background:#fef5e8; padding:20px; margin-bottom:20px;}
+.qList li{ width:50%; float:left; height:20px; line-height:20px; padding:7px 0; overflow:hidden; font-weight:bold;}
+.qList li a{ font-size:14px; color:#222222; font-weight:bold;}
+.qList li span{ color:#e64329;}
+
+.staticContent .title{ font-weight:bold; font-size:15px; color:#222222; padding-bottom:5px;}
+.staticContent p{ color:#4c4c4c; padding-bottom:20px; text-indent:22px; font-size:14px; line-height:22px;}
+
+.article{ padding:0 20px}
+.article ul{padding-bottom:20px;}
+.article li{ font-size:14px; text-indent:28px;}
+.article p a{ font-size:14px; color:#e85037;}
+
+
+

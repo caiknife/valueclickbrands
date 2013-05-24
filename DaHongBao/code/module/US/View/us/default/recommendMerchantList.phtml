@@ -1,0 +1,18 @@
+<?php if ($this->recommendMerchantList):?>
+<div class="featuredmerchant">
+	<div class="content">
+		<div class="headline">
+			<a href="<?php print $recommendMerchantMore; ?>" target="_blank" class="seemore">更多&gt;&gt;</a>
+			<h2><strong><?php print $categoryName; ?></strong>推荐商家</h2>
+		</div>
+		<div class="featuredmerchantlist clearfix">
+			<?php foreach ($this->recommendMerchantList as $key => $recommendMerchant):?>
+			<ul class="<?php if(($key+1)%4 == 0):?>last<?php endif;?><?php if($key > 3):?> nobotborder<?php endif;?>">
+				<li class="imgbox"><a href="<?php print $recommendMerchant['MerchantDetailUrl'];?>" target="_blank"><img src="<?php print __IMAGE_DOMAIN_NAME."".$recommendMerchant['LogoFile'];?>" /></a></li>
+				<li class="mname"><a href="<?php print $recommendMerchant['MerchantDetailUrl'];?>" target="_blank"><?php print $recommendMerchant['MerchantName'];?> <span>(<?php print $recommendMerchant['r_OnlineCouponCount'];?>)</span></a></li>
+			</ul>
+			<?php endforeach;?>
+		</div>
+	</div>
+</div>
+<?php endif;?>

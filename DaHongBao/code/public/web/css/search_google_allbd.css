@@ -1,0 +1,799 @@
+/* CSS Document */
+@import url(http://www.dahongbao.com/css/common.css); 
+/*头部开始*/
+#head {
+	height: 122px;
+	text-align: left;	
+	background: #b80403;
+	position: relative;
+}
+#nav_all {
+	height: 32px;	
+	background: url(http://www.dahongbao.com/images/nav_bg.gif) repeat-x #eacf9a;
+	border-bottom: 1px solid #9e7d4b;
+}
+.nav_all {
+	margin: 0px 7px;
+	height: 32px;
+	float: left;
+	width: 535px;
+	overflow: hidden;
+}
+#nav_all .message_right {
+	float: right;
+	width: 318px;	
+	overflow: hidden;
+}
+#nav_all .message_right ul li {
+	float: left;
+}
+#nav_all .message_right .lileft {
+	width: 62px;
+	color: #636363;
+	background: url(http://www.dahongbao.com/images/icn_gonggao.gif) 0px 6px no-repeat;
+	padding-left: 20px;
+}
+#nav_all input {
+	display: inline;
+}
+#nav_all .input1 {
+	width: 232px;
+	height: 25px;
+	line-height: 25px;
+	padding-top: 4px !important;
+	padding-top: 5px;
+	text-align: right;
+}
+#nav_all .input {	
+	padding: 0px;
+	overflow: hidden;
+	width: 230px;
+	height: 20px;
+	border: 1px solid #a09f9b;
+}
+#nav_all .search_but {
+	width: 85px;
+	text-align: right;
+	height: 29px;
+	padding-top: 4px;
+}
+#nav_all .select {
+	width: 122px;
+	height: 31px;
+	line-height: 31px;
+	padding-top: 0px !important;
+	padding-top: 4px;
+	text-align: right;
+}
+#nav_all .select .select_but {
+	padding: 0px;
+	overflow: hidden;
+	width: 116px;
+	height: 21px;
+	border: 1px solid #a09f9b;
+	overflow: hidden;
+}
+#search_all {
+	width: 425px;
+	height: 32px;
+	float: right;
+	overflow: hidden;
+}
+#search_all ul li {
+	float: left;
+	height: 32px;
+	line-height: 32px;
+}
+#search_all .lileft {
+	font-size: 12px;
+	font-weight: 600;
+	color: #aa4800;
+	width: 70px;	
+}
+#search_all .litag {
+	font-size: 12px;
+	font-weight: 400;
+	color: #aa4800;
+	width: 350px;
+	padding-right: 5px;
+}
+#search_all .litag a:link,#search_all .litag a:visited,#search_all .litag a:hover {
+	color: #aa4800;
+}
+#search_all .litag strong a:link,#search_all .litag strong a:visited,#search_all .litag strong a:hover {
+	font-size: 14px;
+	font-weight: 600;
+}
+/*城市切换开始*/
+#head .city {
+	border: 1px solid #ccc;
+	width: 330px;
+	background: #fff;
+	padding: 0px 10px 10px 10px;
+	height: 250px;
+	left: 120px;
+	top: 115px;
+	position: absolute;
+	z-index: 99;
+}
+#head .city ul {	
+	height: auto;
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+}
+#head .city ul li {
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	white-space: nowrap;
+	float: left;
+	padding: 0px 5px 0px 0px;
+}
+#head .city strong {
+	color: #ae0000;
+	font-weight: 400;
+	height: 20px;
+}
+#head .city ul li strong a:link,#head .city ul li strong a:visited,#head .city strong ul li a:hover {
+	color: #ae0000;
+	font-weight: 400;
+	text-decoration: underline;	
+}
+#head .city ul li a:link,#head .city ul li a:visited,#head .city ul li a:hover {
+	color: #373400;
+	text-decoration: underline;	
+}
+/*城市切换结束*/
+#kejiji_messleft {
+	width: 200px;
+	height: 32px;
+	padding-left: 3px;	
+	float: left;
+	line-height: 33px;
+}
+#kejiji_messleft ul li {
+	float: left;
+	padding: 0px 4px;
+	color: #ae0000;
+}
+#kejiji_messleft ul li a:link,#kejiji_messleft ul li a:visited,#kejiji_messleft ul li a:hover {
+	color: #ae0000;
+	text-decoration: underline;
+}
+#kejiji_messleft .kejiji_place {
+	background: url(http://www.dahongbao.com/images/kejiji_place.gif) no-repeat 0px 11px;
+	padding-left: 10px;
+	color: #393939;
+}
+/*头部结束*/
+/*主体内容开始*/
+#content {
+	height: auto;
+	overflow: hidden;
+	text-align: left;
+	padding: 0px;
+	width: 1003px;
+	margin: 0px auto;
+	background: url(http://www.dahongbao.com/images/newsearch/content_bg.gif) repeat-y;
+}
+#content_top {
+	width: 1003px;
+	height: 106px;
+	overflow: hidden;
+	background: url(http://www.dahongbao.com/images/newsearch/search_top.jpg) no-repeat;
+}
+#content_top ul {
+	width: 700px;
+	padding: 45px 0px 0px 55px;
+	height: 22px;
+	line-height: 22px;
+	float: left;
+	margin: 0px;
+	overflow: hidden;
+}
+#content_top ul li {
+	float: left;
+	margin-right: 7px;
+	width: 105px;
+	height: 22px;
+	text-align: center;
+	font-weight: 600;
+	color: #666;
+}
+#content_top strong {
+	font-size: 14px;
+	color: #aa4800;
+}
+#content_top .libring {
+	color: #aa4800;
+}
+#content_top ul li a:link,#content_top ul li a:visited {
+	color: #666;
+}
+#content_top ul li a:hover {
+	color: #aa4800;
+	text-decoration: none;
+}
+.content_topright {
+	width: 240px;
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+	float: right;
+	padding: 60px 5px 0px 0px;
+	background: url(http://www.dahongbao.com/images/newsearch/search_ico.gif) no-repeat bottom left;
+}
+.content_bring {
+	background: url(http://www.dahongbao.com/images/newsearch/top_ico.gif) 0px 10px  no-repeat;
+	float: right;
+	padding-left: 20px;
+}
+#content_top .content_bring strong {
+	color: #a92f2b;
+	font-size: 12px;
+}
+/*左边内容开始*/
+#content_left {
+	width: 716px;
+	height: auto;
+	overflow: auto;
+	float: left;
+	padding: 0px 0px 5px 43px;
+}
+/*优惠券开始*/
+.coupon_box {
+	width: 716px;
+	height: 135px;
+	overflow: hidden;
+	border-bottom: 1px dotted #e5caa5;
+}
+.coupon_boxover {
+	width: 716px;
+	height: 135px;
+	background: #f9faeb;
+	overflow: hidden;
+	border-bottom: 1px dotted #e5caa5;
+}
+.coupon_left {
+	width: 600px;
+	height: 110px;
+	overflow: hidden;
+	float: left;
+	padding: 17px 0px 18px 0px;
+}
+.coupon_boximg {
+	width: 70px;
+	height: 82px;
+	line-height: 82px;
+	float: left;
+	text-align: center;
+	padding: 14px 18px;
+	overflow: hidden;
+}
+.coupon_boximg img {
+	width: 70px;
+}
+.coupon_boxtext {
+	width: 490px;
+	height: 86px;
+	float: right;
+	padding: 10px 0px;
+	line-height: 28px;
+}
+.coupon_boxtext ul li{
+	float: left;
+}
+.coupon_boxtext .lititle {
+	width: 490px;
+	height: 28px;
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: 600;
+	color: #00c;
+}
+.coupon_boxtext .litext {
+	width: 490px;
+	height: 28px;
+	overflow: hidden;
+	font-size: 12px;
+	font-weight: 400;
+	color: #333;	
+}
+.coupon_boxtext .litag {
+	background: url(http://www.dahongbao.com/images/litag.gif) no-repeat;
+	padding-left: 26px;
+}
+.coupon_boxtext .lisustain {
+	background: url(http://www.dahongbao.com/images/lisustain.gif) no-repeat 0px 3px;
+	padding-left: 20px;
+	color: #918f8b;
+}
+.coupon_boxtext .lireview {
+	background: url(http://www.dahongbao.com/images/lireview.gif) no-repeat 0px 3px;
+	margin-left: 10px;
+	padding-left: 20px;
+	color: #918f8b;
+}
+.coupon_boxtext .litime {
+	background: url(http://www.dahongbao.com/images/litime.gif) no-repeat 0px 6px;
+	margin-left: 10px;
+	padding-left: 20px;
+	color: #918f8b;
+}
+.coupon_boxtext .lititle strong {
+	color: #c03;
+	font-weight: 600;
+}
+.coupon_boxtext ul li strong,.coupon_boxtext ul li strong a:link,.coupon_boxtext ul li strong a:visited,.coupon_boxtext ul li strong a:hover{
+	color: #c03;
+	font-weight: 400;
+}
+.coupon_boxtext ul li a:link,.coupon_boxtext ul li a:visited,.coupon_boxtext ul li a:hover {
+	color: #a92f2b;
+}
+.coupon_boxtext .lititle a:link,.coupon_boxtext .lititle a:visited,.coupon_boxtext .lititle a:hover {
+	color: #00c;
+	text-decoration: underline;
+}
+.coupon_logo {
+	width: 95px;
+	height: 71px;
+	padding: 32px 0px;
+	overflow: hidden;
+	float: right;
+}
+/*优惠券结束*/
+
+/*折扣信息开始*/
+.discount_boximg {
+	width: 99px;
+	height: 82px;
+	line-height: 82px;
+	float: left;
+	text-align: center;
+	padding: 1px;
+	overflow: hidden;
+	padding: 0px 0px 0px 15px;
+}
+.discount_boximg img {
+	width: 99px;	
+}
+.discount_box {
+	width: 470px;
+	height: 86px;
+	float: right;
+	padding: 10px 0px;
+	line-height: 28px;
+}
+.discount_box ul li{
+	float: left;
+}
+.discount_box .lititle {
+	width: 470px;
+	height: 28px;
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: 600;
+	color: #00c;	
+}
+.discount_box .litext {
+	width: 470px;
+	height: 28px;
+	overflow: hidden;
+	font-size: 12px;
+	font-weight: 400;
+	color: #333;	
+}
+.discount_box .litag {
+	background: url(http://www.dahongbao.com/images/litag.gif) no-repeat;
+	padding-left: 26px;
+}
+.discount_box .lisustain {
+	background: url(http://www.dahongbao.com/images/lisustain.gif) no-repeat 0px 3px;
+	padding-left: 20px;
+	color: #918f8b;
+}
+.discount_box .lireview {
+	background: url(http://www.dahongbao.com/images/lireview.gif) no-repeat 0px 3px;
+	margin-left: 10px;
+	padding-left: 20px;
+	color: #918f8b;
+}
+.discount_box .litime {
+	background: url(http://www.dahongbao.com/images/litime.gif) no-repeat 0px 3px;
+	margin-left: 10px;
+	padding-left: 20px;
+	color: #918f8b;
+}
+.discount_box .lititle strong {
+	color: #c03;
+	font-weight: 600;
+}
+.discount_box ul li strong,.discount_box ul li strong a:link,.discount_box ul li strong a:visited,.discount_box ul li strong a:hover{
+	color: #c03;
+	font-weight: 400;
+}
+.discount_box ul li a:link,.discount_box ul li a:visited,.discount_box ul li a:hover {
+	color: #a92f2b;
+}
+.discount_box .lititle a:link,.discount_box .lititle a:visited,.discount_box .lititle a:hover {
+	color: #00c;
+	text-decoration: underline;
+}
+.discount_box1 {
+	width: 570px;
+	height: 86px;
+	padding: 10px 0px 20px 30px;
+	line-height: 28px;
+}
+.discount_box1 ul li {
+	float: left;
+}
+.discount_box1 .lititle {
+	width: 570px;
+	height: 28px;
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: 600;
+	color: #00c;	
+}
+.discount_box1 .litext {
+	width: 570px;
+	height: 28px;
+	overflow: hidden;
+	font-size: 12px;
+	font-weight: 400;
+	color: #333;	
+}
+.discount_box1 .litag {
+	background: url(http://www.dahongbao.com/images/litag.gif) no-repeat;
+	padding-left: 26px;
+}
+.discount_box1 .lisustain {
+	background: url(http://www.dahongbao.com/images/lisustain.gif) no-repeat 0px 3px;
+	padding-left: 20px;
+	color: #918f8b;
+	margin-left: 10px;
+}
+.discount_box1 .lireview {
+	background: url(http://www.dahongbao.com/images/lireview.gif) no-repeat 0px 3px;
+	margin-left: 10px;
+	padding-left: 20px;
+	color: #918f8b;
+}
+.discount_box1 .litime {
+	background: url(http://www.dahongbao.com/images/litime.gif) no-repeat 0px 3px;
+	margin-left: 10px;
+	padding-left: 20px;
+	color: #918f8b;
+}
+.discount_box1 .litime_city {
+	background: url(http://www.dahongbao.com/images/litime.gif) no-repeat 0px 3px;
+	padding-left: 20px;
+	color: #918f8b;
+}
+.discount_box1.lititle strong {
+	color: #c03;
+	font-weight: 600;
+}
+.discount_box1 ul li strong,.discount_box1 ul li strong a:link,.discount_box1 ul li strong a:visited,.discount_box1 ul li strong a:hover{
+	color: #c03;
+	font-weight: 400;
+}
+.discount_box1 ul li a:link,.discount_box1 ul li a:visited,.discount_box1 ul li a:hover {
+	color: #a92f2b;
+}
+.discount_box1 .lititle a:link,.discount_box1 .lititle a:visited,.discount_box1 .lititle a:hover {
+	color: #00c;
+	text-decoration: underline;
+}
+/*折扣信息结束*/
+
+/*社区开始*/
+.bbs_box {
+	width: 716px;
+	height: 150px;
+	overflow: hidden;
+	border-bottom: 1px dotted #e5caa5;
+}
+.bbs_boxover {
+	width: 716px;
+	height: 150px;
+	overflow: hidden;
+	border-bottom: 1px dotted #e5caa5;
+	background: #f9faeb;
+}
+.bbs_boxleft {
+	width: 570px;
+	height: 114px;
+	padding: 10px 0px 20px 30px;
+	line-height: 28px;
+	float: left;
+}
+.bbs_boxleft ul li{
+	float: left;
+}
+.bbs_boxleft .lititle {
+	width: 570px;
+	height: 28px;
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: 600;
+	color: #00c;
+}
+.bbs_boxleft .litext {
+	width: 570px;
+	height: 56px;
+	overflow: hidden;
+	font-size: 12px;
+	font-weight: 400;
+	color: #333;
+}
+.bbs_boxleft .liauthor {
+	background: url(http://www.dahongbao.com/images/search_author.gif) no-repeat 0px 6px;
+	padding-left: 25px;
+	color: #918f8b;
+}
+.bbs_boxleft .libbspoint {
+	background: url(http://www.dahongbao.com/images/search_icn2.gif) no-repeat 0px 4px;
+	margin-left: 10px;
+	padding-left: 25px;
+	color: #918f8b;
+}
+.bbs_boxleft .litime {
+	background: url(http://www.dahongbao.com/images/litime.gif) no-repeat 0px 3px;
+	margin-left: 10px;
+	padding-left: 20px;
+	color: #918f8b;
+}
+.bbs_boxleft .lititle  strong,.bbs_boxleft .lititle strong a:link,.bbs_boxleft .lititle strong a:visited,.bbs_boxleft .lititle strong a:hover {
+	color: #c03;
+	font-weight: 600;
+}
+.bbs_boxleft ul li strong,.bbs_boxleft ul li strong a:link,.bbs_boxleft ul li strong a:visited,.bbs_boxleft ul li strong a:hover {
+	color: #c03;
+	font-weight: 400;
+}
+.bbs_boxleft ul li a:link,.bbs_boxleft ul li a:visited,.bbs_boxleft ul li a:hover {
+	color: #a92f2b;
+}
+.bbs_boxleft .lititle a:link,.bbs_boxleft .lititle a:visited,.bbs_boxleft .lititle a:hover {
+	color: #00c;
+	text-decoration: underline;
+}
+.bbs_logo {
+	width: 95px;
+	height: 71px;
+	padding: 38px 0px;
+	overflow: hidden;
+	float: right;
+}
+/*社区结束*/
+.page {
+	padding-top: 15px;
+}
+/*左边内容结束*/
+/*右边内容开始*/
+#content_right {
+	width: 238px;
+	height: auto;
+	float: right;
+	padding-top: 26px;
+	background: url(http://www.dahongbao.com/images/newsearch/content_right.gif) no-repeat;
+}
+.content_rightadd {
+	width: 200px;
+	margin: 0px 9px 10px 27px;
+	overflow: hidden;
+}
+.content_rightadd ul {
+	width: auto;
+	overflow: hidden;
+	padding: 8px 0px;
+}
+.content_rightadd .lititle {
+	padding: 2px 0px;
+	font-weight: 600;
+	line-height: 18px;
+}
+.content_rightadd .lititle a:link,.content_rightadd .lititle a:visited,.content_rightadd .lititle a:hover {
+	color: #261cdc;
+}
+.content_rightadd .lititle a:link strong,.content_rightadd .lititle a:visited strong,.content_rightadd .lititle a:hover strong {
+	color: #c60a00;
+}
+.content_rightadd .litext {
+	padding: 2px 0px;
+	line-height: 18px;
+	color: #000;
+}
+.content_rightadd .litext a:link,.content_rightadd .litext a:visited,.content_rightadd .litext a:hover{
+	color: #000;
+}
+.content_rightadd .litext a:link strong,.content_rightadd .litext a:visited strong,.content_rightadd .litext a:hover strong {
+	color: #c60a00;
+	font-weight: 400;
+}
+.content_rightadd .litext strong,.content_rightadd .litext strong,.content_rightadd .litext strong {
+	color: #c60a00;
+	font-weight: 400;
+}
+.content_rightadd .liurl{
+	color: #666;
+}
+.content_rightadd .liurl a:link,.content_rightadd .liurl a:visited,.content_rightadd .liurl a:hover {
+	color: #008000;
+}
+.content_rightadd .liurl a:link strong,.content_rightadd .liurl a:visited strong,.content_rightadd .liurl a:hover strong {
+	color: #666;
+	font-weight: 400;
+	text-decoration: underline;
+}
+.content_rightadd .bd_title {
+	text-align: right;
+	height: 13px;
+}
+/*右边内容结束*/
+/*百度头问广告开始*/
+.topad {
+	width: 900px;
+	overflow: hidden;
+	background: url(http://www.dahongbao.com/images/newsearch/top_adbg.gif) repeat-y;
+	padding: 10px 55px 0px 48px;
+	margin: 0px 0px -10px 0px;
+}
+.topad_title {
+	width: 900px;
+	height: 13px;
+	overflow: hidden;
+	text-align: right;
+}
+.topad ul {
+	padding: 10px 0px 5px 0px;
+}
+.topad .li_title {
+	font-size: 14px;
+	color: #00c;
+	font-weight: 600;
+	height: 28px;
+	line-height: 28px;
+}
+.topad .li_title a:link,.topad .li_title a:visited,.topad .li_title a:hover {
+	color: #00c;
+	text-decoration: underline;
+}
+.topad .li_title a:link strong,.topad .li_title a:visited strong,.topad .li_title a:hover strong {
+	color: #c03;
+}
+.topad .li_text {
+	width: 900px;
+	color: #333;
+	line-height: 20px;
+}
+.topad .li_text strong,.topad .li_text strong,.topad .li_text strong {
+	color: #c03;
+	font-weight: 400;
+}
+.topad .li_url {
+	width: 900px;
+	height: 20px;
+	overflow: hidden;
+	line-height: 18px;
+	color: #666;
+}
+.topad .li_url a:link,.topad .li_url a:visited,.topad .li_url a:hover {
+	color: #008000;
+}
+.topad .li_url a:link strong,.topad .li_url a:visited strong,.topad .li_url a:hover strong {
+	color: #666;
+	text-decoration: underline;
+	font-weight: 400;
+}
+/*百度头问广告结束*/
+/*主体内容结束*/
+
+.price_box {
+	width: 420px;
+	float: left;
+	height: auto;
+	color: #a5a5a5;
+	padding: 0px 0px 0px 0px;
+	overflow: hidden;
+}
+.original_price{
+	text-decoration: line-through;
+}
+.discount_price{
+	color: red;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 600;
+}
+/*百度和google广告单行显示*/
+.topad_single {
+	padding-left:35px;
+	margin-bottom: 0px;
+}
+.topad_single_bd{
+	padding-top:2px;
+}
+
+.topad_single_bd ul{
+	height:20px;
+	overflow:hidden;
+}
+
+.topad_single ul{
+	padding:3px 0;
+}
+.topad_single ul li{
+	display:inline;
+	line-height:normal;
+}
+
+.topad_single ul li.li_title{
+	line-height:normal;
+}
+
+.hot_coupon_box{
+	height: 115px;
+}
+.hot_coupon_boxover {
+	width: 716px;
+	height: 115px;
+	background: #f9faeb;
+	overflow: hidden;
+	border-bottom: 1px dotted #e5caa5;
+}
+
+.gg_content #content_top{
+	background-position:0 -25px;
+	height:81px;
+}
+
+.gg_content #content_top ul{
+	padding-top:20px;
+}
+
+.gg_content .content_topright{
+	padding-top:35px;
+}
+
+/* new add */
+.topad_single{ padding-left:23px; padding-top:5px;}
+.topad_single ul{
+	padding:3px 3px 3px 4px;
+}
+.topad{ width:930px;}
+.topad_single .favBg{ padding:0; background:#fefbf6;}
+.topad_single .favBg .favTl{background:url("../images/favBg_border.png") no-repeat scroll left top #F6FFE8; height: 10px;}
+.topad_single .favBg .favTr{ background:url("../images/favBg_border.png") no-repeat scroll right 0 #F6FFE8; float: right;  font-size: 0; height:10px; width: 12px;}
+.topad_single .favBg .favBl{background: url("../images/favBg_border.png") no-repeat scroll 0 -14px #F6FFE8;height: 12px; clear:both;}
+.topad_single .favBg .favBr{  background: url("../images/favBg_border.png") no-repeat scroll right -14px #F6FFE8;  float: right; font-size: 0; height: 10px; width: 10px;}
+.topad_single .favBg .favM{border-left: 3px solid #eaca98;border-right: 3px solid #eaca98; padding: 10px 12px 0; background:#fef6e8 url(../images/ico_bd.gif) no-repeat 804px 0;}
+
+
+.favBg{ margin:0;}
+.topad .li_title a:link, .topad .li_title a:visited, .topad .li_title a:hover{ font-size:12px;}
+
+
+#content{background: url(../images/content_bg_sem.gif) repeat-y;}
+#content_right{ width:215px;}
+.content_rightadd{ width:180px;}
+#content_left{ width:740px;}
+.coupon_box{ width:734px;}
+.coupon_boxover { width:734px;}
+.hot_coupon_boxover {width:734px;}
+
+
+.baiduSearch{ padding-top:4px;}
+.baiduSearch .favBg .favM{ background:#fef6e8 url(../images/favTxtbaidu.gif) no-repeat 868px 0px;}
+
+.baiduSearch ul.selected{background:#fced9d; cursor:pointer;}
+.baiduSearch  span.b_title{ color:#00c; font-weight:bold; text-decoration:underline;}
+.baiduSearch  span.b_title strong{ color:#c03;}
+.baiduSearch  span.b_text{ color:#333; text-decoration:none;}
+.baiduSearch  span.b_url{ color:#008000; text-decoration:none;}
+.baiduSearch ul li a{ display:block; line-height: 20px; overflow: hidden;}

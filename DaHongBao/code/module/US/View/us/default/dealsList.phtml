@@ -1,0 +1,9 @@
+<?php if ($this->dealsList):?>
+<div class="content">
+	<?php foreach ($this->dealsList as $key => $deals):?>
+	<ul class="clearfix">
+		<li<?php if($key == count($this->dealsList) -1):?> class="last"<?php endif;?>><span<?php if ($key < 3):?> class="top3"<?php endif;?>><b></b></span><div><a href="javascript:;" onmouseup="redirectLink('<?php print $deals['OfferUrl'];?>', this)" target="_blank">【<?php print $deals['MerchantName'];?>】<?php print $deals['CouponName'];?></a><em><?php print date('Y-m-d', strtotime($deals['InsertDateTime']));?></em></div></li>
+	</ul>
+	<?php endforeach;?>
+</div>
+<?php endif;?>

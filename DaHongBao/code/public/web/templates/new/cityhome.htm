@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>大红包生活频道-{$nowcityname}</title>
+<link href="../css/kejiji.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+{literal}
+<script>
+	function cityshow(){
+		if(document.getElementById('cityshow').style.display == "inline"){
+			document.getElementById('cityshow').style.display = "none";
+		}else{
+			document.getElementById('cityshow').style.display = "inline";
+		}
+	}
+</script>
+
+{/literal}
+
+<body>
+<!--头部开始-->
+{include file="new/headmerry.htm"}
+<!--头部结束-->
+<div class="clr"></div>
+<!--主体内容开始-->
+<div id="content">
+	<div id="kejiji">
+		<!--左侧开始-->
+		<div id="left">
+			<!--kejiji_box begin-->
+			{section name=loop loop=$categorys start=0 max=4}
+			<div class="kejiji_box">
+				<div class="kejiji_title"></div>
+				<div class="kejiji_text">
+					<h2><strong><a href="listing.php?cityId={$nowcityid}&categoryId={$categorys[loop].id}">{$categorys[loop].name}</a></strong>({$categorys[loop].count})</h2>
+					<ul>
+						{section name=loop1 loop=$categorys[loop].child}
+						<li><a href="listing.php?cityId={$nowcityid}&categoryId={$categorys[loop].child[loop1].id}">{$categorys[loop].child[loop1].name}</a></li>
+						{/section}
+					</ul>
+				</div>
+				<div class="icn_title"><img src="../images/kejiji_icn{$categorys[loop].iconid}.gif" alt="{$categorys[loop].name}"/></div>		
+			</div>
+			{/section}
+		</div>
+		<!--左侧结束-->
+		<!--中侧开始-->
+		<div id="mid">
+			<!--kejiji_box begin-->
+			{section name=loop loop=$categorys start=4 max=4}
+			<div class="kejiji_box">
+				<div class="kejiji_title"></div>
+				<div class="kejiji_text">
+					<h2><strong><a href="listing.php?cityId={$nowcityid}&categoryId={$categorys[loop].id}">{$categorys[loop].name}</a></strong>({$categorys[loop].count})</h2>
+					<ul>
+						{section name=loop1 loop=$categorys[loop].child}
+						<li><a href="listing.php?cityId={$nowcityid}&categoryId={$categorys[loop].child[loop1].id}">{$categorys[loop].child[loop1].name}</a></li>
+						{/section}
+				
+					</ul>
+				</div>
+				<div class="icn_title"><img src="../images/kejiji_icn{$categorys[loop].iconid}.gif" alt="{$categorys[loop].name}"/></div>					
+			</div>
+			{/section}
+			<!--kejiji_box end-->
+			
+			<!--kejiji_box end-->		
+		</div>
+		<!--中侧结束-->
+		<!--右侧开始-->
+		<div id="right">
+			<!--right_ploy begin-->
+			<!-- <div class="right_ploy">
+				<div class="right_top"><h2>热门活动</h2></div>
+				<img src="../images/kejijji_rightad.gif" alt="专题标题" />			
+			</div> -->
+			<!--right_ploy begin-->
+			<!--right_box begin-->
+			<div class="right_box">
+				<div class="right_title"><h2>热门活动</h2></div>
+				<div class="right_text">
+					<ul>
+						<li>·【<a href="/Me-shishangshiwu--Mi-69943.html" title="食尚食屋">食尚食屋</a>】<a href="/shishangshiwu/coupon-71218/">食尚食屋 满30元以上可兑换VIP卡（限男士）</a></li>
+				<li>·【<a href="http://www.dahongbao.com/Me-KFC--Mi-899.html" title="肯德基 ">肯德基</a>】<a href="http://www.dahongbao.com/KFC/coupon-49729/"> 肯德基 葡式蛋挞 香甜粟米棒</a></li>
+				<li>·【<a href="http://www.dahongbao.com/Me-mcdonalds--Mi-1015.html" title="麦当劳">麦当劳</a>】<a href="http://www.dahongbao.com/mcdonalds/coupon-68198/">10月/12月电子优惠券（全国版） 
+</a></li>
+				<li>·【<a href="/Me-mcdonalds--Mi-1015.html" title="麦当劳">麦当劳</a>】<a href="/mcdonalds/coupon-68202/"> 10月/12月电子优惠券（全国版） 
+</a></li>
+				<li>·【<a href="/Me-shengshitianfu--Mi-70107.html" title="盛世天府">盛世天府</a>】<a href="/shengshitianfu/coupon-71217/">盛世天府 菜品三选一特价优惠</a></li>
+				<li>·【<a href="/Me-qianfu--Mi-54758.html" title="黔府 ">黔府</a>】<a href="/qianfu/coupon-64438/"> 黔府 每满100当场抵扣20元</a></li>
+				<li>·【<a href="http://www.dahongbao.com/Me-qiangui--Mi-1163.html" title="钱柜">钱柜</a>】<a href="http://www.dahongbao.com/qiangui/coupon-53418/">上海[钱柜]电子优惠券卢湾店</a></li>
+				<li>·【<a href="http://www.dahongbao.com/Me-qiangui--Mi-1163.html" title="钱柜">钱柜</a>】<a href="http://www.dahongbao.com/qiangui/coupon-53417/"> 上海[钱柜]电子优惠券黄浦店</a></li>
+				<li>·【<a href="http://www.dahongbao.com/Me-papajohn--Mi-13491.html" title="棒约翰">棒约翰</a>】<a href="http://www.dahongbao.com/papajohn/coupon-67301/">棒约翰送30元电影观摩抵用券</a></li>
+				<li>·【<a href="http://www.dahongbao.com/Me-SONIARYKIEL--Mi-69909.html" title="SONIA RYKIE">SONIA RYKIE</a>】<a href="http://www.dahongbao.com/SONIARYKIEL/coupon-68277/"> SONIA RYKIEL限量版“高效保湿精华”优惠价港币$350</a></li></ul>
+
+					</ul>
+				</div>		
+			</div>
+			<div class="ke_rightad">
+			<a href="http://gary.kijiji.cn/006_site.html"><img src="http://pindao.kijiji.cn/upload_img/img/0712/20071205779061.gif" alt="客齐集" /></a>
+			<a href="http://www.kijiji.cn"><img src="/images/kijijilogo.gif" alt="客齐集" /></a>
+		</div>		
+			<!--right_box begin-->			
+		</div>
+		<!--右侧结束-->
+	</div>
+	<div id="kejiji_city">
+		<div class="kejiji_citytop"><img src="../images/kejiji_citytop.gif" alt="客齐集" /></div>
+		<div id="kejiji_text">
+			<h2>更多城市</h2>
+			<ul>
+				<li><a href="cityhome.php?id=21">上海</a></li>
+							<li><a href="cityhome.php?id=10">北京</a></li>
+							<li><a href="cityhome.php?id=22">天津</a></li>
+							<li><a href="cityhome.php?id=23">重庆</a></li>
+				{foreach key=key item=item from=$city}
+				{if $item->id==21 OR $item->id==10 OR $item->id==22 OR $item->id==23}
+							{else}
+							<li><a href="cityhome.php?id={$item->id}">{$item->name}</a></li>
+							{/if}
+				{/foreach}
+			</ul>
+		</div>
+	</div>
+</div>
+<!--主体内容结束-->
+<script type="text/javascript">var referrerURL = escape(document.referrer);var trackerURL = '<img src="http://gary.kijiji.cn/image.php?tp=1&amp;ct=999&amp;ref='+referrerURL+'" height="1" width="1" style="display:none" alt="" />';document.write(trackerURL)</script><noscript><img src="http://gary.kijiji.cn/image.php?tp=1&ct=21" height="1" width="1" style="display:none" alt="" /></noscript>
+{include file="new/foot.htm"}

@@ -1,0 +1,90 @@
+<?php
+/**
+* index.phtml
+*-------------------------
+*
+* 
+*
+* PHP versions 5
+*
+* LICENSE: This source file is from Smarter Ver2.0, which is a comprehensive shopping engine 
+* that helps consumers to make smarter buying decisions online. We empower consumers to compare 
+* the attributes of over one million products in the common channels and common categories
+* and to read user product reviews in order to make informed purchase decisions. Consumers can then 
+* research the latest promotional and pricing information on products listed at a wide selection of 
+* online merchants, and read user reviews on those merchants.
+* The copyrights is reserved by http://www.mezimedia.com. 
+* Copyright (c) 2006, Mezimedia. All rights reserved.
+*
+* @author Yaron Jiang <yjiang@corp.valueclick.com.cn>
+* @copyright (C) 2004-2013 Mezimedia.com
+* @license http://www.mezimedia.com PHP License 5.0
+* @version CVS: $Id: index.phtml,v 1.1 2013/04/15 10:57:14 rock Exp $
+* @link http://www.dahongbao.com/
+* @deprecated File deprecated in Release 3.0.0
+*/
+?>
+<div class="box">
+<div class="box-header">
+<h2><i class="icon-box"></i>新建Code</h2>
+</div>
+
+<div class="box-content">
+<form action="<?php echo $this->url(null,array('controller' => 'couponCode' , 'action' => 'save'));
+?>?uri=<?php echo $this->uri?>" method="post">
+<input type="hidden" name="CouponID" value="<?php echo $this->CouponID?>" />
+<div class="input-group">
+<label class="input-label">
+每行为一条Coupon，Coupon格式为：code,密码,使用次数  使用次数和密码可为空
+</label>
+<div class="input-item">
+<textarea name="CouponCode">
+
+</textarea>
+</div>
+</div>
+<div class="button-group">
+<button type="submit" class="btn btn-primary">提交</button>
+</div>
+</form>
+</div>
+</div>
+
+<div class="box">
+<div class="box-header">
+<h2><i class="icon-box"></i>编辑Code</h2>
+</div>
+
+<div class="box-content">
+<table class="table">
+<thead>
+<tr class="row">
+<th>Code</th>
+<th>Password</th>
+<th>数量</th>
+<th>操作</th>
+</tr>
+</thead>
+
+<tbody>
+<?php foreach($this->list as $v):?>
+<tr class="row">
+<form action="<?php echo $this->url(null,array('controller' => 'couponCode' , 'action' => 'setCount'));
+?>?uri=<?php echo $this->uri?>" method="post">
+<input type="hidden" name="CouponID" value="<?php echo $this->CouponID?>" />
+<input type="hidden" name="CouponCodeID" value="<?php echo $v['CouponCodeID']?>" />
+<input type="hidden" name="OldCount" value="<?php echo $v['CouponCodeTotalCnt']?>" />
+<td><?php echo $v['CouponCode']?></td>
+<td><?php echo $v['CouponPass']?></td>
+<td><input type="number" name="CouponCodeTotalCnt" value="<?php echo $v['CouponCodeTotalCnt']?>" /></td>
+<td><button type="submit" class="btn btn-primary">修改</button>
+<a href="<?php echo $this->url(null,array('controller' => 'couponCode' , 'action' => 'delete'));?>?CouponCodeID=<?php 
+echo $v['CouponCodeID']?>&uri=<?php echo $this->uri?>" class="btn btn-delete">删除</a>
+</td>
+</tr>
+</form>
+<?php endforeach;?>
+</tbody>
+</table>
+</div>
+</div>

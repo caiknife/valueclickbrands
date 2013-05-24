@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>发布折扣信息--大红包</title>
+
+<link href="/css/discount_useradd.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+{literal}
+<script>
+	function check(){
+		if(document.form.Descript.value==""){
+			alert("请输入折扣信息名称");
+			document.form.Descript.focus();
+			return false;
+		}
+		if(document.form.tag.value==""){
+			alert("请输入标签");
+			document.form.tag.focus();
+			return false;
+		}
+
+		var filename = document.form.addfile.value;
+		if(filename) {
+			var index1=filename.lastIndexOf(".") + 1;
+			var index2=filename.length;
+			var postf=filename.substring(index1,index2).toLowerCase();//后缀名
+			if(postf != 'jpg' && postf != 'jpeg' && postf != 'gif') {
+				alert("抱歉，仅支持JPG、JPEG、GIF图片文件");
+				return false;
+			}
+		}
+
+		return true;
+	}
+</script>
+{/literal}
+<body>
+<!--头部开始-->
+{include file="new/head_discount.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <a href="/discount_hot.html">折扣信息</a> > <h1>发布折扣信息</h1>
+	</div>
+	<!--category_title 导航结束-->
+	<!--主体内容开始-->
+	<div id="useradd">
+		<h2>请填写折扣基本信息</h2>
+		<div class="useradd_top">请注意带有“<strong>*</strong>”号的项目必须填写</div>
+		<div class="useradd_box"><FORM NAME="form" enctype="multipart/form-data" METHOD=POST ACTION="" onsubmit="return check();"><INPUT TYPE="hidden" name="step" value="2"><INPUT TYPE="hidden" NAME="userid" value="{$userinfo.uid}">
+			<h3>请 填 写 基 本 信 息</h3>
+			<ul>
+				<li class="lileft"><strong>*</strong> 折扣信息名称：</li>
+				<li class="liright"><input name="Descript" type="text" class="input1"/></li>
+				<li class="lileft">上传折扣信息图片：</li>
+				<li class="liright"><input type="file" class="input4" size="45" name="addfile" onKeyDown="document.getElementById('em').innerHTML='（请选择上传的图片）';return false;"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#900' id="em"></span>
+				</li>
+				<li class="lileft"><strong>*</strong> 标签：</li>
+				<li class="liright"><input name="tag" type="text" class="input2" /></li>
+				<li class="lileft">具体描述：</li>
+				<li class="liright"><textarea name="Detail" cols="" rows="" class="input3"></textarea></li>
+				<li class="licenter"><input class="inputbut" type="submit"  value="继 续" name=""/></li>
+			</ul></FORM>
+		</div>
+	</div>
+	<!--主体内容结束-->
+</div>
+
+</div>
+{include file="new/foot.htm"}

@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>我的大红包--大红包</title>
+<META NAME="description" CONTENT="">
+<META NAME="keywords" CONTENT="">
+<link href="/css/myhongbao.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<!--头部开始-->
+{include file="new/head_myhongbao.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="myhongbao_title">
+		<a href="/">首页</a> &#187; <h1>我的大红包</h1> 
+	</div>
+	
+	<div id="myhongbao">
+		<div class="my_title">
+			<h2>我的红包数</h2>
+			目前累计共有红包数 <strong>{$userrow.userhb}个</strong>  <a href="/price.php">去兑奖中心看看</a>
+		</div>
+		<!--begin my_box-->
+		<div class="my_box">
+			<div class="my_left">
+				<img src="/images/mydahongbao/hongbao.gif" alt="优惠券" /><br />我的优惠券
+			</div>
+			<div class="my_right">
+				<ul>
+					<li class="liimg"><img src="/images/mydahongbao/ico1.gif" alt="发布1条优惠券获得5个红包" title="发布1条优惠券获得5个红包"/></li>
+					<li class="lileft">发布优惠券</li>
+					<li class="licount">{if $userrow.CouponPostHB>=0}+{else}-{/if} {math equation="abs(x)" x=$userrow.CouponPostHB}个</li>
+					<li class="liright">有效优惠券共有 {$couponcount}条；过期优惠券共有 {$couponexpirecount}条</li>
+					<li class="lidetail"><a href="/profile/mycoupon.php">查看我的优惠券</a></li>
+					<li class="liimg"><img src="/images/mydahongbao/ico2.gif" alt="被10个用户评论获得一个红包" title="被10个用户评论获得一个红包" /></li>
+					<li class="lileft">获得评论</li>
+					<li class="licount">{if $userrow.CouponReviewHB>=0}+{else}-{/if} {$userrow.CouponReviewHB}个</li>
+					<li class="litext">获得的评论共有 {$userrow.CouponReviewNum}条</li>
+					<li class="liico"><img src="/images/mydahongbao/ico9.gif" alt="获得评论" /></li>
+					<li class="libring">{if $userrow.CouponReviewNum>0}再{/if}获得<strong>{$userrow.CouponReviewRemain}条</strong>评论就可产生<strong>1个</strong>红包</li>
+					<li class="lidetail"></li>
+					<li class="liimg"><img src="/images/mydahongbao/ico3.gif"  alt="被5个用户支持获得1个红包" title="被5个用户支持获得1个红包"/></li>
+					<li class="lileft">获得“支持”</li>
+					<li class="licount">{if $userrow.CouponSupportHB>=0}+{else}-{/if} {$userrow.CouponSupportHB}个</li>
+					<li class="litext">获得的“支持”共有 {$userrow.CouponSupportNum}个</li>
+					<li class="liico"><img src="/images/mydahongbao/ico9.gif" alt="获得支持" /></li>
+					<li class="libring">{if $userrow.CouponSupportNum>0}再{/if}获得<strong>{$userrow.CouponSupportRemain}个</strong>“支持”就可产生<strong>1个</strong>红包</li>
+					<li class="lidetail"></li>
+					
+					<li class="liimg"><img src="/images/mydahongbao/ico4.gif" alt="被用户浏览100次获得1个红包" title="被用户浏览100次获得1个红包" /></li>
+					<li class="lileft">被浏览</li>
+					<li class="licount">{if $userrow.CouponVisitHB>=0}+{else}-{/if} {$userrow.CouponVisitHB}个</li>
+					<li class="litext">被浏览共有 {$userrow.CouponVisit}次</li>
+					<li class="liico"><img src="/images/mydahongbao/ico9.gif" alt="被浏览" /></li>
+					<li class="libring">{if $userrow.CouponVisit>0}再{/if}被浏览<strong>{$userrow.CouponVisitRemain}次</strong>就可产生<strong>1个</strong>红包</li>
+					<li class="lidetail"></li>
+					
+
+					<li class="liimg"><img src="/images/mydahongbao/ico5.gif" alt="投诉被删除1条，获得1个红包" title="投诉被删除1条，获得1个红包"  /></li>
+					<li class="lileft">投诉被删除</li>
+					<li class="licount">{if $userrow.CouponOpposeDeleteNum>=0}+{else}-{/if} {$userrow.CouponOpposeDeleteNum}个</li>
+					<li class="litext">投诉被删除的共有 {$userrow.CouponOpposeDeleteNum}条</li>
+					<li class="liico"></li>
+					<li class="libring"></li>
+					<li class="lidetail"></li>
+					
+					<li class="liimg"><img src="/images/mydahongbao/ico6.gif" alt="优惠券被删除扣5个红包" title="优惠券被删除扣5个红包" /></li>
+					<li class="lileft">被删除</li>
+					<li class="licount">{if $userrow.CouponPostDeleteHB>0}+{else}-{/if} {math equation="abs(x)" x=$userrow.CouponPostDeleteHB}个</li>
+					<li class="litext">被删除的优惠券共有 {$userrow.CouponPostDeleteNum}条</li>
+					<li class="liico"></li>
+					<li class="libring"></li>
+					<li class="lidetail"></li>					
+					<li class="liimg"><img src="/images/mydahongbao/ico7.gif" alt="被投诉1次，扣1个红包" title="被投诉1次，扣1个红包" /></li>
+					<li class="lileft">被投诉</li>
+					<li class="licount">{if $userrow.CouponOpposeHB>0}+{else}-{/if} {math equation="abs(x)" x=$userrow.CouponOpposeHB}个</li>
+					<li class="litext">你发布的优惠券被投诉了{$userrow.CouponOpposeNum}次</li>
+					<li class="liico"></li>
+					<li class="libring"></li>
+					<li class="lidetail"></li>
+
+					<li class="liimg"><img src="/images/mydahongbao/ico8.gif" alt="支持被删除10条，扣除1个红包" title="支持被删除10条，扣除1个红包"  /></li>
+					<li class="lileft">获得支持被删除</li>
+					<li class="licount">{if $userrow.CouponSupportDeleteHB>0}+{else}-{/if} {math equation="abs(x)" x=$userrow.CouponSupportDeleteHB}个</li>
+					<li class="litext">被删除的支持共有 {$userrow.CouponSupportDeleteNum}条</li>
+					<li class="liico"><img src="/images/mydahongbao/ico9.gif" alt="支持被删除" /></li>
+					<li class="libring">{if $userrow.CouponSupportDeleteNum>0}再{/if}被删除<strong>{$userrow.CouponSupportDeleteRemain}条</strong>支持将失去<strong>1个</strong>红包</li>
+					<li class="lidetail"></li>
+					
+					<li class="liimg"><img src="/images/mydahongbao/ico8.gif" alt="评论被删除10条，扣除1个红包" title="评论被删除10条，扣除1个红包"  /></li>
+					<li class="lileft">评论被删除</li>
+					<li class="licount">{if $userrow.CouponReviewDeleteHB>0}+{else}-{/if} {math equation="abs(x)" x=$userrow.CouponReviewDeleteHB}个</li>
+					<li class="litext">被删除的评论共有 {$userrow.CouponReviewDeleteNum}条</li>
+					<li class="liico"><img src="/images/mydahongbao/ico9.gif" alt="评论被删除" /></li>
+					<li class="libring">{if $userrow.CouponReviewDeleteNum>0}再{/if}被删除<strong>{$userrow.CouponReviewDeleteRemain}条</strong>评论将失去<strong>1个</strong>红包</li>
+					<li class="lidetail"></li>
+
+				</ul>
+			</div>
+		</div>
+		<!--end my_box-->
+		<div class="my_boxline">“我的优惠券”小计红包数 <strong>{$userrow.CouponSumHB}个</strong></div>
+		<!--begin my_box-->
+		<div class="my_box">
+			<div class="my_left">
+				<img src="/images/mydahongbao/discount.gif" alt="折扣信息" /><br />我的折扣信息
+			</div>
+			<div class="my_right">
+				<ul>
+					<li class="liimg"><img src="/images/mydahongbao/ico1.gif"  alt="发布1条折扣信息获得5个红包" title="发布1条折扣信息获得5个红包" /></li>
+					<li class="lileft">发布</li>
+					<li class="licount">{if $userrow.DiscountPostHB>=0}+{else}-{/if} {$userrow.DiscountPostHB}个</li>
+					<li class="liright">有效折扣信息共有 {$discountcount}条；过期折扣信息共有 {$discountexpirecount}条</li>
+					<li class="lidetail"><a href="/profile/mydiscount.php">查看我的折扣信息</a></li>
+					<li class="liimg"><img src="/images/mydahongbao/ico2.gif" "被10个用户评论获得一个红包" title="被10个用户评论获得一个红包" /></li>
+					
+					<li class="lileft">获得评论</li>
+					<li class="licount">{if $userrow.DiscountReviewHB>=0}+{else}-{/if} {$userrow.DiscountReviewHB}个</li>
+					<li class="litext">获得的评论共有 {$userrow.DiscountReviewNum}条</li>
+					<li class="liico"><img src="/images/mydahongbao/ico9.gif" alt="获得评论" /></li>
+					<li class="libring">{if $userrow.DiscountReviewNum>0}再{/if}获得<strong>{$userrow.DiscountReviewRemain}条</strong>评论就可产生<strong>1个</strong>红包</li>
+					<li class="lidetail"></li>
+					<li class="liimg"><img src="/images/mydahongbao/ico3.gif" alt="被5个用户支持获得1个红包" title="被5个用户支持获得1个红包" /></li>					
+					<li class="lileft">获得“支持”</li>
+					<li class="licount">{if $userrow.DiscountSupportHB>=0}+{else}-{/if} {$userrow.DiscountSupportHB}个</li>
+					<li class="litext">获得的“支持”共有 {$userrow.DiscountSupportNum}个</li>
+					<li class="liico"><img src="/images/mydahongbao/ico9.gif" alt="获得支持" /></li>
+					<li class="libring">{if $userrow.DiscountSupportNum>0}再{/if}获得<strong>{$userrow.DiscountSupportRemain}个</strong>“支持”就可产生<strong>1个</strong>红包</li>
+					<li class="lidetail">	</li>
+					<li class="liimg"><img src="/images/mydahongbao/ico4.gif" alt="被用户浏览100次获得1个红包" title="被用户浏览100次获得1个红包" /></li>
+					
+					<li class="lileft">被浏览</li>
+					<li class="licount">{if $userrow.DiscountVisitHB>=0}+{else}-{/if} {$userrow.DiscountVisitHB}个</li>
+					<li class="litext">被浏览共有 {$userrow.DiscountVisit}次</li>
+					<li class="liico"><img src="/images/mydahongbao/ico9.gif" alt="被浏览" /></li>
+					<li class="libring">{if $userrow.DiscountVisit>0}再{/if}被浏览<strong>{$userrow.DiscountVisitRemain}次</strong>就可产生<strong>1个</strong>红包</li>
+					<li class="lidetail"></li>
+					<li class="liimg"><img src="/images/mydahongbao/ico5.gif" alt="投诉被删除1条，获得1个红包" title="投诉被删除1条，获得1个红包" /></li>
+					
+					<li class="lileft">投诉被删除</li>
+					<li class="licount">{if $userrow.DiscountOpposeDeleteNum>=0}+{else}-{/if} {$userrow.DiscountOpposeDeleteNum}个</li>
+					<li class="litext">投诉被删除的共有 {$userrow.DiscountOpposeDeleteNum}条</li>
+					<li class="liico"></li>
+					<li class="libring"></li>
+					<li class="lidetail"></li>
+					<li class="liimg"><img src="/images/mydahongbao/ico6.gif" alt="折扣信息被删除1条，扣5个红包" title="折扣信息被删除1条，扣5个红包" /></li>					
+					<li class="lileft">被删除</li>
+					<li class="licount">{if $userrow.DiscountPostDeleteHB>0}+{else}-{/if} {$userrow.DiscountPostDeleteHB}个</li>
+					<li class="litext">被删除的优惠券共有 {$userrow.DiscountPostDeleteNum}条</li>
+					<li class="liico"></li>
+					<li class="libring"></li>
+					<li class="lidetail"></li>
+					<li class="liimg"><img src="/images/mydahongbao/ico7.gif" alt="被投诉1次，扣1个红包" title="被投诉1次，扣1个红包" /></li>					
+					<li class="lileft">被投诉</li>
+					<li class="licount">{if $userrow.DiscountOpposeHB>0}+{else}-{/if} {math equation="abs(x)" x=$userrow.DiscountOpposeHB}个</li>
+					<li class="litext">你发布的折扣信息被投诉了 {$userrow.DiscountOpposeNum}次</li>
+					<li class="liico"></li>
+					<li class="libring"></li>
+					<li class="lidetail"></li>
+					
+					<li class="liimg"><img src="/images/mydahongbao/ico8.gif" alt="支持被删除5条，扣除1个红包" title="支持被删除5条，扣除1个红包" /></li>					
+					<li class="lileft">获得支持被删除</li>
+					<li class="licount">{if $userrow.DiscountSupportDeleteHB>0}+{else}-{/if} {math equation="abs(x)" x=$userrow.DiscountSupportDeleteHB}个</li>
+					<li class="litext">被删除的支持共有 {$userrow.DiscountSupportDeleteNum}条</li>
+					<li class="liico"><img src="/images/mydahongbao/ico9.gif" alt="支持被删除" /></li>
+					<li class="libring">{if $userrow.DiscountSupportDeleteNum>0}再{/if}被删除<strong>{$userrow.DiscountSupportDeleteRemain}条</strong>支持将失去<strong>1个</strong>红包</li>
+					<li class="lidetail"></li>
+					
+					<li class="liimg"><img src="/images/mydahongbao/ico8.gif" alt="评论被删除10条，扣除1个红包" title="评论被删除10条，扣除1个红包" /></li>					
+					<li class="lileft">评论被删除</li>
+					<li class="licount">{if $userrow.DiscountReviewDeleteHB>0}+{else}-{/if} {$userrow.DiscountReviewDeleteHB}个</li>
+					<li class="litext">被删除的评论共有 {$userrow.DiscountReviewDeleteNum}条</li>
+					<li class="liico"><img src="/images/mydahongbao/ico9.gif" alt="评论被删除" /></li>
+					<li class="libring">{if $userrow.DiscountReviewDeleteNum>0}再{/if}被删除<strong>4条</strong>评论将失去<strong>1个</strong>红包</li>
+					<li class="lidetail"></li>
+				</ul>
+			</div>
+		</div>
+		<!--end my_box-->
+		<div class="my_boxline">“我的折扣信息”小计红包数 <strong>{$userrow.DiscountSumHB}个</strong></div>
+		<!--begin my_box-->
+		<div class="my_box">
+			<div class="my_bbs">
+				<img src="/images/mydahongbao/bbs.gif" alt="社区" /><br />我的社区
+			</div>
+			<div class="my_right">
+				<ul>
+					<li class="liimg"><img src="/images/mydahongbao/ico1.gif" alt="发布1个主题贴，获得1个红包" /></li>
+					<li class="lileft">发布</li>
+					<li class="licount">{if $userrow.BBSPostHB>=0}+{else}-{/if} {math equation="abs(x)" x=$userrow.BBSPostHB}个</li>
+					<li class="liright">发布论坛主题贴共有 {$userrow.BBSPostNum}条</li>
+					<li class="lidetail"><a href="/bbs/personal.php">查看我发布的主题</a></li>
+					<li class="liimg"><img src="/images/mydahongbao/ico2.gif" alt="发布10个回复贴，获得1个红包" /></li>
+					<li class="lileft">回复</li>
+					<li class="licount">{if $userrow.BBSReplyHB>=0}+{else}-{/if} {math equation="abs(x)" x=$userrow.BBSReplyHB}个</li>
+					<li class="litext">回复论坛主题贴共有 {$userrow.BBSReplyNum}条</li>
+					<li class="liico"><img src="/images/mydahongbao/ico9.gif" alt="获得评论" /></li>
+					<li class="libring">{if $userrow.BBSReplyNum>0}再{/if}发布<strong>{$userrow.BBSReplyRemain}条</strong>回复就可产生<strong>1个</strong>红包</li>
+					<li class="lidetail"><a href="/bbs/personal.php?action=post">查看我回复的主题</a></li>
+					<li class="liimg"><img src="/images/mydahongbao/ico3.gif" alt="参加活动" /></li>
+					<li class="lileft">参加活动</li>
+					<li class="licount">+ 0个</li>
+					<li class="litext">参加活动共有 0次</li>
+					<li class="liico"></li>
+					<li class="libring"></li>
+					<li class="lidetail"></li>
+					<li class="liimg"><img src="/images/mydahongbao/ico4.gif" alt="斑竹奖励" /></li>
+					<li class="lileft">斑竹奖励</li>
+					<li class="licount">{if $userrow.OtherHB>=0}+{else}-{/if} {math equation="abs(x)" x=$userrow.OtherHB}个</li>
+					<li class="litext">最近一个月中的斑竹奖励共有 {$userrow.OtherNum}次</li>
+					<li class="liico"></li>
+					<li class="libring"></li>
+					<li class="lidetail"></li>
+					<li class="liimg"><img src="/images/mydahongbao/ico10.gif" alt="被删除1个主题贴，扣1个红包" title="被删除1个主题贴，扣1个红包" /></li>
+					<li class="lileft">主题被删除</li>
+					<li class="licount">{if $userrow.BBSPostDeleteHB>0}+{else}-{/if} {math equation="abs(x)" x=$userrow.BBSPostDeleteHB}个</li>
+					<li class="litext">被删除的主题贴共有 {$userrow.BBSPostDeleteNum}条</li>
+					<li class="liico"></li>
+					<li class="libring"></li>
+					<li class="lidetail"></li>
+					<li class="liimg"><img src="/images/mydahongbao/ico6.gif" alt="被删除10个回复贴，扣1个红包" title="被删除10个回复贴，扣1个红包"  /></li>
+					<li class="lileft">回复被删除</li>
+					<li class="licount">{if $userrow.BBSReplyDeleteHB>0}+{else}-{/if} {math equation="abs(x)" x=$userrow.BBSReplyDeleteHB}个</li>
+					<li class="litext">被删除的回复贴共有 {$userrow.BBSReplyDeleteNum}条</li>
+					<li class="liico"><img src="/images/mydahongbao/ico9.gif" alt="被删除" /></li>
+					<li class="libring">{if $userrow.BBSReplyDeleteNum>0}再{/if}被删除<strong>{$userrow.BBSReplyDeleteRemain}条</strong>回复贴将失去<strong>1个</strong>红包</li>
+					<li class="lidetail"></li>										
+				</ul>
+			</div>
+		</div>
+		<!--end my_box-->
+		<div class="my_boxline">“我的折扣信息”小计红包数 <strong>{$userrow.OtherSumHB}个</strong></div>
+		<div class="my_bbsline">总计红包数 <strong>{$userrow.userhb}个</strong></div>
+	</div>
+</div>
+<!--主体内容结束-->
+<!--脚部开始-->
+{include file="new/foot.htm"}
+<!--脚部结束-->

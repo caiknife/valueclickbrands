@@ -1,0 +1,11 @@
+<!--<?php print <<<EOT
+-->
+<div class="t3" style="margin:8px 0"><table width="100%" cellspacing="0" cellpadding="0" align="center">
+	<tr><td>$msg_guide</td></tr>
+</table></div>
+$forumlist
+<!--
+EOT;
+$thread_children && require_once PrintEot($thread_children);
+$thread_online && require_once PrintEot($thread_online);
+?>

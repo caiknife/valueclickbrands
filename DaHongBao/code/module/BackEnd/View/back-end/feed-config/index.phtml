@@ -1,0 +1,89 @@
+<?php
+/*
+* package_name : file_name
+* ------------------
+* typecomment
+*
+* PHP versions 5
+*
+* @Author   : thomas fu(tfu@mezimedia.com)
+* @Copyright: Copyright (c) 2004-2011 Mezimedia Com. (http://www.mezimedia.com <http://www.mezimedia.com/> )
+* @license  : http://www.mezimedia.com/license/
+* @Version  : CVS: $Id: index.phtml,v 1.2 2013/04/17 13:32:41 thomas_fu Exp $
+*/
+$this->headScript()->prependFile($this->basePath('js/BackEnd/feed-config.js'));
+?>
+<div class="box">
+    <div class="box-header">
+        <h2><i class="icon-box"></i>联盟feed管理</h2>
+    </div>
+    <div class="box-content">
+        <form action="" method="post">
+            <table class="table">
+                <thead>
+                    <tr class="row">
+                        <th>联盟ID</th>
+                        <th>联盟名称</th>
+                        <th>联盟类型</th>
+                        <th>下载FEED文件名</th>
+                        <th>下载状态</th>
+                        <th>下载记录数</th>
+                        <th>导入文件名</th>
+                        <th>导入FEED记录数</th>
+                        <th>新增|更新优惠卷数</th>
+                        <th>新增|更新折扣数</th>
+                        <th>临时表剩余记录数</th>
+                        <th>导入状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                <?php if(isset($this->affliatelistConfig)):?>
+                
+                <?php foreach($this->affliatelistConfig as $k => $v):?>
+                    <tr class="<?php echo $this->cycle(array("", "odd"))->next();?>">
+                        <td><?php echo $k?></td>
+                        <td><?php echo $v['Name']?></td>
+                        <td><?php echo $this->sites[$v['SiteID']]?></td>
+                        <td><?php echo isset($v['DownFeedFileName']) ? $v['DownFeedFileName'] : ''?></td>
+                        <td class="download"><span class="label label-<?php echo isset($v['DownFeedFileRunStatus']) ? strtolower($v['DownFeedFileRunStatus']) : ''?>">
+                            <?php echo isset($v['DownFeedFileRunStatus']) ? $v['DownFeedFileRunStatus'] : '无'?></span>
+                        </td>
+                        <td><?php echo isset($v['DownFeedFileTotalCount']) ? $v['DownFeedFileTotalCount'] : ''?></td>
+                        <td><?php echo isset($v['ImportFeedFileName']) ? $v['ImportFeedFileName'] : ''?></td>
+                        <td><?php echo isset($v['ImportFeedFileTotalCount']) ? $v['ImportFeedFileTotalCount'] : ''?></td>
+                        <td><?php echo isset($v['ImportFeedNewCouponCount']) ? $v['ImportFeedNewCouponCount'] : ''?>
+                            |<?php echo isset($v['ImportFeedExistCouponCount']) ? $v['ImportFeedExistCouponCount'] : '' ?></td>
+                        <td><?php echo isset($v['ImportFeedNewDiscountCount']) ? $v['ImportFeedNewDiscountCount'] : ''?>
+                            |<?php echo isset($v['ImportFeedExistDiscountCount']) ? $v['ImportFeedExistDiscountCount'] : ''?></td>
+                        <td><?php echo isset($v['ImportFeedUserDataRemainCount']) ? $v['ImportFeedUserDataRemainCount'] : ''?></td>
+                        <td class="importFeed"><span class="label label-<?php echo isset($v['ImportFeedRunStatus']) ? strtolower($v['ImportFeedRunStatus']) : ''?>">
+                            <?php echo isset($v['ImportFeedRunStatus']) ? $v['ImportFeedRunStatus'] : '无'?></span>
+                        </td>
+                        <td width="150px;">
+                            <span>
+                            <?php if (isset($v['DownFeedFileRunStatus']) && $v['DownFeedFileRunStatus'] == 'RUNNING'):?>
+                            <img src='/img/BackEnd/loading.gif' align='center' style='padding-right:25px;'>
+                            <?php else:?>
+                            <a title="<?php echo isset($v['DownFeedRunDetailInfo']) ? $v['DownFeedRunDetailInfo'] : ''?>" href="<?php echo $this->ServerUrl()?>/feedConfig/affiliateDownload?id=<?php echo $k?>" class="btn btn-view download">
+                                <i class="icon-download icon-white"></i>下载
+                            </a>
+                            <?php endif?>
+                            </span>
+                            <span>
+                            <?php if (isset($v['ImportFeedRunStatus']) && $v['ImportFeedRunStatus'] == 'RUNNING'):?>
+                            <img src='/img/BackEnd/loading.gif' align='center' style='padding-right:25px;'>
+                            <?php else:?>
+                            <a title="<?php echo isset($v['ImportFeedRunDetailInfo']) ? $v['ImportFeedRunDetailInfo'] :''?>" href="<?php echo $this->ServerUrl()?>/feedConfig/affiliateImport?id=<?php echo $k?>" class="btn btn-delete importFeed"><i class="icon-upload icon-white"></i>导入</a>
+                            <?php endif;?>
+                            </span>
+                        </td>
+                    </tr>
+                <?php endforeach;?>
+                <?php endif;?>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

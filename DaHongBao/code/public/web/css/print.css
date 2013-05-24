@@ -1,0 +1,877 @@
+#printimage{
+	visibility:inline;
+}
+
+
+#couponimage{
+	width:auto;
+}/* CSS Document */
+/* global begin*/
+body {
+	background: #fff; 
+	font-size: 12px; 
+	font-family: "宋体";
+	margin: 0px;
+	color: #666;
+}
+form {
+	margin: 0px;
+	padding: 0px;
+}
+ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+img {
+	border:0px;
+}
+a:link,a:visited {
+	color: #666;
+	text-decoration: none;
+}
+a:hover {
+	color: #666;
+	text-decoration: underline;
+}
+#main {
+	padding: 14px; 
+	background: none;
+	border: 0px solid #e0ccaf; 
+	width: auto; 
+	height: auto;
+	margin: 0px;
+	overflow: hidden;
+	padding: 4px;
+	position: relative;
+}
+.clr {
+	clear: both;
+}
+.none {
+	display: none;
+}
+.margin {
+	height: 10px;
+}
+.margin1 {
+	height: 12px;
+	_height: 0px;
+}
+#main_box {
+	width: auto;
+	height: auto;
+	border: 0px solid #e0ccaf; 
+	background: #fff;
+	padding: 3px 3px 0px 3px;
+}
+/* global end*/
+/*begin head*/
+#head {
+	width: 525px;
+	height: 100px;
+	overflow: hidden;
+	background: none;
+	border-bottom: 0px dotted #d5c99a;
+	margin: 0px 0px 3px 0px;
+	display: none;
+}
+.head_top {
+	width: 525px;
+	height: 58px;
+	overflow: hidden;
+}
+.logo {
+	width: 130px;
+	height: 58px;
+	overflow: hidden;
+	float: left;
+}
+.logo h1 {
+	width: 130px;
+	height: 58px;
+	margin: 0px;
+	padding: 0px;
+}
+.head_top .city{
+	float: right;
+	width: 325px;
+	height: 44px;
+	overflow: hidden;
+	padding: 14px 0px 0px 0px;
+}
+.head_top .city ul {
+	width: 320px;
+	height: 28px;
+	padding: 0px 0px 0px 5px;
+	overflow: hidden;
+}
+.head_top .city ul li {
+	float: left;
+}
+.head_top .licity {
+	width: 65px;
+	height: 28px;
+	line-height: 20px;
+	color: #3e89c9;
+}
+.head_top .licity a:link,.head_top .licity a:visited,.head_top .licity a:hover {
+	color: #3e89c9;
+	text-decoration: underline;
+}
+.head_top .libutton {
+	width: 10px;
+	height: 10px;
+	overflow: hidden;
+	padding: 5px 15px 13px 0px;
+}
+.head_top .litext {
+	width: 65px;
+	height: 28px;
+	line-height: 22px;
+	color: #b80000;
+	overflow: hidden;
+	margin: 0px 10px 0px 0px;
+	text-align: center;
+	background: url(/images/aliwangwang/head_libg.gif) no-repeat;
+}
+.head_top .litext a:link,.head_top .litext a:visited,.head_top .litext a:hover {
+	color: #683700;
+	text-decoration: none;
+}
+.head_top .message {
+	width: 310px;
+	height: 16px;
+	line-height: 16px;
+	padding: 0px 15px 0px 0px;
+	text-align: right;
+}
+.head_top .message a:link,.head_top .message a:visited,.head_top .message a:hover {
+	color: #3e89c9;
+	text-decoration: underline;
+}
+.head_top .message strong {
+	color: #b80000;
+}
+.search {
+	width: 500px;
+	height: 28px;
+	overflow: hidden;
+	padding: 5px 0px 0px 12px;
+}
+.search ul li {
+	float: left;
+}
+.search .lileft {
+	width: 108px;
+	height: 20px;
+	overflow: hidden;
+	padding: 4px 0px;
+}
+.search select {
+	color: #666;
+}
+.search .licenter {
+	width: 303px;
+	height: 20px;
+	overflow: hidden;
+	padding: 4px 0px 4px 10px;
+}
+.search .liinput {
+	width: 287px;
+	height: 18px;
+	line-height: 18px;
+	color: #666;
+	padding: 0px 0px 0px 3px;
+}
+.search .liright {
+	padding: 2px 0px 0px 0px;
+}
+/*begin city*/
+.city_list {
+	border: 1px solid #ccc;
+	width: 330px;
+	background: #fff;
+	padding: 0px 10px 10px 10px;
+	height: 250px;
+	z-index: 199;
+	left: 100px;
+	top: 60px;
+	position: absolute;
+}
+.city_list ul {	
+	height: auto;
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+}
+.city_list ul li {
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	white-space: nowrap;
+	float: left;
+	padding: 0px 5px 0px 0px;
+}
+.city_list strong {
+	color: #ae0000;
+	font-weight: 400;
+	height: 30px;
+	line-height: 30px;
+}
+.city_list ul li strong a:link,.city_list ul li strong a:visited,.city_list strong ul li a:hover {
+	color: #ae0000;
+	font-weight: 400;
+	text-decoration: underline;	
+}
+.city_list ul li a:link,.city_list ul li a:visited,.city_list ul li a:hover {
+	color: #373400;
+	text-decoration: underline;	
+}
+/*end city*/
+/*end head*/
+/*begin nav*/
+.nav {
+	width: 516px;
+	height: 24px;
+	overflow: hidden;
+	padding: 0px 0px 5px 4px;
+	display: block;
+}
+.nav ul {
+	width: 488px;
+	height: 22px;
+	line-height: 22px;
+	overflow: hidden;
+	border: 1px solid #d1c199;
+	background: url(/images/aliwangwang/nav_bg.gif) repeat-x;
+	padding: 0px 0px 0px 26px;
+}
+.nav ul li {
+	float: left;
+	color: #683700;
+	padding: 3px 5px 0px 0px;
+	line-height: 19px;
+	width: auto;
+}
+.nav a:link,.nav a:visited,.nav a:hover {
+	color: #683700;
+}
+.nav strong {
+	color: #960000;
+	font-weight: 400;
+}
+/*end nav*/
+/*begin left*/
+#left_hot {
+	width: 198px;
+	height: 297px;
+	float: left;
+	padding: 0px 10px 0px 5px;
+	z-index: 1;
+	overflow: hidden;
+	background: url(/images/aliwangwang/left_bg.gif) right top no-repeat;
+}
+#left {
+	width: 198px;
+	height: 317px;
+	float: left;
+	overflow: hidden;
+	padding: 0px 10px 0px 5px;
+	z-index: 1;
+	background: url(/images/aliwangwang/left_bg.gif) right top no-repeat;
+}
+#left_discount {
+	width: 158px;
+	height: 317px;
+	float: left;
+	overflow: hidden;
+	padding: 0px 10px 0px 5px;
+	z-index: 1;
+	background: url(/images/aliwangwang/left_bg.gif) right top no-repeat;
+}
+h2 {
+	color: #b80000;
+	font-size: 12px;
+	font-weight: 600;
+	margin: 0px;
+	padding: 5px 0px 0px 0px;
+	line-height: 25px;
+}
+h2 a:link,h2 a:visited,h2 a:hover {
+	color: #b80000;
+	text-decoration: none;
+}
+/*end left*/
+#right {
+	width: 300px;
+	height: 297px;
+	float: right;
+}
+#right_discount {
+	width: 345px;
+	height: 297px;
+	float: right;
+}
+#right_discount h2 a:link,#right_discount h2 a:visited,#right_discount h2 a:hover {
+	color: #666;
+	text-decoration: underline;
+}
+/*begin page*/
+.page {
+	width: 296px;
+	color: #b50000;
+	height: 22px;	
+	overflow: hidden;
+	text-align: right;
+	margin: 0px 0px 0px 0px;
+	border-top: 1px dotted #d5c99a;
+	padding: 7px 6px 0px 0px;
+}
+.page1 {
+	width: 296px;
+	color: #b50000;
+	height: 22px;	
+	overflow: hidden;
+	text-align: right;
+	margin: 5px 0px 0px 0px;
+	border-top: 1px dotted #d5c99a;
+	padding: 12px 6px 0px 0px;
+}
+.page2 {
+	width: 520px;
+	color: #b50000;
+	height: 22px;	
+	overflow: hidden;
+	text-align: right;
+	margin: 15px 0px 0px 0px;
+	border-top: 1px dotted #d5c99a;
+	padding: 12px 6px 0px 0px;
+}
+.page3 {
+	width: 520px;
+	color: #b50000;
+	height: 22px;	
+	overflow: hidden;
+	text-align: right;
+	margin: 10px 0px 0px 0px;
+	border-top: 1px dotted #d5c99a;
+	padding: 12px 6px 0px 0px;
+}
+.page ul,.page1 ul,.page2 ul,.page3 ul {
+	float: right;
+}
+.page ul li,.page1 ul li,.page2 ul li,.page3 ul li {
+	border: 1px solid #dfb245;
+	float: left;
+	height: 15px;
+	line-height: 15px;
+	margin-left: 5px;
+	padding: 1px 3px;
+	width: auto;
+}
+.page a:link,.page a:visited,.page1 a:link,.page1 a:visited,.page2 a:link,.page2 a:visited,.page3 a:link,.page3 a:visited {
+	color: #665a17;
+}
+.page a:hover,.page1 a:hover,.page2 a:hover,.page3 a:hover {
+	color: #665a17;
+}
+.page .input,.page1 .input,.page2 .input,.page3 .input {
+	width: 20px;
+	border: 0px;
+	overflow: hidden;
+	height: 12px;
+	_height: 11px;
+	font-size: 11px;
+}
+/*end page*/
+/*优惠券页面开始*/
+/*begin left*/
+.left_img {
+	width: 198px;
+	height: 95px;
+	overflow: hidden;
+}
+.left_img img {
+	border: 0px;
+	float: left;
+	height: 82px;
+	margin: 4px 20px 4px 10px;
+	overflow: hidden;
+	width: 68px;
+}
+#left_hot .left_text {
+	width: 198px;
+	height: 65px;
+	overflow: hidden;
+	line-height: 20px;
+	border-bottom: 1px dotted #d5c99a;
+}
+#left_hot .left_text ul li {
+	width: 198px;
+	height: 20px;
+	overflow: hidden;
+	color: #666;
+}
+#left_hot .tag {
+	width: 198px;
+	height: 100px;
+	line-height: 22px;
+	overflow: hidden;
+}
+#left_hot .tag .big a:link,#left_hot .tag .big a:visited,#left_hot .tag .big a:hover {
+	color: #aa4800;
+	font-weight: 600;
+}
+/*end left*/
+/*begin right_box*/
+.right_box {
+	width: 90px;
+	height: 130px;
+	padding: 5px 5px 0px 5px;
+	overflow: hidden;
+	float: left;
+	text-align: center;
+}
+.right_img {
+	width: 66px;
+	height: 80px;
+	overflow: hidden;
+	text-align: center;
+	line-height: 80px;
+	border: 1px solid #bbb;
+	margin: 0px 12px;
+	display: table-cell;
+	vertical-align: middle; 
+}
+.right_img img {
+	vertical-align:middle;
+	margin-top: expression((80-this.height)/2);  
+}
+
+.right_box ul {
+	line-height: 13px;
+	padding: 4px 0px 0px 0px;
+}
+.right_box ul li {
+	width: 90px;
+	height: 13px;
+	overflow: hidden;
+	font-size: 10px;
+}
+.right_box .lititle a:link,.right_box .lititle a:visited {
+	color: #960000;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 12px;
+	width: 90px;
+	height: 16px;
+	overflow: hidden;
+	line-height: 16px;
+}
+.right_box .lititle a:hover {
+	color: #960000;
+	font-weight: 600;
+	font-size: 12px;
+	width: 90px;
+	height: 16px;
+	overflow: hidden;
+	line-height: 16px;
+}
+.right_box a:link,.right_box a:visited,.right_box a:hover {
+	color: #3e89c9;
+	text-decoration: underline;
+}
+/*end right_box*/
+/*优惠券页面结束*/
+/*折扣信息页面开始*/
+/*折扣信息开始*/
+#left_discount .discount {
+	width: 158px;
+	height: 298px;
+	overflow: hidden;
+	padding: 2px 0px 0px 0px;
+}
+#left_discount .discount ul li {
+	width: 158px;
+	height: 17px;
+	line-height: 17px;
+	overflow: hidden;
+}
+#left_discount .discount .li_title a:link,#left_discount .discount .li_title a:visited,#left_discount .discount .li_title a:hover {
+	color: #960000;
+}
+#left_discount .discount .li_time {
+	text-align: right;
+	padding: 0px 3px 4px 0px;
+	width: 155px;
+}
+/*折扣信息结束*/
+/*最新折扣开始*/
+#right_discount .discount {
+	width: 340px;
+	height: 240px;
+	overflow: hidden;
+	padding: 2px 5px 0px 0px;
+}
+#right_discount .discount_box {	
+	width: 340px;
+	height: 36px;
+	line-height: 18px;
+	overflow: hidden;
+	padding: 2px 0px;
+}
+#right_discount .discount_box ul {
+	width: 240px;
+	height: 36px;
+	float: left;
+	overflow: hidden;
+}
+#right_discount .discount .li_title a:link,#right_discount .discount .li_title a:visited,#right_discount .discount .li_title a:hover {
+	color: #960000;
+	font-weight: 600;
+	widht: 240px;
+	height: 18px;
+	line-height: 18px;
+}
+#right_discount .discount .li_time {
+	padding: 0px 0px 20px 0px;
+}
+#right_discount .discount_box .li_button {
+	width: 95px;
+	height: 19px;
+	overflow: hidden;
+	float: right;
+	padding: 8px 0px 9px 0px;
+}
+/*最新折扣结束*/
+/*折扣信息页面结束*/
+/*定制页面开始*/
+#left .custom {
+	width: 198px;
+	height: 298px;
+	overflow: hidden;
+	padding: 2px 0px 0px 0px;
+}
+#left .custom ul li {	
+	float: left;
+	line-height: 16px;
+}
+#left .custom .li_input {
+	width: 24px;
+	height: 16px;
+	overflow: hidden;
+	padding: 4px 0px 2px 0px;
+	*padding: 2px 0px 2px 0px;
+}
+#left .custom .li_sort {
+	width: 75px;
+	height: 16px;
+	overflow: hidden;
+	padding: 6px 0px 0px 0px;
+	color: #aa4800;
+}
+#left .custom .li_line {
+	width: 158px;
+	height: 16px;
+	padding: 0px 0px 0px 40px;
+	overflow: hidden;
+	color: #666;
+	line-height: 16px;
+}
+#left .custom .li_button {
+	width: 140px;
+	height: 19px;
+	overflow: hidden;
+	padding: 10px 0px 0px 40px;
+}
+/*定制页面结束*/
+/*详细页面开始*/
+#detail {
+	width: auto;
+	height: auto;
+	float: left;
+	background: none;
+	padding: 0px 15px 0px 5px;
+	z-index: 1;
+}
+.title {
+	width: 430px;
+	height: 50px;
+	border-bottom: 1px dotted #d5c99a;
+	overflow: hidden;
+	text-align: center;
+	line-height: 16px;	
+}
+.title h2 {
+	margin: 0px;
+	padding: 0px;
+	width: 430px;
+	line-height: 20px;
+	height: 20px;
+	padding: 8px 0px 0px 0px;
+	overflow: hidden;
+	color: #960000;
+}
+.detail_img {
+	width: auto;
+	height: auto;
+	text-align: center;
+	line-height: 270px;
+	padding: 15px 0px;
+	display: block;
+}
+.detail_img img{
+	width: auto;
+	height: auto;
+}
+.detail_text {
+	width: 430px;
+	height: 280px;
+	overflow: hidden;
+	line-height: 20px;
+	margin: 10px 0px;
+}
+.detail_text p {
+	margin: 0px;
+	padding: 0px;
+	text-indent: 25px;
+}
+#sidebar {
+	width: 70px;
+	height: 54px;
+	float: right;
+	line-height: 25px;
+	padding: 279px 0px 0px 3px;
+	display: none;
+}
+#sidebar ul li {
+	height: 25px;
+}
+/*详细页面结束*/
+/*推荐好友面面开始*/
+.title_send {
+	width: 430px;
+	height: 78px;
+	border-bottom: 1px dotted #d5c99a;
+	overflow: hidden;
+	line-height: 24px;
+	padding: 6px 0px;
+}
+.title_send h2 {
+	font-weight: 600;
+	margin: 0px;
+	font-size: 12px;
+	padding: 0px;
+
+	color: #666;
+}
+.title_send p {
+	width: 405px;
+	height: 24px;
+	overflow: hidden;
+	text-indent: 25px;
+	margin: 0px;
+	padding: 0px;
+}
+.title_send strong,.detail_send strong {
+	color: #b80000;
+	font-weight: 400;
+}
+.detail_send {
+	width: 430px;
+	height: 250px;
+	overflow: hidden;
+	line-height: 20px;
+	margin: 10px 0px 0px 0px;
+}
+.detail_send h3 {
+	width: 430px;
+	height: 22px;
+	line-height: 22px;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600;
+}
+.detail_send ul li {
+	float: left;
+}
+.detail_send .li_left {
+	width: 105px;
+	height: 22px;
+	line-height: 22px;
+	overflow: hidden;
+	padding: 6px 20px 6px 0px;
+	text-align: right;
+}
+.detail_send .li_right {
+	width: 305px;
+	height: 22px;
+	overflow: hidden;
+	line-height: 22px;
+	padding: 6px 0px;
+}
+.detail_send .input {
+	width: 230px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	border: 1px solid #7f9db9;
+}
+.detail_send .li_left1 {
+	width: 105px;
+	height: 52px;
+	line-height: 22px;
+	overflow: hidden;
+	padding: 6px 20px 6px 0px;
+	text-align: right;
+}
+.detail_send .li_right1 {
+	width: 305px;
+	height: 52px;
+	overflow: hidden;
+	line-height: 22px;
+	padding: 6px 0px;
+}
+.detail_send .textarea {
+	width: 230px;
+	height: 50px;
+	line-height: 20px;
+	overflow: hidden;
+	border: 1px solid #7f9db9;
+	color: #333;
+}
+/*搜索页面开始*/
+#left_searchdiscount {
+	width: 250px;
+	height: 267px;
+	float: left;
+	overflow: hidden;
+	padding: 0px 10px 0px 5px;
+	z-index: 1;
+	background: url(/images/aliwangwang/left_bg1.gif) right top no-repeat;
+}
+#left_searchcoupon {
+	width: 250px;
+	height: 272px;
+	float: left;
+	overflow: hidden;
+	padding: 7px 10px 0px 5px;
+	z-index: 1;
+	background: url(/images/aliwangwang/left_bg1.gif) right 7px no-repeat;
+}
+#right_searchdiscount {
+	width: 255px;
+	height: 267px;
+	float: right;
+	padding: 0px 0px 0px 5px;
+}
+#right_searchcoupon {
+	width: 255px;
+	height: 267px;
+	float: right;
+	padding: 7px 0px 0px 5px;
+}
+#left_searchdiscount .discount,#right_searchdiscount .discount {
+	width: 250px;
+	height: 265px;
+	overflow: hidden;
+	padding: 2px 5px 0px 0px;
+}
+#left_searchdiscount .discount_box,#right_searchdiscount .discount_box {	
+	width: 250px;
+	height: 36px;
+	line-height: 18px;
+	overflow: hidden;
+	padding: 4px 0px;
+}
+#left_searchdiscount .discount_box ul {
+	width: 155px;
+	height: 36px;
+	float: left;
+	overflow: hidden;
+}
+#right_searchdiscount .discount_box ul {
+	width: 150px;
+	height: 36px;
+	float: left;
+	overflow: hidden;
+	padding: 0px 0px 0px 5px;
+}
+#left_searchdiscount .discount .li_title a:link,#left_searchdiscount .discount .li_title a:visited,#left_searchdiscount .discount .li_title a:hover,#right_searchdiscount .discount .li_title a:link,#right_searchdiscount .discount .li_title a:visited,#right_searchdiscount .discount .li_title a:hover {
+	color: #960000;
+	font-weight: 600;
+	widht: 150px;
+	height: 18px;
+	line-height: 18px;
+}
+#left_searchdiscount .discount .li_time,#right_searchdiscount .discount .li_time {
+	padding: 0px 0px 20px 0px;
+}
+#left_searchdiscount .discount_box .li_button {
+	width: 95px;
+	height: 19px;
+	overflow: hidden;
+	float: right;
+	padding: 8px 0px 9px 0px;
+}
+#right_searchdiscount .discount_box .li_button {
+	width: 95px;
+	height: 19px;
+	overflow: hidden;
+	float: right;
+	padding: 8px 0px 9px 0px;
+	text-align: right;
+}
+.search_coupon {
+	width: 248px;
+	height: 82px;
+	overflow: hidden;
+	padding: 5px 0px;
+}
+.search_couponimg {
+	width: 66px;
+	height: 80px;
+	overflow: hidden;
+	float: left;
+	border: 1px solid #bbb;
+	line-height: 80px;
+	display: table-cell;
+	vertical-align: middle; 
+}
+.search_couponimg img {
+	vertical-align:middle;
+	margin-top: expression((80-this.height)/2);  
+}
+.search_coupontext {
+	width: 160px;
+	height: 82px;
+	float: right;
+	padding: 0px 10px 0px 0px;
+}
+.coupon_title {
+	width: 160px;
+	height: 18px;
+	line-height: 16px;
+	font-weight: 600;
+	color: #960000;
+}
+.coupon_title a:link,.coupon_title a:visited,.coupon_title a:hover {
+	color: #960000;
+}
+.coupon_text {
+	width: 160px;
+	height: 18px;
+	line-height: 18px;
+	color: #666;
+}
+.coupon_button {
+	width: 160px;
+	height: 19px;
+	padding: 10px 0px 0px 0px;
+	overflow: hidden;
+}
+/*搜索页面结束*/

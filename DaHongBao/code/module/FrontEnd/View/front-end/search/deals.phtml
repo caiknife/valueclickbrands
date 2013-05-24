@@ -1,0 +1,36 @@
+<?php
+$this->headTitle($this->keyword."_大红包优惠券");
+$this->headMeta()->appendName("keywords", $this->keyword);
+$this->headMeta()->appendName("description", "大红包优惠券网站第一时间提供".$this->keyword."信息，让用户享受到真正的促俏优惠。");
+$this->headLink()->prependStylesheet($this->basePath().'/styles/CN/coupon.css');
+?>
+<div class="main">
+    <div class="breadcrumb ">
+        <span>当前位置：</span> <a href="/">大红包 </a>   &gt;  <a href="<?php print $this->dealsUrl;?>">精选促销</a>  &gt;  <?php print $this->keyword;?>
+    </div>
+
+    <div class="content">
+        <div class="contentLeft">
+            <?php if ($this->dealsList):?>
+            <div class="articleList">
+                <h2>精选促销</h2>
+                <div class="sortBy">排序： 
+                    <a <?php if ($this->sortby == 'new'):?>class="select"<?php endif;?> href="<?php print $this->sortbyNew;?>">最新的</a>
+                    <a <?php if ($this->sortby == 'hot'):?>class="select"<?php endif;?> href="<?php print $this->sortbyHot;?>">最受欢迎的</a>
+                </div>
+                <?php print $this->partial('front-end/default/dealsList.phtml'); ?>
+                <?php echo $this->paginationControl($this->paginator, 'Sliding', 'front-end/default/pagestyle.phtml', array('params' => array('q' => $this->urlKeyword, 'sortby' => $this->sortby))); ?>
+            </div>
+            <?php else:?>
+            <div class="merchantCoupon searchDetailContent">
+                <h2>暂无<span><?php print $this->keyword;?></span>相关结果：</h2>
+            </div>
+            <?php endif;?>
+        </div>
+
+         <div class="sidebar">
+            <?php print $this->partial('front-end/default/hotCouponList.phtml'); ?>
+         </div>
+         <div class="cl"></div>
+    </div>
+</div>

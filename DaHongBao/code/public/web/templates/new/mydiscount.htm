@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>我的折扣信息--大红包</title>
+<META NAME="description" CONTENT="">
+<META NAME="keywords" CONTENT="">
+<link href="/css/myhongbao.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<!--头部开始-->
+{include file="new/head_myhongbao.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="myhongbao_title">
+		<a href="/">首页</a> &#187; <h1>我的折扣信息</h1>
+	</div>
+	
+	<div id="mycoupon">
+		<div id="mycoupon_title">
+			<ul>
+				<li><a href="/profile/mydiscount.php">我的折扣信息</a></li>
+				<li><a href="/profile/mydiscount.php?switch=myadddiscount">我发布的折扣信息</a></li>
+				<li><a href="/profile/mydiscount.php?switch=myuseradddiscount">等待审核的折扣信息</a></li>
+				<li><a href="/profile/mydiscount.php?switch=myfavordiscount">我收藏的折扣信息</a></li>
+				<li><a href="/useradddiscount.php" target=_blank>发布折扣信息</a></li>
+			</ul>
+		</div>
+		<!--begin mycoupon_left-->
+		<div id="mycoupon_left">
+			
+			<div class="mycoupon_leftbox">
+				<div class="mycoupon_title"><h2>用户头像</h2></div>
+				<img src="{$touxiang}" /><br />{$userinfo.username}
+			</div>
+			<div class="mycoupon_leftbox">
+				<div class="mycoupon_title"><h2>当前状态</h2></div>
+				<ul>
+					<li>当前拥有红包数：{$userhb} 个</li>
+					
+				</ul>
+			</div>
+		</div>
+		<!--end mycoupon_left-->
+		
+		<!--begin mycoupon_right-->
+		<div id="mycoupon_right">
+			{if $smarty.get.switch=="" && empty($userdiscountlist) && empty($useradddiscountlist) && empty($userfavordiscountlist)}
+			<div class="mycoupon_rightbox">
+				<div class="mycoupon_title"><h2>我的折扣信息</h2></div>
+				<ul>
+					<li class="liline">你还没有发布和收藏过折扣信息。</li>
+				</ul>
+			</div>
+			{/if}
+		
+			{if $userdiscountlist || $smarty.get.switch=="myadddiscount"}
+			<div class="mycoupon_rightbox">
+				<div class="mycoupon_title"><h2>我发布的折扣信息</h2>{if $smarty.get.switch==""}<a href="/profile/mydiscount.php?switch=myadddiscount">>>更多</a>{else}{/if}</div>
+				<ul>
+					{if $userdiscountlist}
+					<li class="lititle1">ID</li>
+					<li class="lititle2">折扣信息标题</li>
+					<li class="lititle3">开始时间</li>
+					<li class="lititle4">过期时间</li>
+					{section name=loop loop=$userdiscountlist}
+					<li class="li1 {if $smarty.section.loop.iteration%2==0}libg{/if}">{$userdiscountlist[loop].Coupon_}</li>
+					<li class="li2 {if $smarty.section.loop.iteration%2==0}libg{/if}"><a href="/discount_detail-{$userdiscountlist[loop].Coupon_}.html">{$userdiscountlist[loop].Descript}</a></li>
+					<li class="li3 {if $smarty.section.loop.iteration%2==0}libg{/if}">{$userdiscountlist[loop].StartDate}</li>
+					<li class="li4 {if $smarty.section.loop.iteration%2==0}libg{/if}">{if $userdiscountlist[loop].ExpireDate=='0000-00-00'}永久有效{else}{$userdiscountlist[loop].ExpireDate}{/if}</li>
+					{/section}
+					{else}
+					<li class="liline">你目前没有发布的折扣信息，<a href="/useradddiscount.php">点击这里立即发布。</a></li>
+					{/if}
+				</ul>
+			</div>	
+			{if $userdiscountlist}
+			{$pageStr}
+			{/if}
+			{/if}
+			{if $useradddiscountlist || $smarty.get.switch=="myuseradddiscount"}
+			<div class="mycoupon_rightbox">
+				<div class="mycoupon_title"><h2>等待审核折扣信息</h2>{if $smarty.get.switch==""}<a href="/profile/mydiscount.php?switch=myuseradddiscount">>>更多</a>{else}{/if}</div>
+				<ul>
+					{if $useradddiscountlist}
+					<li class="lititle1">ID</li>
+					<li class="lititle2">折扣信息标题</li>
+					<li class="lititle3">状态</li>
+					<li class="lititle4"></li>
+					{section name=loop loop=$useradddiscountlist}
+					<li class="li1 {if $smarty.section.loop.iteration%2==0}libg{/if}">{$useradddiscountlist[loop].Coupon_}</li>
+					<li class="li2 {if $smarty.section.loop.iteration%2==0}libg{/if}">{$useradddiscountlist[loop].Descript}</a></li>
+					<li class="li3 {if $smarty.section.loop.iteration%2==0}libg{/if}">{if $useradddiscountlist[loop].isActive==0}等待审核中{else}审核被拒绝{/if}</li>
+					<li class="li4 {if $smarty.section.loop.iteration%2==0}libg{/if}"></li>
+					{/section}
+					{else}
+					<li class="liline">目前没有等待审核的折扣信息。</li>
+					{/if}
+				</ul>
+			</div>	
+			{if $useradddiscountlist}
+			{$pageStr}
+			{/if}
+			{/if}
+			{if $userfavordiscountlist || $smarty.get.switch=="myfavordiscount"}
+			<div class="mycoupon_rightbox">
+				<div class="mycoupon_title"><h2>我收藏的折扣信息</h2>{if $smarty.get.switch==""}<a href="/profile/mydiscount.php?switch=myfavordiscount">>>更多</a>{else}{/if}</div>
+				<ul>
+					{if $userfavordiscountlist}
+					<li class="lititle1">ID</li>
+					<li class="lititle2">折扣信息标题</li>
+					<li class="lititle3">开始时间</li>
+					<li class="lititle4">过期时间</li>
+					{section name=loop loop=$userfavordiscountlist}
+					<li class="li1 {if $smarty.section.loop.iteration%2==0}libg{/if}">{$userfavordiscountlist[loop].Coupon_}</li>
+					<li class="li2 {if $smarty.section.loop.iteration%2==0}libg{/if}"><a href="/discount_detail-{$userfavordiscountlist[loop].Coupon_}.html">{$userfavordiscountlist[loop].Descript}</a></li>
+					<li class="li3 {if $smarty.section.loop.iteration%2==0}libg{/if}">{$userfavordiscountlist[loop].StartDate}</li>
+					<li class="li4 {if $smarty.section.loop.iteration%2==0}libg{/if}">{if $userfavordiscountlist[loop].ExpireDate=='0000-00-00'}永久有效{else}{$userfavordiscountlist[loop].ExpireDate}{/if}</li>
+					{/section}
+					{else}
+					<li class="liline">你目前没有收藏的折扣信息。</li>
+					{/if}
+				</ul>
+			</div>
+			{if $userfavordiscountlist}
+			{$pageStr}
+			{/if}
+			{/if}
+		</div>
+		<!--end mycoupon_right-->
+	</div>
+</div>
+<!--主体内容结束-->
+<!--脚部开始-->
+{include file="new/foot.htm"}
+<!--脚部结束-->

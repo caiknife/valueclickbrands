@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{$topicrow.title}</title>
+<META NAME="description" CONTENT="{$topicrow.description}">
+<META NAME="keywords" CONTENT="{$topicrow.keywords}">
+<link href="../css/subject.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<!--头部开始-->
+{include file="new/head_topic.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <a href="/topic.html">专题首页</a> > <h1>{$topicrow.title}专题页面</h1>
+	</div>
+	<!--category_title 导航结束-->
+	
+	<!--subject 具体内容开始-->
+	<div id="subject">
+		<!--本期专题简介开始-->
+		<div id="banner">
+			<img src="{$__IMAGE_SRC}images/topic/topichead_{$topicrow.id}.gif" onerror="this.src='/images/topicnull.gif'"/>
+			<div class="banner_box">
+				<div class="banner_left"><img src="../images/sub_jianjie.gif" alt="专题简介" /></div><p>{$topicrow.topicdetail}</p>
+			</div>
+		</div>
+		<!--本期专题简介结束-->
+		<!--美食专题开始-->
+		{section name=loop loop=$topiccontent}
+		<div class="subject_box">
+			<div class="subject_bar"><img src="{$__IMAGE_SRC}images/topic/{$topiccontent[loop].id}/topic10.gif" width="70" height="364" onerror="this.src='/images/tnull.gif'"/></div>			
+			<div class="subject_main">
+				<!--美食类专题内容开始-->
+				<div class="subject_mid">
+					<div class="subject_title"><span><a href="/topicinfo-{$topiccontent[loop].id}.html">更多</a></span><img src="../images/sub_icn{$smarty.section.loop.iteration}.gif" alt="1" /><h2>{$topiccontent[loop].contenttitle}</h2></div>					
+					<div class="subject_midimg"><img src="{$__IMAGE_SRC}images/topic/{$topiccontent[loop].id}/topic11.gif" onerror="this.src='/images/tnull.gif'"/></div>
+					<div class="subject_midtext">
+						{section name=loop1 loop=$topiccontent[loop].contentarray start=0 max=3}
+						<h3><a href="/news---Ca-{$topiccontent[loop].contentarray[loop1].NameURL}--Ci-{$topiccontent[loop].contentarray[loop1].fid}--number-{$topiccontent[loop].contentarray[loop1].tid}.html" target="_blank">{$topiccontent[loop].contentarray[loop1].subject}</a></h3>
+						<p class="border"><a href="/news---Ca-{$topiccontent[loop].contentarray[loop1].NameURL}--Ci-{$topiccontent[loop].contentarray[loop1].fid}--number-{$topiccontent[loop].contentarray[loop1].tid}.html" target="_blank">{$topiccontent[loop].contentarray[loop1].content}</a></p>
+						{/section}
+					</div>
+				</div>
+				<!--美食类专题内容结束-->
+				<!--相关优惠券标题开始-->
+				<div class="subject_right">
+					<div class="subject_title"><span><a href="/topiccoupon-{$topiccontent[loop].id}.html">更多</a></span><img src="../images/sub_icnzero.gif" alt="0" /><h2>{$topiccontent[loop].coupontitle}</h2></div>
+					<div class="subject_rightimg"><img src="{$__IMAGE_SRC}images/topic/{$topiccontent[loop].id}/topic12.gif" onerror="this.src='/images/tnull.gif'"/></div>
+					<div class="subject_righttext">
+					<ul>
+						{section name=loop2 loop=$topiccontent[loop].couponarray start=0 max=5}
+						<li><a href="{$topiccontent[loop].couponarray[loop2].couponUrl}" target="_blank">·{$topiccontent[loop].couponarray[loop2].Descript}</a></li>
+						{/section}
+					</ul>
+					</div>
+					<div class="clr"></div>
+					<div class="subject_rightimg"><img src="{$__IMAGE_SRC}images/topic/{$topiccontent[loop].id}/topic13.gif" onerror="this.src='/images/tnull.gif'"/></div>
+					<div class="subject_righttext">
+					<ul>
+						{section name=loop2 loop=$topiccontent[loop].couponarray start=5 max=5}
+						<li><a href="{$topiccontent[loop].couponarray[loop2].couponUrl}" target="_blank">·{$topiccontent[loop].couponarray[loop2].Descript}</a></li>
+						{/section}
+					</ul>
+					</div>
+					<div class="clr"></div>	
+			
+				</div>	
+				<!--相关优惠券标题结束-->			
+			</div>
+		</div>
+		<!--美食专题结束-->
+		<div class="clr"></div>
+		{/section}
+		
+
+
+
+		<!--精选优惠专题开始-->
+		<!-- <div class="handpick">
+			<div class="subject_title"><img src="../images/sub_icnzero.gif" alt="0" /><h2>精选优惠专题</h2></div>
+			<div class="handpick_box">
+				<div class="handpick_minbox">
+					<div class="handpick_img"><img src="../images/sub_handpick.gif" alt="精选优惠专题" /></div>
+					<div class="handpick_text">
+						<h3>自定义栏目标题</h3>
+						<p>该标题内容简 说起“国宴”，多少有点神秘感，因为外交无小事，“国宴”更须规格高，礼仪性重。“说神秘，也不神秘，说不神秘，也神秘”，曾在人民大会堂主持了几十年“国宴”……</p>
+					</div>
+				</div>
+				<div class="handpick_minbox">
+					<div class="handpick_img"><img src="../images/sub_handpick.gif" alt="精选优惠专题" /></div>
+					<div class="handpick_text">
+						<h3>自定义栏目标题</h3>
+						<p>该标题内容简 说起“国宴”，多少有点神秘感，因为外交无小事，“国宴”更须规格高，礼仪性重。“说神秘，也不神秘，说不神秘，也神秘”，曾在人民大会堂主持了几十年“国宴”……</p>
+					</div>
+				</div>
+				<div class="handpick_minbox">
+					<div class="handpick_img"><img src="../images/sub_handpick.gif" alt="精选优惠专题" /></div>
+					<div class="handpick_text">
+						<h3>自定义栏目标题</h3>
+						<p>该标题内容简 说起“国宴”，多少有点神秘感，因为外交无小事，“国宴”更须规格高，礼仪性重。“说神秘，也不神秘，说不神秘，也神秘”，曾在人民大会堂主持了几十年“国宴”……</p>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<!--精选优惠专题结束-->
+	</div>
+	<!--subject 具体内容结束-->
+</div>
+<!--主体内容结束-->
+{include file="new/foot.htm"}

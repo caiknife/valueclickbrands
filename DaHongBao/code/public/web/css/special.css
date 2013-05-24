@@ -1,0 +1,486 @@
+@charset "gb2312";
+/* CSS Document */
+@import url(common.css); 
+#head {
+	height: 163px;
+	position: relative;
+}
+#kejiji_messleft {
+	width: 225px;
+	float: left;
+	height: 28px;
+	padding-left: 10px;		
+}
+#kejiji_messleft ul li {
+	float: left;
+	padding: 0px 4px;
+	color: #ae0000;
+}
+#kejiji_messleft ul li a:link,#kejiji_messleft ul li a:visited,#kejiji_messleft ul li a:hover {
+	color: #ae0000;
+	text-decoration: underline;
+}
+#kejiji_messleft .kejiji_place {
+	background: url(../images/kejiji_place.gif) no-repeat 0px 8px;
+	padding-left: 10px;
+	color: #393939;
+}
+#nav_discount {
+	height: 12px;	
+	background: url(../images/discount/nav_discount.gif) repeat-x #eacf9a;
+	position: relative;
+}
+#nav_discount ul {
+	margin: 0px 7px;
+	line-height: 11px;
+	height: 11px;
+	border-bottom: 1px solid #9d7c49;
+}
+/*城市切换开始*/
+#head .city {
+	border: 1px solid #ccc;
+	width: 330px;
+	background: #fff;
+	padding: 0px 10px 10px 10px;
+	height: 250px;
+	z-index: 5;
+	left: 120px;
+	top: 163px;
+	position: absolute;
+}
+#head .city ul {	
+	height: auto;
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+}
+#head .city ul li {
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	white-space: nowrap;
+	float: left;
+	padding: 0px 5px 0px 0px;
+}
+#head .city strong {
+	color: #ae0000;
+	font-weight: 400;
+	height: 20px;
+}
+#head .city ul li strong a:link,#head .city ul li strong a:visited,#head .city strong ul li a:hover {
+	color: #ae0000;
+	font-weight: 400;
+	text-decoration: underline;	
+}
+#head .city ul li a:link,#head .city ul li a:visited,#head .city ul li a:hover {
+	color: #373400;
+	text-decoration: underline;	
+}
+/*城市切换结束*/
+#special {
+	width: 975px;
+	height: auto;
+	overflow: hidden;
+	margin-top: 7px;
+	padding: 7px;	
+	border: 1px solid #e0cdaf;
+	text-align: center;
+}
+#special_box {
+	width: 975px;
+	height: auto;
+	overflow: hidden;
+	border: 1px solid #e4ccb2;
+}
+#banner {
+	width: 975px;
+	height: 282px;
+}
+#special_merry {
+	width: 975px;
+	height: auto;
+	overflow: auto;
+}
+#kejiji_messleft {
+	width: 225px;
+	float: left;
+	height: 28px;
+	padding-left: 10px;	
+}
+#kejiji_messleft ul li {
+	float: left;
+	padding: 0px 4px;
+	color: #ae0000;
+}
+#kejiji_messleft ul li a:link,#kejiji_messleft ul li a:visited,#kejiji_messleft ul li a:hover {
+	color: #ae0000;
+	text-decoration: underline;
+}
+#kejiji_messleft .kejiji_place {
+	background: url(../images/kejiji_place.gif) no-repeat 0px 8px;
+	padding-left: 10px;
+	color: #393939;
+}
+
+/*左侧开始*/
+#special_left {
+	width: 630px;
+	height: auto;
+	float: left;
+}
+#special_left .special_title {
+	width: 630px;
+	height: 91px;
+	overflow: hidden;
+}
+#special_left .special_box {
+	width: 630px;
+	height: 357px;
+	overflow: hidden;
+	background: url(../images/merry_leftbg.gif) no-repeat;	
+}
+#special_left .special_min {
+	width: 535px;
+	height: 342px;
+	margin-left: 90px;
+	margin-top: 15px;
+}
+.special_min .special_boxleft {
+	width: 195px;
+	height: 342px;
+	float: left;
+}
+.special_boxleft .special_img {
+	width: 185px;
+	height: 167px;
+	padding: 3px;
+	border: 1px solid #d6d6d6;
+	background: #fff;
+}
+.special_boxleft .special_img img{
+	width: 185px;
+	height: 167px;
+	overflow: hidden;
+}
+.special_boxleft ul {
+	width: 193px;
+	height: 177px;
+	overflow: hidden;
+	text-align: left;
+	padding-top: 6px;
+}
+.special_boxleft ul li {
+	width: 193px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+}
+#special_left ul li a:link,#special_left a:visited,#special_left ul li a:hover {
+	color: #000;
+} 
+#special_left .bring {
+	line-height: 24px;
+	height: 24px;
+}
+#special_left .bring a:link,#special_left .bring a:visited,#special_left .bring a:hover {
+	color: #ad1514;
+	font-weight: 600;
+	text-decoration: none;
+}
+#special_left .more {
+	width: 193px;
+	text-align: right;
+}
+#special_left .more a:link,#special_left .more a:visited,#special_left .more a:hover {
+	color: #ad1514;	
+	text-decoration: none;
+}
+.special_min .special_boxright {
+	width: 330px;
+	height: 357px;
+	float: right;
+	text-align: left;
+	overflow: hidden;
+}
+.special_boxright .special_text {
+	width: 330px;
+	height: auto;
+}
+.special_boxright h2 {
+	color: #ad1514;
+	font-size: 14px;
+	font-weight: 600;
+	display: inline;
+	width: 330px;
+}
+.special_text p {
+	margin: 6px 0px 1px 0px;
+	color: #683700;
+	text-indent: 25px;
+	height: 48px;
+	line-height: 16px;
+}
+#special_left .special_text p a:link,#special_left .special_text p a:visited,#special_left .special_text p a:hover {
+	color: #683700;
+}
+.special_boxright .border {
+	border-bottom: 1px solid #d4d4d2;
+	padding-bottom: 2px;
+}
+#special_left .special_text ul {
+	width: 330px;
+	height: 93px;
+	line-height: 18px;
+	overflow: hidden;
+}
+#special_left .special_text ul li {
+	overflow: hidden;
+	height: 18px;
+	float: left;
+}
+#special_left .special_text .bring {
+	line-height: 24px;
+	height: 24px;
+	width: 330px;
+}
+.special_text .line {
+	width: 165px;
+}
+#special_left .special_text .more {
+	width: 330px;
+	text-align: right;
+	height: 20px;
+}
+.special_text .bring a:link,.special_text .bring a:visited,.special_text .bring a:hover {
+	color: #ad1514;
+	font-weight: 600;
+	text-decoration: none;
+}
+.special_text .more a:link,.special_text .more a:visited,.special_text .more a:hover {
+	color: #ad1514;	
+	text-decoration: none;
+}
+/*google 广告开始*/
+.special_boxright .google_merry {
+	width: 330px;
+	height: 65px;	
+	padding-top: 6px;
+}
+.special_boxright .google_merry ul {
+	width: 330px;
+	height: 65px;
+	overflow: hidden;
+}
+.special_boxright .google_merry ul li {
+	float: left;
+}
+#special_left .google_merry .bring {
+	line-height: 20px;
+	height: 20px;
+	width: 330px;
+}
+.google_merry .line {
+	width: 330px;
+	height: 30px;
+	line-height: 15px;
+}
+#special_left .google_merry .google_url {
+	width: 265px;
+	height: 15px;
+	color: #b3b3b3;
+}
+.google_merry .img {
+	width: 65px;
+	height: 15px;
+}
+.google_merry .bring a:link,.google_merry .bring a:visited,.google_merry .bring a:hover {
+	color: #ad1514;
+	font-weight: 600;
+	text-decoration: none;
+}
+#special_left .google_merry .google_url a:link,#special_left .google_merry .google_url a:visited,#special_left .google_merry .google_url a:hover {
+	color: #b3b3b3;	
+	text-decoration: none;
+	height: 15px;
+}
+#special_left .merry_title {
+	width: 558px;
+	height: 67px;
+	overflow: hidden;
+	margin-left: 68px;	
+	margin-bottom: 22px;
+}
+#special_left .special_mbox {
+	width: 630px;
+	height: 390px;
+	overflow: hidden;
+	background: url(../images/merry_leftbg1.gif) no-repeat;
+	margin-top: -20px;
+}
+#special_left .special_mbox1 {
+	width: 630px;
+	height: 390px;
+	overflow: hidden;
+	background: url(../images/merry_leftbg2.gif) no-repeat;
+	margin-top: -20px;
+}
+/*google 广告开始*/
+/*左侧结束*/
+#special_right {
+	width: 337px;
+	height: auto;
+	float: right;	
+	text-align: left;
+}
+#special_right .special_title {
+	width: 337px;
+	height: 91px;
+	overflow: hidden;
+}
+#ploy {
+	width: 337px;
+	height: 150px;
+	background: url(../images/ploy_bg.gif) no-repeat 135px 0px;
+	padding-top: 18px;
+}
+#ploy .ploy_img {
+	width: 135px;
+	height: 122px;
+	padding: 2px;
+	border: 1px solid #d7d6d4;
+	overflow: hidden;
+	float: left;
+	background: #fff;
+}
+#ploy .ploy_img img {
+	width: 135px;
+	height: 122px;
+}
+#ploy .ploy_text {
+	width: 170px;
+	float: right;
+	height: 148px;
+	padding: 2px 12px 0px 0px;
+}
+#ploy h2 {
+	color: #ad1514;
+	font-size: 14px;
+	font-weight: 600;
+	display: inline;
+	width: 170px;
+	height: 20px;
+	line-height: 20px;
+}
+#ploy p {	
+	line-height: 18px;
+	margin: 0px;
+	text-indent: 25px;
+	color: #683700;
+}
+#ploy_bbs {
+	width: 297px;
+	height: 80px;
+	border: 1px solid #ffe363;
+	background: #fff;
+	margin-top: 10px;
+	padding: 10px 15px;
+	overflow: hidden;
+}
+#ploy_bbs h2 {
+	color: #ad1514;
+	font-size: 14px;
+	font-weight: 600;
+	display: inline;
+	width: 327px;
+	height: 20px;
+	line-height: 20px;
+}
+#ploy_bbs p {
+	line-height: 18px;
+	margin: 0px;
+	text-indent: 25px;
+}
+#special_right .special_titleright {
+	width: 337px;
+	height: 76px;
+	margin-top: 30px;
+	overflow: hidden;
+}
+/*google 广告开始*/
+#special_right .special_google {
+	width: 330px;
+	margin-left: 7px;
+	height: 95px;
+	margin-top: 35px;
+	line-height: 16px;
+	overflow: hidden;
+}
+#special_right .special_google .special_googlemess {
+	height: 15px;
+	width: 330px;
+	text-align: right;
+}
+#special_right .special_google .bring {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 24px;
+	height: 24px;
+}
+#special_right .special_google a {
+	color: #000;
+	text-decoration: none;
+}
+#special_right .special_google .bring a:link,#special_right .special_google .bring a:visited,#special_right .special_google .bring a:hover {
+	color: #ad1514;
+	text-decoration: none;
+}
+#special_right .special_google .google_url a:link,#special_right .special_google .google_url a:visited,#special_right .special_google .google_url a:hover {
+	color: #b3b3b3
+}
+/*google 广告结束*/
+#special_right .special_boxmin {
+	width: 330px;
+	padding: 13px 0px 13px 7px !important;
+	padding: 10px 0px 10px 7px;
+	height: 86px;
+}
+#special_right .special_boxmin .boxmin_img {
+	width: 88px;
+	height: 80px;
+	padding: 2px;
+	border: 1px solid #d8d6d9;
+	overflow: hidden;
+	float: left;
+}
+#special_right .special_boxmin .boxmin_text {
+	float: right;
+	width: 218px;
+	padding-right: 8px;
+	height: 86px;
+}
+#special_right .special_boxmin .boxmin_text h3 {
+	font-size: 12px;
+	font-weight: 600;
+	display: inline;
+	height: 20px;
+	line-height: 20px;
+}
+#special_right .special_boxmin .boxmin_text h3 a {
+	color: #ad1514;
+}
+#special_right .special_boxmin .boxmin_text p {
+	margin: 2px 0px;
+	text-indent: 25px;
+	line-height: 18px;
+}
+#special_right .special_boxmore {
+	width: 330px;
+	float: right;
+	text-align: right;
+	padding-right: 7px;
+}
+#special_right .special_boxmore a {
+	color: #ad1514;
+	text-decoration: none;
+}	

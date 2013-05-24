@@ -1,0 +1,75 @@
+{literal}
+<script language="JavaScript" src="/jscript/jquery.js"></script>
+<script>
+
+var width=360;
+var height=208;
+$(document).ready(function() {
+	var image = $("#imagewillprint");
+	var pwidth = image.width();
+	var pheight = image.height();
+	$(".showcity").click(function () {
+		$("#cityshow").slideToggle();
+	});
+});
+
+</script>
+{/literal}
+<div id="head">
+	<!--begin head_top-->
+	<div class="head_top">
+		<div class="logo"><h1><a href="{url f=aliUrl}"><img src="/images/aliwangwang/logo.gif" alt="大红包" /></a></h1></div>
+		<div class="city">
+			<div class="city_ul">
+				<ul>
+					<li class="licity">城市：<a href="#" class="showcity">{$nowcityname}</a></li>
+					<li class="libutton"><a href="#" class="showcity"><img src="/images/aliwangwang/head_button.gif" alt="城市列表"/></a></li>				
+					{if $headtype==1}
+					<li class="litext">优惠券</li>
+					<li class="litext"><a href="{url f=aliUrl switch=discount}">折扣信息</a></li>
+					<li class="litext"><a href="{url f=aliUrl switch=dingzhi}">定制信息</a></li>
+					{elseif $headtype==2}
+					<li class="litext"><a href="{url f=aliUrl switch=coupon}">优惠券</a></li>
+					<li class="litext">折扣信息</li>
+					<li class="litext"><a href="{url f=aliUrl switch=dingzhi}">定制信息</a></li>
+					{elseif $headtype==3}
+					<li class="litext"><a href="{url f=aliUrl switch=coupon}">优惠券</a></li>
+					<li class="litext"><a href="{url f=aliUrl switch=discount}">折扣信息</a></li>
+					<li class="litext">定制信息</li>
+					{else}
+					<li class="litext"><a href="{url f=aliUrl switch=coupon}">优惠券</a></li>
+					<li class="litext"><a href="{url f=aliUrl switch=discount}">折扣信息</a></li>
+					<li class="litext"><a href="{url f=aliUrl switch=dingzhi}">定制信息</a></li>
+					{/if}
+				</ul>
+			</div>		
+			<div class="message">{if $isdingzhi}您当前定制了：<strong>{$dingzhicount}</strong> 条优惠券 <a href="{url f=aliUrl switch=dingzhi}">修改</a>/<a href="{url f=aliUrl switch=dingzhi type=del}">退订</a>{else}&nbsp;{/if}</div>
+		</div>
+	</div>
+	<!--end head_top-->
+	<!--begin search-->
+	<div class="search">
+		<ul><FORM NAME="wwsearchform" METHOD="POST" ACTION="{url f=aliUrl switch=dofind}" id="searchform">
+			<li class="lileft">
+				<select name="cid" id="type">
+				  {section name=loop loop=$searchcategory}
+				  <option value="{$searchcategory[loop].Category}" {if $nowsearchcategory==$searchcategory[loop].Category}selected{/if}>{$searchcategory[loop].Name}</option>
+				  {/section}
+				</select>
+			</li>
+			<li class="licenter"><input name="q" type="text" class="liinput" id="q" value="{$searchTextOri|escape}"/></li>
+			<li class="liright"><input type="image" src="/images/aliwangwang/button_search.gif" alt="搜索" /></li></FORM>
+		</ul>
+	</div>
+	<!--end search-->
+</div>
+<!--城市列表开始-->
+<div id="cityshow" class="city_list" style="display: none;">						
+	<strong>城市列表</strong>
+	<ul>
+		{section name=loop loop=$citylist}
+		<li><a href="/changecity.php?id={$citylist[loop].CityID}">{$citylist[loop].CityName}</a></li>
+		{/section}
+	</ul>	
+</div>
+<!--城市列表结束-->

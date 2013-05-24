@@ -1,0 +1,23 @@
+<?php
+$this->headTitle($this->categoryName."优惠券，".$this->categoryName."电子优惠券下载_大红包优惠券");
+$this->headMeta()->appendName("keywords", $this->categoryName."优惠券，".$this->categoryName."电子优惠券下载");
+$this->headMeta()->appendName("description", "大红包优惠券网站第一时间提供".$this->categoryName."优惠券信息，让用户享受到真正的优惠。");
+$this->headLink()->prependStylesheet($this->basePath().'/styles/CN/coupon.css');
+?>
+<div class="main">
+	<div class="famous">
+		<?php print $this->partial('front-end/default/topCategoryList.phtml'); ?>
+		<?php print $this->partial('front-end/default/hotMerchantList.phtml'); ?>
+	</div>
+
+	<div class="breadcrumb ">
+		<span>当前位置：</span> <a href="/">大红包</a>   &gt; <a href="<?php print $this->couponUrl;?>">优惠券</a>   &gt; <?php print $this->categoryName;?>
+	</div>
+
+	<div class="couponLists">
+		<?php if ($this->couponList):?>
+		<?php print $this->partial('front-end/default/couponList.phtml'); ?>
+		<?php echo $this->paginationControl($this->paginator, 'Sliding', 'front-end/default/pagestyle.phtml', array('params' => array('cid' => $this->cid, 'sortby' => $this->sortby))); ?>
+		<?php endif;?>
+	</div>
+</div>

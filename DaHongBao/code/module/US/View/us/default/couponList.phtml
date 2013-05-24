@@ -1,0 +1,73 @@
+<?php if ($this->couponList):?>
+<div class="content">
+	<div class="couponlist clearfix">
+		<?php foreach ($this->couponList as $key => $coupon):?>
+		<?php 
+		//echo '<pre>';print_r($coupon);
+		?>
+		<div class="couponblock<?php if ($key == 0):?> first<?php endif;?> clearfix<?php if (!$coupon['CouponCode']):?> gotostore<?php endif;?><?php if ($key == count($this->couponList) - 1):?> last<?php endif;?>">
+			<?php if ($this->showMerchantCouponInfo !== false):?>
+			<!-- 商家优惠券 左侧不显示商家信息-->
+			<div class="coll" onMouseOver="showIndexCouponMerchant(this, '<?php print $coupon['CouponID'];?>')" onMouseOut="hideIndexCouponMerchant(this, '<?php print $coupon['CouponID'];?>')">
+				<dl>
+					<dt class="imgbox"><div class="arrow"></div><a href="<?php print $coupon['MerchantInfo']['MerchantDetailUrl'];?>"><img src="<?php print __IMAGE_DOMAIN_NAME."".$coupon['MerchantInfo']['LogoFile'];?>" /></a></dt>
+					<dd class="mname"><a href="<?php print $coupon['MerchantInfo']['MerchantDetailUrl'];?>"><?php print $coupon['MerchantInfo']['MerchantName'];?></a></dd>
+					<?php if ($coupon['CouponEndDate'] > '0000-00-00 00:00:00' && $coupon['CouponEndDate'] < '3333-03-03 00:00:00'):?>
+					<dt class="expiredatetitle">优惠券到期时间:</dt>
+					<dd class="expiredate"><?php print date('m/d/Y', strtotime($coupon['CouponEndDate']));?></dd>
+					<?php endif;?>
+				</dl>
+			</div>
+			<?php endif;?>
+			<div class="colr" id="indexCoupon_<?php print $coupon['CouponID'];?>">
+				<div class="couponcol">
+					<div class="coupontitle"><a href="javascript:;" onmouseup="redirectLink('<?php print $coupon['OfferUrl'];?>', this)" target="_blank"><?php print $coupon['CouponName'];?></a></div>
+					<div class="copycodecow" style="display:none"><span class="copycodetip">复制成功<b></b></span></div>
+					<?php if ($coupon['CouponCode']):?>
+					<div class="couponcode">
+						<span class="use">使用优惠券</span>
+						<span class="code"><span<?php if (strlen($coupon['CouponCode']) < 8):?> class="fixwidth"<?php endif; ?>><?php print $coupon['CouponCode'];?></span><b class="codeshadow"></b></span>
+						<span class="copy">复制优惠券代码</span>
+						<!--<a href="#" class="howtouse">如何使用？</a>-->
+					</div>
+					<?php else:?>
+					<div class="couponcode">
+						<span class="code2"><span><a href="javascript:;" onmouseup="redirectLink('<?php print $coupon['OfferUrl'];?>', this)" target="_blank">直接使用 &gt;</a></span><b class="codeshadow"></b></span>
+					</div>
+					<?php endif;?>
+					<div class="coupondesc"><?php print $coupon['CouponDescription'];?></div>
+					<div class="saveandcomment">
+						<?php if ($coupon['CouponFavorite']):?>
+						<a href="javascript:;" onclick="return false;" class="savedcoupon">已收藏</a>
+						<?php else:?>
+						<a href="javascript:;" onclick="favorite('<?php print $coupon['CouponID'];?>', this)" class="savecoupon">收藏</a>
+						<?php endif;?>
+						<!--<a href="#" class="addcomment"><span>2 </span>条评论</a>-->
+					</div>
+					<div class="coupon" OfferUrl="<?php print $coupon['OfferUrl'];?>"></div>
+				</div>
+			</div>
+			<?php if ($this->showMerchantCouponInfo !== false):?>
+			<!-- 商家优惠券 左侧不显示商家信息-->
+			<div class="colr disn" id="indexCouponMerchant_<?php print $coupon['CouponID'];?>">
+				<div class="merchantcol">
+					<p><?php print strip_tags(($coupon['MerchantInfo']['DescriptionCN']));?></p>
+					<ul>
+						<?php if ($coupon['MerchantInfo']['MainSales']):?><li><strong>主营业务：</strong><?php print $coupon['MerchantInfo']['MainSales'];?></li><?php endif;?>
+						<?php if ($coupon['MerchantInfo']['SupportDeliveryCN'] == 'YES'):?><li><strong>是否支持直邮：</strong>支持</li><?php endif;?>
+						<?php if ($coupon['MerchantInfo']['SupportCN'] == 'YES'):?><li><strong>是否支持中文：</strong>支持</li><?php endif;?>
+						<?php if ($coupon['MerchantInfo']['Payment']):?><li><strong>付款方式： </strong><?php print implode("、", $coupon['MerchantInfo']['Payment']);?></li><?php endif;?>
+					</ul>
+				</div>
+			</div>
+			<script>
+			$(function(){
+				updateHeight('indexCoupon_<?php print $coupon['CouponID'];?>', 'indexCouponMerchant_<?php print $coupon['CouponID'];?>');
+			})
+			</script>
+			<?php endif;?>
+		</div>
+		<?php endforeach;?>
+	</div>
+</div>
+<?php endif;?>

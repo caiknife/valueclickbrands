@@ -1,0 +1,53 @@
+<?php
+$this->headTitle($this->categoryName."－大红包海淘优惠券");
+$this->headMeta()->appendName("keywords", $this->categoryName);
+$this->headMeta()->appendName("description", "大红包海淘优惠券为您展示了最为齐全的海淘购物知识。");
+?>
+<div class="mainleft">
+	<!-- 全部优惠券分类 -->
+	<?php print $this->partial('us/default/allCategory.phtml');?>
+
+	<!-- 海淘攻略 && 优惠券使用攻略 -->
+	<?php print $this->partial('us/default/siteHelp.phtml');?>
+
+	<!-- 邮箱订阅 -->
+	<?php print $this->partial('us/default/emailSubcription.phtml');?>
+
+	<!-- 帮助中心 -->
+	<?php print $this->partial('us/default/helpCenter.phtml');?>
+
+	<!-- 特价促销 -->
+	<?php print $this->partial('us/default/specialDealsList.phtml');?>
+
+	<!-- google ads -->
+	<?php print $this->partial('us/default/googleAdsList.phtml');?>
+</div>
+<div class="mainright">
+	<div class="breadcrumb">
+		当前位置： <a href="/">大红包海淘</a> &gt; 
+		<?php if ($isHelpCenter):?>
+		<?php print $this->helpCenterName;?>
+		<?php else:?>
+		<a href="<?php print $this->helpCenterUrl;?>"><?php print $this->helpCenterName;?></a> &gt; <?php print $this->categoryName;?>
+		<?php endif;?>
+	</div>
+	
+	<div class="articlewp">
+		<div class="headline">
+			<h2><?php print $this->categoryName;?></h2>
+		</div>
+		<div class="content">
+			<div class="articlelist">
+				<?php if ($this->categoryArticleInfo):?>
+				<div class="articlemodule shoppingguide">
+					<ul class="clearfix">
+						<?php foreach ($this->categoryArticleInfo as $article): ?>
+						<li class="<?php echo $this->cycle(array("bghover", ""))->next();?>"><a href="<?php print $article['ArticleDetailUrl'];?>" class="featuredarticle"><?php print $article['ArticleTitle'];?></a><b></b></li>
+						<?php endforeach;?>
+					</ul>
+				</div>
+				<?php endif;?>
+			</div>
+		</div>
+	</div>
+</div>

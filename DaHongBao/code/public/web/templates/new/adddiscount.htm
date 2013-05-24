@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>大红包发布优惠券信息</title>
+<META NAME="description" CONTENT="大红包免费提供各种网上购物优惠券，打折信息,商场促销活动，目前已拥有超过1000家在线店铺：肯德基、麦当劳、必胜客、当当、梦露内衣、时尚起义、七彩谷,让您省钱又省心。">
+<META NAME="keywords" CONTENT="当当优惠券,梦露内衣优惠券,时尚起义优惠券,七彩谷优惠券，麦当劳优惠卷，肯德基优惠券,肯德基优惠卷，麦当劳优惠券,必胜客优惠券">
+<link href="/css/detail.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+{literal}
+<script>
+	function alwaysval(){
+		if(document.getElementById('date2').value=="永久有效"){
+			document.getElementById('date2').value="";
+		}else{
+			document.getElementById('date2').value="永久有效";
+		}
+	}
+
+	function checkandgo(){
+		
+		if(document.getElementById('CouponName').value==""){
+			
+			alert("请输入优惠券的名称");
+			return false;
+		}
+		var flag = false;
+
+		if(document.form1.Category_ != null){
+			//	alert("sdf");
+			var msglen=document.form1.Category_.length;
+			for(i=0;i<msglen;i++){
+			  if(document.form1.Category_[i].checked==true){
+				document.getElementById('radiocategory').value = document.form1.Category_[i].value;
+				flag = true;
+			  }
+			}
+		}
+		if (flag == false)
+		{
+			alert("请选择优惠券类别");
+			return false;
+		}
+		if(document.getElementById('date1').value==""){
+			alert("开始时间不能为空");
+			return false;
+		}
+		if(document.getElementById('date2').value==""){
+			alert("结束时间不能为空");
+			return false;
+		}
+		
+		
+
+		document.form1.submit();
+		return true;
+	}
+
+
+	var allMonth=[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+     var allNameOfWeekDays=["一","二", "三", "四", "五", "六", "七"];
+     var allNameOfMonths=["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"];
+     var newDate=new Date();
+     var yearZero=newDate.getFullYear();
+     var monthZero=newDate.getMonth();
+     var day=newDate.getDate();
+     var currentDay=0, currentDayZero=0;
+     var month=monthZero, year=yearZero;
+     var yearMin=2000, yearMax=2010;
+     var target='';
+     var hoverEle=false;
+     function setTarget(e){
+          if(e) return e.target;
+          if(event) return event.srcElement;
+     }
+     function newElement(type, attrs, content, toNode) {
+          var ele=document.createElement(type);
+          if(attrs) {
+               for(var i=0; i<attrs.length; i++) {
+                    eval('ele.'+attrs[i][0]+(attrs[i][2] ? '=\u0027' :'=')+attrs[i][1]+(attrs[i][2] ? '\u0027' :''));
+               }
+          }
+          if(content) ele.appendChild(document.createTextNode(content));
+          if(toNode) toNode.appendChild(ele);
+          return ele;
+     }
+     function setMonth(ele){month=parseInt(ele.value);calender()}
+     function setYear(ele){year=parseInt(ele.value);calender()}
+     function setValue(ele) {
+          if(ele.parentNode.className=='week' && ele.firstChild){
+               var dayOut=ele.firstChild.nodeValue;
+               if(dayOut < 10) dayOut='0'+dayOut;
+               var monthOut=month+1;
+               if(monthOut < 10) monthOut='0'+monthOut;
+               target.value=year+'-'+monthOut+'-'+dayOut;
+               removeCalender();
+          }
+     }
+     function removeCalender() {
+          var parentEle=document.getElementById("calender");
+          while(parentEle.firstChild) parentEle.removeChild(parentEle.firstChild);
+          document.getElementById('basis').parentNode.removeChild(document.getElementById('basis'));
+     }          
+     function calender() {
+          var parentEle=document.getElementById("calender");
+          parentEle.onmouseover=function(e) {
+               var ele=setTarget(e);
+               if(ele.parentNode.className=='week' && ele.firstChild && ele!=hoverEle) {
+                    if(hoverEle) hoverEle.className=hoverEle.className.replace(/hoverEle ?/,'');
+                    hoverEle=ele;
+                    ele.className='hoverEle '+ele.className;
+               } else {
+                    if(hoverEle) {
+                         hoverEle.className=hoverEle.className.replace(/hoverEle ?/,'');
+                         hoverEle=false;
+                    }
+               }
+          }
+          while(parentEle.firstChild) parentEle.removeChild(parentEle.firstChild);
+          function check(){
+               if(year%4==0&&(year%100!=0||year%400==0))allMonth[1]=29;
+               else allMonth[1]=28;
+          }
+          function addClass (name) { if(!currentClass){currentClass=name} else {currentClass+=' '+name} };
+          if(month < 0){month+=12; year-=1}
+          if(month > 11){month-=12; year+=1}
+          if(year==yearMax-1) yearMax+=1;
+          if(year==yearMin) yearMin-=1;
+          check();
+          var control=newElement('p',[['id','control',1]],false,parentEle);
+          var controlPlus=newElement('a', [['href','javascript:month--;calender()',1],['className','controlPlus',1]], '<', control);
+          var select=newElement('select', [['onchange',function(){setMonth(this)}]], false, control);
+          for(var i=0; i<allNameOfMonths.length; i++) newElement('option', [['value',i,1]], allNameOfMonths[i], select);
+          select.selectedIndex=month;
+          select=newElement('select', [['onchange',function(){setYear(this)}]], false, control);
+          for(var i=yearMin; i<yearMax; i++) newElement('option', [['value',i,1]], i, select);
+          select.selectedIndex=year-yearMin;
+          controlPlus=newElement('a', [['href','javascript:month++;calender()',1],['className','controlPlus',1]], '>', control);
+          check();
+          currentDay=1-new Date(year,month,1).getDay();
+          if(currentDay > 0) currentDay-=7;
+          currentDayZero=currentDay;
+          var newMonth=newElement('table',[['cellSpacing',0,1],['onclick',function(e){setValue(setTarget(e))}]], false, parentEle);
+          var newMonthBody=newElement('tbody', false, false, newMonth);
+          var tr=newElement('tr', [['className','head',1]], false, newMonthBody);
+          tr=newElement('tr', [['className','weekdays',1]], false, newMonthBody);
+          for(i=0;i<7;i++) td=newElement('td', false, allNameOfWeekDays[i], tr);     
+          tr=newElement('tr', [['className','week',1]], false, newMonthBody);
+          for(i=0; i<allMonth[month]-currentDayZero; i++){
+               var currentClass=false;               
+               currentDay++;
+               if(currentDay==day && month==monthZero && year==yearZero) addClass ('today');
+               if(currentDay <= 0 ) {
+                    if(currentDayZero!=-7) td=newElement('td', false, false, tr);
+               }
+               else {
+                    if((currentDay-currentDayZero)%7==0) addClass ('holiday');
+                    td=newElement('td', (!currentClass ? false : [['className',currentClass,1]] ), currentDay, tr);
+                    if((currentDay-currentDayZero)%7==0) tr=newElement('tr', [['className','week',1]], false, newMonthBody);
+               }
+               if(i==allMonth[month]-currentDayZero-1){
+                    i++;
+                    while(i%7!=0){i++;td=newElement('td', false, false, tr)};
+               }
+          }
+     }
+     function showCalender(ele) {
+          if(document.getElementById('basis')) { removeCalender() }
+          else {
+               target=document.getElementById(ele.id.replace(/for_/,'')); 
+               var basis=ele.parentNode.insertBefore(document.createElement('div'),ele);
+               basis.id='basis';
+               newElement('div', [['id','calender',1]], false, basis);
+               calender();
+          }
+     }
+</script>
+<style type='text/css'>
+#basis {
+     display:inline;
+     position: absolute;
+     }
+#calender {
+     position:absolute;
+     top:30px;
+     left:0;
+     width:220px;
+     background-color:#fff;
+     border:3px solid #ccc;
+     padding:10px;
+     z-index:10;
+}
+#control {
+     text-align:center;
+     margin:0 0 5px 0;
+     }
+#control select {
+     font-family:"Lucida sans unicode", sans-serif;
+     font-size:11px;
+     margin:0 5px;
+     vertical-align:middle;
+     }
+#calender .controlPlus {
+     padding:0 5px;
+     text-decoration:none;
+     color:#333;
+     }
+#calender table {
+     empty-cells: show;
+     width:100%;
+     font-size:11px;
+     table-layout:fixed;
+     }
+#calender .weekdays td{
+     text-align:right;
+     padding:1px 5px 1px 1px;
+     color:#333;
+     }
+#calender .week td {
+     text-align:right;
+     cursor:pointer;
+     border:1px solid #fff;
+     padding:1px 4px 1px 0;
+     }
+#calender .week .today { 
+     background-color:#ccf;
+     border-color:#ccf;
+     }
+#calender .week .holiday {
+     font-weight: bold;
+     }
+#calender .week .hoverEle {
+     border-color:#666;
+     background-color:#99f;
+     color:#000;
+     }
+
+</style>
+{/literal}
+<body>
+<!--头部开始-->
+{include file="new/head.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <a href="#"><h1>发布优惠券</h1></a>
+	</div>
+	<!--category_title 导航结束-->		
+	<!--sidebar 栏目页左边内容开始-->
+	<div id="sidebar">
+		<!--sidebox 热门优惠券开始-->
+		
+		{$hotmerchantin}
+		<!--sidebox 热门优惠券结束-->
+			
+		<!--sidebox 热门优惠券开始-->
+	
+		{$hotcouponin}
+		
+		<!--sidebox 热门优惠券结束-->
+			
+		<!--sidebox 热门优惠券开始-->
+		<div class="sidebox">
+			<div class="title"><h2>论坛热帖</h2></div>
+			<ul>
+				{section name=loop loop=$bbslist start=0 max=10}
+				<li>·<a href="/bbs/read.php?tid={$bbslist[loop].tid}">{$bbslist[loop].subject}</a></li>
+				{/section}
+			</ul>
+		</div>
+		<!--sidebox 热门优惠券结束-->
+	</div>
+	<!--sidebar 栏目页左边内容结束-->	
+	
+	<!--detail 优惠券信息开始-->
+	<div id="detail">
+		<div id="detail_title2"><span class="message">请注意带有“<span class="red">*</span>”号的项目必须填写</span><h2>请填写优惠券的基本信息</h2></div>
+		<!--useradd_box 优惠券基本信息开始-->
+		<div class="useradd_box"><FORM METHOD=POST ACTION="" name=form1 enctype="multipart/form-data">
+					<ul>
+			<li class="left"><span class="red">*</span>优惠券的名称：</li>
+			<li class="right"><input name="c[CouponName]" type="text" id="CouponName"  class="input"/>&nbsp;&nbsp;上传优惠券图片：<INPUT TYPE="file" NAME="c[Picurl]" class="file"></li>
+			<li class="left">优惠券具体描述：</li>
+			<li class="right"><TEXTAREA NAME="c[Description]" ROWS="" COLS=""></TEXTAREA></li>
+			<li class="left">优惠券的标签：</li>
+			<li class="right"><INPUT TYPE="text" NAME="c[TagName]">&nbsp;&nbsp;多个标签请用逗号分割</li>
+			<li class="left"><span class="red">*</span>类别：</li>
+			<li class="right"><INPUT TYPE="hidden" name="c[Category_]" id="radiocategory"><INPUT TYPE="radio" NAME="Category_" value="72">餐饮美食	
+			<INPUT TYPE="radio" NAME="Category_" value="70">旅游度假
+			<INPUT TYPE="radio" NAME="Category_" value="66">鲜花礼品
+			<INPUT TYPE="radio" NAME="Category_" value="68">美容化妆
+			<INPUT TYPE="radio" NAME="Category_" value="76">影视票务
+			<INPUT TYPE="radio" NAME="Category_" value="71">手机通讯
+			<INPUT TYPE="radio" NAME="Category_" value="97">房产家居
+			<INPUT TYPE="radio" NAME="Category_" value="88">宠物用品
+			<INPUT TYPE="radio" NAME="Category_" value="63">服装服饰
+			<INPUT TYPE="radio" NAME="Category_" value="65">家用电器
+			<INPUT TYPE="radio" NAME="Category_" value="90">摄影婚庆
+			<INPUT TYPE="radio" NAME="Category_" value="98">商场促销
+			<INPUT TYPE="radio" NAME="Category_" value="82">理财保险	
+			<INPUT TYPE="radio" NAME="Category_" value="94">教育培训
+			<INPUT TYPE="radio" NAME="Category_" value="86">母婴用品
+			<INPUT TYPE="radio" NAME="Category_" value="62">书籍优惠
+			<INPUT TYPE="radio" NAME="Category_" value="96">娱乐休闲
+			<INPUT TYPE="radio" NAME="Category_" value="77">数码软件	
+			<INPUT TYPE="radio" NAME="Category_" value="75">运动健身
+			<INPUT TYPE="radio" NAME="Category_" value="93">汽车优惠
+			<INPUT TYPE="radio" NAME="Category_" value="95">其他			</li>
+			<li class="left"><span class="red">*</span>开始时间：</li>
+			<li class="right"><input type='text' id='date1' name="c[Start]"  class="input" value="{$today}"/><input type='button' id='for_date1' value='选择日期' onclick='showCalender(this)'class="button" />
+			</li>
+			<li class="left"><span class="red">*</span>结束时间：</li>
+			<li class="right"><input type='text' id='date2' name="c[End]"  class="input" value="永久有效"/><INPUT TYPE="checkbox" NAME="" checked onclick="alwaysval();">永久有效<input type='button' id='for_date2' value='选择日期' onclick='showCalender(this)' class="button" />
+			</li>
+			<li class="left"><span class="red">*</span>城市：</li>
+			<li class="right">
+			<select name="c[CityID]">
+				{section name=loop loop=$citylist}
+				<option value="{$citylist[loop].CityID}" {if $citylist[loop].CityID==$cityid}selected{/if}>{$citylist[loop].CityName}</option>
+				{/section}
+				<option value="0" {if $smarty.cookies.cityid=="all"}selected{/if}>全国</option>
+			</select>
+			</li>
+			<li class="left">商家名称：</li>
+			<li class="right"><input name="c[Tel]" type="text" id="Tel" class="input" /></li>	
+			<li class="left">优惠券添加人：</li>
+			<li class="right"><div>{if $islogon==1}{$userinfo.username}{else}游客{/if}<INPUT TYPE="hidden" name="c[AddUser]" value="{$userid}"></div></li>
+		</ul>	
+			<div class="user_center">
+				<input name="" type="button" value="提交信息"  class="user_input" onclick="javascript:checkandgo();"><INPUT TYPE="hidden" name="act" value="submit">
+			</div></form>	
+		</div>
+		<!--useradd_box 优惠券基本信息结束-->		
+	</div>
+	<!--detail 优惠券信息结束-->	
+</div>
+<!--主体内容结束-->
+<div class="clr"></div>
+<!--脚部开始-->
+{include file="new/foot.htm"}

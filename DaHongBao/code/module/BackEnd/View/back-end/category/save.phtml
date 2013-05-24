@@ -1,0 +1,57 @@
+<?php
+/**
+* save.phtml
+*-------------------------
+*
+* 
+*
+* PHP versions 5
+*
+* LICENSE: This source file is from Smarter Ver2.0, which is a comprehensive shopping engine 
+* that helps consumers to make smarter buying decisions online. We empower consumers to compare 
+* the attributes of over one million products in the common channels and common categories
+* and to read user product reviews in order to make informed purchase decisions. Consumers can then 
+* research the latest promotional and pricing information on products listed at a wide selection of 
+* online merchants, and read user reviews on those merchants.
+* The copyrights is reserved by http://www.mezimedia.com. 
+* Copyright (c) 2006, Mezimedia. All rights reserved.
+*
+* @author Yaron Jiang <yjiang@corp.valueclick.com.cn>
+* @copyright (C) 2004-2013 Mezimedia.com
+* @license http://www.mezimedia.com PHP License 5.0
+* @version CVS: $Id: save.phtml,v 1.1 2013/04/15 10:57:14 rock Exp $
+* @link http://www.dahongbao.com/
+* @deprecated File deprecated in Release 3.0.0
+*/
+$form = $this->form;
+$messages = $form->getMessages();
+?>
+
+<div class="box">
+    <div class="box-header">
+        <h2><a class="btn btn-inverse" href="<?php echo $this->url('backend' , array('controller' 
+            => 'category' , 'action' => 'index'))?>?<?php echo $this->query?>">
+            <i class="icon-white icon-chevron-left"></i>返回列表</a><i class="icon-box"></i>编辑分类</h2>
+    </div>
+    
+    <div class="box-content">
+    <form class="box-form" action="<?php echo $this->url('backend' , array('controller' => 'category'
+        ,'action' => 'save'))?>?<?php echo $this->query?>" method="post">
+    <?php echo $this->formHidden($form->get('CategoryID'))?>
+    <?php echo $this->formHidden($form->get('SiteID'))?>
+    <?php echo $this->formText($form->get('CategoryName'))?>
+    <?php echo $this->formText($form->get('CategoryEnName'))?>
+    <?php echo $this->formText($form->get('CategoryUrlEnName'))?>
+    <?php echo $this->formText($form->get('Sequence'))?>
+    <div class="input-group">
+        <label class="input-item" for="IsActive">
+        上线
+        <input type="hidden" value="NO" name="IsActive" />
+        <input type="checkbox" value="YES" name="IsActive" <?php if($form->get('IsActive')->getValue() == 'YES'):?>
+            checked="checked"<?php endif;?> />
+        </label>
+    </div>
+    <?php echo $this->formSubmit($form->get('submit') , '提交')?>
+    </form>
+    </div>
+</div>

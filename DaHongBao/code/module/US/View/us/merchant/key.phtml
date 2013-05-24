@@ -1,0 +1,49 @@
+<?php
+$this->headTitle($this->type."开头的海外购物商家，".$this->type."开头的海淘商家大全 － 大红包海淘优惠券");
+$this->headMeta()->appendName("keywords", $this->type."开头的海外购物商家");
+$this->headMeta()->appendName("description", "大红包海淘优惠券为您展示了最为齐全的".$this->type."开头的海外购物的商家网站，".$this->type."开头的海淘商家名站大全尽在大红包海淘优惠券。");
+?>
+<div class="mainleft">
+	<!-- 全部优惠券分类 -->
+	<?php print $this->partial('us/default/allCategory.phtml');?>
+	
+	<!-- 海淘攻略 && 优惠券使用攻略 -->
+	<?php print $this->partial('us/default/siteHelp.phtml');?>
+	
+	<!-- 邮箱订阅 -->
+	<?php print $this->partial('us/default/emailSubcription.phtml');?>
+
+	<!-- 帮助中心 -->
+	<?php print $this->partial('us/default/helpCenter.phtml');?>
+
+	<!-- 特价促销 -->
+	<?php print $this->partial('us/default/specialDealsList.phtml');?>
+
+	<!-- google ads -->
+	<?php print $this->partial('us/default/googleAdsList.phtml');?>
+</div>
+<div class="mainright">
+	<div class="breadcrumb">
+		当前位置： <a href="/">大红包海淘</a> &gt; <a href="<?php print $allMerchantUrl;?>">全部商家</a> &gt; <?php print $this->type;?>
+	</div>
+	<div class="allmerchantwp">
+		<?php if ($this->merchantList):?>
+		<div class="content">
+			<div class="allmerchantlist">
+				<dl class="clearfix last">
+					<?php
+					if ($key == '~') {
+						$key = '0-9';
+					}
+					?>
+					<dt><span id="<?php echo $type;?>"><?php echo $type;?></span></dt>
+					<?php foreach ($this->merchantList['Date'] as $key => $mer):?>
+					<dd><a href="<?php echo $mer['MerchantUrl'];?>"><img src="<?php echo __IMAGE_DOMAIN_NAME."".$mer['LogoFile'];?>"  /></a><a href="<?php echo $mer['MerchantUrl'];?>"><?php echo $mer['MerchantName'];?></a></dd>
+					<?php endforeach;?>
+				</dl>
+			</div>
+		</div>
+		<?php endif;?>
+	</div>
+</div>        
+<!--end mainright  -->

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk"?>
+<rss version="2.0">
+<channel>
+ <title><![CDATA[大红包论坛]]></title>
+ <link><![CDATA[http://www.dahongbao.com/bbs]]></link>
+ <description><![CDATA[Latest 20 article of ]]></description>
+ <copyright><![CDATA[Copyright(C) 大红包论坛]]></copyright>
+ <generator><![CDATA[PHPWind BLOG by PHPWind Studio]]></generator>
+ <lastBuildDate><![CDATA[Tue, 08 Jul 2008 05:02:39 +0000]]></lastBuildDate>
+  <image>
+ <url><![CDATA[images/rss.gif]]></url>
+ <title><![CDATA[PHPWind Board]]></title>
+ <link><![CDATA[http://www.dahongbao.com/bbs]]></link>
+ <description><![CDATA[大红包论坛]]></description>
+  </image>
+</channel></rss>

@@ -1,0 +1,35 @@
+<div class="headerbg">
+   <div class="header">
+       <div class="logo">
+            <a href="/"><img src="/img/CN/logo.jpg" width="430" height="60" /></a>
+       </div>
+       <div class="searchBox">
+			<span class="rightTop"></span><span class="bottomLeft"></span>  
+			<form id="cscsearch" name="cscsearch" action="/search" method="get" onsubmit="return dhb_searchTextOnSubmit('cscsearch');">
+				<input name="q" class="searchInput" value="<?php if ($this->keyword):?><?php print htmlspecialchars($this->keyword);?><?php else:?>请输入商城名或活动名，如：京东，满200减100<?php endif;?>"  onfocus="dhb_searchTextOnfocus(this);" onblur="dhb_searchTextOnBlur(this);" type="text">
+				<input type="hidden" id="searchType" name="searchType" value="">
+				<ul class="selectcate" id="selectcate"></ul>
+				<input class="searchButton" value="搜 索" type="submit">
+			</form>
+       </div>
+	   <script>insertSearchType('<?php if ($this->searchType):?><?php print $this->searchType;?><?php endif;?>');</script>
+       <div class="menu">
+           <ul>
+               <li class="home<?php if ($this->currentPage == "/" || !$this->currentPage):?> select<?php endif;?>"><a href="/">首 页</a></li>
+			   <?php if ($this->siteConfg['allCategoryList']):?>
+               <li class="channel" id="allcategory"><a href="#" class="allChannel">分类浏览</a>
+                    <ul class="subChannel" style="display:none">
+						<?php foreach ($this->siteConfg['allCategoryList'] as $key => $category):?>
+                        <li><a href="<?php print $category['CategoryUrl'];?>"><span></span><?php print $category['CategoryName'];?></a></li>
+						<?php endforeach;?>
+                    </ul>
+               </li>
+			   <?php endif;?>
+               <li<?php if ($this->currentPage == $this->siteConfg['couponUrl']):?> class="select"<?php endif;?>><a href="<?php print $this->siteConfg['couponUrl'];?>">优惠券</a></li>
+               <li<?php if ($this->currentPage == $this->siteConfg['dealsUrl']):?> class="select"<?php endif;?>><a href="<?php print $this->siteConfg['dealsUrl'];?>">精选促销</a></li>
+               <li><a href="<?php print $this->siteConfg['__DHBUS_DOMAIN'];?>">海淘优惠券</a></li>
+           </ul>
+       </div>
+       <div class="userLink" id="userLink"></div>
+  </div>
+</div>

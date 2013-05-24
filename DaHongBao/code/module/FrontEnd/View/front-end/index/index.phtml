@@ -1,0 +1,253 @@
+<?php
+$this->headTitle("大红包-专注优惠券,网上购物电子优惠券,中国最知名的网上商城优惠券网站");
+$this->headMeta()->appendName("keywords", "优惠券,电子优惠券, 网上商城优惠券");
+$this->headMeta()->appendName("description", "大红包优惠券网站致力于为用户提供及时有效的国内、海外购物优惠券及国内、海淘特价促销信息，网站本着为用户省钱的理念，精选了数家知名商城的优惠券，旨在做中国最全面的优惠券网站。");
+$this->headScript()->prependFile($this->basePath().'/js/jquery.tools.min.js');
+$this->headLink()->prependStylesheet($this->basePath().'/styles/CN/home.css');
+?>
+<div class="main">
+    <div class="hotMerchant">
+        <?php if ($this->hotMerchantList):?>
+        <h2><span></span>热门商家</h2>
+        <div class="hotListLogo">
+        <ul>
+            <?php foreach ($this->hotMerchantList as $hotMerchant):?>
+            <li><a href="<?php print $hotMerchant['MerchantDetailUrl'];?>" target="_blank" title="<?php print $this->escapeHtml($hotMerchant['MerchantName']);?>"><img src="<?php print __IMAGE_DOMAIN_NAME."".$hotMerchant['LogoFile'];?>" width="100" height="46" alt="<?php print $this->escapeHtml($hotMerchant['MerchantName']);?>" /><span><?php print $hotMerchant['MerchantName'];?>（<?php print $hotMerchant['CouponCount'];?>）</span></a></li></a></li>
+            <?php endforeach;?>
+        </ul>
+        <div class="cl"></div>
+        </div>
+        <?php endif;?>
+
+        <?php if ($this->rightAdsList):?>
+        <div class="banner">
+            <div class="bannerPage">
+                <div class="bannerPageBox">
+                <?php foreach ($this->rightAdsList as $key => $rightAds):?>
+                    <a href="#"><?php print $key + 1;?></a>
+                <?php endforeach;?>
+                </div>
+            </div> 
+            <div class="images">
+                <?php foreach ($this->rightAdsList as $rightAds):?>
+                <a href="javascript:;" onmouseup="redirectLink('<?php print $rightAds['Url'];?>', this)" target="_blank" title="<?php print $this->escapeHtml($rightAds['CouponName']);?>"><img width="690" height="240" alt="<?php print $this->escapeHtml($rightAds['CouponName']);?>" src="<?php print __IMAGE_DOMAIN_NAME."".$rightAds['CouponImageUrl'];?>"></a>
+                <?php endforeach;?>
+            </div>
+        </div>
+        <?php endif;?>
+        <div class="cl"></div>
+    </div>
+
+    <?php if ($this->newCouponList):?>
+    <div class="newest">
+        <div class="seeMore"><a href="<?php print $this->newCouponMore;?>">点击查看更多&gt;&gt;</a></div>
+        <h2><span></span>最新优惠券 </h2>
+        <div class="newestList">
+            <div class="newestbg">  
+                <?php foreach ($this->newCouponList as $newCoupon):?>
+                <div class="newestCoupon">
+                    <?php if ($newCoupon['CouponImageUrl']):?>
+                    <div class="newestImg"><a href="<?php print $newCoupon['CouponDetailUrl'];?>" target="_blank" title="<?php print $this->escapeHtml($newCoupon['CouponName']);?>"><img src="<?php print __IMAGE_DOMAIN_NAME."".$newCoupon['CouponImageUrl'];?>" width="200" height="180" /></a></div>
+                    <?php else:?>
+                    <div class="noNewestImg">
+                        <p class="newestLogo">
+                            <a href="<?php print $newCoupon['CouponDetailUrl'];?>" target="_blank" title="<?php print $this->escapeHtml($newCoupon['CouponName']);?>">
+                            <img width="150" height="70" alt="<?php print $this->escapeHtml($newCoupon['CouponName']);?>" src="<?php print __IMAGE_DOMAIN_NAME."".$newCoupon['LogoFile'];?>">
+                            </a>
+                        </p> 
+                        <p class="newestName"><a href="<?php print $newCoupon['CouponDetailUrl'];?>" target="_blank" title="<?php print $this->escapeHtml($newCoupon['CouponName']);?>"><?php print $newCoupon['MerchantName'];?></a></p>
+                   </div>
+                    <?php endif;?>
+                    <div class="newestInfo <?php print $this->cycle(array("", "double"))->next();?>"><a href="<?php print $newCoupon['CouponDetailUrl'];?>" target="_blank" title="<?php print $this->escapeHtml($newCoupon['CouponName']);?>"><span><?php print $newCoupon['MerchantName'];?></span>
+                    <?php
+                    $couponName = strip_tags($newCoupon['CouponName']);
+                    $replace = array($newCoupon['CouponAmount'], $newCoupon['CouponReduction'], $newCoupon['CouponDiscount']);
+                    rsort($replace);
+                    foreach ($replace as $key => $r) {
+                        $key ++;
+                        if ($r > 0) {
+                            $couponName = str_replace($r, "<strong>\\".$key."</strong>", $couponName);
+                        }
+                    }
+                    foreach ($replace as $key => $r) {
+                        $key ++;
+                        if ($r > 0) {
+                            $couponName = str_replace("\\".$key, $r, $couponName);
+                        }
+                    }
+                    ?>
+                    <?php print $couponName;?>
+                    </a>
+                    </div>
+                </div>
+                <?php endforeach;?>
+                <div class="cl"></div>
+            </div>
+        </div>
+    </div>
+    <?php endif;?>
+
+    <?php if ($this->newCouponList):?>
+    <div class="goodMerchant">
+        <h2><span></span>精选商家优惠券</h2>
+        <div class="goodMerchantList">
+             <div class="arrowLeft" id="arrowLeft"><span></span></div>
+             <div class="scrollBox">
+                <div class="box">
+                    <div class="items">
+                    <div class="scrollList">
+                        <?php foreach ($this->hotMerchantCouponlist as $key => $hotCoupon):?>
+                        <?php if ($key%4 ==0 && $key > 0):?></div><div class="scrollList"><?php endif;?>
+                        <div class="scrollCoupon">
+                            <p class="scrollLogo"><a href="<?php print $hotCoupon['CouponDetailUrl'];?>" target="_blank" title="<?php print $this->escapeHtml($hotCoupon['CouponName']);?>"><img src="<?php print __IMAGE_DOMAIN_NAME."".$hotCoupon['LogoFile'];?>" width="100" height="46" /></a></p>
+                            <p class="merchant"><a href="<?php print $hotCoupon['MerchantDetailUrl'];?>" target="_blank" title="<?php print $this->escapeHtml($hotCoupon['MerchantName']);?>"><?php print $hotCoupon['MerchantName'];?></a></p>
+                            <p class="code"><a href="<?php print $hotCoupon['CouponDetailUrl'];?>" target="_blank" title="<?php print $this->escapeHtml($hotCoupon['CouponName']);?>">
+                            <?php
+                            $class = array("span", "strong");
+                            $couponName = strip_tags($hotCoupon['CouponName']);
+                            $replace = array($hotCoupon['CouponAmount'], $hotCoupon['CouponReduction'], $hotCoupon['CouponDiscount']);
+                            rsort($replace);
+                            foreach ($replace as $key => $r) {
+                                $key ++;
+                                if ($r > 0) {
+                                    $htmlTag = $class[0];
+                                    if (count($class) > 1) {
+                                        array_shift($class);
+                                    }
+                                    $couponName = str_replace($r, "<".$htmlTag.">\\".$key."</".$htmlTag.">", $couponName);
+                                }
+                            }
+                            foreach ($replace as $key => $r) {
+                                $key ++;
+                                if ($r > 0) {
+                                    $couponName = str_replace("\\".$key, $r, $couponName);
+                                }
+                            }
+                            ?>
+                            <?php print $couponName;?>
+                            </a></p>
+                            <p class="useIt"><a href="<?php print $hotCoupon['CouponDetailUrl'];?>" target="_blank" title="<?php print $this->escapeHtml($hotCoupon['CouponName']);?>">立即领取</a></p>
+                        </div>
+                        <?php endforeach;?>
+                    </div>
+                    </div>
+                 </div>
+             </div>
+             <div class="arrowRight" id="arrowRight"><span></span></div>
+        </div>
+    </div>
+    <?php endif;?>
+
+    <?php if ($this->hotDealsList):?>
+    <div class="promotion">
+        <h2><span></span>精选促销</h2>
+        <div class="promotionBox">
+            <div class="promotionLeft">
+                <div class="promotionList">
+                   <?php if ($this->hotDealsList['left']):?>
+                   <ul>
+                       <?php foreach ($this->hotDealsList['left'] as $left):?>
+                       <li>
+                           <p><a target="_blank" href="<?php print $left['MerchantDetailUrl'];?>"><span>【<?php print $left['MerchantName'];?>】</span></a><a target="_blank" href="<?php print $left['DealsDetailUrl'];?>" title="<?php print $this->escapeHtml($left['CouponName']);?>"><?php print strip_tags($left['CouponName']);?></a></p>
+                       </li>
+                       <?php endforeach;?>
+                   </ul> 
+                   <?php endif;?>
+                </div>
+                <?php if ($leftBanner):?>
+                <div class="leftBanner">
+                    <?php foreach ($leftBanner as $banner):?>
+                    <a href="javascript:;" onmouseup="redirectLink('<?php print $banner['Url'];?>', this)" target="_blank" title="<?php print $this->escapeHtml($banner['CouponName']);?>"><img width="250" height="250" alt="<?php print $this->escapeHtml($banner['CouponName']);?>" src="<?php print __IMAGE_DOMAIN_NAME."".$banner['CouponImageUrl'];?>"></a>
+                    <?php endforeach;?>
+                </div>   
+                <?php endif;?>
+            </div>
+            <div class="promotionRight">
+                <?php if ($this->hotDealsList['right']):?>
+                <div class="promotionCouponBox">
+                    <?php foreach ($this->hotDealsList['right'] as $right):?>
+                    <div class="promotionCoupon">
+                        <?php
+                        if ($right['CouponType'] == 'COUPON') {
+                            $url = $right['CouponDetailUrl'];
+                        } else {
+                            $url = $right['DealsDetailUrl'];
+                        }
+                        ?>
+                        <p class="promotionImg"><a target="_blank" href="<?php print $url;?>" title="<?php print $this->escapeHtml($right['CouponName']);?>"><img alt="<?php print $this->escapeHtml($right['CouponName']);?>" src="<?php if ($right['CouponImageUrl']):?><?php print __IMAGE_DOMAIN_NAME."".$right['CouponImageUrl'];?><?php else:?><?php print __IMAGE_DOMAIN_NAME."".$right['LogoFile'];?><?php endif;?>" /></a></p>
+                        <p class="promotionInfo"><a target="_blank" href="<?php print $url;?>" title="<?php print $this->escapeHtml($right['CouponName']);?>">
+                        <?php
+                        $couponName = strip_tags($right['CouponName']);
+                        $replace = array($right['CouponAmount'], $right['CouponReduction'], $right['CouponDiscount']);
+                        rsort($replace);
+                        foreach ($replace as $key => $r) {
+                            $key ++;
+                            if ($r > 0) {
+                                $couponName = str_replace($r, "<span>\\".$key."</span>", $couponName);
+                            }
+                        }
+                        foreach ($replace as $key => $r) {
+                            $key ++;
+                            if ($r > 0) {
+                                $couponName = str_replace("\\".$key, $r, $couponName);
+                            }
+                        }
+                        ?>
+                        <span>【<?php print $right['MerchantName'];?>】</span><?php print $couponName;?>
+                        </a></p>
+                        <p class="promotionDate">
+                        <?php if ($right['CouponEndDate'] != '3333-03-03 00:00:00'):?>
+                        <?php print date('m', strtotime($right['CouponStartDate']));?>月<?php print date('d', strtotime($right['CouponStartDate']));?>日-<?php print date('m', strtotime($right['CouponEndDate']));?>月<?php print date('d', strtotime($right['CouponEndDate']));?>日 
+                        <?php endif;?>
+                        <?php if ($right['CouponType'] == 'COUPON'):?>
+                        <span>优惠券</span>
+                        <?php elseif ($right['CouponType'] == 'DISCOUNT'):?>
+                        <span>促 销</span>
+                        <?php endif;?>
+                        </p>
+                    </div>
+                    <?php endforeach;?>
+                </div>
+                <?php endif;?>
+            </div>
+            <div class="cl"></div>
+        </div>
+    </div>
+    <?php endif;?>
+</div>
+
+<div class="friendly">
+     <h3>友情链接 </h3>
+     <a target="_blank" href="http://www.smarter.com.cn/">聪明点比较购物</a>，<a target="_blank" href="http://www.dahongbao.com/">优惠券</a>，
+     <a target="_blank" href="http://www.dahongbao.com/">电子优惠券</a>，<a target="_blank" href="http://off.bj100.com/">麦当劳优惠券</a>，
+     <a target="_blank" href="http://bizinfo.jinti.com/">生活服务</a>，<a target="_blank" href="http://www.hui800.com/">惠800</a>
+</div>
+<script language="JavaScript">
+$(function() {
+    //banner广告轮播，5秒自动轮播
+    $(".bannerPage").tabs(".images > a", {
+        effect: 'fade',
+        fadeOutSpeed: "slow",
+        rotate: true
+    }).slideshow({autoplay:true, interval: 5000});
+
+    //精选商家优惠券，5秒自动轮播
+    $(".scrollList > .scrollCoupon").mouseover(function(){
+        $(this).addClass("dotRed");
+    });
+    $(".scrollList > .scrollCoupon").mouseout(function(){
+        $(this).removeClass("dotRed");
+    });
+    setTimeout(function(){
+        $(".scrollBox > .box").scrollable({
+            circular: true, 
+            mousewheel: false,
+            next:"#arrowRight",
+            prev:"#arrowLeft",
+            speed:500
+        })
+        .navigator()
+        .autoscroll({interval: 5000});
+    },300);
+});
+</script>

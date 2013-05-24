@@ -1,0 +1,103 @@
+<?php
+/**
+* mapping.phtml
+*-------------------------
+*
+* 
+*
+* PHP versions 5
+*
+* LICENSE: This source file is from Smarter Ver2.0, which is a comprehensive shopping engine 
+* that helps consumers to make smarter buying decisions online. We empower consumers to compare 
+* the attributes of over one million products in the common channels and common categories
+* and to read user product reviews in order to make informed purchase decisions. Consumers can then 
+* research the latest promotional and pricing information on products listed at a wide selection of 
+* online merchants, and read user reviews on those merchants.
+* The copyrights is reserved by http://www.mezimedia.com. 
+* Copyright (c) 2006, Mezimedia. All rights reserved.
+*
+* @author Yaron Jiang <yjiang@corp.valueclick.com.cn>
+* @copyright (C) 2004-2013 Mezimedia.com
+* @license http://www.mezimedia.com PHP License 5.0
+* @version CVS: $Id: mapping.phtml,v 1.1 2013/04/15 10:57:14 rock Exp $
+* @link http://www.dahongbao.com/
+* @deprecated File deprecated in Release 3.0.0
+*/
+?>
+
+<div class="box">
+<div class="box-header">
+<h2><i class="icon-box"></i>商家别名映射</h2>
+</div>
+
+<div class="box-content">
+<form class="box-form" method="get"
+ action="<?php echo $this->url('backend' , array('controller' => 'merchant' , 'action' => 'mapping'))?>">
+ <input type="hidden" name="MerchantAliasName" value="<?php echo $this->MerchantAliasName?>" />
+ <input type="hidden" name="AffiliateID" value="<?php echo $this->AffiliateID?>" />
+ <input type="hidden" name="referer" value="<?php echo $this->referer?>" />
+<div class="input-group">
+<label class="input-label">商家名</label>
+<input type="text" name="merchantName" class="input-element" value="<?php echo $this->merchantName?>" />
+<button class="btn btn-primary">搜索</button>
+</div>
+</form>
+
+<form class="box-form" method="post"
+action="<?php $this->url('backend' , array('controller' => 'merchant' , 'action' => 'mapping'))
+?>?referer=<?php echo $this->referer?>">
+
+
+<div class="input-group">
+<label class="input-label">别名</label>
+<input type="text" name="MerchantAliasName" class="input-element" value="<?php echo $this->MerchantAliasName?>" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<label class="">AffiliateID</label>
+<select name="AffiliateID" class="">
+<?php foreach($this->affiliates as $k => $v):?>
+<option <?php if($k == $this->AffiliateID):?>selected="selected"<?php endif;?> value="<?php 
+echo $k?>" ><?php echo $v?></option>
+<?php endforeach;?>
+</select>
+</div>
+
+<?php if(isset($this->list)):?>
+<?php if(!empty($this->list)):?>
+<div class="input-group">
+<table class="table">
+<thead>
+<tr class="row">
+<th width="12"></th>
+<th>选择要绑定的商家</th>
+</tr>
+</thead>
+<tbody>
+<?php foreach($this->list as $v):?>
+<tr>
+<td>
+<input class="radio" type="radio" name="MerchantID" value="<?php echo $v['MerchantID']?>" />
+</td>
+<td>
+<?php echo $v['MerchantName']?>
+</td>
+</tr>
+<?php endforeach;?>
+</tbody>
+<tfoot>
+<tr>
+<td colspan=2><button type="submit" class="btn btn-success">提交</button></td>
+</tr>
+</tfoot>
+</table>
+</div>
+<?php else:?>
+<div class="input-group">
+没有找到相关商家，请:
+<a class="btn btn-success" href="<?php echo $this->url('backend' , array('controller' 
+    => 'merchant' , 'action' => 'save'));?>">添加新商家</a>
+</div>
+<?php endif;?>
+<?php endif;?>
+</form>
+</div>
+</div>

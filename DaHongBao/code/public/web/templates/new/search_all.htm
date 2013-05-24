@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{$title}</title>
+<META NAME="description" CONTENT="{$description}">
+<META NAME="keywords" CONTENT="{$keywords}">
+<meta name="copyright" content="www.dahongbao.com">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="verify-v1" content="QVIPb4M3AU1SQ7HQONfC2lrlH7RkeUn+PL1dLv8l5fs=" />
+<link href="../css/search_all.css" rel="stylesheet" type="text/css" media="all" />
+<script src="/jscript/prototype.js"></script>
+</head>
+<body>
+<!--头部开始-->
+{include file="new/head_searchall.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	
+	<!--左侧开始-->
+		<div id="left">		
+		{if $smarty.get.ci==3}
+			{if $maxcount3all==""}
+			<div class="search_box">
+				<ul>
+					<li class="lititle">对不起，暂时没有"{$searchtextformer}"相关的社区信息。</li>
+				</ul>
+			</div>
+			{else}
+			{section name=loop loop=$r3}
+			<div class="news_box">
+				<ul>
+					<li class="lititle"><a href="/bbs/read.php?tid={$r3[loop].tid}">{$r3[loop].subject}</a></li>
+					{if $r3[loop].content neq ""}
+					<li class="libbs">{$r3[loop].content}</li>
+					{/if}
+					<li class="liauthor">by <a href="/bbs/profile.php?action=show&uid={$r3[loop].authorid}">{$r3[loop].author}</a> 发表于</li>				
+					<li class="litime"><!-- <a href="#" target="_blank"> -->{$r3[loop].postdate}</li>
+					<li class="libbspoint"><!-- <a href="#" target="_blank"> -->{$r3[loop].hits} 人气</li>
+				</ul>
+			</div>
+			{/section}
+			{$pageString}
+			{/if}
+		{elseif $smarty.get.ci==1}
+			{if $maxcount1all==""}
+			<div class="search_box">
+				<ul>
+					<li class="lititle">对不起，暂时没有"{$searchtextformer}"相关的优惠券。</li>
+				</ul>
+			</div>
+			{else}
+			{section name=loop loop=$r1}
+			<div class="search_box">
+				<div class="search_boximg"><a href="/{if $r1[loop].NameURL}{$r1[loop].NameURL}{else}merchant{/if}/coupon-{$r1[loop].Coupon_}/" target="_blank"><img src="{$r1[loop].ImageURL}" onerror="this.src='/images/dahongbao.gif'"/></a></div>
+				<!-- <div class="search_boxicn"></div> -->
+				<ul>
+					<li class="lititle">{if $r1[loop].MerchantName}【<a href="/Me-{if $r1[loop].NameURL}{$r1[loop].NameURL}{else}merchant{/if}--Mi-{$r1[loop].Merchant_}.html" target="_blank">{$r1[loop].MerchantName}</a>】&nbsp;{/if}<a href="/{if $r1[loop].NameURL}{$r1[loop].NameURL}{else}merchant{/if}/coupon-{$r1[loop].Coupon_}/" target="_blank">{$r1[loop].Descript}</a></li>
+					<li class="litext">{$r1[loop].Detail}</li>
+					{if $r1[loop].tagname!=""}<li class="litag">{$r1[loop].tagname}</li>{/if}
+					<li class="lisustain"><a href="/{if $r1[loop].NameURL}{$r1[loop].NameURL}{else}merchant{/if}/coupon-{$r1[loop].Coupon_}/" target="_blank">{$r1[loop].digest}人</a>支持</li>
+					<li class="lireview"><a href="/{if $r1[loop].NameURL}{$r1[loop].NameURL}{else}merchant{/if}/coupon-{$r1[loop].Coupon_}/" target="_blank">{$r1[loop].replies}人</a>评论</li>
+					<li class="litime">过期时间：{$r1[loop].ExpireDate}</li>
+				</ul>
+			</div>
+			{/section}
+			{$pageString}
+			{/if}
+		{elseif $smarty.get.ci==2}
+			{if $maxcount2all==""}
+			<div class="search_box">
+				<ul>
+					<li class="lititle">对不起，暂时没有"{$searchtextformer}"相关的折扣信息。</li>
+				</ul>
+			</div>
+			{else}
+			{section name=loop loop=$r2}
+
+			{if $r2[loop].ImageDownload==1}
+			<div class="discount_box">
+				<div class="discount_boximg"><a href="/discount_detail-{$r2[loop].Coupon_}.html" target="_blank"><img src="{$r2[loop].ImageURL}" onerror="this.src='/images/dahongbao.gif'"/></a></div>
+			{else}
+			<div class="news_box">
+			{/if}
+				<ul>
+					<li class="lititle"><a href="/discount_detail-{$r2[loop].Coupon_}.html" target="_blank">{$r2[loop].Descript}</a></li>
+					<li class="litext">{$r2[loop].Detail}</li>
+					{if $r2[loop].tagname!=""}<li class="litag">{$r2[loop].tagname}</li>{/if}				
+					<li class="lireview"><a href="/discount_detail-{$r2[loop].Coupon_}.html" target="_blank">{$r2[loop].hits}人</a> 查看</li>
+					<li class="litime">发表时间：{$r2[loop].AddDate}</li>
+				</ul>
+			</div>
+			{/section}
+			{$pageString}
+			{/if}
+		{elseif $smarty.get.ci==4}
+			{if $kjjcount==0}
+				<div class="search_box">
+					<ul>
+						<li class="lititle">对不起，暂时没有"{$searchtextformer}"相关的同城生活信息。</li>
+					</ul>
+				</div>
+			{else}
+			{foreach key=key item=item from=$r4 name=foo}
+				{if $item->image1!=""}
+				<div class="search_box">
+					<div class="search_boximg"><a href="/life/view.php?id={$item->id}" target="_blank"><img src="{$item->image1}"/></a></div>
+					<ul>
+						<li class="lititle"><a href="/life/view.php?id={$item->id}" target="_blank">{$item->title}</a></li>
+						<li class="litext">{$item->description}</li>				
+						<li class="litime1">发表时间：<a href="/life/view.php?id={$item->id}" target="_blank">{$item->createdTime}</a></li>
+					</ul>
+				</div>
+				{else}
+				<div class="news_box">
+					<ul>
+						<li class="lititle"><a href="/life/view.php?id={$item->id}" target="_blank">{$item->title}</a></li>
+						<li class="litext">{$item->description}</li>				
+						<li class="litime1">发表时间：<a href="/life/view.php?id={$item->id}" target="_blank">{$item->createdTime}</a></li>
+					</ul>
+				</div>
+				{/if}
+			{/foreach}
+			<div class="page">
+				<ul>
+					{if $hiddenlast==1}{else}
+					<li><a href="/se-{$smarty.get.searchText}-{$smarty.get.p-1}-4/">上一页</a></li>
+					{/if}
+					<li>当前第{$nowpage}页</li>
+					{if $hiddennext==1}{else}
+					<li><a href="/se-{$smarty.get.searchText}-{$smarty.get.p+1}-4/">下一页</a></li>
+					{/if}
+					{if $showpage==1}
+					<li>1</li>
+					{/if}
+				</ul>
+			</div>
+			{/if}
+		{else}
+
+		{if $maxcount1!=""}
+		{section name=loop loop=$r1 start=0 max=5}
+		<div class="search_box">
+			<div class="search_boximg"><a href="/{if $r1[loop].NameURL}{$r1[loop].NameURL}{else}merchant{/if}/coupon-{$r1[loop].Coupon_}/" target="_blank"><img src="{$r1[loop].ImageURL}" onerror="this.src='/images/dahongbao.gif'"/></a></div>
+			<!-- <div class="search_boxicn"></div> -->
+			<ul>
+				<li class="lititle">{if $r1[loop].MerchantName}【<a href="/Me-{if $r1[loop].NameURL}{$r1[loop].NameURL}{else}merchant{/if}--Mi-{$r1[loop].Merchant_}.html" target="_blank">{$r1[loop].MerchantName}</a>】&nbsp;{/if}<a href="/{if $r1[loop].NameURL}{$r1[loop].NameURL}{else}merchant{/if}/coupon-{$r1[loop].Coupon_}/" target="_blank">{$r1[loop].Descript}</a></li>
+				<li class="litext">{$r1[loop].Detail}</li>
+				{if $r1[loop].tagname!=""}<li class="litag">{$r1[loop].tagname}</li>{/if}
+				<li class="lisustain"><a href="/{if $r1[loop].NameURL}{$r1[loop].NameURL}{else}merchant{/if}/coupon-{$r1[loop].Coupon_}/" target="_blank">{$r1[loop].digest}人</a>支持</li>
+				<li class="lireview"><a href="/{if $r1[loop].NameURL}{$r1[loop].NameURL}{else}merchant{/if}/coupon-{$r1[loop].Coupon_}/" target="_blank">{$r1[loop].replies}人</a>评论</li>
+				<li class="litime">过期时间：{$r1[loop].ExpireDate}</li>
+			</ul>
+		</div>
+		{/section}
+		<div class="search_bottom">
+			<strong>↑{$searchText} </strong> <a href="/se-{$smarty.get.searchText}-1-1/">优惠券</a> 搜索结果 共有<strong>{$maxcount1all}</strong>条 显示1-{$maxcount1}条 <a href="/se-{$smarty.get.searchText}-1-1/">更多>></a>
+		</div>
+		{/if}
+
+		{if $maxcount2!=""}
+		{section name=loop loop=$r2 start=0 max=5}
+		
+		{if $r2[loop].ImageDownload==1}
+		<div class="discount_box">
+			<div class="discount_boximg"><a href="/discount_detail-{$r2[loop].Coupon_}.html" target="_blank"><img src="{$r2[loop].ImageURL}" onerror="this.src='/images/dahongbao.gif'"/></a></div>
+		{else}
+		<div class="news_box">
+		{/if}
+			<ul>
+				<li class="lititle"><a href="/discount_detail-{$r2[loop].Coupon_}.html" target="_blank">{$r2[loop].Descript}</a></li>
+				<li class="litext">{$r2[loop].Detail}</li>
+				{if $r2[loop].tagname!=""}<li class="litag">{$r2[loop].tagname}&nbsp;</li>{/if}
+				<li class="lisustain"><a href="/discount_detail-{$r2[loop].Coupon_}.html" target="_blank">{$r2[loop].digest}人</a>支持</li>
+				<li class="lireview"><a href="/discount_detail-{$r2[loop].Coupon_}.html" target="_blank">{$r2[loop].replies}人</a>评论</li>
+				<li class="litime">过期时间：{$r2[loop].ExpireDate}</li>
+			</ul>
+		</div>
+
+
+
+		
+		{/section}
+		<div class="search_bottom">
+			<strong>↑{$searchText} </strong> <a href="/se-{$smarty.get.searchText}-1-2/">折扣信息</a> 搜索结果 共有<strong>{$maxcount2all}</strong>条 显示1-{$maxcount2}条 <a href="/se-{$smarty.get.searchText}-1-2/">更多>></a>
+		</div>
+		{/if}
+
+		{if $ajaxkijiji == 1}
+			<div id="kijijiurl" style="display:none">{$kijijiurl}</div>
+			<div id="searchTextBase" style="display:none">{$searchTextBase64}</div>
+			<div id="kijijicontent"></div>
+			{literal}
+			<script>
+				function gokijiji(){
+					var cid = document.getElementById('kijijiurl').innerHTML;
+					//alert(cid);
+					var url = '/async_kijijiajax.php'
+					var pars = 'id=' + cid ;
+					var myAjax = new Ajax.Request(
+					url,
+					{
+					method: 'get',
+					parameters: pars,
+					onComplete: showResponse
+					});
+				}
+				function showResponse(originalRequest)
+				{
+					var returnstr = originalRequest.responseText;
+					//alert(returnstr);
+					//var a = "godigest_"+returnstr;
+					//var b = "digest_point_"+returnstr;
+					document.getElementById('kijijicontent').innerHTML=returnstr;
+					//document.getElementById(b).innerHTML=parseInt(document.getElementById(b).innerHTML)+1;
+				}
+				gokijiji();
+			</script>
+			{/literal}
+			
+		{else}
+			{if $maxcount4!=""}
+			{foreach key=key item=item from=$r4 name=foo}
+				{if $smarty.foreach.foo.index lt 5}
+				<div class="news_box">
+					<ul>
+						<li class="lititle"><a href="/life/view.php?id={$item->id}" target="_blank">{$item->title}</a></li>
+						<li class="litext">{$item->description}</li>				
+						<li class="litime1">发表时间：{$item->createdTime}</li>
+					</ul>
+				</div>
+				{/if}
+			{/foreach}
+			<div class="search_bottom">
+				<strong>↑{$searchText} </strong> <a href="/se-{$smarty.get.searchText}-1-4/">同城生活</a> 搜索结果 显示1-{$maxcount4}条 <a href="/se-{$smarty.get.searchText}-1-4/">更多>></a>
+			</div>
+			{/if}
+		{/if}
+
+		{if $maxcount3!=""}
+		{section name=loop loop=$r3 start=0 max=5}
+		<div class="news_box">
+			<ul>
+				<li class="lititle"><a href="/bbs/read.php?tid={$r3[loop].tid}">{$r3[loop].subject}</a></li>
+				{if $r3[loop].content neq ""}
+				<li class="libbs">{$r3[loop].content}</li>
+				{/if}
+				<li class="liauthor">by <a href="/bbs/profile.php?action=show&uid={$r3[loop].authorid}">{$r3[loop].author}</a> 发表于</li>				
+				<li class="litime"><!-- <a href="#" target="_blank"> -->{$r3[loop].postdate}</li>
+				<li class="libbspoint"><!-- <a href="#" target="_blank"> -->{$r3[loop].hits} 人气</li>
+			</ul>
+		</div>
+		{/section}
+		<div class="search_bottom">
+			<strong>↑{$searchText} </strong> <a href="/se-{$smarty.get.searchText}-1-3/">社区</a> 搜索结果 共有<strong>{$maxcount3all}</strong>条 显示1-{$maxcount3}条 <a href="/se-{$smarty.get.searchText}-1-3/">更多>></a>
+		</div>
+		{/if}
+
+		{if $maxcount4+$maxcount3+$maxcount2+$maxcount1==0}
+		<div class="search_box">
+			<ul>
+				<li class="lititle">对不起，暂时没有"{$searchtextformer}"相关的信息。</li>
+			</ul>
+		</div>
+		{/if}
+
+		
+
+		
+		{/if}
+	</div>
+	
+	
+</div>
+<!--主体内容结束-->
+{include file="new/foot.htm"}

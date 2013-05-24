@@ -1,0 +1,13 @@
+<?php if ($this->hotDealsList):?>
+<div class="specialpromotion">
+	<a target="_blank" href="<?php print $hotDealsMore;?>" class="seemore">更多&gt;&gt;</a>
+	<h2>热门促销</h2>
+	<div class="content">
+		<ul class="clearfix">
+			<?php foreach ($this->hotDealsList as $key => $deals):?>
+			<li><span<?php if ($key < 3):?> class="top3"<?php endif;?>><?php print $key + 1;?><b></b></span><a href="javascript:;" onmouseup="redirectLink('<?php print $deals['OfferUrl'];?>', this)" target="_blank"><?php print $deals['CouponName'];?></a></li>
+			<?php endforeach;?>
+		</ul>
+	</div>
+</div>
+<?php endif;?>

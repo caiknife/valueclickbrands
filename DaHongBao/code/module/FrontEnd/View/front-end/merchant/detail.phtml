@@ -1,0 +1,68 @@
+<?php
+$this->headTitle($this->merchantInfo['MerchantName']."优惠券，".$this->merchantInfo['MerchantName']."电子优惠券下载_大红包优惠券");
+$this->headMeta()->appendName("keywords", $this->merchantInfo['MerchantName']."优惠券，".$this->merchantInfo['MerchantName']."电子优惠券下载");
+$this->headMeta()->appendName("description", "大红包优惠券网站第一时间提供".$this->merchantInfo['MerchantName']."优惠券信息，并定期更新".$this->merchantInfo['MerchantName']."优惠券，让用户享受到真正的优惠。");
+$this->headLink()->prependStylesheet($this->basePath().'/styles/CN/coupon.css');
+?>
+<div class="main">
+	<div class="famous">
+		<?php print $this->partial('front-end/default/topCategoryList.phtml'); ?>
+		<?php print $this->partial('front-end/default/hotMerchantList.phtml'); ?>
+	</div>
+
+	<div class="breadcrumb">
+		<span>当前位置：</span> <a href="/">大红包</a>   &gt; <a href="<?php print $this->couponUrl;?>">优惠券</a>   &gt; <?php print $this->merchantInfo['MerchantName'];?>
+	</div>
+
+	<div class="content">
+		<div class="contentLeft">
+			<div class="merchantInfo">
+				<div class="coupon">
+					<p class="couponLogo"><a href="javascript:;" onmouseup="redirectLink('<?php print $this->merchantInfo['MerchantOfferUrl'];?>', this)" target="_blank"><img src="<?php print __IMAGE_DOMAIN_NAME."".$this->merchantInfo['LogoFile'];?>" width="150" height="70" alt="" /></a></p>
+					<p class="merchant"><a href="javascript:;" onmouseup="redirectLink('<?php print $this->merchantInfo['MerchantOfferUrl'];?>', this)" target="_blank"><?php print $this->merchantInfo['MerchantName'];?></a></p>
+					<?php if ($this->merchantInfo['Instructions']):?>
+					<p class="useIt"><a href="#use"><?php print $this->merchantInfo['MerchantName'];?>优惠券如何使用?</a></p>
+					<?php endif;?>
+				</div>
+				<div class="merchantInfoRight">
+					<div class="detail">
+						<h2><?php print $this->merchantInfo['MerchantName'];?>优惠券</h2>
+						<p><?php print $this->merchantInfo['DescriptionCNSort'];?></p>
+					</div>
+					<ul>
+						<?php if ($this->merchantInfo['ContactCSPhone']):?><li><span>电　　话：</span><?php print $this->merchantInfo['ContactCSPhone'];?></li><?php endif;?>
+						<?php if ($this->merchantInfo['MerchantUrl']):?><li><span>商家网址：</span><a href="javascript:;" onmouseup="redirectLink('<?php print $this->merchantInfo['MerchantOfferUrl'];?>', this)" target="_blank"><?php print $this->merchantInfo['MerchantUrl'];?></a></li><?php endif;?>
+						<?php if ($this->merchantInfo['ContactCSAddress']):?><li><span>公司地址：</span><?php print $this->merchantInfo['ContactCSAddress'];?></li><?php endif;?>
+					</ul>
+				</div>
+				<div class="cl"></div>
+			</div>
+
+			<?php if ($this->couponList):?>
+			<div class="merchantCoupon">
+				<h2><?php print $this->merchantInfo['MerchantName'];?>优惠券 <span>（共<?php print $this->merchantCouponCount;?>张优惠券）</span> </h2>
+				<div class="couponLists">
+					<?php print $this->partial('front-end/default/couponList3.phtml'); ?>
+				</div>
+			</div>
+			<?php endif;?>
+
+			<a name="use" id="use"></a>
+			<?php if ($this->merchantInfo['Instructions']):?>
+			<div class="howToUse">
+			<h2><?php print $this->merchantInfo['MerchantName'];?><span>如何使用</span>？</h2>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php print $this->merchantInfo['Instructions'];?>
+			</div>
+			<?php endif;?>
+		</div>
+
+		<div class="sidebar">
+			<?php print $this->partial('front-end/default/googleAdsList.phtml'); ?>
+
+			<?php print $this->partial('front-end/default/recommendMerchantList.phtml'); ?>
+
+			<?php print $this->partial('front-end/default/hotCouponList.phtml'); ?>
+		</div>
+		<div class="cl"></div>
+	</div>
+</div>

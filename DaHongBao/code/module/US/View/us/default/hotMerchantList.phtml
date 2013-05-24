@@ -1,0 +1,18 @@
+<?php if ($this->hotMerchantList):?>
+<div class="hotmerchant">
+	<div class="content">
+		<div class="headline">
+			<a href="<?php print $hotMerchantMore; ?>" target="_blank" class="seemore">更多&gt;&gt;</a>
+			<h2>热门商家</h2>
+		</div>
+		<div class="hotmerchantlist clearfix">
+			<?php foreach ($this->hotMerchantList as $key => $hotMerchant):?>
+			<ul<?php if($key == 3):?> class="last"<?php endif;?>>
+				<li class="imgbox"><a href="<?php print $hotMerchant['MerchantDetailUrl'];?>"><img src="<?php print __IMAGE_DOMAIN_NAME."".$hotMerchant['LogoFile'];?>" /></a></li>
+				<li class="mname"><a href="<?php print $hotMerchant['MerchantDetailUrl'];?>"><?php print $hotMerchant['MerchantName'];?></a></li>
+			</ul>
+			<?php endforeach;?>
+		</div>
+	</div>
+</div>
+<?php endif;?>

@@ -1,0 +1,24 @@
+<?php
+$this->headTitle("所有优惠券_大红包优惠券");
+$this->headMeta()->appendName("keywords", "所有优惠券");
+$this->headMeta()->appendName("description", "大红包优惠券网站致力于为用户提供及时有效的国内所有商城优惠券，旨在做中国最全面的优惠券网站。");
+$this->headLink()->prependStylesheet($this->basePath().'/styles/CN/coupon.css');
+?>
+<div class="main">
+    <div class="famous">
+        <?php print $this->partial('front-end/default/topCategoryList.phtml'); ?>
+        <?php print $this->partial('front-end/default/hotMerchantList.phtml'); ?>
+    </div>
+
+    <div class="breadcrumb ">
+        <span>当前位置：</span> <a href="/">大红包</a>   &gt;  优惠券
+    </div>
+
+    <div class="couponLists">
+        <?php if ($this->couponList):?>
+        <?php print $this->partial('front-end/default/couponList.phtml'); ?>
+        <?php echo $this->paginationControl($this->paginator, 'Sliding', 'front-end/default/pagestyle.phtml', array('params' => array('sortby' => $this->sortby))); ?>
+        <?php endif;?>
+    </div>
+    <div class="cl"></div>
+</div>

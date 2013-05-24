@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>我的奖品--大红包</title>
+<META NAME="description" CONTENT="">
+<META NAME="keywords" CONTENT="">
+<link href="/css/myhongbao.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<!--头部开始-->
+{include file="new/head_myhongbao.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="myhongbao_title">
+		<a href="/">首页</a> &#187; <h1>我的奖品</h1>
+	</div>
+	
+	<div id="mycoupon">
+		<div id="mycoupon_title">
+			<ul>
+				<li><a href="/profile/myaward.php">我的奖品</a></li>
+				<li><a href="/priceinfo.php" target=_blank>兑奖流程</a></li>
+				
+				<li><a href="/price.php" target=_blank>马上去兑奖</a></li>
+			</ul>
+		</div>
+		<!--begin mycoupon_left-->
+		<div id="mycoupon_left">
+			
+			<div class="mycoupon_leftbox">
+				<div class="mycoupon_title"><h2>用户头像</h2></div>
+				<img src="{$touxiang}" /><br />{$userinfo.username}
+			</div>
+			<div class="mycoupon_leftbox">
+				<div class="mycoupon_title"><h2>当前状态</h2></div>
+				<ul>
+					<li>当前拥有红包数：{$userhb} 个</li>
+					
+				</ul>
+			</div>
+		</div>
+		<!--end mycoupon_left-->
+		
+		<!--begin mycoupon_right-->
+		<div id="mycoupon_right">
+			<div class="mycoupon_rightbox">
+				<div class="mycoupon_title"><h2>我的奖品</h2></div>
+				<ul>
+					{if $userawardlist}
+					<li class="lititle1">ID</li>
+					<li class="lititle2">奖品名</li>
+					<li class="lititle3">申请时间</li>
+					<li class="lititle4">兑奖状态</li>
+					{section name=loop loop=$userawardlist}
+					<li class="li1">{$userawardlist[loop].ID}</li>
+					<li class="li2">{$userawardlist[loop].AwardName}</li>
+					<li class="li3">{$userawardlist[loop].AddTime}</li>
+					<li class="li4">{if $userawardlist[loop].Type=='PASS'}奖品已发放{elseif $userawardlist[loop].Type=='REFUSE'}申请被拒绝{else}等待审核中{/if}</li>
+					{/section}
+					{else}
+					<li class="liline">你目前兑换的奖品，<a href="/price.php" target=_blank>立即去兑奖中心看看。</a></li>
+					{/if}
+				</ul>
+			</div>	
+			{if $userawardlist}
+			{$pageStr}
+			{/if}
+
+			
+		</div>
+		<!--end mycoupon_right-->
+	</div>
+</div>
+<!--主体内容结束-->
+<!--脚部开始-->
+{include file="new/foot.htm"}
+<!--脚部结束-->

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{$categoryName}资讯,消费指南,打折信息,优惠促销,行业新闻 - 大红包{$categoryName}资讯频道</title>
+<link href="../css/detail.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<!--头部开始-->
+{include file="new/head_news.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <a href="/news.html">导购资讯</a> > <h1>{$categoryName}资讯</h1>
+	</div>
+	<!--category_title 导航结束-->		
+		
+	
+	<!--detail 具体内容开始-->
+	<div id="detail">
+		<div id="detail_title2"><h2>{$categoryName}资讯,消费指南,打折信息,优惠促销,行业新闻</h2></div>
+		<!--list_box 列表开始-->
+		<div class="list_box">
+			<ul>
+				{section name=loop loop=$list}
+				<li class="lileft">·<a href="/news---Ca-{$NameURL}--Ci-{$smarty.get.cid}--number-{$list[loop].tid}.html">{$list[loop].subject}</a></li>
+				<li class="liright">{$list[loop].postdate}</li>
+				{/section}
+			</ul>
+		</div>
+		<!--list_box 列表结束-->	
+		<!--begin page-->
+		{$pageString}
+		<!--page end-->			
+	</div>
+	<!--detail 具体内容结束-->	
+
+	<!--sidebar 栏目页左边内容开始-->
+	<div id="sidebar">
+		<!--sidebox 热门优惠券开始-->
+		<div class="sidebox">
+			<div class="title"><h2>热门优惠券</h2></div>
+			<ul>
+				{section name=loop loop=$allhotcategorycouponlist start=0 max=10}
+				<li>·{if $allhotcategorycouponlist[loop].Merchant_>0}【<a href="/Me-{$allhotcategorycouponlist[loop].NameURL}--Mi-{$allhotcategorycouponlist[loop].Merchant_}.html">{if $allhotcategorycouponlist[loop].name1 == ""}{$allhotcategorycouponlist[loop].name}{else}{$allhotcategorycouponlist[loop].name1}{/if}</a>】{/if}<a href="/{if $allhotcategorycouponlist[loop].NameURL}{$allhotcategorycouponlist[loop].NameURL}{else}merchant{/if}/coupon-{$allhotcategorycouponlist[loop].Coupon_}/">{$allhotcategorycouponlist[loop].Descript}</a></li>
+				{/section}
+			</ul>
+		</div>
+		<!--sidebox 热门优惠券结束-->
+			
+		<!--sidebox 热门优惠券开始-->
+		<div class="sidebox">
+			<div class="title"><h2>相关资讯</h2></div>
+			<ul>
+				{section name=loop loop=$hotinfo start=0 max=10}
+				<li>·<a href="/news---Ca-{$NameURL}--Ci-{$smarty.get.cid}--number-{$hotinfo[loop].tid}.html">{$hotinfo[loop].subject}</a></li>
+				{/section}
+			</ul>
+		</div>
+		<!--sidebox 热门优惠券结束-->
+			
+		<!--sidebox 热门优惠券开始-->
+		<div class="sidebox">
+			<div class="title"><h2>论坛相关</h2></div>
+			<ul>
+				{section name=loop loop=$hotbbs start=0 max=10}
+				<li>·<a href="/bbs/read.php?tid={$hotbbs[loop].tid}">{$hotbbs[loop].subject}</a></li>
+				{/section}
+			</ul>
+		</div>
+		<!--sidebox 热门优惠券结束-->
+	</div>
+	<!--sidebar 栏目页左边内容结束-->
+</div>
+<!--主体内容结束-->
+
+{include file="new/foot.htm"}

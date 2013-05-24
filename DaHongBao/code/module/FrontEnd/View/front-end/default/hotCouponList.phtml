@@ -1,0 +1,13 @@
+<?php if ($this->hotCouponList):?>
+<div class="ratingCoupon">
+	<div class="line"></div>
+	<h2><?php if ($this->isCouponDetail):?>最新优惠券排行<?php else:?>热券推荐<?php endif;?></h2>
+	<div class="ratingCouponList">
+		<ul>
+			<?php foreach ($this->hotCouponList as $key => $hotCoupon):?>
+			<li><span<?php if ($key < 3):?> class="top"<?php endif;?>><?php print $key + 1;?></span><a target="_blank" href="<?php print $hotCoupon['CouponDetailUrl'];?>" title="<?php print $this->escapeHtml($hotCoupon['CouponName']);?>">【<?php print strip_tags($hotCoupon['MerchantName']);?>】<?php print strip_tags($hotCoupon['CouponName']);?></a></li>
+			<?php endforeach;?> 
+		</ul>
+	</div>
+</div>
+<?php endif;?>

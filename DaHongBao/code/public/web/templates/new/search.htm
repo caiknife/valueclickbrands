@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{$title}</title>
+<META NAME="description" CONTENT="{$description}">
+<META NAME="keywords" CONTENT="{$keywords}">
+<meta name="copyright" content="www.dahongbao.com">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="verify-v1" content="QVIPb4M3AU1SQ7HQONfC2lrlH7RkeUn+PL1dLv8l5fs=" />
+<link href="../css/category.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+{literal}
+<script>
+	function vote(id){
+			var cid = id;
+			var url = '/digest.php'
+			var pars = 'id=' + cid ;
+			var myAjax = new Ajax.Request(
+			url,
+			{
+			method: 'get',
+			parameters: pars,
+			onComplete: showResponse
+			});
+		}
+		function showResponse(originalRequest)
+		{
+			var returnstr = originalRequest.responseText;
+			var a = "godigest_"+returnstr;
+			var b = "digest_point_"+returnstr;
+			document.getElementById(a).innerHTML="<input name='' type='image' src='../images/category_bear1.gif' />系统已记录您的投票！";
+			document.getElementById(b).innerHTML=parseInt(document.getElementById(b).innerHTML)+1;
+		}
+</script>
+<script src="/jscript/prototype.js"></script>
+<script language="JavaScript" src="/jscript/category.js"></script>
+{/literal}
+<body>
+<!--头部开始-->
+{include file="new/head.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--category_title 导航开始-->
+	<div id="category_title">
+		<span class="bring">当前位置:</span> <a href="/">首页</a> > <h1>"{$seKey}"优惠券搜索结果</h1>
+	</div>
+	<!--category_title 导航结束-->
+	
+	<!--category 具体内容开始-->
+	<div id="category">		
+		<!--main 栏目页主体内容开始-->
+		<div id="main">
+			<!--ad 广告开始-->
+			<!--ad 广告结束-->
+			{if $couponList==""}
+					<div id="main_min">	
+
+						<div class="main_title">
+							<ul>
+								<li>&nbsp;&nbsp;没有 "{$seKey}" 的优惠信息,我们给您提供了以下关于 "{$seKey}" 的生活信息</li>
+							</ul>
+						</div>
+
+
+						{if $kjjcount==0}
+							<div><BR>没有搜索结果.<BR><BR></div>
+						{else}
+
+						{foreach key=key item=item from=$kjj}
+						{if $item->image1!=""}
+						<div class="ke_box">
+							<h3><a href="/life/view.php?id={$item->id}" target="_blank">{$item->title}</a></h3>
+							<div class="ke_message">
+								<div class="ke_img"><a href="/life/view.php?id={$item->id}" target="_blank"><img src="{$item->image1}"/></a></div>
+								<div class="ke_messright">{$item->description}......
+								</div>
+							</div>					
+							<div class="ke_line">
+								<!-- <strong>作者</strong>  -->发表于 <span class="ke_time">{$item->createdTime}</span>
+							</div>
+						</div>
+						{else}
+						<div class="ke_box">
+							<h3><a href="/life/view.php?id={$item->id}" target="_blank">{$item->title}</a></h3>
+							<div class="ke_message">{$item->description}......
+							</div>
+							<div class="ke_line">
+								<!-- <strong>作者</strong>  -->发表于 <span class="ke_time">{$item->createdTime}</span>
+							</div>
+						</div>
+						{/if}
+						{/foreach}
+
+
+						<div class="page">
+							<ul>
+								{if $hiddenlast==1}{else}
+								<li><a href="/se-{$smarty.get.searchText}-{$smarty.get.p-1}-/">上一页</a></li>
+								{/if}
+								<li>当前第{$nowpage}页</li>
+								{if $hiddennext==1}{else}
+								<li><a href="/se-{$smarty.get.searchText}-{$smarty.get.p+1}-/">下一页</a></li>
+								{/if}
+								{if $showpage==1}
+								<li>1</li>
+								{/if}
+							</ul>
+						</div>
+						{/if}
+					</div>
+			{else}
+			<!--main_min 栏目页具体内容开始-->
+			<div id="main_min">				
+				<!--main_title 头部开始-->
+				<div class="main_title">
+					<ul>
+						<li class="liname">名称 城市排序</li>
+						<li class="select"><select onchange="trygosearch(this.value)">{foreach from=$cityarray key=k item=foo}<option value="{$k}" {if $k==$nowcityid}selected{/if}>{$foo}</option>{/foreach}</select></li>
+						<li class="liticket">投票</li>
+						<li class="litime">过期时间</li>
+					</ul>
+				</div>
+				<!--main_title 头部结束-->
+				
+
+				{section name=loop loop=$couponList}
+				<!--main_box 具体内容块开始-->
+				<div class="main_box">
+					<!--main_left 左边开始-->
+					<div class="main_left">
+						<h3><a href="{$couponList[loop].couponURL}" target=_blank>{$couponList[loop].couponTitle}</a></h3>
+						<div class="main_leftimg">
+						{if $couponList[loop].HasImage==0}
+							<img src="/images/dahongbao.gif" alt="{$couponList[loop].couponTitle}" />
+						{else}
+							<img src="{$couponList[loop].image}" alt="{$couponList[loop].couponTitle}" />
+						{/if}
+						</div>
+						<p><a href="{$couponList[loop].couponURL}" target=_blank>{$couponList[loop].DetailOri}</a></p>
+			 			<div class="message">
+							<div class="more"><a href="/Me-{$couponList[loop].NameURL}--Mi-{$couponList[loop].Merchant_}.html">>>{$couponList[loop].merchantName}更多优惠</a></div>
+							地区：<span class="red">{$couponList[loop].City}</span>  优惠类别：<a href="/Ca-{$couponList[loop].cnameurl}--Ci-{$couponList[loop].Category_}.html"><span class="red">{$couponList[loop].CategoryName}</span></a>  评论数量：(<span class="red">{$couponList[loop].replies}</span>)  
+						</div>
+						<div class="message">							
+							发布时间：{$couponList[loop].start} 发布人：<a href="/bbs/profile.php?action=show&uid={$couponList[loop].authorid}">{$couponList[loop].author}</a> <a href="/account.php?action=save&p={$couponList[loop].couponID}"  target=_blank><span class="join">加入收藏</span></a> <a href="JavaScript:window.open('/send_friend.php?p={$couponList[loop].couponID}&c=','sendfriend{$couponList[loop].couponID}','width=415,height=550,resizable=0,scrollbars=yes');void(0);"><span class="friend">推荐朋友</span></a>							
+						</div>
+					</div>
+					<!--main_left 左边结束-->
+					
+					<!--main_right 右边开始-->
+					<div class="main_right">
+						<!--main_img 图片开始-->
+						<div class="main_img">
+							<div id="digest_point_{$couponList[loop].couponID}" class="main_point">{$couponList[loop].digest}</div>
+							<div id="godigest_{$couponList[loop].couponID}">
+							{if $couponList[loop].IsDigest==1}
+							<input name="" type="image" src="../images/category_bear1.gif" />
+							系统已记录您的投票！
+							{else}
+							<input name="" type="image" src="../images/category_bear.gif" onclick="javascript:vote('{$couponList[loop].couponID}')"/>	
+							{/if}
+							</div>
+						</div>
+						<!--main_img 图片结束-->
+						
+						<!--main_time 时间开始-->
+						<div class="main_time">
+						{$couponList[loop].end}
+						</div>
+						<!--main_time 时间结束-->
+					</div>
+					<!--main_left 右边结束-->
+				</div>
+				<!--main_box 具体内容块结束-->
+				{/section}
+
+				
+				
+				
+				
+				<!--begin page-->
+				{if $pageStr}
+				<div class="page">
+				<ul>
+				{$pageStr}
+				</ul>
+				</div>
+				{/if}
+				<!-- <div class="page">
+					<ul>
+						<li><a href="#">下一页</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">上一页</a></li>
+					</ul>
+				</div> -->
+				<!--page end-->
+			</div>
+			<!--main_min 栏目页具体内容结束-->
+			{/if}
+
+			<!--search_more 相关优惠券开始-->
+			<!-- <div id="search_more">
+				<div class="search_title"><h3>相关优惠券</h3></div>
+				<ul>
+					<li><a href="company.htm"><img src="../images/search_pro.gif" alt="pro" /></a><br /><a href="company.htm">购买长虹佳华MP3、MP4，丰厚奖品等着您</a></li>
+					<li><a href="company.htm"><img src="../images/search_pro.gif" alt="pro" /></a><br /><a href="company.htm">购买长虹佳华MP3、MP4，丰厚奖品等着您</a></li>
+					<li><a href="company.htm"><img src="../images/search_pro.gif" alt="pro" /></a><br /><a href="company.htm">购买长虹佳华MP3、MP4，丰厚奖品等着您</a></li>					
+				</ul>
+			</div> -->
+			<!--search_more 相关优惠券结束-->
+			<!--ad 广告开始-->
+			<!-- <div class="ad">
+				<img src="../images/category_ad.gif" alt="ad广告或分类类栏目图片" />
+			</div> -->
+			<!--ad 广告结束-->
+		</div>
+		
+		<!--main 栏目页主体内容结束-->
+		
+		<!--sidebar 栏目页左边内容开始-->
+		<div id="sidebar">
+			<!--sidebox 热门优惠券开始-->
+			
+
+			{$hotcouponin}
+			<!--sidebox 热门优惠券结束-->
+			
+			<!--sidebox 相关咨询开始-->
+			<div class="sidebox">
+				<h2>相关资讯</h2>
+				<ul>
+					<!-- {section name=loop loop=$hotinfo start=0 max=10}
+					<li>·<a href="/news---Ca-{$hotinfo[loop].NameURL}--Ci-{$hotinfo[loop].fid}--number-{$hotinfo[loop].tid}.html">{$hotinfo[loop].subject}</a></li>
+					{/section} -->
+					{$hotinfo}
+				</ul>
+			</div>
+			<!--sidebox 相关咨询结束-->
+			
+			<!--sidebox 论坛相关开始-->
+			<div class="sidebox">
+				<h2>论坛相关</h2>
+				<ul>
+					{$hotbbs}
+				</ul>
+			</div>
+			<!--sidebox 论坛相关结束-->
+		</div>
+		<!--sidebar 栏目页左边内容结束-->		
+	</div>
+	<!--category 具体内容结束-->
+</div>
+<!--主体内容结束-->
+
+
+  
+
+
+{include file="new/foot.htm"}

@@ -1,0 +1,728 @@
+/* CSS Document */
+@import url(common.css); 
+/*begin kejiji_search*/
+#head {
+	height: 135px;
+	border-bottom: 1px solid #f3f3f3;
+	text-align: left;
+}
+#nav_discount {
+	height: 12px;	
+	background: url(../images/discount/nav_discount.gif) repeat-x #eacf9a;
+	position: relative;
+}
+#nav_discount ul {
+	margin: 0px 7px;
+	line-height: 11px;
+	height: 11px;
+	border-bottom: 1px solid #9d7c49;
+}
+#kejiji_search {
+	border-bottom: 1px solid #9d7c49;
+	height: 32px;
+	background: url(../images/kejiji_searchbg.gif) repeat-x #eacf9a;
+}
+#kesearch_left {
+	width: 530px;
+	float: left;
+}
+#keserch_right {
+	width: 460px;
+	float: right;
+	text-align: right;
+}
+#keserch_right ul {
+	float: right;
+}
+#kejiji_search ul {
+	margin: 0px 7px;
+	line-height: 32px;
+	height: 32px;
+	overflow: hidden;
+}
+#kejiji_search ul li {
+	float: left;
+	padding: 0px 6px;
+}
+#kejiji_search .hot {
+	color: #636363;
+	padding: 0px 5px 0px 16px;
+}
+#kejiji_search .hotmessage {
+	color: #a15000;
+}
+#kejiji_search ul li strong a:link,#kejiji_search ul li strong a:visited,#kejiji_search ul li strong a:hover {
+	color: #ae0000;
+	text-decoration: none;
+	font-weight: 400;
+}
+#kejiji_message .kejiji_input {
+	width: 256px;
+	height: 20px;
+	padding-left: 4px;
+	border-top: 1px solid #b5902a;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	border-left: 1px solid #b5902a;
+	background: #fff6d6;
+	margin: 0px 0px 0px 3px !important;
+	margin: 3px 0px 0px 3px;
+	line-height: 20px;
+	color: #781300;
+}
+.kejiji_select {
+	width: 120px;
+	margin: 0px 0px 0px 0px !important;
+	margin: 3px 0px 0px 0px;
+	height: 22px;
+}
+.kejiji_imgput {
+	margin-top: 2px;
+}
+#kejiji_search .kejiji_hot {
+	left: 264px;
+	top: 107px;
+	width: 29px;
+	height: 0px;
+	position: absolute;
+	z-index: 2;
+}
+#kejiji_message {
+	border-top: 1px solid #f3f3f3;
+	border-bottom: 1px solid #9d7c49;
+	height: 33px;
+	line-height: 33px;
+	background: #edd0a2;
+}
+#kejiji_messleft {
+	width: 380px;
+	float: left;
+	height: 33px;
+	padding-left: 10px;	
+}
+#kejiji_messleft ul li {
+	float: left;
+	padding: 0px 4px;
+	color: #ae0000;
+}
+#kejiji_messleft ul li a:link,#kejiji_messleft ul li a:visited,#kejiji_messleft ul li a:hover {
+	color: #ae0000;
+	text-decoration: underline;
+}
+#kejiji_messleft .kejiji_place {
+	background: url(../images/kejiji_place.gif) no-repeat 0px 12px;
+	padding-left: 10px;
+	color: #393939;
+}
+#kejiji_messright {
+	width: 590px;
+	float: right;
+	height: 33px;
+	overflow: hidden;
+	text-align: right;
+}
+#kejiji_messright ul li {
+	float: left;
+	padding-right: 8px;
+	color: #ae5000;
+}
+#kejiji_messright ul li a:link,#kejiji_messright ul li a:visited,#kejiji_messright ul li a:hover {
+	color: #ae5000;
+	text-decoration: none;
+}
+#kejiji_messright .kejiji_keyword {
+	color: #636363;
+}
+/*end kejiji_search*/
+#kejiji {
+	width: 970px;
+	height: auto;
+	overflow: hidden;
+	margin: 20px auto 0px auto;
+	position: relative;
+}
+.kejiji_box {
+	width: 325px;
+	margin-left:11px;
+	padding-bottom: 10px;
+	background: url(../images/kejiji_leftbottom.gif) no-repeat bottom;
+	padding-top: 25px;
+	position: relative;
+}
+.kejiji_title {
+	width: 325px;
+	height: 21px;
+	background: url(../images/kejiji_lefttitle.gif) no-repeat bottom;
+}
+.kejiji_text {
+	width: 323px;
+	height: auto;
+	border-left: 1px solid #d8d8d8;
+	border-right: 1px solid #d8d8d8;
+}
+.kejiji_text h2 {
+	height: 26px;
+	line-height: 26px;
+	font-size: 12px;
+	font-weight: 400;
+	color: #ae0000;
+	margin: 0px;
+	padding: 7px 0px 0px 15px;
+}
+.kejiji_text h2 strong {
+	font-weight: 600;
+	font-size: 14px;
+}
+.kejiji_text h2 strong a:link,.kejiji_text h2 strong a:visited,.kejiji_text h2 strong a:hover {
+	color: #ae0000;
+	text-decoration: underline;
+}
+.kejiji_text ul {
+	padding-left: 23px;
+	width: 300px;
+	height: auto;
+	overflow: auto;
+}
+.kejiji_text ul li {
+	white-space: nowrap;
+	width: auto;
+	padding: 0px 5px;
+	float: left;
+	line-height: 20px;
+}
+.kejiji_text ul li a:link,.kejiji_text ul li a:visited,.kejiji_text ul li a:hover {
+	color: #373400;
+	text-decoration: underline;
+}
+.kejiji_text ul li strong a:link,.kejiji_text ul li strong a:visited,.kejiji_text ul li strong a:hover {
+	font-weight: 400;
+	color: #ae0000;
+	text-decoration: underline;
+}
+.icn_title {
+	width: 45px;
+	height: 45px;
+	left: -15px;
+	top: 6px;
+	position: absolute;
+	z-index: 2;
+}
+/*左侧开始*/
+#left {
+	width: 336px;
+	float:left;	
+}
+/*左侧结束*/
+#mid {
+	width: 330px;
+	float:left; 
+    margin-left:7px; 
+}
+/*右侧开始*/
+#right {
+	width: 281px;
+	float: right;
+}
+#right h2 {
+	font-size: 14px;
+	font-weight: 600;
+	color: #fff;
+	padding-left: 15px;
+	line-height: 32px;
+	margin: 0px;
+}
+.right_box {
+	width: 281px;
+	padding-bottom: 10px;
+	background: url(../images/kejiji_rightbottom.gif) no-repeat bottom;
+	margin-top: 25px;
+}
+.right_ploy {
+	width: 281px;
+	margin-top: 24px;
+}
+.right_top {
+	width: 281px;
+	height: 32px;
+	background: url(../images/kejiji_righttop.gif) no-repeat;
+}
+.right_title {
+	width: 281px;
+	height: 32px;
+	background: url(../images/kejiji_righttitle.gif) no-repeat;
+}
+.right_text{
+	width: 277px;
+	border-left: 1px solid #d8d8d8;
+	border-right: 1px solid #d8d8d8;
+	padding: 1px;
+}
+.right_text ul {
+	padding: 15px 5px 15px 15px;
+	width: 257px;
+	height: auto;
+	overflow: auto;
+	line-height: 25px;
+}
+.right_text ul li {
+	width: 257px;
+	color: #373400;
+}
+.right_text ul li a:link,.right_text ul li a:visited,.right_text ul li a:hover {
+	color: #373400;
+	text-decoration: underline;	
+}
+.ke_rightad {
+	margin: 10px 0px 0px 15px;
+	width: 250px;
+	height: 290px;
+	text-align: right;
+}
+.ke_rightad img {
+	margin-bottom: 5px;
+}
+/*右侧结束*/
+/*kejiji_city begin*/
+#kejiji_city {
+	width: 960px;
+	height: auto;
+	overflow: hidden;
+	margin: 25px auto 0px auto;
+	padding-bottom: 10px;
+	background: url(../images/kejiji_citybottom.gif) no-repeat bottom;
+}
+#kejiji_text {
+	width: 958px;
+	height: auto;
+	border-left: 1px solid #d8d8d8;
+	border-right: 1px solid #d8d8d8;
+}
+#kejiji_text h2 {
+	height: 15px;
+	line-height: 15px;
+	font-size: 12px;
+	font-weight: 600;
+	color: #ae0000;
+	margin: 0px;
+	padding: 0px 0px 0px 15px;
+	width: 943px;
+}
+#kejiji_city ul {
+	padding: 4px 3px 6px 10px;
+	width: 945px;
+	height: auto;
+	overflow: auto;
+	
+}
+#kejiji_city ul li {
+	white-space: nowrap;
+	width: auto;
+	padding: 0px 5px;
+	float: left;
+	line-height: 20px;
+}
+#kejiji_city ul li a:link,#kejiji_city ul li a:visited,#kejiji_city ul li a:hover {
+	color: #373400;
+	text-decoration: underline;
+}
+#kejiji_city ul li strong a:link,#kejiji_city ul li strong a:visited,#kejiji_city ul li strong a:hover {
+	font-weight: 400;
+	color: #ae0000;
+	text-decoration: underline;
+}
+/*kejiji_city end*/
+/*城市切换开始*/
+#head .city {
+	border: 1px solid #ccc;
+	width: 330px;
+	background: #fff;
+	padding: 0px 10px 10px 10px;
+	height: 250px;
+	z-index: 5;
+	left: 120px;
+	top: 156px;
+	position: absolute;
+}
+#head .city ul {	
+	height: auto;
+	overflow: auto;
+	padding: 0px;
+	margin: 0px;
+}
+#head .city ul li {
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	white-space: nowrap;
+	float: left;
+	padding: 0px 5px 0px 0px;
+}
+#head .city strong {
+	color: #ae0000;
+	font-weight: 400;
+	height: 20px;
+}
+#head .city ul li strong a:link,#head .city ul li strong a:visited,#head .city strong ul li a:hover {
+	color: #ae0000;
+	font-weight: 400;
+	text-decoration: underline;	
+}
+#head .city ul li a:link,#head .city ul li a:visited,#head .city ul li a:hover {
+	color: #373400;
+	text-decoration: underline;	
+}
+/*城市切换结束*/
+/*频道页开始*/
+#ke_channel {
+	width: 1003px;
+	height: auto;
+	overflow: auto;
+	margin: 0px auto;
+	background: #fff;
+	padding-bottom: 10px;
+}
+#ke_title {
+	width: 993px;
+	border-bottom: 1px dotted #999;
+	line-height: 22px;
+	padding: 3px 0px 3px 10px;
+	color: #363500;
+	overflow: hidden;
+}
+.ke_titlemessage {
+	width: 915px !important;
+	padding-left: 0px !important;
+	width: 913px;
+	padding-left: 2px;
+	float: left;
+}
+#ke_title a:link,#ke_title a:visited,#ke_title a:hover {
+	color: #363500;
+}
+#ke_title .red {
+	color: #ae0000;
+}
+#ke_title strong {
+	color: #ae0000;
+	font-weight: 600;
+	float: left;
+}
+#ke_title .bring {
+	color: #b78001;
+}
+/*左侧开始*/
+#ke_left {
+	float: left;
+	width: 250px;
+	overflow: hidden;
+	position: relative;
+	padding-top: 18px;
+}
+#ke_left h2 {
+	font-size: 12px;
+	font-weight: 600;
+	color: #ae0000;
+	margin: 0px;
+	height: 18px;
+	line-height: 18px;
+	width: 215px;	
+}
+.ke_leftbox {
+	width: 232px;
+	margin-left: 18px;
+	background: url(../images/ke_leftbottom.gif) left bottom no-repeat;
+	padding-bottom: 11px;
+}	
+.ke_lefttitle {
+	width: 232px;
+	height: 21px;
+}
+.ke_leftmain {
+	width: 215px;
+	padding-left: 15px;
+	border-left: 1px solid #d8d8d8;
+	border-right: 1px solid #d8d8d8;
+}
+.ke_leftmain ul {
+	width: 215px;
+	height: auto;
+	overflow: auto;
+	color: #373400;
+	line-height: 20px;
+}
+.ke_leftmain a:link,.ke_leftmain a:visited,.ke_leftmain a:hover {
+	color: #373400;
+	text-decoration: underline;
+}
+.ke_leftmain ul li strong a:link,.ke_leftmain ul li strong a:visited,.ke_leftmain ul li strong a:hover {
+	color: #ae0000;
+	text-decoration: underline;
+	font-weight: 400;
+}
+.ke_lefticn {
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.ke_leftad {
+	width: 250px;
+	margin-top: 10px;
+	text-align: right;
+}
+.ke_leftad img {
+	margin-bottom: 5px;
+}
+/*左侧结束*/
+#ke_right {
+	width: 720px;
+	float: right;
+	padding: 18px 20px 0px 0px;
+	
+}
+.ke_rightbox {
+	width: 720px;
+	padding-bottom: 11px;
+	background: url(../images/ke_rightbottom.gif) bottom no-repeat;	
+	margin-bottom: 12px;
+}
+.ke_righttitle {
+	width: 720px;
+	height: 29px;
+	background: url(../images/ke_righttitle.gif) bottom no-repeat;
+}
+.ke_righttitle h2 {
+	font-weight: 400;
+	font-size: 12px;
+	color: #ae0000;
+	padding-left: 15px;
+	height: 29px;
+	line-height: 29px;
+	margin: 0px;
+}
+.ke_rightmain {
+	width: 698px;
+	border-left: 1px solid #d8d8d8;
+	border-right: 1px solid #d8d8d8;
+	padding: 0px 10px 10px 10px;
+}
+.ke_rightmain h4 {
+	font-weight: 600;
+	font-size: 14px;
+	color: #ae0000;
+	height: 60px;
+	line-height: 50px;
+	padding: 30px 0px 0px 3px;
+	margin: 0px;
+}
+.page {
+	height: 25px;
+	overflow: hidden;
+	padding: 10px 0px 0px 0px;
+	margin: 0px;
+	color: #b50000;
+	text-align: right;
+}
+.ke_border {
+	border-bottom: 1px dotted #9c9c9c;
+}
+.ke_box {
+	width: 698px;
+	border-bottom: 1px dotted #9c9c9c;
+}
+.ke_box h3 {
+	font-weight: 600;
+	font-size: 14px;
+	color: #ae0000;
+	height: 20px;
+	line-height: 20px;
+	margin: 10px 0px 0px 0px;
+}
+.ke_box h3 a:link,.ke_box h3 a:visited,.ke_box h3 a:hover {
+	color: #ae0000;
+	text-decoration: underline;
+}
+.ke_message {
+	color: #7e7e7e;
+	line-height: 20px;
+	width: 698px;
+	overflow: hidden;
+}
+.ke_line {
+	height: 27px;
+	line-height: 27px;
+	width: 698px;
+	overflow: hidden;
+}
+.ke_line strong {
+	font-weight: 400;
+	font-size: 12px;
+	color: #ae0000;
+}
+.ke_time {
+	color: #ad6503;
+}
+.ke_img {
+	width: 64px;
+	height: 64px;
+	float: left;
+	border: 1px solid #d1cfd2;
+	padding: 1px;
+	overflow: hidden;
+	text-align: center;
+	line-height: 64px;
+	margin-top: 3px;
+}
+.ke_img img {
+	width: 64px;
+	height: 64px;
+	overflow: hidden;
+}
+.ke_messright {
+	width: 615px;
+	float: right;
+}
+/*发布信息开始*/
+.ke_put {
+	color: #050505;
+	line-height: 25px;	
+	padding-top: 5px;
+	width: 615px;
+}
+.ke_input {
+	height: 17px;
+	width: 315px;
+	background: #ffffcd;
+	border-top: 1px solid #b3b3b3;
+	border-left: 1px solid #b3b3b3;
+	border-right: 1px solid #ebebe9;
+	border-bottom: 1px solid #ebebe9;
+	margin: 0px;
+}
+.ke_textarea {
+	background: #ffffcd;
+	border-top: 1px solid #b3b3b3;
+	border-left: 1px solid #b3b3b3;
+	border-right: 1px solid #ebebe9;
+	border-bottom: 1px solid #ebebe9;
+	width: 488px;
+	height: 140px;
+	margin: 0px;
+}
+.ke_putleft {
+	height: 20px;
+	float: left;
+	width: 38px;
+}
+.ke_height {
+	padding-top: 5px;
+}
+/*发布信息结束*/
+/*频道页结束*/
+/*内容页开始*/
+#ke_sort {
+	width: 660px;
+	float: left;
+	padding: 0px 0px 15px 25px;	
+}
+#sort_title {
+	height: 44px;
+	width: 660px;
+	border-bottom: 1px dotted #eee;
+	margin-bottom: 18px;
+	line-height: 22px;
+	padding: 3px 0px;
+	color: #363500;
+	overflow: hidden;
+}
+#sort_title a:link,#sort_title a:visited,#sort_title a:hover {
+	color: #363500;
+	text-decoration: underline;
+}
+#sort_title strong {
+	color: #ae0000;
+	font-weight: 400;
+}
+.sort_message {
+	float: right;
+	width: 40px;
+	height: 22px;
+	background: url(../images/ke_backicn.gif) no-repeat right;
+}
+#ke_sort h1 {
+	font-weight: 400;
+	font-size: 18px;
+	text-align: center;
+	color: #ae0000;
+	margin: 0px;
+	line-height: 30px;
+	width: 660px;
+	font-family: "黑体";
+}
+.sort_top {
+	text-align: center;
+	line-height: 16px;
+	color: #808080;
+	width: 660px;
+}
+.sort_time {
+	color: #ad4700;
+}
+.sort_main {
+	width: 659px;
+	border-right: 1px solid #ecd0a1;
+	color: #000;	
+	margin-top: 20px;
+}
+.sort_box {
+	padding-right: 25px;
+}
+.sort_img {
+	width: 659px;
+	overflow: hidden;
+}
+.sort_box img{
+	float: left;
+	width: 200px;
+	height: 200px;
+	padding: 4px;
+	border: 1px solid #ebebeb;
+	margin: 0px 15px 10px 0px;
+}
+.sort_box p {
+	text-indent: 25px;
+	margin: 3px 0px;
+	line-height: 25px;
+}
+.sort_minimg {
+	width: 140px;
+	height: 160px;
+	float: left;
+	margin: 20px 20px 0px 0px;
+	text-align: center;
+	line-height: 20px;
+}
+.sort_minimg img{
+	width: 130px;
+	height: 130px;
+	overflow: hidden;
+	padding: 4px;
+	border: 1px solid #ebebeb;
+	margin-bottom: 4px;
+}
+.sort_img a:link,.sort_img a:visited,.sort_img a:hover {
+	color: #ae0000;
+	text-decoration: underline;
+}
+.ke_ad {
+	float: right;
+	margin: 20px;
+	width: 250px;
+	text-align: right;
+}
+.ke_ad img {
+	margin-bottom: 5px;
+}
+/*内容页结束*/

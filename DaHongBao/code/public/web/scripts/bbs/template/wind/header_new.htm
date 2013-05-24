@@ -1,0 +1,355 @@
+<!--<?php
+print <<<EOT
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+$expires
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=$db_charset">
+<title>$subject $forumname $db_bbsname $db_bbstitle</title>
+<meta name="keywords" content="$db_metakeyword" />
+<meta name="description" content="$db_metadescrip" />
+<base href="$db_bbsurl/" />
+<link href="/css/bbscommon.css" rel="stylesheet" type="text/css" media="all" />
+<!--css--><style type="text/css">
+body{font-family:宋体,Tahoma;font-size:12px;background:$bgcolor;}
+h1,h2,h3,h4,h5,h6,form,body{padding:0;margin:0}
+td,th{word-break:break-all;word-wrap:break-word}
+table{empty-cells:show;}
+img{border:0}
+h3,h2{display:inline;font-size:1.0em;}
+h3{font-weight:normal}
+h2 a,h3 a{color:#000}
+h4{margin:20px 0 10px;font-size:1.1em}
+
+.c{clear:both;height:0;font:0/0 Arial;}
+.b{font-weight:bold}
+.tal{text-align:left}
+.tac{text-align:center}
+.tar{text-align:right}
+.fr{float:right}
+.fl{float:left}
+/*a link 基本连接颜色*/
+a{text-decoration:none;color:#683700}
+a:hover{text-decoration:underline;}
+/*字体大小*/
+.f9{font-size:11px;}
+.f10{font-size:11px;}
+.f12{font-size:12px}
+.f14{font-size:14px}
+.fn,.fn a{font-weight:normal}
+/*span color 数值自定义*/
+.s1{color:#008000;}
+.s2{color:#984B98;}
+.s3{color:#FA891B;}
+.s4{color:#0033FF;}
+.s5{color:#659B28}
+.gray{color:#818a89} /*次要文字颜色-可定义*/
+/*main color 数值自定义*/
+.f_one,.t_one,.r_one{background:$forumcolorone;}
+.f_two,.t_two,.r_two{background:$forumcolortwo;}
+.index_one{background:#ffffff;padding-left: 10px;line-height: 22px;}
+.index_two{background:#FFF6E0;margin: 0px;padding-left: 10px;line-height: 22px;}
+/*form*/
+
+select{border:solid 1px $tdcolor;}
+.btn{background:#E7BEA5;color:$headfontone;border-width:1px;padding-left:15px;padding-right:15px;vertical-align:middle}
+.input{border:solid 1px #E7BEA5;padding:2px 0px 2px 1px;font-size:1.0em;vertical-align:middle}
+form{display:inline;}
+textarea{border:solid 1px #E7BEA5;}
+/*header*/
+#header{width:$mtablewidth;margin:auto;background-color:#FFFFFF}
+#nav {
+	height: 33px;	
+	background: url(../images/nav_bg.gif) repeat-x #eacf9a;
+	position: relative;
+	border-bottom: 1px solid #ccc;
+}
+#nav ul {
+	line-height: 31px;
+	height: 31px;
+	overflow: hidden;
+	padding-top: 1px;
+	border: 0px;
+	margin: 0px;
+	float: left;
+	list-style: none;
+}
+#nav ul li {
+	float: left;
+	padding: 0px 4px;
+	list-style: none;
+}
+#nav .nav_right {
+	width: 470px;
+	text-align: right;
+	float: right;
+	line-height: 32px;
+	height: 32px;
+	color: #731800;
+	padding-right: 6px;
+}
+#nav .nav_right {
+	width: 470px;
+	text-align: right;
+	float: right;
+	line-height: 32px;
+	height: 32px;
+	color: #731800;
+	padding-right: 6px;
+}
+#nav .nav_right strong{
+	color: #000;
+}
+.myhongbao_title {
+	width: 983px;
+	line-height: 40px;
+	background: url(/images/mydahongbao/ico_home.gif) no-repeat 0px 12px #fff;	
+	padding-left: 20px;
+	font-weight: 600;
+	color: #000;
+	height: 40px;
+	overflow: hidden;
+}
+.myhongbao_title h1 {
+	display: inline;
+	font-size: 12px;
+	margin: 0px;
+}
+/*toolbar*/
+.toptool{border-bottom:1px solid $cbgborder;}
+.toptool span{padding:1px 5px;line-height:150%}
+/*banner*/
+.banner{padding-right:3%}
+.banner img{vertical-align:middle;}
+/*guide*/
+.guide{}
+/*table*/
+.t{border:1px solid #E7BEA5;margin:0px auto 8px;}
+.t table{border:1px solid #fff;margin:0 auto;width:99.98%;}
+.t2{border-top:#E7BEA5 1px solid;margin:0px auto 5px;}
+.t3{margin:auto}
+.t4{padding:1px 0 1px 1px}
+/*table head*/
+.h{border-bottom:4px solid #dbecf4;background: url($imgpath/$stylepath/table_bg.gif) repeat-x;text-align:left;color:#004c7d;padding:5px 7px 3px 7px;}
+.h span{font-weight:normal;}
+.h h2{font-weight:bold}
+.h a{font-family:Arial;color: #731800;}
+.h span a,.h span{color:$headfonttwo;}
+.h a.a2{margin-left:12px;}
+/*table tr1*/
+.tr1 th{padding:5px 10px;text-align:left;vertical-align:top;font-weight:normal;}
+.tr1 td.td1{border:1px solid $tdcolor;}
+/*table tr2*/
+.tr2{background:#FCF1F5;color:#659B28;}
+.tr2 td,.tr2 th{line-height:21px;border-bottom:1px solid #E7BEA5;padding:0px 6px 0px;border-top:1px solid #E7BEA5;}
+.tr2 a{color:#659B28;margin:2px}
+/*table tr3*/
+.tr3 td,.tr3 th{border-bottom:1px solid #E7BEA5;padding:5px 8px}
+.tr3 th{text-align:left;font-weight:normal;}
+.tr4{background:#e0f0f9;color:#004c7d;}
+.tr4 td{padding:4px 10px;}
+.tr td,.tr th{padding:2px}
+/*topic content tips*/
+.tpc_content{font-size:14px;font-family:Arial;padding:0 2% 0 0.5%;margin:0 0 2%}
+.tips{background:$forumcolortwo;border:$tdcolor 1px solid;padding:5px;margin:0 1% 1% 0;float:left;text-align:center;}
+.tiptop{border-bottom:1px solid $tdcolor;padding:0 0 5px 0;vertical-align:middle;}
+.tipad{border-top:1px solid $tdcolor;margin:10px 0 0;padding:5px 0 0;}
+.quote{font-size:70%;color:$headfontone;margin:2px;padding:0}
+blockquote{width:92%;font-size:85%;color:#81888c;border:1px solid $tdcolor;border-left-width:3px;padding:5px;margin:0 0 1%}
+/*menu*/
+.menu{position:absolute;background:#fff;border:1px solid #E7BEA5;}
+.menu td, .menu li,.menu ul{background:$headcolor;padding:0; margin:0}
+.menu li{list-style:none;}
+.menu a{display:block;padding:3px 15px 3px 15px}
+.menu a:hover{background:$linkcolor;text-decoration:none;color:#333;}
+.menu ul.ul1 li a{display:inline;padding:0}
+/*pages*/
+.pages{margin:3px 0;font:11px/12px Tahoma}
+.pages *{vertical-align:middle;}
+.pages a{padding:1px 4px 1px;border:1px solid #E7BEA5;margin:0 1px 0 0;text-align:center;text-decoration:none;font:normal 12px/14px verdana;}
+.pages a:hover{border:$cbgfont 1px solid;background:$cbgcolor;text-decoration:none;color:$headfontone}
+.pages input{margin-bottom:0px;border:1px solid $cbgfont;height:15px;font:bold 12px/15px Verdana;padding-bottom:1px;padding-left:1px;margin-right:1px;color:$cbgfont;}
+/*footer*/
+#footer{width:$mtablewidth;text-align:right;border-top:2px solid $headborder;margin:auto;padding:5px 0;border-bottom:$cbgcolor 12px solid}
+#main{width:1003px;margin:0px auto;overflow: hidden;}
+</style><!--css-->
+<!--
+EOT;
+if($yeyestyle){ print <<<EOT
+-->
+<style type="text/css">/*竖线风格输出*/
+.tr3 td,.tr3 th{border-right:1px solid #E7BEA5;}
+.y-style{text-align:center;}
+.t table{border:0;width:100%;}
+.tr1 td.td1{border-left:0}
+.t{padding:1px}
+</style>
+<!--[if IE]>
+<style type="text/css">
+.t table{border:1px solid #fff;}
+</style><![endif]-->
+<!--
+EOT;
+} print <<<EOT
+-->
+<!--[if IE]>
+<style type="text/css">
+.btn{border:3px double #E7BEA5; height:21px;padding-left:0.15em;padding-right:0.15em;}
+.tr1 td.td1{border-top:0}
+.t4{padding:0}
+.pages a{padding:1px 4px 2px;}
+.t table{width:100%;border-collapse:collapse;}
+.t {padding:0}
+.menu a{height:14px}
+</style>
+<![endif]-->
+</head><body>
+$msgsound
+<div id="head" class="main_box">
+	<div id="head_top">		
+		<div id="logo">
+			<a href="/"><img src="../images/logo.gif" alt="大红包优惠券" /></a>
+		</div>		
+		<div id="head_topnav">
+			<div class="head_nav">
+				<div class="head_navimg"><img src="/images/top_nav/current_5.gif" id="id2"/></div>
+				<ul>
+					<li><a href="/" title="优惠券" onmouseover="document.getElementById('id2').src='/images/top_nav/other_5_1.gif'" onmouseout="document.getElementById('id2').src='/images/top_nav/current_5.gif'">优惠券</a></li>
+					<li><a href="/discount_hot.html" title="折扣信息" onmouseover="document.getElementById('id2').src='/images/top_nav/other_5_2.gif'" onmouseout="document.getElementById('id2').src='/images/top_nav/current_5.gif'">折扣信息</a></li>
+					<li><a href="/onlinediscount.html" title="劲爆特价" onmouseover="document.getElementById('id2').src='/images/top_nav/other_5_3.gif'"onmouseout="document.getElementById('id2').src='/images/top_nav/current_5.gif'">劲爆特价</a></li>										
+					<li><a href="/travel.html" title="旅游度假" onmouseover="document.getElementById('id2').src='/images/top_nav/other_5_4.gif'" onmouseout="document.getElementById('id2').src='/images/top_nav/current_5.gif'">旅游度假</a></li>
+					<li class="lileft"><a href="/bbs" title="社区"><strong>社区</strong></a></li>			
+				</ul>
+			</div>
+			<!--
+EOT;
+if($groupid=='guest'){print <<<EOT
+-->
+			<div id="head_login">
+				<a href="/bbs/login.php">登录</a>&nbsp;<a href="/bbs/register.php">注册</a>
+			</div>
+		<!--
+EOT;
+}else{ print <<<EOT
+-->
+			<div id="head_message">				
+				<div class="head_messbottom">你好，<a href="/bbs/profile.php">$windid</a> <span><a href="/bbs/login.php?action=quit">退出</a></span></div>
+				<div class="head_messtop">目前红包数：<strong>$userhongbao</strong><strong>个</strong> <a href="/profile/myhongbao.php">我的大红包</a></div>
+			</div>
+<!--
+EOT;
+}print <<<EOT
+-->
+		</div>	
+	</div>
+	<script type="text/javascript">
+			var cityid = GetCookie("cityid");
+
+			function GetCookie(Name) { 
+				  var search = Name + "="; 
+				  var returnvalue = ""; 
+				  if (document.cookie.length > 0) { 
+						offset = document.cookie.indexOf(search); 
+						if (offset != -1) {     
+							  offset += search.length; 
+							  end = document.cookie.indexOf(";", offset);                       
+							  if (end == -1) 
+									end = document.cookie.length; 
+							  returnvalue=unescape(document.cookie.substring(offset,end)); 
+						} 
+				  } 
+				  return returnvalue; 
+			 }
+			
+	</script>
+	
+	<div id="nav">
+		<ul>			
+			<li><a href="/profile/myhongbao.php">我的大红包</a> |</li>
+			<li><a href="/profile/mycoupon.php">我的优惠券</a> |</li>
+			<li><a href="/profile/mydiscount.php">我的折扣信息</a> |</li>
+			<li><a href="/bbs/profile.php">我的社区</a> |</li>
+			<li><a href="/profile/myaward.php">我的奖品</a> |</li>
+			<li><a href="/bbs/read.php?tid=99431" target=_blank>积分规则</a></li>
+		</ul>
+		<div class="nav_right">欢迎，<strong>$windid</strong> | 您上次登录的时间是：$lastvisittime</div>
+	</div>	
+
+</div>
+<div id="showmenu" style="z-index:100;display:none;"></div>
+<div id="menu_hack" class="menu" style="display:none;"><table width="120" cellspacing="1" cellpadding="5">
+	<tr><th class="h">社区服务</th></tr>
+<!--
+EOT;
+foreach($db_hackdb as $key=>$hack){
+if($hack[2]=='1' && file_exists(R_P."hack/$key/index.php")){print <<<EOT
+-->
+	<tr><td class="f_one"><a href="hack.php?H_name=$hack[1]">$hack[0]</a></td></tr>
+<!--
+EOT;
+}}print <<<EOT
+-->
+</table></div>
+<!--
+EOT;
+if($db_menu==1 || $db_menu==3){ print <<<EOT
+-->
+<div id="menu_msg" class="menu" style="display:none;"><table width="120" cellspacing="1" cellpadding="5">
+	<tr><th class="h">短消息</th></tr>
+	<tr><td class="f_one"><a href="message.php">收件箱</a></td></tr>
+	<tr><td class="f_one"><a href="message.php?action=sendbox">发件箱</a></td></tr>
+	<tr><td class="f_one"><a href="message.php?action=scout">消息跟踪</a></td></tr>
+	<tr><td class="f_one"><a href="message.php?action=write">写新消息</a></td></tr>
+</table></div>
+<div id="menu_profile" class="menu" style="display:none;"><table width="120" cellspacing="1" cellpadding="5">
+	<tr><th class="h">控制面板</th></tr>
+	<tr><td class="f_one"><a href="profile.php">控制面板首页</a></td></tr>
+	<tr><td class="f_one"><a href="profile.php?action=modify">编辑个人资料</a></td></tr>
+	<tr><td class="f_one"><a href="profile.php?action=show&uid=$winduid">查看个人资料</a></td></tr>
+	<tr><td class="f_one"><a href="profile.php?action=friend">好友列表</a></td></tr>
+	<tr><td class="f_one"><a href="profile.php?action=permission">用户权限查看</a></td></tr>
+<!--
+EOT;
+if($_G['atclog']){print <<<EOT
+-->
+	<tr><td class="f_one"><a href="profile.php?action=log">帖子操作记录</a></td></tr>
+<!--
+EOT;
+}print <<<EOT
+-->
+	<tr><td class="f_one"><a href="userpay.php">{$db_currencyname}管理</a></td></tr>
+	<tr><td class="f_one"><a href="profile.php?action=buy">特殊组购买</a></td></tr>
+	<tr><td class="f_one"><a href="profile.php?action=favor">收藏夹</a></td></tr>
+	<tr><td class="f_one"><a href="personal.php">我的主题</a></td></tr>
+</table></div>
+<div id="menu_sort" class="menu" style="display:none;">
+	<table width="120" cellspacing="1" cellpadding="5">
+	<tr><th class="h">统计与排行</th></tr>
+	<tr><td class="f_one"><a href="sort.php">基本统计信息</a></td></tr>
+	<tr><td class="f_one"><a href="sort.php?action=ipstate">到访IP统计</a></td></tr>
+	<tr><td class="f_one"><a href="sort.php?action=team">管理团队</a></td></tr>
+	<tr><td class="f_one"><a href="sort.php?action=admin">管理统计</a></td></tr>
+	<tr><td class="f_one"><a href="sort.php?action=online">在线统计</a></td></tr>
+	<tr><td class="f_one"><a href="sort.php?action=member">会员排行</a></td></tr>
+	<tr><td class="f_one"><a href="sort.php?action=forum">版块排行</a></td></tr>
+	<tr><td class="f_one"><a href="sort.php?action=article">帖子排行</a></td></tr>
+</table></div>
+<!--
+EOT;
+} print <<<EOT
+-->
+</div>
+<!--
+EOT;
+if(!$db_union[6] && @in_array('2',$db_yh) && SCR!='post'){print <<<EOT
+-->
+<div class="tac"><script type="text/javascript" src="http://ce.phpwind.com/src/yh.php?v=$wind_version&siteid={$GLOBALS[db_sitehash]}&type=2"></script></div>
+<!--
+EOT;
+}print <<<EOT
+-->
+<div id="main">
+<!--
+EOT;
+?>-->

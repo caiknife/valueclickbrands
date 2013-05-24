@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>代码说明</title>
+<style>
+ul{ margin-top:0}
+body{ margin:10px; font-size:14px; line-height:1.8; font-family:Arial, Helvetica, sans-serif}
+h1{ font-size:20px;}
+h2{ font-size:14px; background:#CAD5F0}
+#sidebar{ position:absolute;width:150px; left:10px; padding-top:30px;}
+#content{border-left:1px dotted #CCC; padding:10px; margin-left:180px;}
+#footer{border-top:1px solid #CCC; clear:both; text-align:center; color:#666}
+#header{border-bottom:1px solid #CCC; clear:both}
+p,h1,h2{ padding:0 5px;}
+em{ font-size:12px; color:#666;}
+</style>
+</head>
+<body>
+<div id="info">
+  <div id="header">
+    <h1>OEM premier</h1>
+  </div>
+  <div id="sidebar">
+    <ul>
+      <li><a href="index.html">政策法规</a></li>
+      <li><a href="system.html">系统要求</a></li>
+      <li><a href="code.html">代码说明</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <h2>代码说明</h2>
+    <p> <strong>文件说明</strong>
+    <ul>
+      <li>lib/settings.php 为配置文件，在这里配置您的ID和KEY</li>
+      <li>lib/oem.php 为获取数据文件</li>
+      <li>lib文件夹以外的文件都为是示例代码，您可以随意命名和更改</li>
+    </ul>
+    客齐集鼓励您自已作Cache，来提高用户的访问速度以及减少服务请求。
+    </p>
+    <p>
+    <h2>类（Class） Oem</h2>
+    version: 1.0 <br />
+    author: fbjiang@kijiji.com.cn
+    </p>
+    <p>
+    <h2>方法（Method）</h2>
+    <ul>
+      <li><a href="#1">function getService</a>(<em>string </em>$service, <em>array </em>$options) </li>
+    </ul>
+    </p>
+    <p style="padding:0 30px;"> 请求一个服务。<br />
+      参数（Parameters）
+    <table width="90%" border="0" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#EDF1FA"><strong>$service</strong></td>
+        <td valign="top" bgcolor="#EDF1FA"><em>string</em></td>
+        <td valign="top" bgcolor="#EDF1FA">Values are:
+          <ul>
+            <li><em><a href="#ad">adLoad</a></em> 获取一条广告的内容。</li>
+            <li><em><a href="#ads">adsLoad</a></em> 获取多条广告内容。</li>
+            <li><em><a href="#cate">categoryLoad</a></em> 获取一个类目的信息。</li>
+            <li><em><a href="#catec">categoryChildren</a></em> 获取一个类目的所有子类目信息。</li>
+            <li><em><a href="#area">areaLoad</a></em> 获取一个地区的信息。</li>
+            <li><em><a href="#areac">areaChildren</a></em> 获取一个地区的所有子地区信息。</li>
+            <li><em><a href="#search">searchLoad</a></em> 获取一个搜索的结果。</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EDF1FA"><strong>$options</strong></td>
+        <td valign="top" bgcolor="#EDF1FA"><em>array</em></td>
+        <td valign="top" bgcolor="#EDF1FA">不同的请求有不同的参数，详见<a href="#qw">服务请求对应的参数</a>！</td>
+      </tr>
+    </table>
+    </p>
+    <h2>服务请求对应的参数<a name="qw" id="qw"></a></h2>
+    <div style="padding:0 30px;">
+      <ul>
+        <li><strong>adLoad 获取一条广告的内容。</strong>
+          <a name="ad" id="ad"></a>
+          <table width="90%" border="0" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF">
+            <tr>
+              <td width="70%" valign="top" bgcolor="#DFE7F7"><strong>代码</strong></td>
+              <td valign="top" bgcolor="#DFE7F7"><strong>参数说明</strong></td>
+            </tr>
+            <tr>
+              <td valign="top" bgcolor="#EDF1FA">$oem->getService('adLoad ',array('id' => 14664343)); </td>
+              <td valign="top" bgcolor="#EDF1FA"><em>'id'</em>14664343为广告ID号。</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" bgcolor="#EDF1FA">示例见：view.php</td>
+            </tr>
+          </table>
+          <br />
+        </li>
+		
+        <li><strong>adsLoad 获取多条广告内容。</strong>
+          <a name="ads" id="ads"></a>
+          <table width="90%" border="0" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF">
+            <tr>
+              <td width="70%" valign="top" bgcolor="#DFE7F7"><strong>代码</strong></td>
+              <td valign="top" bgcolor="#DFE7F7"><strong>参数说明</strong></td>
+            </tr>
+            <tr>
+              <td valign="top" bgcolor="#EDF1FA">$oem->getService('adsLoad', array('categoryId' => 2104, 'areaId' => 21001, 'page' => 3));</td>
+              <td valign="top" bgcolor="#EDF1FA"><em>'categoryId'</em>2104为类目ID号。<br />
+			  <em>'areaId'</em>21001为地区ID号。<br />
+			  <em>'page'</em>3为页数。			  </td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" bgcolor="#EDF1FA">示例见：listing.php</td>
+            </tr>
+          </table><br />
+        </li>
+		        <li><strong>categoryLoad 获取一个类目的信息。</strong>
+                  <a name="cate" id="cate"></a>
+                  <table width="90%" border="0" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF">
+            <tr>
+              <td width="70%" valign="top" bgcolor="#DFE7F7"><strong>代码</strong></td>
+              <td valign="top" bgcolor="#DFE7F7"><strong>参数说明</strong></td>
+            </tr>
+            <tr>
+              <td valign="top" bgcolor="#EDF1FA">$oem->getService('categoryLoad', array('id' => 2104));</td>
+              <td valign="top" bgcolor="#EDF1FA"><em>'id'</em>2104为类目ID号。<br />			  </td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" bgcolor="#EDF1FA">示例见：cityhome.php</td>
+            </tr>
+          </table><br />
+        </li>
+		
+		        <li><strong>categoryChildren 获取一个类目的所有子类目信息。</strong>
+                  <a name="catec" id="catec"></a>
+                  <table width="90%" border="0" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF">
+            <tr>
+              <td width="70%" valign="top" bgcolor="#DFE7F7"><strong>代码</strong></td>
+              <td valign="top" bgcolor="#DFE7F7"><strong>参数说明</strong></td>
+            </tr>
+            <tr>
+              <td valign="top" bgcolor="#EDF1FA">$oem->getService('categoryChildren', array('id' => 2104));</td>
+              <td valign="top" bgcolor="#EDF1FA"><em>'id'</em>2104为类目ID号。<br />			  </td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" bgcolor="#EDF1FA">示例见：cityhome.php</td>
+            </tr>
+          </table><br />
+        </li>
+		
+		        <li><strong>areaLoad 获取一个地区的信息。</strong>
+                  <a name="area" id="area"></a>
+                  <table width="90%" border="0" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF">
+            <tr>
+              <td width="70%" valign="top" bgcolor="#DFE7F7"><strong>代码</strong></td>
+              <td valign="top" bgcolor="#DFE7F7"><strong>参数说明</strong></td>
+            </tr>
+            <tr>
+              <td valign="top" bgcolor="#EDF1FA">$oem->getService('areaLoad', array('id' => 21));</td>
+              <td valign="top" bgcolor="#EDF1FA"><em>'id'</em>21为地区ID号。<br />			  </td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" bgcolor="#EDF1FA">示例见：listing.php</td>
+            </tr>
+          </table><br />
+        </li>
+		
+		        <li><strong>areaChildren 获取一个地区的所有子地区信息。 </strong>
+                  <a name="areac" id="areac"></a>
+                  <table width="90%" border="0" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF">
+            <tr>
+              <td width="70%" valign="top" bgcolor="#DFE7F7"><strong>代码</strong></td>
+              <td valign="top" bgcolor="#DFE7F7"><strong>参数说明</strong></td>
+            </tr>
+            <tr>
+              <td valign="top" bgcolor="#EDF1FA">$oem->getService('areaChildren', array('id' => 21));</td>
+              <td valign="top" bgcolor="#EDF1FA"><em>'id'</em>21为地区ID号。			  </td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" bgcolor="#EDF1FA">示例见：index.php</td>
+            </tr>
+          </table><br />
+        </li>
+		
+		        <li><strong>searchLoad 获取一个搜索的结果。</strong>
+                  <a name="search" id="search"></a>
+                  <table width="90%" border="0" cellpadding="5" cellspacing="1" bgcolor="#FFFFFF">
+            <tr>
+              <td width="70%" valign="top" bgcolor="#DFE7F7"><strong>代码</strong></td>
+              <td valign="top" bgcolor="#DFE7F7"><strong>参数说明</strong></td>
+            </tr>
+            <tr>
+              <td valign="top" bgcolor="#EDF1FA">getService('searchLoad', array('categoryId' => 2104 , 'query' => urlencode('兼职'), 'page' => 2));</td>
+              <td valign="top" bgcolor="#EDF1FA"><em>'categoryId'</em>2104为类目ID号。<br />
+			  <em>'query'</em>“兼职”为要搜索的关键词，关键词要用<em>urlencode()</em>;。<br />
+			  <em>'page'</em>2为页数。			  </td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" bgcolor="#EDF1FA">示例见：listing.php</td>
+            </tr>
+          </table><br />
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer">kijiji</div>
+</div>
+</body>
+</html>

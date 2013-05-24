@@ -1,0 +1,69 @@
+<?php
+$this->headTitle("所有海外购物商家，海淘商家大全 － 大红包海淘优惠券");
+$this->headMeta()->appendName("keywords", "所有海外购物商家,海淘商家");
+$this->headMeta()->appendName("description", "大红包海淘优惠券为您展示了最为齐全的海外购物的商家网站，海淘商家名站大全尽在大红包海淘优惠券。");
+?>
+<div class="mainleft">
+	<!-- 全部优惠券分类 -->
+	<?php print $this->partial('us/default/allCategory.phtml');?>
+	
+	<!-- 海淘攻略 && 优惠券使用攻略 -->
+	<?php print $this->partial('us/default/siteHelp.phtml');?>
+	
+	<!-- 邮箱订阅 -->
+	<?php print $this->partial('us/default/emailSubcription.phtml');?>
+
+	<!-- 帮助中心 -->
+	<?php print $this->partial('us/default/helpCenter.phtml');?>
+
+	<!-- 特价促销 -->
+	<?php print $this->partial('us/default/specialDealsList.phtml');?>
+
+	<!-- google ads -->
+	<?php print $this->partial('us/default/googleAdsList.phtml');?>
+</div>
+<div class="mainright">
+	<div class="breadcrumb">
+		当前位置： <a href="/">大红包海淘</a> &gt; 全部商家
+	</div>
+	<div class="allmerchantwp">
+		<div class="headline clearfix">
+			<h2>全部商家</h2>
+			<ul>
+				<?php
+				$first_chars = "";
+				for ($ascii = 65; $ascii < 91; $ascii ++) {
+					 $first_char = chr($ascii);
+					 echo '<li><a href="#'.$first_char.'">'.$first_char.'</a></li>';
+				}
+				?>
+				<li class="first"><a href="#~">0-9</a></li>
+			</ul>
+		</div>
+		<?php if ($this->merchantList):?>
+		<div class="content">
+			<div class="allmerchantlist">
+				<?php $i = 1;?>
+				<?php foreach ($this->merchantList as $key => $merchant):?>
+				<dl class="clearfix<?php if ($i == count($this->merchantList)):?> last<?php endif;?>">
+					<a name="<?php echo $key; ?>" clas="disn"></a>
+					<?php
+					if ($key == '~') {
+						$key = '0-9';
+					}
+					?>
+					<dt><?php if (count($merchant['Date']) > 8):?><a href="<?php echo $merchant['Url'];?>" class="seemore">更多&gt;&gt;</a><?php endif;?><span id="<?php echo $key;?>"><?php echo $key;?></span></dt>
+					<?php foreach ($merchant['Date'] as $key => $mer):?>
+					<?php if ($key < 8):?>
+					<dd><a target="_blank" href="<?php echo $mer['MerchantUrl'];?>"><img src="<?php echo __IMAGE_DOMAIN_NAME."".$mer['LogoFile'];?>"  /></a><a target="_blank" href="<?php echo $mer['MerchantUrl'];?>"><?php echo $mer['MerchantName'];?></a></dd>
+					<?php endif;?>
+					<?php endforeach;?>
+				</dl>
+				<?php $i ++;?>
+				<?php endforeach;?>
+			</div>
+		</div>
+		<?php endif;?>
+	</div>
+</div>        
+<!--end mainright  -->

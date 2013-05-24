@@ -1,0 +1,54 @@
+<?php
+if ($this->page > 1) {
+    $this->headTitle("您正在访问第".$this->page."页 - ".$this->merchantInfo['MerchantName']."优惠券，".$this->merchantInfo['MerchantName']."购物攻略教程－大红包海淘优惠券");
+    $this->headMeta()->appendName("keywords", "您正在访问第".$this->page."页 - ".$this->merchantInfo['MerchantName']."优惠券，".$this->merchantInfo['MerchantName']."购物攻略教程");
+    $this->headMeta()->appendName("description", "您正在访问第".$this->page."页 - 大红包海淘优惠券为您展示了最为齐全的".$this->merchantInfo['MerchantName']."优惠券，".$this->merchantInfo['MerchantName']."购物攻略教程。");
+} else {
+	$this->headTitle($this->merchantInfo['MerchantName']."优惠券，".$this->merchantInfo['MerchantName']."购物攻略教程－大红包海淘优惠券");
+    $this->headMeta()->appendName("keywords", $this->merchantInfo['MerchantName']."优惠券，".$this->merchantInfo['MerchantName']."购物攻略教程");
+    $this->headMeta()->appendName("description", "大红包海淘优惠券为您展示了最为齐全的".$this->merchantInfo['MerchantName']."优惠券，".$this->merchantInfo['MerchantName']."购物攻略教程。");
+}
+?>
+<div class="mainleft">
+	<!-- 全部优惠券分类 -->
+	<?php print $this->partial('us/default/allCategory.phtml');?>
+
+	<!-- google ads -->
+	<?php print $this->partial('us/default/googleAdsList.phtml');?>
+
+	<!-- 热门优惠券 -->
+	<?php print $this->partial('us/default/hotCouponList.phtml');?>
+
+	<!-- 热门促销 -->
+	<?php print $this->partial('us/default/hotDealsList.phtml');?>
+
+	<!-- 海淘攻略 && 优惠券使用攻略 -->
+	<?php print $this->partial('us/default/siteHelp.phtml');?>
+	
+	<!-- 邮箱订阅 -->
+	<?php print $this->partial('us/default/emailSubcription.phtml');?>
+
+	<!-- 帮助中心 -->
+	<?php print $this->partial('us/default/helpCenter.phtml');?>
+</div>
+<div class="mainright">
+	<!-- 商家详细信息 -->
+	<?php print $this->partial('us/default/merchantInfo.phtml');?>
+
+	<!-- 商家优惠券优惠券 -->
+	<?php if ($this->couponList):?>
+	<div class="couponlistwp merchantcouponwp">
+		<div class="headline">
+			<h2><strong><?php print $this->merchantInfo['MerchantName'];?></strong>所有优惠券</h2>
+		</div>
+		<?php print $this->partial('us/default/couponList.phtml');?>
+	</div>
+	<?php echo $this->paginationControl($this->paginator, 'Sliding', 'us/default/pagestyle.phtml', array('params' => array('mid' => $this->merchantInfo['MerchantID']))); ?>
+    <?php else:?>
+    <div class="couponlistwp merchantcouponwp">
+		<div class="headline">
+			<h2>暂无<strong><?php print $this->merchantInfo['MerchantName'];?></strong>所有优惠券</h2>
+		</div>
+	</div>
+	<?php endif;?>
+</div>

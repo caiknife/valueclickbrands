@@ -1,0 +1,459 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>{$title}</title>
+<META NAME="description" CONTENT="{$description}">
+<META NAME="keywords" CONTENT="{$keywords}">
+<meta name="msvalidate.01" content="468C439C3B9E4E0385BC2C3387650481" />
+<meta name="copyright" content="www.dahongbao.com">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="verify-v1" content="QVIPb4M3AU1SQ7HQONfC2lrlH7RkeUn+PL1dLv8l5fs=" />
+<META name="y_key" content="4e5d1ab55ff4129b" />
+<link href="/css/index.css" rel="stylesheet" type="text/css" media="all" />
+<script language="javascript" src="/jscript/index_help.js" type="text/javascript"></script>
+<script language="javascript" src="/jscript/swfobject.js"></script>
+<script src="/jscript/prototype.js"></script>
+<script src="/jscript/cellgo.js"></script>
+</head>
+<body>
+<!--头部开始-->
+{include file="new/head.htm"}
+<!--头部结束-->
+<!--主体内容开始-->
+<div id="content">
+	<!--main 开始-->
+	<div id="main">
+		<!--main_left 热门优惠券开始-->
+		{$hotCoupon}
+		<!--main_left 热门优惠券结束-->
+		<!--main_right 图片开始-->
+		<div id="main_right">
+			<strong>正在加载播放器...请稍后</strong>
+		</div>
+		{literal}
+		<script type="text/javascript">
+		{/literal}
+		 var pics="{$TopicConfig.pics}";
+		 var linksgo="{$TopicConfig.links}";
+		 var texts="{$TopicConfig.texts}";
+		{literal}
+			var so = new SWFObject("/images/picviewer.swf", "flv", "677", "218", "6", "");
+			so.addParam("FlashVars", "pics="+pics+"&links="+linksgo+"&texts='"+texts+"'&borderwidth=677&borderheight=218&textheight=0");
+			so.addParam("wmode", "opaque");
+			so.addParam("allowScriptAccess", "sameDomain");
+			so.write("main_right");
+		</script>
+		{/literal}
+		<!--main_left 图片结束-->
+	</div>
+	<!--main 结束-->
+	<div class="clr"></div>
+	<!--contentmax begin-->
+	<div id="contentmax">
+	
+	
+	<!--contont 右边内容开始-->
+	<div id="contont">
+		<!--contont_box 导购咨询开始-->
+		<div class="contont_box bg">
+			<!--title 导购咨询头部开始-->
+			<div class="title">
+				<h2>最热&amp;最新优惠券</h2>
+				<div class="more">
+				
+				</div>
+			</div>
+			<!--title 导购咨询头部结束-->
+			<!--contont_minbox 餐饮美食开始-->
+			<div class="contont_minbox">
+				<h3 class="bg1">餐饮美食</h3>
+				<!--contont_minleft 图片开始-->
+				<div class="contont_minleft">
+					<a href="{$indexpage.1.0.Link}"><img src="{$indexpage.1.0.PicUrl}" alt="餐饮美食" border=0/></a>			
+				</div>
+				<!--contont_minleft 图片结束-->
+				<!--contont_minright 具体内容开始-->
+				<div class="contont_minright">
+					<!--contont_minmid 中间内容开始-->
+					<div class="contont_minmid">
+						<h4><a href="{$indexpage.1.0.Link}" title="{$indexpage.1.0.Title}">{$indexpage.1.0.Title}</a></h4>
+						<p><a href="{$indexpage.1.0.Link}">{$indexpage.1.0.Description}</a></p>
+						<ul>
+							{section name=loop loop=$indexpage.1 start=1 max=3}
+							<li>·<a href="{$indexpage.1[loop].Link}">{$indexpage.1[loop].Title}</a></li>
+							{/section}
+						
+						</ul>
+					</div>
+					<!--contont_minmid 中间内容结束-->
+					<!--contont_minmid 右边内容开始-->
+					<div class="contont_minbar">
+						<ul>
+							{section name=loop loop=$newcouponlist1 start=0 max=5}
+							<li class="liline">·{if $newcouponlist1[loop].Merchant_}【<a href="/Me-{$newcouponlist1[loop].NameUrl}--Mi-{$newcouponlist1[loop].Merchant_}.html">{if $newcouponlist1[loop].name1}{$newcouponlist1[loop].name1}{else}{$newcouponlist1[loop].name}{/if}</a>】{/if}<a href="/{if $newcouponlist1[loop].NameURL}{$newcouponlist1[loop].NameURL}{else}merchant{/if}/coupon-{$newcouponlist1[loop].Coupon_}/" title="{$newcouponlist1[loop].Descript}">{$newcouponlist1[loop].Descript}</a></li>
+							{/section}
+							<li class="more1"><a href="/Ca-food--Ci-72.html">更多餐饮美食优惠</a></li>
+						</ul>
+					</div>
+					<!--contont_minbar 右边内容结束-->
+				</div>
+				<!--contont_minright 具体内容结束-->
+			</div>
+			<!--contont_minbox 餐饮美食结束-->
+			
+			<!--contont_minbox 旅游度假开始-->
+			<div class="contont_minbox">
+				<h3 class="bg2">酒店机票</h3>
+				<!--contont_minleft 图片开始-->
+				<div class="contont_minleft">
+					<a href="{$indexpage.2.0.Link}"><img src="{$indexpage.2.0.PicUrl}" alt="数码手机" border=0/></a>		
+				</div>
+				<!--contont_minleft 图片结束-->
+				<!--contont_minright 具体内容开始-->
+				<div class="contont_minright">
+					<!--contont_minmid 中间内容开始-->
+					<div class="contont_minmid">
+						<h4><a href="{$indexpage.2.0.Link}" title="{$indexpage.2.0.Title}">{$indexpage.2.0.Title}</a></h4>
+						<p><a href="{$indexpage.2.0.Link}">{$indexpage.2.0.Description}</a></p>
+						<ul>
+							{section name=loop loop=$indexpage.2 start=1 max=3}
+							<li>·<a href="{$indexpage.2[loop].Link}">{$indexpage.2[loop].Title}</a></li>
+							{/section}
+						</ul>
+					</div>
+					<!--contont_minmid 中间内容结束-->
+					<!--contont_minmid 右边内容开始-->
+					<div class="contont_minbar">
+						<ul>
+							{section name=loop loop=$newcouponlist2 start=0 max=5}
+							<li class="liline">·{if $newcouponlist2[loop].Merchant_}【<a href="/Me-{$newcouponlist2[loop].NameUrl}--Mi-{$newcouponlist2[loop].Merchant_}.html">{if $newcouponlist2[loop].name1}{$newcouponlist2[loop].name1}{else}{$newcouponlist2[loop].name}{/if}</a>】{/if}<a href="/{if $newcouponlist2[loop].NameURL}{$newcouponlist2[loop].NameURL}{else}merchant{/if}/coupon-{$newcouponlist2[loop].Coupon_}/" title="{$newcouponlist2[loop].Descript}">{$newcouponlist2[loop].Descript}</a></li>
+							{/section}
+							<li class="more1"><a href="/Ca-travel--Ci-70.html">更多酒店机票优惠</a></li>
+						</ul>
+					</div>
+					<!--contont_minbar 右边内容结束-->
+				</div>
+				<!--contont_minright 具体内容结束-->
+			</div>
+			<!--contont_minbox 旅游度假结束-->
+			
+			<!--contont_minbox 美容化妆开始-->
+			<div class="contont_minbox">
+				<h3 class="bg3">时尚美容</h3>
+				<!--contont_minleft 图片开始-->
+				<div class="contont_minleft">
+					<a href="{$indexpage.3.0.Link}"><img src="{$indexpage.3.0.PicUrl}" alt="时尚美容" border=0/></a>				
+				</div>
+				<!--contont_minleft 图片结束-->
+				<!--contont_minright 具体内容开始-->
+				<div class="contont_minright">
+					<!--contont_minmid 中间内容开始-->
+					<div class="contont_minmid">
+						<h4><a href="{$indexpage.3.0.Link}" title="{$indexpage.3.0.Title}">{$indexpage.3.0.Title}</a></h4>
+						<p><a href="{$indexpage.3.0.Link}">{$indexpage.3.0.Description}</a></p>
+						<ul>
+							{section name=loop loop=$indexpage.3 start=1 max=3}
+							<li>·<a href="{$indexpage.3[loop].Link}">{$indexpage.3[loop].Title}</a></li>
+							{/section}
+						</ul>
+					</div>
+					<!--contont_minmid 中间内容结束-->
+					<!--contont_minmid 右边内容开始-->
+					<div class="contont_minbar">
+						<ul>
+							{section name=loop loop=$newcouponlist3 start=0 max=5}
+							<li class="liline">·{if $newcouponlist3[loop].Merchant_}【<a href="/Me-{$newcouponlist3[loop].NameUrl}--Mi-{$newcouponlist3[loop].Merchant_}.html">{if $newcouponlist3[loop].name1}{$newcouponlist3[loop].name1}{else}{$newcouponlist3[loop].name}{/if}</a>】{/if}<a href="/{if $newcouponlist3[loop].NameURL}{$newcouponlist3[loop].NameURL}{else}merchant{/if}/coupon-{$newcouponlist3[loop].Coupon_}/" title="{$newcouponlist3[loop].Descript}">{$newcouponlist3[loop].Descript}</a></li>
+							{/section}
+							<li class="more1"><a href="/Ca-Cosmestics--Ci-68.html">更多时尚美容优惠</a></li>
+						</ul>
+					</div>
+					<!--contont_minbar 右边内容结束-->
+				</div>
+				<!--contont_minright 具体内容结束-->
+			</div>
+			<!--contont_minbox 美容化妆结束-->
+			
+			<!--contont_minbox 鲜花礼品开始-->
+			<div class="contont_minbox">
+				<h3 class="bg4">鲜花礼品</h3>
+				<!--contont_minleft 图片开始-->
+				<div class="contont_minleft">
+					<a href="{$indexpage.4.0.Link}"><img src="{$indexpage.4.0.PicUrl}" alt="鲜花礼品" border=0/></a>			
+				</div>
+				<!--contont_minleft 图片结束-->
+				<!--contont_minright 具体内容开始-->
+				<div class="contont_minright">
+					<!--contont_minmid 中间内容开始-->
+					<div class="contont_minmid">
+						<h4><a href="{$indexpage.4.0.Link}" title="{$indexpage.4.0.Title}">{$indexpage.4.0.Title}</a></h4>
+						<p><a href="{$indexpage.4.0.Link}">{$indexpage.4.0.Description}</a></p>
+						<ul>
+							{section name=loop loop=$indexpage.4 start=1 max=3}
+							<li>·<a href="{$indexpage.4[loop].Link}">{$indexpage.4[loop].Title}</a></li>
+							{/section}
+						</ul>
+					</div>
+					<!--contont_minmid 中间内容结束-->
+					<!--contont_minmid 右边内容开始-->
+					<div class="contont_minbar">
+						<ul>
+							{section name=loop loop=$newcouponlist4 start=0 max=5}
+							<li class="liline">·{if $newcouponlist4[loop].Merchant_}【<a href="/Me-{$newcouponlist4[loop].NameUrl}--Mi-{$newcouponlist4[loop].Merchant_}.html">{if $newcouponlist4[loop].name1}{$newcouponlist4[loop].name1}{else}{$newcouponlist4[loop].name}{/if}</a>】{/if}<a href="/{if $newcouponlist4[loop].NameURL}{$newcouponlist4[loop].NameURL}{else}merchant{/if}/coupon-{$newcouponlist4[loop].Coupon_}/" title="{$newcouponlist4[loop].Descript}">{$newcouponlist4[loop].Descript}</a></li>
+							{/section}
+							<li class="more1"><a href="/Ca-gift--Ci-66.html">更多鲜花礼品优惠</a></li>
+						</ul>
+					</div>
+					<!--contont_minbar 右边内容结束-->
+				</div>
+				<!--contont_minright 具体内容结束-->
+			</div>
+			<!--contont_minbox 鲜花礼品结束-->
+			
+			
+		</div>
+		<!--contont_box 导购咨询结束-->
+		
+		<!--contont_box 大红包社区开始-->
+		<div class="contont_box">
+			<!--title 大红包社区头部开始-->
+			<div class="title">
+				<h2>大红包社区</h2>
+				<div class="more">
+					<a href="/bbs/"><img src="/images/icn_more.gif" /></a>
+				</div>
+			</div>
+			<!--title 大红包社区头部结束-->
+			<!--bbs_left 大红包社区左边开始-->
+			<div class="bbs_left">
+				<h4>网友互动</h4>
+				<ul>
+					{section name=loop loop=$indexlist.69 start=0 max=8}
+						<li>·<a href="/bbs/thread.php?fid=69" title="悬赏信息">【悬赏信息】</a> <a href="/bbs/read.php?tid={$indexlist.69[loop].tid}">{$indexlist.69[loop].subject}</a></li>
+					{/section}
+				</ul>
+			</div>
+			<!--bbs_left 大红包社区左边结束-->
+			
+			<!--bbs_left 大红包社区右边开始-->
+			<div class="bbs_right">
+				<h4>热帖</h4>
+				<ul>
+					{section name=loop loop=$hotallbbs start=0 max=8}
+					<li>·<a href="/bbs/thread.php?fid={$hotallbbs[loop].fid}" title="{$hotallbbs[loop].name}">【{$hotallbbs[loop].name}】</a> <a href="/bbs/read.php?tid={$hotallbbs[loop].tid}">{$hotallbbs[loop].subject}</a></li>
+					{/section}
+				</ul>
+			</div>
+			<!--bbs_left 大红包社区右边结束-->
+			
+
+		</div>
+		<!--contont_box 大红包社区结束-->
+
+		<!--contont_box 大红包推荐商家开始-->
+		{$tjsj}
+		<!--contont_box 大红包推荐商家结束-->
+		
+		<!--contont_box 大红包优惠小贴士开始-->
+		<div class="contont_box">
+			<!--title 大红包优惠小贴士头部开始-->
+			<div class="title">
+				<h2>大红包优惠小贴士</h2>				
+			</div>
+			<!--title 大红包优惠小贴士头部结束-->
+			<!--小贴士开始-->
+			<div class="contont_boxhelp" id="help_box1" style="display: none;">		
+				<div class="help_nav">
+					<dl>
+						<dt onclick="show_it(1);" class="red2"><a name="boxhelp" id="boxhelp">说明</a></dt>
+						<dt onclick="show_it(2);"><a name="boxhelp" id="boxhelp">帮助</a></dt>
+					</dl>
+				</div>
+				<ul>
+					<li class="red1">如何使用大红包优惠券，优惠信息，促销活动？</li>
+					<li>第一步：无论要网上购物还是准备外出消费，先来大红包查看相关商家优惠券。</li>
+					<li>第二步：预览和打印优惠券,折扣券。</li>
+					<li>第三步：根据您选择优惠券不同，可适用网上购物或实时店使用。</li>				</ul>
+			</div>
+			<!--小贴士结束-->
+			
+			<!--帮助开始-->
+			<div class="contont_boxhelp" id="help_box2">	
+				<div class="help_nav">
+					<dl>
+						<dt onclick="show_it(2);" class="red2"><a name="boxhelp" id="boxhelp">帮助</a></dt>
+						<dt onclick="show_it(1);"><a name="boxhelp" id="boxhelp">说明</a></dt>
+					</dl>
+				</div>	
+				<ul>
+					<li class="red1">大红包优势在哪？</li>
+					<li>1) 大红包为您提供了最全、最新、最IN的优惠券、优惠信息及促销信息，一切优惠您都可以免费获取
+。</li>
+					<li>2) 成为注册用户后，当您发布优惠券、在论坛发贴或参加网站的各类活动，即有机会获得我们送出的免费精美礼品。</li>
+					<li>3) 优惠券曲线图为您精确、直观的展示市场上优惠券数量，让您更轻松的把握消费时机。</li>	
+					<li>非常感谢您访问大红包！如果您有其它任何问题或要求，欢迎联系我们，为您服务是我们的荣幸。
+
+</li>			
+				</ul>
+			</div>
+			<!--帮助结束-->
+		</div>
+		<!--contont_box 大红包优惠小贴士结束-->
+		<!--ad 广告开始-->
+		<div class="ad"></div>
+		<!--ad 广告结束-->
+	</div>
+	<!--contont 右边内容结束-->
+	
+	<!--sidebar 左边部分开始-->	
+	<div id="sidebar">
+		<!--允值开始-->
+		<!--<div class="sidebox_phone"><FORM METHOD=POST action="http://cz.eachnet.com/selernie.do?adid=song_tkisswin_015_080505_mcash_dahongbao" target="_blank" name="FORM" onsubmit="return checkCellNumber('formsubmit',1);">			
+			<div class="title_phone">手机充值</div>
+			<div class="phone_box">
+				<ul>
+					<li class="phone_left">请输入您要充值的号码</li>
+					<li class="phone_right"><input id="inputId" maxlength="11" name="mphone" type="text" class="phone_input" onKeyUp="return checkCellNumber();"/></li>
+					<li class="phone_left">请选择你要充值的面额</li>
+					<li class="phone_right"><input name="amount" type="radio" value="50" onclick="checkCellNumber('',1);"/>50元 <input name="amount" type="radio" value="100" checked="checked" onclick="checkCellNumber('',1);"/>100元 <input name="amount" type="radio" value="300" onclick="checkCellNumber('',1);"/>300元</li>
+					<li class="phone_ico"><span id="phonealert">现在充值9.8折起</span></li>
+					<li><input type="image" src="/images/phone_button.gif"></li>
+				</ul>
+			</div>
+		</FORM>
+		</div>-->
+		<!--手机充值结束-->
+		
+		<!--sidebox 热门商家开始-->
+		<div class="sidebox padding">
+			<!--title 热门商家头部开始-->
+			<div class="title">
+				<h2>推荐优惠券</h2>
+				<div class="more">
+				<a href="/new_coupon.php"><img src="/images/icn_more.gif" /></a>
+				</div>
+			</div>
+			<!--title 热门商家头部结束-->
+			<!--shopping 热门商家的具体内容开始-->
+			{$hotmerchant}
+			<!--shopping 热门商家的具体内容结束-->				
+		</div>
+		
+		<!--sidebox 优惠券曲线展示图开始-->
+		<div class="sidebox">
+			<div class="graph">
+				<h3>优惠券曲线展示图</h3>
+				当前有效优惠券：<span class="red">{$cnum}</span>条 新增优惠券：<span class="red">{$nowaddcoupon}</span>条
+				<div class="bring" id="d1">{$day}-{$day2}</div>
+				<div class="bring" id="d2" style="display:none">{$week}-{$week2}</div>
+				<div class="bring" id="d3" style="display:none">{$month}-{$month2}</div>
+				<div class="graph_box">
+					<img src="{$__IMAGE_SRC}images/up/day.png" id="pic">
+				</div>
+				<div class="graph_bottom" id="tintro">
+					VIEW BY: <span class="bold">DAY</span> | <a href="javascript:pic('w')"><span class="blue">WEEK</span></a> | <a href="javascript:pic('m')"><span class="blue">MONTH</span></a>
+				</div>
+			</div>
+		</div>
+		<!--sidebox 优惠券曲线展示图结束-->
+		
+		<!--sidebox 惠友排行榜开始-->
+		<div class="sidebox">
+			<!--title 惠友排行榜头部开始-->
+			<div class="title">
+				<h2>惠友排行榜</h2>
+				<div class="more">
+				<!-- 更多 -->
+				</div>
+			</div>
+
+
+			<!--title 惠友排行榜头部结束-->
+			<!--list 惠友排行榜内容开始-->
+			<div class="list">
+				<ul>
+					<li class="lileft"><strong>用户名</strong></li>
+					<li class="liright"><strong>红包数</strong></li>
+					<li class="lileft"><strong>用户名</strong></li>
+                    <li class="liright"><strong>红包数</strong></li>
+					{section name=loop loop=$hotuser start=0 max=16}
+					<li class="lileft">{$hotuser[loop].username}</li>
+					<li class="liright">{$hotuser[loop].money}</li>
+					{/section}
+				</ul>
+			</div>
+			<!--list 惠友排行榜内容开始-->
+		</div>
+		<!--sidebox 惠友排行榜结束-->
+		
+		<!--sidebox RSS订阅开始-->
+		<div class="sidebox">
+			<!--title 惠友排行榜头部开始-->
+			<div class="title">
+				<h2>RSS订阅</h2>
+				<div class="more">
+				
+				</div>
+			</div>
+			<!--title RSS订阅头部结束-->
+			
+			<!--RSS订阅内容开始-->
+			<div class="rss">
+				<ul>
+					<li><a href="wp-rss.php" target='_blank'><img src="/images/rss.gif" /></a></li>
+					<li><a href="ad.php?dahongbaoadurl=12" target='_blank'><img src="/images/addToGoogle.gif"></a></li>
+					<li><a href="ad.php?dahongbaoadurl=13" target='_blank'><img src="/images/addToYahoo.gif"></a></li>
+					<li><a href="ad.php?dahongbaoadurl=14" target='_blank'><img src="images/msnlive.gif"></a></li>
+					<li><a href="ad.php?dahongbaoadurl=15" target='_blank'><img src="/images/zhuaxia.gif"></a></li>
+					<li><a href="ad.php?dahongbaoadurl=16" target='_blank'><img src="images/bloglines.gif"></a></li>
+					<li><a href="ad.php?dahongbaoadurl=17" target='_blank'><img src="/images/rojo.gif"></a></li>
+				</ul>
+			</div>
+			<!--RSS订阅内容结束-->
+		</div>
+		<!--sidebox RSS订阅结束-->
+		
+		<!--sidebox 订阅活动预告邮件开始-->
+		<div class="sidebox">
+			<div class="email"><FORM name=form2 METHOD=POST ACTION="" >
+				<h3>订阅“活动预告”邮件</h3>
+				您的信箱即将收到活动预告，还有各种各样的优惠券！<br />
+				<div class="red">
+					<input name="email" type="text" class="input" /></div> <input name="" type="button" class="but1"  value="订阅" onclick="checkgo();"/><INPUT TYPE="hidden" name="addemail" value="true">
+				
+			</FORM></div>
+		</div>
+		<!--sidebox 订阅活动预告邮件结束-->
+	</div>
+	<!--sidebar 左边部分结束-->
+
+
+	</div>
+	<!--contentmax end-->
+	<div class="clr"></div>
+	<!--friend 友情链接开始-->
+	<div id="friend">
+		<!--title 友情链接头部开始-->
+		<div class="title">
+			<h2>合作伙伴</h2>
+			<div class="more">
+				<a href="/all_merchant.html"><img src="/images/icn_more.gif" /></a>
+			</div>
+		</div>
+		<!--title 友情链接头部结束-->
+		<ul>
+			{$yqlj1}
+		</ul>
+		<ul>
+			{$yqlj2}
+		</ul>
+		<div class="clr"></div>
+	</div>
+	<!--friend 友情链接结束-->
+</div>
+<!--主体内容结束-->
+</div>
+
+</div>
+{include file="new/foot.htm"}

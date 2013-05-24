@@ -1,0 +1,107 @@
+@charset "utf-8";
+/*reset global css*/
+.header, .footer, .footerInfo, .main{ width:990px;}
+.main{ background:#fff; padding:20px 0; margin-bottom:20px;}
+.searchBox{ width:510px;}
+.searchInput{ width:390px}
+.userLink{ text-align:right; color:#fff; padding-top:13px;}
+.btn{ background:#be0101; color:#fff; font-size:14px; padding:3px 10px; border:#960101 1px solid; cursor:pointer; text-shadow:0 -1px 0 rgba(0, 0, 0, 0.5); -moz-text-shadow:0 -1px 0 rgba(0, 0, 0, 0.5); -webkit-text-shadow:0 -1px 0 rgba(0, 0, 0, 0.5);  background-image:linear-gradient(bottom , #b30101, #cc0000);background-image:-moz-linear-gradient(bottom , #b30101, #cc0000);background-image:-webkit-linear-gradient(bottom , #b30101, #cc0000);}
+
+
+/*register*/
+.accountwrapper{ margin:0 15px;}
+.stepbox{ margin:30px 0 10px 0; height:32px; background:url(../../images/default/account_img.png) 0 0 no-repeat;}
+.stepbox ul li{ width:320px; text-align:center; color:#fff; font-size:14px; float:left; line-height:32px;}
+.step2{ background-position:0 -32px;}
+.step3{ background-position:0 -64px;}
+
+.registerform{ padding:15px 0 20px 0; float:left;}
+.registerform .topcow{ color:#301100; font-size:16px; font-weight:bold; padding:0 0 10px 130px; line-height:23px; background:url(../../images/default/account_img.png) 100px -142px no-repeat;}
+.formitem{ width:480px; padding:5px 0; clear:both;}
+.formitem strong{ display:block; float:left; width:120px; text-align:right; padding:0 10px 0 0; color:#393939; font-size:14px; font-weight:normal; line-height:28px;}
+.formitem input.formtxt{ width:205px; margin-right:8px; float:left; border:#c6c6c6 1px solid; height:18px; line-height:18px; padding:4px; box-shadow:1px 2px 3px rgba(0, 0, 0, 0.15) inset; -moz-box-shadow:1px 2px 3px rgba(0, 0, 0, 0.15) inset; -webkit-box-shadow:1px 2px 3px rgba(0, 0, 0, 0.15) inset;}
+.formitem .msg{ padding:5px 0 0 130px; clear:both}
+.formitem .msgfix{ padding-left:125px;}
+.formitem .msgfix input{ vertical-align:middle}
+.formitem .msgfix a{ color:#0D70A3}
+.formitem p{ clear:both; height:20px; line-height:20px; color:#969696; float:left; padding:0 5px;}
+.attention input.formtxt{ border:#739134 1px solid; background:#f8feec;}
+.attention p{ border:#739134 1px solid; position:relative;}
+.attention p span{ position:absolute; top:-6px; left:13px; width:10px; height:6px; background:url(../../images/default/account_img.png) 0px -98px no-repeat; display:block; }
+.error input.formtxt{ border:#c30202 1px solid; box-shadow:1px 2px 3px rgba(0, 0, 0, 0.2) inset; -moz-box-shadow:1px 2px 3px rgba(0, 0, 0, 0.2) inset; -webkit-box-shadow:1px 2px 3px rgba(0, 0, 0, 0.2) inset;}
+.error p{ border:#c30202 1px solid; position:relative; color:#c30202;}
+.error p span{ position:absolute; top:-6px; left:13px; width:10px; height:6px; background:url(../../images/default/account_img.png) 0px -125px no-repeat; display:block; }
+.correctitem{ background:url(../images/default/account_img.png) -170px -597px no-repeat;}
+.formitem input.shorttxt{vertical-align:middle; width:80px;}
+.formitem img{ vertical-align:middle; margin-top:3px;}
+.formitem input.registerbut{}
+.formitem .pwlevel{ float:left;}
+.formitem .pwlevel .bg{ width:105px; height:13px;}
+.formitem .pwlevel .bg .col1,.formitem .pwlevel .bg .col2,.formitem .pwlevel .bg .col3{ width:34px; height:10px; font-size:0; border-right:#fff 1px solid; background:#ddd; float:left;}
+.formitem .low .bg .col1{ background:#ff0000;}
+.formitem .low{ color:#ce7e00}
+.formitem .middle .bg .col1,.formitem .middle .bg .col2{ background:#779636;}
+.formitem .middle{ color:#547A09}
+.formitem .high .bg .col1,.formitem .high .bg .col2,.formitem .high .bg .col3{ background:#779636;}
+.formitem .high{ color:#547A09}
+.agreebbrule input{ margin-left:130px;}
+em.hint{ font-style:normal;}
+
+.regfeaturedmerchant{ margin-left:490px;}
+.regfeaturedmerchant .headline{ color:#c9aa99; font-size:16px; font-weight:bold; padding:15px 0 15px 30px;background:url(../../images/default/account_img.png) 0px -168px no-repeat;}
+.regfeaturedmerchant .headline a{color:#301100; font-size:16px; font-weight:bold; }
+.regfeaturedmerchant .enmerchant{ width:462px; height:360px;background:url(../../images/default/registermerchant_en.gif) 0px 0px no-repeat;}
+
+.successform{ width:360px; padding:0 0 0 140px; margin:80px auto; position:relative; }
+.successform .alerticon{ position:absolute; top:10px; left:0; width:116px; height:116px; background:url(../../images/default/register_icon.jpg) 0px 0px no-repeat;}
+.successform h4{ padding:0 0 5px 0; color:#301100; font-size:16px; font-weight:normal;}
+.successform p{ padding:0 0 5px 0; color:#333; font-size:14px; font-family:"microsoft yahei","宋体",Arial,Verdana;}
+.successform .topcow p{ font-size:16px; }
+.successform .topcow{ padding-bottom:10px;}
+.successform a:link,.successform a:active,.successform a:visited{ color:#cd0000; text-decoration:underline; font-size:14px;}
+.successform a:hover{ text-decoration:none; font-size:14px;}
+
+.activateform{ width:280px;}
+.activateform h4{ font-size:18px;}
+.activateform .topcow{ padding-top:45px;}
+.activateform .topcow p{ font-size:14px; }
+
+.failedform{ width:430px;}
+.failedform .alerticon{ background-position:0 -116px;}
+.failedform .topcow p{ font-size:18px; padding-top:55px;}
+.failedform .topcow p span{ color:#cd0000; font-size:18px; }
+.failedform a:link,.failedform a:active,.failedform a:visited{ font-size:18px;}
+.failedform a:hover{ font-size:18px;}
+
+.reactivateform{ width:430px;}
+.reactivateform h4{ font-size:18px; padding:25px 0 10px 0;}
+.reactivateform .alerticon{ background-position:0 -232px;}
+.reactivateform .topcow p{ font-size:14px;}
+
+.loginwrapper{margin:0 15px; padding:45px 0;}
+.loginwrapper .coll{ width:555px; float:left}
+.loginwrapper .colr{ width:405px; height:400px; float:left; background:url(../../images/default/login_r_bg.gif) no-repeat 10px 63px;}
+.loginform{ width:553px; float:left; border:#d8d8d8 1px solid; border-top:#cd0000 3px solid; box-shadow:-1px -2px 5px rgba(0, 0, 0, 0.15) inset; -moz-box-shadow:-1px -2px 5px rgba(0, 0, 0, 0.15) inset; -webkit-box-shadow:-1px -2px 5px rgba(0, 0, 0, 0.15) inset;}
+.loginform .topcow{ color:#301100; font-size:16px; padding:20px 0 5px 0;  font-weight:bold; border-bottom:#e2e1e1 1px solid; margin:0 35px 10px 35px;}
+.loginform form{ border-bottom:#f5f5f5 1px solid;}
+.loginform .formitem{ padding:5px 0 0 35px; line-height:28px; height:53px;}
+.loginform .formitem input.formtxt{ color:#d4d4d4;}
+.loginform .formitem input.shorttxt{ width:50px;}
+.loginform .formitem img{ margin-top:0px;}
+.loginform a.changevalida:link,
+.loginform a.changevalida:active,
+.loginform a.changevalida:visited,
+.loginform a.changevalida:hover{ color:#cd0000;}
+.formitem input.loginbut{ margin:0 0 0 126px; float:left;}
+.loginform .othermethod{ clear:both; width:503px; float:left; padding:25px 0 0 50px; height:47px; line-height:35px; background:#f5f5f5; border-top:#fff 1px solid; box-shadow:-1px -2px 5px rgba(0, 0, 0, 0.15) inset; -moz-box-shadow:-1px -2px 5px rgba(0, 0, 0, 0.15) inset; -webkit-box-shadow:-1px -2px 5px rgba(0, 0, 0, 0.15) inset;}
+.loginform .othermethod span{ float:left; margin-right:10px;}
+.loginform .othermethod a{ display:block; float:left; margin:0 15px 0 0; padding:10px 0 0 30px; line-height:16px; background:url(../../images/default/account_img.png) 0 -225px no-repeat; }
+.loginform .othermethod a.qqzone{ background-position:0 -225px;}
+.loginform .othermethod a.qqweibo{ background-position:0 -251px;}
+.loginform .othermethod a.sinaweibo{ background-position:0 -277px; line-height:17px;}
+.loginwrapper .registerinfo{ width:200px; margin:158px auto;}
+.loginwrapper .registerinfo p{ color:#393939; font-size:14px; line-height:30px;}
+.loginwrapper .registerinfo a.registerlink{ display:block; margin:10px auto; width:100px; padding:5px 10px; overflow:hidden; color:#fff; font-size:14px; text-align:center; border:#e07f00 1px solid; background:#fc8f02; box-shadow:0 1px 0px rgba(255, 179, 83, 1) inset; -moz-box-shadow:0 1px 0px rgba(255, 179, 83, 1) inset; -webkit-box-shadow:0 1px 0px rgba(255, 179, 83, 1) inset;}
+.chkRememberUsername input{ margin-left:130px;}
+.loginform .chkRememberUsername{ height:auto}
+.loginform .error_tips{ margin:0 35px;}

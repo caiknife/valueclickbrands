@@ -1,0 +1,136 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0;}
+body{ font-family:"microsoft yahei","宋体",Arial,Verdana; font-size:12px; background:url(../images/bg.jpg);}
+a{ font-size:12px; text-decoration:none; color:#333333;}
+a:hover{ text-decoration:underline; color:#333333;}
+
+img{ border:0;}
+ul{ margin:0; padding:0;}
+li{ list-style-type:none;}
+.cl{ clear:both;}
+
+.headerbg{ background:#bd0101; height:140px; border-bottom:1px solid #8e0505; }
+.header,.footer,.footerInfo,.friendly,.main{width:1180px; margin:0 auto;}
+.footer{ text-align:center; padding:25px 0 35px;}
+.footer span{ padding-right:20px;}
+.footerLink{ padding-bottom:5px;}
+.footerLink a{ margin:0 5px;}
+.address{ color:#666666;}
+
+
+.logo{ float:left; padding-top:20px; padding-right:110px;}
+
+.searchBox{ box-shadow:4px 4px 0 #a10101; margin-top:20px; width:630px; float:right; position:relative;}
+.searchInput{ padding:13px 12px 12px; font-size:14px; color:#000000; font-weight:bold; width:510px;}
+.searchButton{ width:96px;padding:9px 0 10px 25px; line-height:40px; position:absolute; right:0px; top:1px; cursor:pointer;background:url(../images/button.png); font-weight:bold; color:#fff; font-size:18px; border:0;}
+.searchMenu{ background:#e9e9e9 url(../images/icons.png) no-repeat 55px -454px; width:50px; height:41px; border-left:1px solid #d9d9d9; position:absolute; top:1px; right:96px; color:#666666; font-size:14px; line-height:41px; padding-right:20px; padding-left:10px; cursor:pointer;}
+
+
+.menu{ float:left; clear:left; padding-top:33px;}
+.menu li{ display:inline; margin-right:12px;}
+.menu li a{ color:#fff; font-size:16px; padding:6px 18px; font-weight:bold;border:1px solid #bd0101; border-bottom:0;}
+.menu li.select a,.menu li a:hover{ color:#cd0000;background:#ffffff;border:1px solid #8e0505; border-bottom:0; text-decoration:none;}
+.menu li.channel > a{ padding-right:30px; background:url(../images/icons.png) no-repeat 84px -857px;border:2px solid #bd0101;border-bottom:0;}
+.menu li.channelSelect{ position:relative; z-index:999999;}
+.menu li.channelSelect a.allChannel{background:#fff url(../images/icons.png) no-repeat 84px -928px; border:2px solid #e54128; border-bottom:0; padding:5px 16px 6px; color:#cd0000;padding-right: 30px;box-shadow: 2px 2px 0 #aa0101;}
+.menu .subChannel{ border:2px solid #e54128; position:absolute; top:24px; left:0; border-top:0; padding:5px 5px 5px; background:#fff url(../images/couponDot.png) no-repeat 0 -432px; }
+ul.subChannel{ background:#fff; width:155px;box-shadow: 2px 2px 0 #e5e5e5;}
+ul.subChannel li{ margin:0;}
+ul.subChannel a{ color:#000000; display:block; font-size:15px; font-weight:normal;}
+
+.userLink{ float:right; padding-top:33px;}
+.userLink li{ display:inline; color:#fff;}
+.userLink li a{ color:#fff; margin-right:5px; margin-left:5px;}
+
+
+.menu li.channelSelect .subChannel a{background:url(../images/icons.png) no-repeat right -795px; padding-left:5px;border:0;box-shadow:0;}
+.menu li.channelSelect .subChannel a:hover{ background:#fef5e8 url(../images/icons.png) no-repeat right -977px; color:#cd0000; text-decoration:none;}
+.menu li.channelSelect .subChannel a span{ padding:3px 12px; background:url(../images/icons.png) no-repeat 0 -1031px;}
+.menu li.channelSelect .subChannel a:hover span{padding:3px 12px; background:url(../images/icons.png) no-repeat 0 -1031px;}
+
+.footerInfoBg{ background:#fff; border-top:1px solid #d4d4d4; border-bottom:1px solid #d4d4d4; padding:20px 0; clear:both;}
+.footerInfo h3{ color:#cd0000; padding-bottom:5px;}
+.footerInfo li{ padding:5px 0;}
+.footerInfo .col{ float:left; width:220px;} 
+
+.iconLinks{ float:right;}
+.iconLinks ul{ padding-top:60px}
+.iconLinks li{ display:inline; padding:60px 15px 0 15px;}
+.iconLinks li a{ font-size:14px;}
+
+.help{ background:url(../images/icons.png) no-repeat 20px -522px;}
+.suggest{background:url(../images/icons.png) no-repeat 15px -623px;}
+.subscription{background:url(../images/icons.png) no-repeat 23px -706px ;}
+
+.friendly{ padding:20px 0; line-height:22px; }
+.friendly h3{ padding-bottom:10px; background:url(../images/button.png) no-repeat 67px -77px; font-weight:normal;}
+
+
+.breadcrumb{ padding:15px 0 15px; color:#000;}
+.breadcrumb a{ color:#cd0000;}
+
+
+/*SLs*/
+.favBox{ border:1px solid #e4e4e4; padding:1px;margin-bottom:20px;}
+.favBg{background:#fff; border:2px solid #f4f4f4;padding:3px 8px 5px 10px;  clear:both; box-shadow:inset 0 0 3px #f8f8f8;}
+.favBg .favM .favTop{background:url(../images/favTxt.gif) no-repeat right 5px; padding:16px 0px 0px ;}
+.favBg ul{ padding-bottom:10px; padding-top:6px;}
+.favBg .li_title{ padding-bottom:4px; padding-right:8px;}
+.favBg .li_title a:link,
+.favBg .li_title a:visited,
+.favBg .li_title a:hover,
+.favBg .li_title a:active{color:#e64329; font-size:14px; text-decoration:underline; line-height:18px;}
+.favBg .li_url a:link,
+.favBg .li_url a:visited,
+.favBg .li_url a:hover,
+.favBg .li_url a:active{color:#cd0000; font-size:12px; font-family: Arial, Helvetica, sans-serif;}
+.favBg .li_text{ color:#222;}
+
+
+.scrollCoupon,.dotRed{ border:1px solid #ededed; box-shadow: 4px 4px 0 #eefafc; width:220px; height:192px; padding-top:25px; float:left; margin:0 23px; background:url(../images/couponDot.png) no-repeat 12px 13px; text-align:center; position:relative;}
+.dotRed{ background:url(../images/couponDot.png) no-repeat 11px -205px; }
+
+
+
+.page{ text-align:right; padding:20px 0 10px; font-size:14px;}
+.page a{ margin:0 2px; padding:2px 8px; background:#ebebeb; font-size:14px;}
+.page a:hover,.page .current{ background:#cd0000; color:#fff; text-decoration:none;}
+
+/*sem SLs style*/
+.fav20130515{ background:#fff; padding:7px; margin-bottom:15px;}
+.fav20130515 .favBox{ margin-bottom:0; border:0;}
+.fav20130515 .favBg{ padding:8px 15px; box-shadow:none; border:0; background:#eefafc;}
+.fav20130515 .favBg .favM .favTop{ padding-top:10px;}
+.fav20130515 .favBg ul li{ display:inline;}
+
+.fav20130515_a{ background:#fff; padding:7px 7px 17px 7px;}
+.fav20130515_a .favBox{ margin-bottom:0; border:0;}
+.fav20130515_a .favBg{ padding:8px 15px; box-shadow:none; border:0; background:#eefafc;}
+.fav20130515_a .favBg .favM .favTop{ padding-top:10px;}
+.fav20130515_a .favBg .li_title a:link,
+.fav20130515_a .favBg .li_title a:visited,
+.fav20130515_a .favBg .li_title a:hover,
+.fav20130515_a .favBg .li_title a:active{ font-size:16px;}
+.fav20130515_a .favBg .li_text{ font-size:14px;}
+.fav20130515_a .favBg .li_url a:link,
+.fav20130515_a .favBg .li_url a:visited,
+.fav20130515_a .favBg .li_url a:hover,
+.fav20130515_a .favBg .li_url a:active{ font-size:14px;}
+.fav20130515_a .favBg ul{ padding-left:130px; padding-top:8px; border-bottom:#fff 1px solid; position:relative;}
+.fav20130515_a .favBg ul.last{ border:0;}
+.fav20130515_a .favBg ul li.orderid{ position:absolute; width:120px; text-align:center; left:0; top:5px; color:#c9aa99; font-style:italic; font-weight:bold; font-size:60px; font-family:Arial;}
+
+.fav20130515_b .favBg ul{ padding-left:0;}
+
+.couponlistallChannel{ background:#fff; padding:0 10px 10px;}
+.couponlistallChannel .couponlistChannel{ margin-bottom:0;}
+.couponlistChannel{ clear:both; border:1px solid #d4d4d4; padding:5px 15px; height:32px; line-height:32px; background:url(../images/bg.png) repeat-x 0 -129px; margin-bottom:15px;}
+.couponlistChannel li{ float:left; font-size:13px;}
+.couponlistChannel li strong{font-weight:normal;padding:2px 5px; color:#fff; background:#e64329; margin-right:12px;}
+.couponlistChannel li strong span{ color:#fff; font-size:13px;}
+.couponlistChannel li a span{ color:#333;}
+.couponlistChannel li a{padding:2px 5px; font-size:13px;}
+.couponlistChannel li a:hover,.couponlistChannel li a:hover span{ color:#fff; background:#e64329; text-decoration:none;}
+.couponlistChannel li b{ font-weight:normal; margin-right:8px; color:#c1c1c1;}
+

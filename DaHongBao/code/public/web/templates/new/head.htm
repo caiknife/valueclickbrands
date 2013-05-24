@@ -1,0 +1,99 @@
+	<div id="head" class="main_box">
+	{include file="inc/top_coupon.inc.tpl"}
+	{*}
+	<!--head_top 开始-->
+	<div id="head_top">		
+		<div id="logo">
+			<a href="/"><img src="/images/logo.gif" alt="大红包优惠券" /></a>
+		</div>		
+		<!--head_topnav 开始-->
+		<div id="head_topnav">
+			<div class="head_nav">
+				<div class="head_navimg"><img src="/images/top_navbg_02.gif"  id="id2"/></div>
+				<ul>
+					<li><a href="/" title="优惠券" onmouseover="document.getElementById('id2').src='/images/top_navbg_02.gif'"><strong>优惠券</strong></a></li>
+					<li><a href="/discount_hot.html" title="折扣信息" onmouseover="document.getElementById('id2').src='/images/top_nunun1_01.gif'" onmouseout="document.getElementById('id2').src='/images/top_navbg_02.gif'">折扣信息</a></li>									
+					<li><a href="/bbs" title="社区" onmouseover="document.getElementById('id2').src='/images/top_nunun1_02.gif'" onmouseout="document.getElementById('id2').src='/images/top_navbg_02.gif'">社区</a></li>
+					<li><a href="/topic-6.html" title="圣诞节" onmouseover="document.getElementById('id2').src='/images/top_nunun1_03.gif'" onmouseout="document.getElementById('id2').src='/images/top_navbg_02.gif'">圣诞节</a></li>					
+					<li class="lileft"><a href="/topic.html" title="专题活动" onmouseover="document.getElementById('id2').src='/images/top_nunun1_04.gif'" onmouseout="document.getElementById('id2').src='/images/top_navbg_02.gif'">专题活动</a></li>		
+				</ul>
+			</div>
+			<!--下面的注释为登陆以后的状态-->
+			{include file="new/head_userinfo.htm"}		
+		</div>
+		<!--head_topnav 结束-->			
+	</div>
+	<!--head_top 结束-->
+	{/*}	
+	<!--nav导航 开始-->
+	<div id="nav">
+		<ul>
+			{section name=loop loop=$category}
+
+			{if $category[loop].category_name==$categoryName}
+			<li class="bring"><strong>{$category[loop].category_name}</strong></li>
+			{else}
+			<li><a href="{$category[loop].category_url}" title="{$category[loop].category_name}">{$category[loop].category_name}</a></li>
+			{/if}
+			{/section}
+		</ul>
+	</div>
+	<!--nav导航 结束-->
+	<!--search搜索 开始-->
+	<div id="search">
+		<ul><form method="get" name="searchform" action="/search.php" target="_parent" onsubmit="if(searchform.searchText.value=='' || searchform.searchText.value=='请输入关键字') return false;">
+			<li class="input1"><input name="searchText" type="text" class="input" style="{if $searchtextformer && $searchtextformer != '请输入关键字'}color:#000;{else}color:#CCC;{/if}" value="{if $searchtextformer}{$searchtextformer|escape}{else}请输入关键字{/if}" {literal}onblur="if(this.value=='') { this.value='请输入关键字'; this.style.color='#CCC'; }else{ this.style.color='#000'; }"{/literal} onfocus="if(this.value=='请输入关键字') this.value=''; this.style.color='#000';"/><INPUT TYPE="hidden" name="needjump" value="true"></li>			
+			<li class="search_but"><input type="image" src="/images/button_search.gif"/></li></form>
+			<li class="button_publish"><a href="/useraddcoupon.php"><img src="../../images/button_publish.gif" alt="发布优惠券" /></a></li>	
+			{*}	
+			<li class="hot">热门关键字：</li>
+			<li class="hotmessage">{$hotkeywords}</li>
+			{/*}		
+		</ul>
+	</div>
+	<!--search搜索 结束-->
+	<div class="clr"></div>
+	<!--message 信息开始-->
+	<div id="message">
+		<div id="kejiji_messleft">
+			<ul>
+				<li class="kejiji_place">当前位置：</li>
+				<li>{$nowcityname}</li>
+				<li><a href="#" onclick="cityshow();"> 城市切换</a></li>		
+				<div id="cityshow" class="city" style="display:none">
+					<!-- <strong>按拼音排序</strong> -->
+					<strong>城市列表</strong>
+				   <span><a href="/changecity.php?id=all">全国</a></span>
+				   <span><a href="/changecity.php?id=10">北京</a></span>
+				   <span><a href="/changecity.php?id=21">上海</a></span>
+					<ul>
+						{section name=loop loop=$citylist}
+						<li><a href="/changecity.php?id={$citylist[loop].CityID}">{$citylist[loop].CityName}</a></li>
+						{/section}
+					</ul>
+				</div>
+			</ul>			
+		</div>	
+		{literal}
+		<script>
+			function cityshow(){
+				if(document.getElementById('cityshow').style.display == "inline"){
+					document.getElementById('cityshow').style.display = "none";
+				}else{
+					document.getElementById('cityshow').style.display = "inline";
+				}
+			}
+		</script>
+		{/literal}
+		<!--message_right活动公告开始-->
+		<div class="message_right">
+			<ul>
+				<li class="lileft">活动公告:</li>
+				<li class="lired">·<a href="/bbs/read.php?tid={$indexlist.50.0.tid}">{$indexlist.50.0.subject}</a></li>
+				<li class="liblue">·<a href="/bbs/read.php?tid={$indexlist.50.1.tid}">{$indexlist.50.1.subject}</a></li>
+			</ul>
+		</div>
+		<!--message_right活动公告结束-->
+	</div>
+	<!--message 信息结束-->
+</div>

@@ -1,0 +1,13 @@
+<?php if ($this->newDealsList):?>
+<div class="ratingCoupon">
+	<div class="line"></div>
+	<h2>最新促销折扣</h2>
+	<div class="ratingCouponList">
+		<ul>
+			<?php foreach ($this->newDealsList as $key => $newDeals):?>
+			<li><span<?php if ($key < 3):?> class="top"<?php endif;?>><?php print $key + 1;?></span><a target="_blank" href="<?php print $newDeals['DealsDetailUrl'];?>" title="<?php print $this->escapeHtml($newDeals['CouponName']);?>">【<?php print $newDeals['MerchantName'];?>】<?php print strip_tags($newDeals['CouponName']);?></a></li>
+			<?php endforeach;?> 
+		</ul>
+	</div>
+</div>
+<?php endif;?>
