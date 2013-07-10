@@ -1,0 +1,278 @@
+##############################################
+# tracking config file, used to define fraud IP
+# ignored IP
+##############################################
+
+
+# add by lee(2005-08-01)
+12.105.8.131
+
+# add by lee(2005-08-01)
+66.14.113.218
+
+# add by lee(2005-08-01)
+66.35.223.1
+
+# add by lee(2005-08-01)
+12.161.232.132
+
+# add by lee(2005-08-01)
+64.241.243.66
+
+# add by lee(2005-08-01)
+218.80.117.2
+
+# add by lee(2005-08-01)
+66.249.64.40
+
+# add by lee(2005-08-01)
+66.249.64.12
+
+# add by lee(2005-08-01)
+66.98.184.81
+
+# add by lee(2005-08-01)
+66.194.55.242
+
+# add by lee(2005-08-01)
+66.102.6.136
+
+# add by lee(2005-08-01)
+61.214.29.211
+
+# add by lee(2005-08-03)
+64.124.85.80
+
+# add by lee(2005-08-14)
+68.80.12.254
+
+# add by lee(2005-08-14)
+220.248.124.162
+
+# add by lee(2005-08-14)
+220.248.124.163
+
+# add by lee(2005-08-14)
+220.248.124.164
+
+# add by lee(2005-08-14)
+220.248.124.165
+
+# add by lee(2005-08-14)
+220.248.124.166
+
+# add by lee(2005-08-14) web13
+192.168.10.80
+
+# add by lee(2005-08-14) web10
+192.168.10.72
+
+# add by lee(2005-08-14) Yahoo
+66.196.92.10
+
+# add by lee(2005-08-14) Yahoo
+66.196.92.11
+
+# add by lee(2005-08-14) Yahoo
+66.196.92.12
+
+# add by lee(2005-08-14) Yahoo
+66.196.92.13
+
+# add by lee(2005-08-14) Yahoo
+66.196.92.14
+
+# add by lee(2005-08-14) Yahoo
+66.196.92.15
+
+# add by lee(2005-08-14) Yahoo
+66.196.92.16
+
+# add by lee(2005-08-14) Yahoo
+66.196.92.17
+
+# add by lee(2005-08-14) Yahoo
+66.196.92.18
+
+# add by lee(2005-08-14) Yahoo
+66.196.92.19
+
+# add by lee(2005-08-14) Yahoo
+66.196.91.157
+
+# add by lee(2005-08-14) Yahoo
+66.196.91.158
+
+# add by lee(2005-08-14) Yahoo
+66.196.91.159
+
+# add by lee(2005-08-14) Yahoo
+68.142.246.86
+
+# add by lee(2005-08-14) Yahoo
+68.142.246.87
+
+# add by lee(2005-08-14) Yahoo
+68.142.246.88
+
+# add by lee(2005-08-14) Yahoo
+68.142.246.89
+
+# add by lee(2005-08-14) Yahoo
+68.142.246.90
+
+# add by lee(2005-08-14) Yahoo
+68.142.246.91
+
+# add by lee(2005-08-14) Yahoo
+68.142.246.92
+
+# add by lee(2005-08-14) Yahoo
+68.142.246.93
+
+# add by lee(2005-08-14) Yahoo
+68.142.246.94
+
+# add by lee(2005-08-14) Yahoo
+68.142.246.95
+
+# add by lee(2005-08-14) UUNET
+65.214.44.179
+
+# add by lee(2005-08-14) Covad Communications
+68.164.143.245
+
+# add by lee(2005-08-14) google 66.249.64.0-66.249.95.255
+66.249.66.1
+
+# add by lee(2005-08-14) google
+66.249.64.39
+
+# add by lee(2005-08-14) google
+66.249.64.68
+
+# add by lee(2005-08-14) google
+66.249.64.55
+
+# add by lee(2005-08-14) google
+66.249.64.68
+
+# add by lee(2005-08-14) google
+66.249.64.33
+
+# add by lee(2005-08-14) google
+66.249.64.30
+
+# add by lee(2005-08-14) google
+66.249.64.37
+
+# add by lee(2005-08-14) google
+66.249.64.66
+
+# add by lee(2005-08-14) google
+66.249.64.38
+
+# add by lee(2005-08-14) google
+66.249.64.28
+
+# add by lee(2005-08-14) google
+66.249.64.79
+
+# add by lee(2005-08-14) google
+66.249.64.18
+
+# add by lee(2005-08-14) google
+66.249.71.70
+
+# add by lee(2005-08-14) google
+66.249.71.40
+
+# add by lee(2005-08-14) google
+66.249.71.67
+
+# add by lee(2005-08-14) google
+66.249.71.72
+
+# add by lee(2005-08-14) google
+66.249.71.32
+
+# add by lee(2005-08-14) google
+66.249.71.28
+
+# add by lee(2005-08-14) google
+66.249.71.18
+
+# add by lee(2005-08-14) google
+66.249.71.69
+
+# add by lee(2005-08-14) google
+66.249.71.73
+
+# add by lee(2005-08-14) google
+66.249.71.39
+
+# add by lee(2005-08-14) Road Runner
+66.24.251.31
+
+# add by lee(2005-08-14) Microsoft
+65.54.188.71
+
+# add by lee(2005-08-14) Microsoft
+65.54.188.72
+
+# add by lee(2005-08-14) mezimedia shoffice lan ip
+192.168.168.248
+
+# add by lee(2005-09-13)  ThePlanet.com Internet Services, Inc. visit very frequence but haven't went out. seems a crawler.
+70.85.3.132
+
+# add by lee(2005-09-13) Hosting-Network GmbH, visit very frequence but haven't went out. seems a crawler.
+72.41.62.1
+
+#add by lee(2005-09-13) Webhost4Life.com, visit very frequence but haven't went out. seems a crawler
+209.132.227.111
+
+#add by lee(2005-09-13) Dulance, Inc. visit very frequence but haven't went out. seems a crawler
+66.160.142.3
+
+#add by lee(2005-09-13) ServerBeach . visit very frequence but haven't went out. seems a crawler
+64.34.176.79
+
+#add by lee(2005-09-13) ServerBeach . visit very frequence but haven't went out. seems a crawler
+69.109.40.171
+
+#add by lee(2005-09-27) lan ip
+192.168.10.119
+
+#add by lee(2005-09-30) find a product crawler
+66.215.23.54
+
+#add by lee(2005-10-10) snap.smarter.com crawler
+216.56.21.195
+
+#add by lee(2005-09-30) smarter.com crawler
+65.54.236.86
+
+#add by lee(2005-09-30) smarter.com crawler
+65.54.236.87
+
+#add by lee(2005-09-30) smarter.com crawler
+65.54.236.88
+
+#add by lee(2005-09-30) find a product.com crawler
+66.215.23.54
+
+#add by lee(2005-11-7) BeachCamera and Buydig.com IP
+12.161.232.129
+
+#add by lee(2005-11-7) BeachCamera and Buydig.com IP
+12.161.232.142
+
+#add by lee(2005-11-7) BeachCamera and Buydig.com IP
+12.105.8.131
+
+#add by lee
+69.181.71.58
+
+# Level 3 Communications, Inc.
+63.215.202.229

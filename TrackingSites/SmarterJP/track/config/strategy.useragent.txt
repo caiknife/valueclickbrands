@@ -1,0 +1,114 @@
+###### whitelist@20100206
+
+###### blacklist@20100206
+-=anonymous
+-=ASK
+-=IE/4.0
+-=Mozilla
+-=Mozilla 4/0
+-=Mozilla/3.0 (compatible)
+-=Mozilla/3.01 (compatible;)
+-=Mozilla/4.0
+-=Mozilla/4.0 (compatible;)
+-=Mozilla/4.5 [en] (Win98; I)
+-=Mozilla/5.0
+-=Outbrain
+-=PHP
+-=pirst
+-=VB Project
+
+###### blacklist@20100206 top, for performance
+-~Bot
+-~Crawl
+-~Yandex
+-~Slurp
+-~Spider
+-~Indexer
+-~larbin
+-~libwww
+-~Nagios
+-~Nutch
+-~Pathtraq
+-~PHP/4
+-~PHP/5
+-~wget
+
+###### blacklist@20100206, history
+-~100pulse
+-~AnswerBus (http://www.answerbus.com/)
+-~ApacheBench/
+-~appie 1.1
+-~arachnophilia
+-~architext
+-~asked/
+-~Ask Jeeves/
+-~backrub
+-~BTWebClient
+-~CJNetworkQuality
+-~Client-HTTP
+-~ColdFusion
+-~curl
+-~Download Ninja
+-~EasyDL/
+-~findlinks/
+-~Firefly
+-~gazz/2.1 (gazz@nttrd.com)
+-~geturl
+-~google_partner_monitoring
+-~grub-client
+-~gulliver
+-~Hatena Antenna
+-~HLoader
+-~HTMLParser/
+-~HTTP Client
+-~HttpClient
+-~httpunit
+-~ia_archiver
+-~ichiro/
+-~Indy Library
+-~internetseer
+-~Link Sleuth
+-~InetURL
+-~JS-Kit
+-~LWP::Simple/
+-~lwp-request/
+-~lwp-trivial/
+-~lycos
+-~Lynx/
+-~Lynxy/
+-~Mail.Ru/
+-~Mediapartners-Google
+-~mercator
+-~MetaURI
+-~Microsoft URL Control
+-~Mister Pix
+-~Monitor
+-~Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 4.0; KHTE B
+-~MSNPTC/
+-~NG/2.0
+-~Ocelli/1.1
+-~Openfind
+-~panscient.com
+-~Pathtraq
+-~POE-Component-Client-HTTP/
+-~Pompos/
+-~scooter
+-~ShopWiki
+-~sna-0.0.1
+-~Snoopy
+-~someone@somewhere.any
+-~urllib/
+-~voyager-hc/
+-~voyager/
+-~WatchMouse/
+-~Webmetrics
+-~WebPatrol
+-~Website Explorer
+-~WebZIP
+-~WinHttp
+-~WordPress/
+-~TravelWorm
+-~wotbox.com
+-~Yahoo! Mindset
+-~YahooYSMcm
+-~ZyBorg

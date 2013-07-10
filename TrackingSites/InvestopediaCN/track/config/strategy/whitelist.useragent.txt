@@ -1,0 +1,7 @@
+/^Mozilla/i
+/^Opera/i
+/^mediapartners-google/i
+/^googlebot/i
+/^adsbot-google/i
+/^lanshanbot/i
+/^msnbot/i

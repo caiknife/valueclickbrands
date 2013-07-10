@@ -1,0 +1,76 @@
+<?php
+$outgoingLog = $this->_outgoingLog;
+if (!empty($outgoingLog['sponsorType'])) {
+    switch ($outgoingLog['sponsorType']) {
+        case Tracking_Constant::SPONSOR_GOOGLE:
+            $businessType = 'GSL';
+            break;
+
+        case Tracking_Constant::SPONSOR_OVERTURE:
+            $businessType = 'YSL';
+            break;
+
+        case Tracking_Constant::SPONSOR_BAIDU:
+            $businessType = 'BSL';
+            break;
+
+        default:
+            $businessType = 'Other';
+            break;
+    }
+    $outgoing = array(
+        'kw'    => $outgoingLog['keyword'],
+        'ps'    => $outgoingLog['displayPosition'],
+        'ch'    => $outgoingLog['channelId'],
+        'ca'    => $outgoingLog['categoryId'],
+        'tg'    => $outgoingLog['channelTag'],
+        'ar'    => $outgoingLog['clickArea'],
+        'url'   => $outgoingLog['destUrl'],
+    );
+} else if (!empty($outgoingLog['destSite'])) {
+    $businessType = 'CPA';
+    $outgoing = array(
+        'pi'    => $outgoingLog['productId'],
+        'mi'    => $outgoingLog['merchantId'],
+        'ch'    => $outgoingLog['channelId'],
+        'ca'    => $outgoingLog['categoryId'],
+        'ds'    => $outgoingLog['destSite'],
+        'ar'    => $outgoingLog['clickArea'],
+        'url'   => $outgoingLog['destUrl'],
+    );
+} else if (!empty($outgoingLog['businessType'])) {
+    $businessType = $outgoingLog['businessType'];
+    $outgoing = array(
+        'pi'    => $outgoingLog['productId'],
+        'mi'    => $outgoingLog['merchantId'],
+        'ch'    => $outgoingLog['channelId'],
+        'ca'    => $outgoingLog['categoryId'],
+        'oi'    => $outgoingLog['offerId'],
+        'ar'    => $outgoingLog['clickArea'],
+        'url'   => $outgoingLog['destUrl'],
+    );
+} else {
+    $businessType = 'Other';
+    $outgoing = array();
+}
+?>
+<!doctype html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Track Event</title>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-10602262-5']);
+        _gaq.push(['_trackEvent', 'OutClick', '<?php echo $businessType; ?>', '<?php echo base64_encode(Zend_Json::encode($outgoing)); ?>', 0]);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+<body>
+    <!-- If you see this text, you must have too much time~ -->
+</body>
+</html>
